@@ -20,9 +20,17 @@ const f100vh = () => {
     document.body.style.setProperty('--vh-100', `${bodyHeight}px`);
 };
 
+const promoHidden = () => {
+    const btnPromoClose = document.querySelector('.js-close-promo-header');
+    btnPromoClose.addEventListener('click', () => {
+        btnPromoClose.closest('.header').classList.add('promo-hidden');
+    });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     fHeader();
     f100vh();
+    promoHidden();
 });
 
 window.addEventListener('resize', () => {

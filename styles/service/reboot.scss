@@ -113,6 +113,9 @@ ul,
 dl {
   margin-top: 0;
   margin-bottom: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 ol ol,
@@ -272,6 +275,12 @@ select,
 summary,
 textarea {
   touch-action: manipulation;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 

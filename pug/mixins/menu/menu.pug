@@ -1,14 +1,60 @@
 mixin menu-list(items)
-    ul(class="menu")
+    ul.header-menu
         each item in items
             -
                 const {
-                    text,
-                    icon,
-                    link,
-                    hide
+                    name,
+                    url,
+                    items,
                 } = item;
-            li(class=(hide ? "menu__item tablet-hide" : "menu__item"))
-                a(href=link + '.html' class=(page === link ? "menu__link menu__link--active" : "menu__link"))
-                    span(class="icon icon--" + icon)
-                    != text
+            li
+                a(href=url + '.html', class=page === url ? 'active' : '')
+                    != name
+                    if items
+                        span.icon
+
+                if items
+                    .header-menu__submenu.wrapper__page
+                        ul
+                            each item in items
+                                -
+                                    const {
+                                        name,
+                                        url,
+                                        items,
+                                    } = item;
+                                li
+                                    a(href='catalog-category.html')
+                                        != name
+                                        if items
+                                            span.header-menu__arr.js-menu-arr
+                                                span.icon
+                                    if items
+                                        -
+                                            itemsLength = items.length
+                                            itemsCount = items.length - 6
+
+                                        ul
+                                            li.header-menu__caption.js-menu-back
+                                                span.icon
+                                                != name
+                                            each item, index in items
+                                                -
+                                                    const {
+                                                        name,
+                                                        url,
+                                                        items,
+                                                    } = item;
+                                                if index === 6 && itemsLength > 7
+                                                    li.header-menu__more
+                                                        a.link-more.js-menu-more(
+                                                            href='#'
+                                                        )
+                                                            | Еще&nbsp;
+                                                            != itemsCount
+                                                            span.icon
+                                                li
+                                                    a(
+                                                        href='catalog-category.html'
+                                                    )
+                                                        != name

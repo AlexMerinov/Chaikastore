@@ -21,7 +21,7 @@ body {
     height: 100%;
 }
 body {
-    background: var(--secondary-color-100);
+    background: var(--Main-background);
     color: var(--secondary-color-900);
     @include text-body;
 }

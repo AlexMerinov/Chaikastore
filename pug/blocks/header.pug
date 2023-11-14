@@ -1,3 +1,168 @@
-header(class="header")
-    div(class="wrapper__page")
-        | Header
+include ../mixins/menu/menu
+
+header.header
+    .header__promo
+        marquee(behavior='scroll', direction='left')
+            | BLACK FRIDAY 24.11-25.11 BLACK FRIDAY 24.11-25.11 BLACK FRIDAY 24.11-25.11
+        .header__promo-end
+            .header__promo-close.js-close-promo-header
+    .wrapper__page.header__bottom 
+        .header-menu-block
+            -
+                const menu = [
+                    {
+                        name: 'Каталог',
+                        url: 'catalog-categories',
+                        items: [
+                            {
+                                name: '92days',
+                                items: [
+                                    {
+                                        name: 'Для женщин',
+                                    },
+                                    {
+                                        name: 'Для мужчин',
+                                    },
+                                    {
+                                        name: 'Для детей',
+                                    },
+                                ]
+                            },
+                            {
+                                name: 'Новинки',
+                                items: [
+                                    {
+                                        name: 'Для женщин',
+                                    },
+                                    {
+                                        name: 'Для мужчин',
+                                    },
+                                    {
+                                        name: 'Для детей',
+                                    },
+                                ]
+                            },
+                            {
+                                name: 'Одежда',
+                                items: [
+                                    {
+                                        name: 'Верхняя',
+                                    },
+                                    {
+                                        name: 'Свитеры и джемперы',
+                                    },
+                                    {
+                                        name: 'Худи и свитшоты',
+                                    },
+                                    {
+                                        name: 'Блузы и рубашки',
+                                    },
+                                    {
+                                        name: 'Лонгсливы',
+                                    },
+                                    {
+                                        name: 'Футболки',
+                                    },
+                                    {
+                                        name: 'Топы и поло',
+                                    },
+                                    {
+                                        name: 'Деним',
+                                    },
+                                    {
+                                        name: 'Брюки',
+                                    },
+                                    {
+                                        name: 'Юбки',
+                                    },
+                                    {
+                                        name: 'Платья',
+                                    },
+                                    {
+                                        name: 'Шорты',
+                                    },
+                                    {
+                                        name: 'Костюмы',
+                                    },
+                                ]
+                            },
+                            {
+                                name: 'Аксессуары',
+                                items: [
+                                    {
+                                        name: 'Кепи',
+                                    },
+                                    {
+                                        name: 'Шапки',
+                                    },
+                                    {
+                                        name: 'Шарфы',
+                                    },
+                                    {
+                                        name: 'Балаклавы',
+                                    },
+                                    {
+                                        name: 'Варежки и перчатки',
+                                    },
+                                    {
+                                        name: 'Кулоны и бусы',
+                                    },
+                                    {
+                                        name: 'Серьги',
+                                    },
+                                ]
+                            },
+                            {
+                                name: 'Купальники',
+                            },
+                            {
+                                name: 'SALE',
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Новинки',
+                        url: 'nevelty',
+                    },
+                    {
+                        name: 'Лукбук',
+                        url: 'lookbook',
+                    },
+                    {
+                        name: 'О нас',
+                        url: 'about',
+                    },
+                ];
+            +menu-list(menu)
+
+        a.header-logo(href='index.html')
+            img.header-logo__img(
+                src='images/logo-black.svg',
+                alt='chaika',
+                width='108',
+                height='48'
+            )
+
+        ul.header-menu-user
+            li.header-menu-user__item
+                a.header-menu-user__link.js-search-show(href='#')
+                    +icon-sym('blank')
+            li.header-menu-user__item.tablet-hide
+                a.header-menu-user__link(
+                    href='#',
+                    data-micromodal='modal-enter'
+                )
+                    +icon-sym('blank')
+            li.header-menu-user__item.tablet-hide
+                a.header-menu-user__link(
+                    href='#',
+                    data-micromodal='modal-favorite'
+                )
+                    +icon-sym('blank')
+            li.header-menu-user__item
+                // class="header-menu-user__link header-menu-user__link--basket-active" - показывает пипку, если в корзине что-то есть
+                a.header-menu-user__link(
+                    href='#',
+                    data-micromodal='modal-basket'
+                )
+                    +icon-sym('blank')
