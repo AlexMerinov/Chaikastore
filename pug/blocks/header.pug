@@ -7,6 +7,8 @@ header.header
         .header__promo-end
             .header__promo-close.js-close-promo-header
     .wrapper__page.header__bottom 
+        .hamburger.js-menu-open
+            span
         .header-menu-block
             -
                 const menu = [
@@ -136,8 +138,14 @@ header.header
             +menu-list(menu)
 
         a.header-logo(href='index.html')
-            img.header-logo__img(
+            img.header-logo__img.header-logo__img--dark(
                 src='images/logo-black.svg',
+                alt='chaika',
+                width='108',
+                height='48'
+            )
+            img.header-logo__img.header-logo__img--light(
+                src='images/logo-white.svg',
                 alt='chaika',
                 width='108',
                 height='48'
@@ -146,23 +154,23 @@ header.header
         ul.header-menu-user
             li.header-menu-user__item
                 a.header-menu-user__link.js-search-show(href='#')
-                    +icon-sym('blank')
+                    +icon-sym('search')
             li.header-menu-user__item.tablet-hide
                 a.header-menu-user__link(
                     href='#',
                     data-micromodal='modal-enter'
                 )
-                    +icon-sym('blank')
+                    +icon-sym('user')
             li.header-menu-user__item.tablet-hide
                 a.header-menu-user__link(
                     href='#',
                     data-micromodal='modal-favorite'
                 )
-                    +icon-sym('blank')
+                    +icon-sym('favorite')
             li.header-menu-user__item
                 // class="header-menu-user__link header-menu-user__link--basket-active" - показывает пипку, если в корзине что-то есть
                 a.header-menu-user__link(
                     href='#',
                     data-micromodal='modal-basket'
                 )
-                    +icon-sym('blank')
+                    +icon-sym('cart')

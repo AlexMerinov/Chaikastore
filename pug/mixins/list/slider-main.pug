@@ -1,0 +1,24 @@
+mixin slider-main(items)
+    .main-slider.wrapper__wide.swiper.js-slider-main
+        .swiper-wrapper
+            each item, index in items
+                -
+                    const {
+                        name,
+                        url,
+                        picture,
+                    } = item;
+                .swiper-slide.main-slider__item
+                    .wrapper__page.main-slide__wrapper
+                        .main-slider__text
+                            a.main-slider__link(href=url)
+                                != name
+                    .main-slider__bg
+                        picture
+                            // ресайз 1024*730
+                            source(
+                                srcset=picture.small,
+                                media='(max-width: 1023px)'
+                            )
+                            // ресайз 1680*680
+                            img(src=picture.big, alt=name)

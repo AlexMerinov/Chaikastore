@@ -1,8 +1,25 @@
 extends ./_layout
-
+include ./mixins/list/slider-main
 
 block content
-
-    div(class="wrapper__page article__top")
-        h1 Главная страница
-
+    .wrapper__page.article__top
+        -
+            const sliderMain = [    
+                {
+                    name: 'Весенняя коллекция',
+                    url: 'catalog-category.html',
+                    picture: {
+                        big: 'images/content/banners/main_0.png',
+                        small: 'images/content/banners/main_0.png'
+                    },
+                },
+                {
+                    name: 'Последние Тренды',
+                    url: 'catalog-category.html',
+                    picture: {
+                        big: 'images/content/banners/main_1.png',
+                        small: 'images/content/banners/main_1.png'
+                    },
+                },
+            ];
+        +slider-main(sliderMain)

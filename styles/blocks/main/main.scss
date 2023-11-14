@@ -1,0 +1,48 @@
+.main-slider{
+	position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    max-height: 800px;
+	z-index: 1;
+	color: var(--white);
+	margin-bottom: 60px;
+    overflow: hidden;
+
+    .swiper-wrapper,
+    .swiper-slide {
+        height: 100%;
+    }
+
+    .wrapper__page, {
+        height: 100%;
+    }
+	&__bg{
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.8;
+		img{
+			position: absolute;
+			z-index: -1;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__link{
+		border: none;
+		color: var(--white);
+		font-size: 48px;
+		line-height: 120%;
+		font-style: normal;
+		display: inline-block;
+		vertical-align: top;
+	}
+}
