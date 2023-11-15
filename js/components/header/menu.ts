@@ -29,12 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             if (!body.classList.contains('menu-show')) {
+                e.target.closest('.header__bottom').classList.add('bg');
                 link.classList.add('active');
                 wintop = window.scrollY;
                 body.classList.add('menu-show');
                 body.style.top = `-${wintop}px`;
                 body.style.setProperty('--wintop', `${wintop}px`);
             } else {
+                e.target.closest('.header__bottom').classList.remove('bg');
                 link.classList.remove('active');
                 body.classList.remove('menu-show');
                 window.scroll(0, wintop);
@@ -42,5 +44,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 body.style.removeProperty('--wintop');
             }
         });
+    });
+
+
+    const hoverMenu = () => {
+        const jsMenuItemDrop = document.querySelectorAll('.js-menu-item-drop');
+        jsMenuItemDrop.forEach((item) => {
+            item.addEventListener('mouseover', (e) => {
+                e.target.closest('.header__bottom').classList.add('bg');
+                
+            });
+
+            item.addEventListener('mouseout', (e) => {
+                e.target.closest('.header__bottom').classList.remove('bg');
+                
+            });
+        });
+    }
+
+    if (document.documentElement.clientWidth > 1024) {
+        hoverMenu();
+    }
+
+    window.addEventListener('resize', () => {
+        hoverMenu();
     });
 });

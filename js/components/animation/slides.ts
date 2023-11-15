@@ -7,11 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const sliders = document.querySelectorAll('.js-slider-main');
 
     sliders.forEach((slider) => {
-        const swiperSlder = new Swiper(slider, {
+        const swiperSlider = new Swiper(slider, {
             slidesPerView: 1,
             speed: 1000,
             loop: true,
             grabCursor: true,
+            effect: 'fade',
+            fadeEffect: {
+              crossFade: true
+            },
             // autoplay: {
             //     delay: 7000,
             //     disableOnInteraction: false,

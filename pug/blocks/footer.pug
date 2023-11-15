@@ -1,3 +1,89 @@
-footer(class="footer")
-    div(class="wrapper__page")
-        | Footer
+include ../mixins/menu/footer-menu
+
+footer.footer
+    .wrapper__page
+        .footer__wrapper
+            .footer-menu.footer__menu 
+                -
+                    const topList = [
+                        {
+                            name: 'Покупателям',
+                            url: '#',
+                        },
+                                            {
+                            name: 'О нас',
+                            url: '#',
+                        },
+                                            {
+                            name: 'Контакты',
+                            url: '#',
+                        },
+                                            {
+                            name: 'Магазины',
+                            url: '#',
+                        },
+                                            {
+                            name: 'Новости и акции',
+                            url: '#',
+                        },
+                    ]
+                +footer-menu-top(topList)
+
+                -
+                    const botList = [
+                        {
+                            name: 'Оплата и доставка',
+                            url: '#',
+                        },
+                        {
+                            name: 'Возврат',
+                            url: '#',
+                        },
+                        {
+                            name: 'Частые  вопросы',
+                            url: '#',
+                        },
+                        {
+                            name: 'Размерная сетка',
+                            url: '#',
+                        },
+                        {
+                            name: 'Правовая информация',
+                            url: '#',
+                        },
+                        {
+                            name: 'Правовая информация',
+                            url: '#',
+                        },
+                        {
+                            name: 'Правовая информация',
+                            url: '#',
+                        },
+                    ]
+                +footer-menu-bot(botList)
+
+            .footer__info 
+                .footer__policy 
+                    form.form-subscribe(action='post')
+                        input(type='text', name='', placeholder='Ваш e-mail') 
+                        button(type='button')
+                    span 
+                        | Нажимая на кнопку, вы подтверждаете, что ознакомились с Политикой конфиденциальности
+
+                .footer__contacts
+                    .footer__contacts-l
+                        a(href='tel:+74954775204')
+                            | +7 (495) 477-52-04
+                        a(href='mailto:mail@chaikastore.ru') 
+                            | mail@chaikastore.ru
+                    .footer__contacts-r
+                        a(href='http://')
+                            +icon-sym('tg') 
+                        a(href='http://')
+                            +icon-sym('ws') 
+            .footer__bottom 
+                span 
+                    | 2012-2023 © chaikastore.ru
+
+                a(href='#')
+                    | Карта сайта

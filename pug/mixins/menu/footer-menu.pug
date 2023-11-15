@@ -1,0 +1,23 @@
+mixin footer-menu-top(items)
+    ul.footer-menu__top
+        each item in items 
+            -
+                const {
+                    name,
+                    url,
+                } = item;
+            li 
+                a(href=url + '.html')
+                    != name
+
+mixin footer-menu-bot(items)
+    ul.footer-menu__bot
+        each item in items 
+            -
+                const {
+                    name,
+                    url,
+                } = item;
+            li 
+                a(href=url + '.html')
+                    != name

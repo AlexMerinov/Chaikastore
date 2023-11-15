@@ -1,12 +1,14 @@
 :root {
-    --font-main: 'Onest', Arial, Helvetica, sans-serif;
-    --font-caption: 'Inter', Arial, Helvetica, sans-serif;
+    --font-main: 'TTHoves', Arial, Helvetica, sans-serif;
+    --font-caption: 'TTHoves', Arial, Helvetica, sans-serif;
     --text-h1-size: 36px;
     --text-h2-size: 26px;
     --text-h3-size: 22px;
     --text-body-size: 12px;
     --text-subtitle-size: 16px;
     --text-description: 10px;
+    --text-size-12: 12px;
+    --text-size-16: 16px;
 
    //  @include maxBp($bp-1680) {
    //      --text-h1-size: 60px;
@@ -26,5 +28,6 @@
         --text-h1-size: 28px;
         --text-h2-size: 24px;
         --text-h3-size: 19px;
+        --text-size-16: 14px;
     }
 }

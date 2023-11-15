@@ -1,16 +1,16 @@
 mixin slider-main(items)
-    .main-slider.wrapper__wide.swiper.js-slider-main
-        .swiper-wrapper
+    .swiper.main-slider.wrapper__wide.js-slider-main
+        .swiper-wrapper.main-slider__wrapper
             each item, index in items
                 -
                     const {
-                        name,
+                        name, 
                         url,
                         picture,
                     } = item;
                 .swiper-slide.main-slider__item
-                    .wrapper__page.main-slide__wrapper
-                        .main-slider__text
+                    .main-slider__item-wrapper 
+                        h1.main-slider__name 
                             a.main-slider__link(href=url)
                                 != name
                     .main-slider__bg
