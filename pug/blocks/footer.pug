@@ -64,9 +64,13 @@ footer.footer
 
             .footer__info 
                 .footer__policy 
-                    form.form-subscribe(action='post')
-                        input(type='text', name='', placeholder='Ваш e-mail') 
-                        button(type='button')
+                    form.form.form--subscribe(action='post')
+                        .form__line 
+                            input.form__input(type='text', placeholder='')
+                            label.form__label
+                                | Ваш e-mail
+                        button.form__button(type='button')
+                            +icon-sym('arrow-r')
                     span 
                         | Нажимая на кнопку, вы подтверждаете, что ознакомились с Политикой конфиденциальности
 

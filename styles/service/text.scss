@@ -52,11 +52,8 @@ p,.p{
 a{
   text-decoration: none;
   transition: var(--trans);
-  color: var(--primary-color-600);
+  color: var(--black);
   cursor: pointer;
-  &:hover{
-    color: var(--secondary-color-900);
-  }
 }
 
 .text-nowrap{

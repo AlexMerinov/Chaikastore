@@ -1,4 +1,5 @@
 import { slideToggle } from '@js/components/animation/toggle';
+import { forEach } from 'lodash-es';
 
 document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('.js-menu-toggle');
@@ -46,27 +47,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const jsOpenMenuList = document.querySelectorAll('.js-menu-arr');
+    console.log(jsOpenMenuList);
+    
+
+    jsOpenMenuList.forEach((link) => {
+        console.log(link);
+        
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            if(link.closest('li').classList.contains('open')) {
+                link.classList.remove('active');
+                link.closest('li').classList.remove('open');
+            } else {
+                link.classList.add('active');
+                link.closest('li').classList.add('open');
+            }
+
+        });
+    });
 
     const hoverMenu = () => {
-        const jsMenuItemDrop = document.querySelectorAll('.js-menu-item-drop');
-        jsMenuItemDrop.forEach((item) => {
-            item.addEventListener('mouseover', (e) => {
-                e.target.closest('.header__bottom').classList.add('bg');
-                
-            });
+        if (document.documentElement.clientWidth > 1024) {
+            const jsMenuItemDrop = document.querySelectorAll('.js-menu-item-drop');
+            jsMenuItemDrop.forEach((item) => {
+                item.addEventListener('mouseover', (e) => {
+                    e.target.closest('.header__bottom').classList.add('bg');
+                });
 
-            item.addEventListener('mouseout', (e) => {
-                e.target.closest('.header__bottom').classList.remove('bg');
-                
+                item.addEventListener('mouseout', (e) => {
+                    e.target.closest('.header__bottom').classList.remove('bg');
+                });
             });
-        });
-    }
-
-    if (document.documentElement.clientWidth > 1024) {
-        hoverMenu();
+        }
     }
 
     window.addEventListener('resize', () => {
         hoverMenu();
     });
+
+    window.addEventListener('load', () => {
+        hoverMenu();
+    });
+    
 });

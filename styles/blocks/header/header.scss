@@ -90,6 +90,10 @@
         &.bg {
             background: var(--Main-background);
         }
+
+        @include maxBp($bp-1024) {
+            height: 55px;
+        }
     }
 }
 
@@ -98,14 +102,17 @@
     align-items: center;
 
     @include maxBp($bp-1024) {
-        height: 100%;
-        padding: 0 16px;
-        display: flex;
-        flex-direction: column;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: var(--space-s);
+        padding-bottom: var(--space-s);
+        background-color: var(--Main-background);
     }
 
     @include maxBp($bp-768) {
-        padding: 0 8px;
+        padding-left: 8px;
+        padding-right: 8px;
+        justify-content: space-between;
     }
 
     &__item {
@@ -113,8 +120,8 @@
         align-items: center;
         padding: 0 16px;
 
-        @include maxBp($bp-1024) {
-
+        @include maxBp($bp-768) {
+            padding: 0;
         }
 
         & > a {
@@ -167,8 +174,33 @@
                line-height: 1.3;
                margin-bottom: var(--space-2xs); 
 
+                & > ul {
+                    @include maxBp($bp-768) {
+                        max-height: 0px;
+                        overflow: hidden;
+                        transition: var(--trans);
+                    }
+                }
+
+                &.open > ul {
+                    transition: all 1s linear;
+                    max-height: 999px;
+                }
+
+               & > a {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: var(--space-2xs); 
+               }
+
                 ul li {
                     margin-bottom: var(--space-2xs); 
+
+                    @include maxBp($bp-768) {
+                        line-height: 1;
+                        margin-bottom: var(--space-3xs); 
+                    }
                 }
 
                 ul li a {
@@ -205,7 +237,30 @@
                         }
                     }
                 }
+
+                @include maxBp($bp-768) {
+                    border-bottom: 1px solid #c4c4c479;
+                }
             }
+
+            @include maxBp($bp-768) {
+                height: 100%;
+                overflow: auto;
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        @include maxBp($bp-1024) {
+            opacity: 1;
+            max-height: 100%;
+            top: 66px;
+            padding-top: 0;
+            pointer-events: visible;
+        }
+
+        @include maxBp($bp-768) {
+            height: 100%;
         }
     }
 
@@ -223,6 +278,47 @@
         }
     }
 
+    &__arr {
+        display: block;
+        width: 16px;
+        height: 16px;
+
+        position: relative;
+
+        & span {
+            display: block;
+            width: 10px;
+            height: 1px;
+            background: #C4C4C4;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transition: var(--trans);
+
+            &:nth-child(1) {
+                transform: translate(calc(-75% - 1px), -50%) rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                transform: translate(calc(-25% + 1px), -50%) rotate(-45deg);
+            }
+        }
+
+        &.active {
+            & span {
+                &:nth-child(1) {
+                    transform: translate(calc(-75% - 1px), -50%) rotate(-45deg);
+                }
+    
+                &:nth-child(2) {
+                    transform: translate(calc(-25% + 1px), -50%) rotate(45deg);
+                }
+            }
+        }
+    }
+
     &__more ~ li {
         display: none;
     }
@@ -236,6 +332,10 @@
 .header-menu,
 .header-menu__item {
     height: 100%;
+
+    @include maxBp($bp-1024) {
+        height: auto;
+    }
 }
 
 .header-menu-block {
@@ -249,11 +349,9 @@
         left: 0;
         width: 100%;
         display: block;
-        overflow: auto;
+        overflow: hidden;
         height: 100vh;
-
-        background-color: var(--Main-background);
-
+        background: transparent;
         transition: var(--trans-slow);
     }
 }
@@ -358,8 +456,12 @@
 
 body.menu-show {
     .header-menu-block {
-    transition-delay: .3s;
+        transition-delay: .3s;
         top: 100%;
+
+        @include maxBp($bp-768) {
+            background: var(--Main-background);
+        }
     }
 }
 

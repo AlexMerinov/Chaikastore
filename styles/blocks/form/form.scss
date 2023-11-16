@@ -1,92 +1,128 @@
 .form{
-  &__line {
+    &__line {
     position: relative;
-    margin: 0 0 var(--space-2xs) 0;
 
     .error-message {
-      z-index: 1;
+        z-index: 1;
     }
 
     &:last-child {
-      margin-bottom: 0;
+        margin-bottom: 0;
     }
-  }
-  &__label{
-    color: var(--secondary-color-500);
-    @include text-size-16;
-    padding: 11px 14px;
+    }
+
+    &__label{
+    color: var(--black);
+    opacity: 0.5;
+    @include text-size-12;
     position: absolute;
+    pointer-events: none;
     z-index: 1;
     left: 0;
-    top: 0;
-    pointer-events: none;
-    border: 1px solid transparent;
+    top: 3px;
     transition: var(--trans);
-    margin: 0;
     white-space: nowrap;
     overflow: hidden;
     max-width: 100%;
     text-overflow: ellipsis;
-  }
-  &__input{
+    }
+
+    &__input{
     display: block;
     width: 100%;
-    border: 1px solid var(--secondary-color-150);
+    border: none;
+    border-bottom: 0.5px solid var(--Stroke-bk-30);
     outline: 0;
-    border-radius: 10px;
-    @include text-size-16;
+    @include text-size-12;
+    color: var(--black);
     margin: 0;
-    padding:18px 14px 4px 14px;
+    padding: 3px 30px 3px 0px;
     transition: var(--trans);
     box-shadow: none;
     overflow: auto;
     resize: none;
+    background: transparent;
     &:hover{
-      border-color: var(--secondary-color-200);
+        border-color: var(--black);
     }
     &:focus{
-      border-color: var(--secondary-color-300);
+        border-color: var(--black);
     }
+
     &.error{
-      border-color: var(--primary-color-600);
-      @include input-error;
-      ~.form__label{
+        border-color: var(--primary-color-600);
+        @include input-error;
+        ~.form__label{
         @include text-error;
-      }
+        }
     }
+
     @include placeholder{
-      color: var(--secondary-color-500);
+        color: var(--secondary-color-500);
     }
+
     &:focus,&.filled{
-      ~.form__label{
-        font-size: 10px;
-        transform: translate3d(0,-6px,0);
-      }
+        ~.form__label{
+        font-size: 8px;
+        transform: translate3d(0,-10px,0);
+        }
     }
+
     &:not(.error)+.error-message{
-      display: none;
+        display: none;
     }
     &--small{
-      padding: 8px 14px 6px 14px;
+        padding: 8px 14px 6px 14px;
     }
     &--counter{
-      text-align: center;
-      padding:11px 14px 11px 14px;
-      min-width: 64px;
-      @include maxBp($bp-768){
+        text-align: center;
+        padding:11px 14px 11px 14px;
+        min-width: 64px;
+        @include maxBp($bp-768){
         min-width: 40px;
         padding: 7px 14px;
-      }
+        }
     }
     &--text{
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      padding: 11px 14px;
-      color: var(--secondary-color-500);
-      pointer-events: none;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 11px 14px;
+        color: var(--secondary-color-500);
+        pointer-events: none;
     }
-  }
+    }
+
+    &--subscribe {
+        position: relative;
+        .form__button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 25px;
+
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .icon-sym {
+                @include icon-stroke;
+                transition: var(--trans);
+                width: 12px;
+                height: 12px;
+            }
+
+            &:hover {
+                .icon-sym {
+                    transition-delay: .2s ;
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
 }
 
 .error-message{

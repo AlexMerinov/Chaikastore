@@ -11,6 +11,7 @@ $secondary-color-100: #EFEFE6;
 $primary-color-500: #F35982;
 $primary-color-600: #E84A74;
 $main-bg: #FDF9F4;
+$stroke-bk-30: rgba(0, 0, 0, 0.30);
 
 $shadow: 0 5px 15px rgba(29, 29, 27, 0.1);
 $text-shadow: 0 1px 1px transparentize($secondary-color-900,0.5);
@@ -31,4 +32,5 @@ $text-shadow: 0 1px 1px transparentize($secondary-color-900,0.5);
     --shadow: #{$shadow};
     --text-shadow: #{$text-shadow};
     --Main-background: #{$main-bg};
+    --Stroke-bk-30: #{$stroke-bk-30};
 }

@@ -24,6 +24,7 @@
     &__link {
         @include text-h1;
         color: var(--White-background);
+
         &:hover {
             color: var(--dark);
         }
