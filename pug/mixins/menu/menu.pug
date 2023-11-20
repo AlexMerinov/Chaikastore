@@ -18,14 +18,14 @@ mixin menu-list(items)
                 if items
                     .header-menu__submenu.wrapper__page
                         ul
-                            each item in items
+                            each item, index in items
                                 -
                                     const {
                                         name,
                                         url,
                                         items,
                                     } = item;
-                                li
+                                li.js-item-preview(id=index)
                                     a(href='catalog-category.html')
                                         != name
                                         if items
@@ -61,3 +61,32 @@ mixin menu-list(items)
                                                         href='catalog-category.html'
                                                     )
                                                         != name
+
+                        .header-menu__preview.chapter-preview 
+                            .chapter-preview__box.visible(data-chapter-id='0') 
+                                .chapter-preview__item
+                                    img(src="images/content/menu/menu_preview_00.png", alt="")
+                                .chapter-preview__item
+                                    img(src="images/content/menu/menu_preview_01.png", alt="")
+                            .chapter-preview__box(data-chapter-id='1') 
+                                .chapter-preview__item
+                                    img(src="images/content/menu/menu_preview_01.png", alt="")
+                                .chapter-preview__item
+                                    img(src="images/content/menu/menu_preview_00.png", alt="")
+                            .chapter-preview__box(data-chapter-id='2')  
+                                .chapter-preview__item
+                                    img(src="images/content/menu/menu_preview_00.png", alt="")
+                                .chapter-preview__item
+                                    img(src="images/content/menu/menu_preview_00.png", alt="")
+                            .chapter-preview__box(data-chapter-id='3')  
+                                .chapter-preview__item
+                                    img(src="images/content/menu/menu_preview_01.png", alt="")
+                                .chapter-preview__item
+                                    img(src="images/content/menu/menu_preview_01.png", alt="")
+                            .chapter-preview__box.chapter-preview__box--uno(data-chapter-id='4')  
+                                .chapter-preview__item
+                                    img(src="images/content/menu/menu_preview_00.png", alt="")
+                            .chapter-preview__box.chapter-preview__box--uno(data-chapter-id='5') 
+                                .chapter-preview__item
+                                    img(src="images/content/menu/menu_preview_01.png", alt="")
+

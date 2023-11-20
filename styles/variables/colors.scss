@@ -1,6 +1,7 @@
 // Base
 $black: #000;
 $white: #fff;
+$black-30:  rgba(0, 0, 0, 0.30);
 $secondary-color-900: #1D1D1B;
 $secondary-color-700: #474744;
 $secondary-color-500: #71716C;
@@ -35,6 +36,7 @@ $success: #CAD96E;
     --icon-color: #{$black};
     --White-background: #{$white};
     --black: #{$black};
+    --black-30: #{$black-30};
     --secondary-color-900: #{$secondary-color-900};
     --secondary-color-700: #{$secondary-color-700};
     --secondary-color-500: #{$secondary-color-500};
@@ -53,7 +55,7 @@ $success: #CAD96E;
     --Button-primary: #{$beige};
     --Button-secondary: #{$light-beige};
     --beige: #{$beige};
-    --light-beig: #{$light-beige};
+    --beidge-50: #{$light-beige};
     --Breadcrums-active: #{$dark-grey};
     --Stroke-gray: #{$medium-grey};
     --Button-inactive: #{$light-grey};
@@ -62,5 +64,5 @@ $success: #CAD96E;
     --light-grey: #{$light-grey};
     --Error: #{$error};
     --Error-30: #{$error-30};
-    --success: #{$success};
+    --Green : #{$success};
 }

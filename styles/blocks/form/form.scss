@@ -2,95 +2,97 @@
     &__line {
     position: relative;
 
-    .error-message {
-        z-index: 1;
-    }
+        .error-message {
+            z-index: 1;
+        }
 
-    &:last-child {
-        margin-bottom: 0;
-    }
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     &__label{
-    color: var(--black);
-    opacity: 0.5;
-    @include text-size-12;
-    position: absolute;
-    pointer-events: none;
-    z-index: 1;
-    left: 0;
-    top: 3px;
-    transition: var(--trans);
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 100%;
-    text-overflow: ellipsis;
+        color: var(--black);
+        opacity: 0.5;
+        @include text-size-12;
+        position: absolute;
+        pointer-events: none;
+        z-index: 1;
+        left: 0;
+        top: 50%;
+        transform: translate3d(0,-50%,0);
+        transition: var(--trans);
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 100%;
+        text-overflow: ellipsis;
     }
 
     &__input{
-    display: block;
-    width: 100%;
-    border: none;
-    border-bottom: 0.5px solid var(--Stroke-bk-30);
-    outline: 0;
-    @include text-size-12;
-    color: var(--black);
-    margin: 0;
-    padding: 3px 30px 3px 0px;
-    transition: var(--trans);
-    box-shadow: none;
-    overflow: auto;
-    resize: none;
-    background: transparent;
-    &:hover{
-        border-color: var(--black);
-    }
-    &:focus{
-        border-color: var(--black);
-    }
-
-    &.error{
-        border-color: var(--primary-color-600);
-        @include input-error;
-        ~.form__label{
-        @include text-error;
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 0.5px solid var(--Stroke-bk-30);
+        outline: 0;
+        @include text-size-12;
+        color: var(--black);
+        margin: 0;
+        padding: 3px 80px 3px 0px;
+        transition: var(--trans);
+        box-shadow: none;
+        overflow: auto;
+        resize: none;
+        background: transparent;
+        &:hover{
+            border-color: var(--black);
         }
-    }
-
-    @include placeholder{
-        color: var(--secondary-color-500);
-    }
-
-    &:focus,&.filled{
-        ~.form__label{
-        font-size: 8px;
-        transform: translate3d(0,-10px,0);
+        &:focus{
+            border-color: var(--black);
         }
-    }
 
-    &:not(.error)+.error-message{
-        display: none;
-    }
-    &--small{
-        padding: 8px 14px 6px 14px;
-    }
-    &--counter{
-        text-align: center;
-        padding:11px 14px 11px 14px;
-        min-width: 64px;
-        @include maxBp($bp-768){
-        min-width: 40px;
-        padding: 7px 14px;
+        &.error{
+            border-color: var(--primary-color-600);
+            @include input-error;
+            ~.form__label{
+            @include text-error;
+            }
         }
-    }
-    &--text{
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        padding: 11px 14px;
-        color: var(--secondary-color-500);
-        pointer-events: none;
-    }
+
+        @include placeholder{
+            color: var(--secondary-color-500);
+        }
+
+        &:focus,&.filled{
+            ~.form__label{
+                font-size: 10px;
+                transform: translate3d(-100%,-50%,0);
+                left: 100%;
+            }
+        }
+
+        &:not(.error)+.error-message{
+            display: none;
+        }
+        &--small{
+            padding: 8px 14px 6px 14px;
+        }
+        &--counter{
+            text-align: center;
+            padding:11px 14px 11px 14px;
+            min-width: 64px;
+            @include maxBp($bp-768){
+            min-width: 40px;
+            padding: 7px 14px;
+            }
+        }
+        &--text{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding: 11px 14px;
+            color: var(--secondary-color-500);
+            pointer-events: none;
+        }
     }
 
     &--subscribe {
@@ -120,6 +122,14 @@
                     transition-delay: .2s ;
                     width: 16px;
                     height: 16px;
+                }
+            }
+        }
+
+        .form__input {
+            &:focus,&.filled{
+                ~.form__label{
+                    transform: translate3d(-150%,-50%,0);
                 }
             }
         }

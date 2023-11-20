@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             e.target.closest('.header-menu__more').classList.add('hide');
-            
-        });     
+
+        });
     });
 
     const { body } = document;
@@ -48,16 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const jsOpenMenuList = document.querySelectorAll('.js-menu-arr');
-    console.log(jsOpenMenuList);
-    
 
     jsOpenMenuList.forEach((link) => {
-        console.log(link);
-        
+
         link.addEventListener('click', (e) => {
             e.preventDefault();
 
-            if(link.closest('li').classList.contains('open')) {
+            if (link.closest('li').classList.contains('open')) {
                 link.classList.remove('active');
                 link.closest('li').classList.remove('open');
             } else {
@@ -90,5 +87,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', () => {
         hoverMenu();
     });
-    
+
 });
