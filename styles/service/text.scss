@@ -50,10 +50,14 @@ p,.p{
 }
 
 a{
-  text-decoration: none;
-  transition: var(--trans);
-  color: var(--black);
-  cursor: pointer;
+    text-decoration: none;
+    transition: var(--trans);
+    color: var(--black);
+    cursor: pointer;
+
+    &:hover {
+        color: var(--dark-grey);
+    }
 }
 
 .text-nowrap{

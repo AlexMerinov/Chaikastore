@@ -16,6 +16,21 @@ $stroke-bk-30: rgba(0, 0, 0, 0.30);
 $shadow: 0 5px 15px rgba(29, 29, 27, 0.1);
 $text-shadow: 0 1px 1px transparentize($secondary-color-900,0.5);
 
+$ivory: #FDF9F4;
+
+$beige: #E2D7C9;
+$light-beige: rgba(226, 215, 201, 0.50);
+
+$main-bg: #FDF9F4;
+$stroke-bk-30: rgba(0, 0, 0, 0.30);
+$dark-grey: #7E7E7E;
+$medium-grey: #C4C4C4;
+$light-grey: rgba(229, 229, 229, 0.50);
+
+$error: #FF5569;
+$error-30: rgba(255, 85, 105, 0.30);
+$success: #CAD96E;
+
 :root {
     --icon-color: #{$black};
     --White-background: #{$white};
@@ -33,4 +48,19 @@ $text-shadow: 0 1px 1px transparentize($secondary-color-900,0.5);
     --text-shadow: #{$text-shadow};
     --Main-background: #{$main-bg};
     --Stroke-bk-30: #{$stroke-bk-30};
+
+    --Ivory-background: #{$ivory};
+    --Button-primary: #{$beige};
+    --Button-secondary: #{$light-beige};
+    --beige: #{$beige};
+    --light-beig: #{$light-beige};
+    --Breadcrums-active: #{$dark-grey};
+    --Stroke-gray: #{$medium-grey};
+    --Button-inactive: #{$light-grey};
+    --dark-grey: #{$dark-grey};
+    --medium-grey: #{$medium-grey};
+    --light-grey: #{$light-grey};
+    --Error: #{$error};
+    --Error-30: #{$error-30};
+    --success: #{$success};
 }

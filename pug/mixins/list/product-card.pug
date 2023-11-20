@@ -1,0 +1,71 @@
+mixin product-card(items)
+    each item, index in items
+        -
+            const {
+                name,
+                price_old,
+                price,
+                label,
+                colors,
+            } = item;
+
+        .product-card
+            .product-card__preview 
+                if label
+                    .product-card__label
+                        != item.label
+                .product-card__favorite 
+                    +icon-sym('favorite')
+
+                each item, index in colors 
+                    -
+                        const {
+                            hex,
+                            photos,
+                        } = item;
+
+                    if index === 0 
+                        a.product-card__gallery.js-product-card-gallery(
+                            href='product-detail.html',
+                            data-index=index,
+                            data-src-bg=photos[0],
+                            data-photos-length=photos.length
+                        )
+                    else 
+                        a.product-card__gallery.js-product-card-gallery.hide(
+                            href='product-detail.html',
+                            data-index=index,
+                            data-src-bg=photos[0],
+                            data-photos-length=photos.length
+                        )
+                            each item, index in photos
+                                if index === 0
+                                    span.product-card__gallery__item.active(
+                                        data-img=item
+                                    )
+                                else
+                                    span.product-card__gallery__item(data-img=item)
+
+            a.product-card__name(href='product-detail.html')
+                != name
+
+            if colors.length > 1
+                each item, index in colors
+                    if index === 0
+                        .product-card__item.active.js-catalog-color-change(
+                            style='--catalog-color:' + item.hex,
+                            data-color-white=item.hex === '#FFFFFF' ? 'true' : 'false',
+                            data-index=index
+                        )
+                    else
+                        .product-card__item.js-catalog-color-change(
+                            style='--catalog-color:' + item.hex,
+                            data-color-white=item.hex === '#FFFFFF' ? 'true' : 'false',
+                            data-index=index
+                        )
+
+            .product-card__price
+                != price
+                if price_old
+                    s
+                        != price_old

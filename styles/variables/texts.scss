@@ -10,20 +10,6 @@
     --text-size-12: 12px;
     --text-size-16: 16px;
 
-   //  @include maxBp($bp-1680) {
-   //      --text-h1-size: 60px;
-   //      --text-h2-size: 40px;
-   //      --text-h3-size: 32px;
-   //      --text-body-size: 16px;
-   //      --text-subtitle-size: 20px;
-   //  }
-   //  @include maxBp($bp-1280) {
-   //      --text-h1-size: 48px;
-   //      --text-h2-size: 34px;
-   //      --text-h3-size: 28px;
-   //      --text-body-size: 16px;
-   //      --text-subtitle-size: 18px;
-   //  }
     @include maxBp($bp-768) {
         --text-h1-size: 28px;
         --text-h2-size: 24px;

@@ -1,6 +1,6 @@
 include ../mixins/menu/menu
 
-header.header.transparent
+header.header.promo-hidden.transparent
     .header__promo
         marquee(behavior='scroll', direction='left')
             | BLACK FRIDAY 24.11-25.11 BLACK FRIDAY 24.11-25.11 BLACK FRIDAY 24.11-25.11
@@ -155,13 +155,13 @@ header.header.transparent
             li.header-menu-user__item
                 a.header-menu-user__link.js-search-show(href='#')
                     +icon-sym('search')
-            li.header-menu-user__item.tablet-hide
+            li.header-menu-user__item
                 a.header-menu-user__link(
                     href='#',
                     data-micromodal='modal-enter'
                 )
                     +icon-sym('user')
-            li.header-menu-user__item.tablet-hide
+            li.header-menu-user__item
                 a.header-menu-user__link(
                     href='#',
                     data-micromodal='modal-favorite'
@@ -174,3 +174,5 @@ header.header.transparent
                     data-micromodal='modal-basket'
                 )
                     +icon-sym('cart')
+                    .header-menu-user__counter
+                        | 3

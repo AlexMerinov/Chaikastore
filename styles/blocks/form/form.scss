@@ -116,6 +116,7 @@
 
             &:hover {
                 .icon-sym {
+                    transition: var(--trans);
                     transition-delay: .2s ;
                     width: 16px;
                     height: 16px;

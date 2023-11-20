@@ -14,13 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
             grabCursor: true,
             effect: 'fade',
             fadeEffect: {
-              crossFade: true
+                crossFade: true
             },
-            // autoplay: {
-            //     delay: 7000,
-            //     disableOnInteraction: false,
-            //     pauseOnMouseEnter: true,
-            // },
+            pagination: {
+                el: '.main-slider__pagination',
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
         });
     });
 });
