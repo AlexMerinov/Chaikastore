@@ -4,9 +4,9 @@ import { Navigation, Pagination, Parallax, Autoplay } from 'swiper/modules';
 document.addEventListener('DOMContentLoaded', () => {
     Swiper.use([Navigation, Pagination, Parallax, Autoplay]);
 
-    const sliders = document.querySelectorAll('.js-slider-main');
+    const slidersBaner = document.querySelectorAll('.js-slider-main');
 
-    sliders.forEach((slider) => {
+    slidersBaner.forEach((slider) => {
         const swiperSlider = new Swiper(slider, {
             slidesPerView: 1,
             speed: 1000,
@@ -24,6 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
             },
+        });
+    });
+
+    const sliderProduct = document.querySelectorAll('.js-slider-product');
+
+    sliderProduct.forEach((slider) => {
+        const productSlide = new Swiper(slider, {
+            slidesPerView: 4.1,
+            speed: 1000,
+            loop: true,
         });
     });
 });

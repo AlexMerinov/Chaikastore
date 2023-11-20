@@ -1,5 +1,6 @@
 extends ./_layout
 include ./mixins/list/slider-main
+include ./mixins/list/slider-product
 include ./mixins/list/product-card
 
 block content
@@ -117,4 +118,4 @@ block content
                                 ]
                             },
                         ];
-                    +product-card(saleList)
+                    +slider-product(saleList)

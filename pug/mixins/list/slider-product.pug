@@ -1,0 +1,19 @@
+
+mixin slider-product(items)
+    .swiper.slider-product.js-slider-product
+        .swiper-wrapper.slider-product__wrapper
+            each item, index in items
+                -
+                    const {
+                        name, 
+                        url,
+                        picture,
+                        colors,
+                        price,
+                        price_old,
+                        label,
+                    } = item;
+                .swiper-slide.slider-product__item
+                    +product-card(item)
+        
+        .swiper-scrollbar.slider-product__scrollbar
