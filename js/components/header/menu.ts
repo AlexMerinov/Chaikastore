@@ -22,30 +22,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const { body } = document;
-    const jsMenuOpen = document.querySelectorAll('.js-menu-open');
-    let wintop = 0;
+    const menuShow = () => {
+        const { body } = document;
+        const jsMenuOpen = document.querySelector('.js-menu-open');
+        let wintop = 0;
 
-    jsMenuOpen.forEach((link) => {
-        link.addEventListener('click', (e) => {
+        jsMenuOpen?.addEventListener('click', (e) => {
             e.preventDefault();
             if (!body.classList.contains('menu-show')) {
                 e.target.closest('.header__bottom').classList.add('bg');
-                link.classList.add('active');
+                jsMenuOpen.classList.add('active');
                 wintop = window.scrollY;
                 body.classList.add('menu-show');
                 body.style.top = `-${wintop}px`;
                 body.style.setProperty('--wintop', `${wintop}px`);
             } else {
                 e.target.closest('.header__bottom').classList.remove('bg');
-                link.classList.remove('active');
+                jsMenuOpen.classList.remove('active');
                 body.classList.remove('menu-show');
                 window.scroll(0, wintop);
                 body.style.removeProperty('top');
                 body.style.removeProperty('--wintop');
             }
         });
-    });
+
+        if (document.documentElement.clientWidth > 1023 && body.classList.contains('menu-show')) {
+            body.classList.remove('menu-show');
+            jsMenuOpen.classList.remove('active');
+            jsMenuOpen.closest('.header__bottom').classList.remove('bg');
+        }
+    }
+
+
 
     const jsOpenMenuList = document.querySelectorAll('.js-menu-arr');
 
@@ -66,26 +74,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const hoverMenu = () => {
-        if (document.documentElement.clientWidth > 1024) {
-            const jsMenuItemDrop = document.querySelectorAll('.js-menu-item-drop');
-            jsMenuItemDrop.forEach((item) => {
-                item.addEventListener('mouseover', (e) => {
+        const jsMenuItemDrop = document.querySelectorAll('.js-menu-item-drop');
+        jsMenuItemDrop.forEach((item) => {
+            item.addEventListener('mouseover', (e) => {
+                if (document.documentElement.clientWidth > 1023) {
                     e.target.closest('.header__bottom').classList.add('bg');
-                });
-
-                item.addEventListener('mouseout', (e) => {
-                    e.target.closest('.header__bottom').classList.remove('bg');
-                });
+                }
             });
-        }
+
+            item.addEventListener('mouseout', (e) => {
+                if (document.documentElement.clientWidth > 1023) {
+                    e.target.closest('.header__bottom').classList.remove('bg');
+                }
+            });
+        });
     }
 
     window.addEventListener('resize', () => {
         hoverMenu();
+        menuShow();
     });
 
     window.addEventListener('load', () => {
         hoverMenu();
+        menuShow();
     });
 
 });

@@ -1,5 +1,5 @@
-mixin slider-main(items)
-    .swiper.main-slider.js-slider-main
+mixin lookbook-slider(items)
+    .swiper.main-slider.main-slider--dark.js-slider-main
         .swiper-wrapper.main-slider__wrapper
             each item, index in items
                 -
@@ -10,9 +10,12 @@ mixin slider-main(items)
                     } = item;
                 .swiper-slide.main-slider__item
                     .main-slider__item-wrapper 
-                        h1.main-slider__name 
-                            a.main-slider__link(href=url)
-                                != name
+                        .main-slider__content
+                            h4.main-slider__name 
+                                a.main-slider__link(href=url)
+                                    != name
+                            a.main-slider__button(href=url)
+                                | Прикоснуться
                     .main-slider__bg
                         picture
                             // ресайз 1024*730

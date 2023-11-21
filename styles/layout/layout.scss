@@ -51,24 +51,79 @@ body {
 }
 
 .wrapper__wide {
-    margin-left: -48px;
-    margin-right: -48px;
 
-    @include maxBp($bp-1024){
-        margin-left: -16px;
-        margin-right: -16px;
+    &.h-fix--805 {
+        height: 805px;
+        @include maxBp($bp-1024){
+            height: 1000px;
+        }
+    
+        @include maxBp($bp-768){
+            height: 546px;
+        }
     }
 
-    @include maxBp($bp-768){
-        margin-left: -8px;
-        margin-right: -8px;
+    &.h-fix--688 {
+        height: 688px;
+
+        @include maxBp($bp-768){
+            height: 488px;
+        }
+    }
+
+    &.overflow-l {
+        margin-left: -48px;
+    
+        @include maxBp($bp-1024){
+            margin-left: -16px;
+        }
+    
+        @include maxBp($bp-768){
+            margin-left: -8px;
+        }
+    }
+
+    &.overflow-r {
+        margin-right: -48px;
+    
+        @include maxBp($bp-1024){
+            margin-right: -16px;
+        }
+    
+        @include maxBp($bp-768){
+            margin-right: -8px;
+        }
+    }
+
+    &.overflow-all {
+        margin-left: -48px;
+        margin-right: -48px;
+
+        @include maxBp($bp-1024){
+            margin-left: -16px;
+            margin-right: -16px;
+        }
+
+        @include maxBp($bp-768){
+            margin-left: -8px;
+            margin-right: -8px;
+        }
+    }
+
+
+}
+
+.section {
+    margin-bottom: var(--space-xl);
+
+    &__title {
+        margin-bottom: var(--space-xs);
     }
 }
 
 .article {
     flex: 1 0 auto;
     @include animation(fadeIn 0.3s var(--cubic));
-    padding-bottom: var(--space-m);
     &__top{
         padding-top: 100px;
     }

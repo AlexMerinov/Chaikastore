@@ -15,8 +15,8 @@
 @mixin text-h2 {
     @include text-caption;
     font-size: var(--text-h2-size);
-    line-height: normal;
-    font-weight: normal;
+    line-height: 1;
+    font-weight: 300;
 }
 
 @mixin text-h3 {

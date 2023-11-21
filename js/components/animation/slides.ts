@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
             pagination: {
                 el: '.main-slider__pagination',
             },
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-            },
+            // autoplay: {
+            //     delay: 5000,
+            //     disableOnInteraction: false,
+            //     pauseOnMouseEnter: true,
+            // },
         });
     });
 
@@ -31,9 +31,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sliderProduct.forEach((slider) => {
         const productSlide = new Swiper(slider, {
-            slidesPerView: 4.1,
+            slidesPerView: 1,
             speed: 1000,
-            loop: true,
+            spaceBetween: 16,
+
+            scrollbar: {
+                el: '.slider-product__scrollbar',
+                draggable: true,
+            },
+
+            breakpoints: {
+                320: {
+                    slidesPerView: 1.1,
+                },
+                375: {
+                    slidesPerView: 1.3,
+                },
+                480: {
+                    slidesPerView: 1.6,
+                },
+                576: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 2.4,
+                },
+                1024: {
+                    slidesPerView: 3.4,
+                },
+                1440: {
+                    slidesPerView: 4.2,
+                },
+                1680: {
+                    slidesPerView: 5.2,
+                }
+            }
         });
     });
 });

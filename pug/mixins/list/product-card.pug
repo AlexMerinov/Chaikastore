@@ -8,53 +8,48 @@ mixin product-card(card)
                 +icon-sym('favorite')
 
 
-            each item in card.colors 
+            each item, index in card.colors 
                 -
                     const {
                         hex,
                         photos,
                     } = item;
 
-                if index === 0 
-                    a.product-card__gallery.js-product-card-gallery(
-                        href='product-detail.html',
-                        data-index=index,
-                        data-src-bg=photos[0],
-                        data-photos-length=photos.length
-                    )
+                a(class=(index === 0 ? 'product-card__gallery js-product-card-gallery' : 'product-card__gallery js-product-card-gallery hide'),
+                    href='product-detail.html',
+                    data-index=index,
+                    data-src-bg=photos[0],
+                    data-photos-length=photos.length)
+                    each item, index in photos
+                        if index === 0
+                            span.product-card__gallery__item.active(
+                                data-img=item
+                            )
+                        else
+                            span.product-card__gallery__item(data-img=item)
 
-                    a(class=(index === 0 ? 'test' : 'test_1'))
-                else 
-                    a.product-card__gallery.js-product-card-gallery.hide(
-                        href='product-detail.html',
-                        data-index=index,
-                        data-src-bg=photos[0],
-                        data-photos-length=photos.length
-                    )
-                        each item, index in photos
-                            if index === 0
-                                span.product-card__gallery__item.active(
-                                    data-img=item
-                                )
-                            else
-                                span.product-card__gallery__item(data-img=item)
 
         a.product-card__name(href='product-detail.html')
             != card.name
 
-        each item, index in card.colors
-            if index === 0
-                .product-card__item.active.js-catalog-color-change(
-                    style='--catalog-color:' + item.hex,
+        ul.product-card__colors 
+            each item, index in card.colors
+                -
+                    colorsLength = card.colors.length
+                    colorsCount = card.colors.length - 3
+
+                if index === 3 && colorsLength > 3
+                    li.product-card__more
+                        a.link-more.js-color-more(
+                            href='#'
+                        )
+                            | +
+                            != colorsCount
+                            span.icon
+                li(class=(index === 0 ? 'product-card__colors-item active js-catalog-color-change' : 'product-card__colors-item js-catalog-color-change'),
+                    style='background-color:' + item.hex,
                     data-color-white=item.hex === '#FFFFFF' ? 'true' : 'false',
-                    data-index=index
-                )
-            else
-                .product-card__item.js-catalog-color-change(
-                    style='--catalog-color:' + item.hex,
-                    data-color-white=item.hex === '#FFFFFF' ? 'true' : 'false',
-                    data-index=index
-                )
+                    data-index=index)
 
         .product-card__price
             != card.price

@@ -1,15 +1,17 @@
 .main-slider {
-    height: 100vh;
-    max-height: 800px;
-
+    height: 100%;
     animation: fadeScale 1.0s forwards;
 
-    @include maxBp($bp-1024){
-        max-height: 1000px;
+    &--dark {
+        .main-slider__name {
+            @include text-h2;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
     }
 
-    @include maxBp($bp-768){
-        max-height: 546px;
+    &__button {
+        
     }
 
     &__item-wrapper {
@@ -26,7 +28,7 @@
     &__pagination {
         display: flex;
         height: 3px;
-        top: calc(100% - 8px);
+        top: calc(100% - 10px);
         gap: 2px;
 
         .swiper-pagination-bullet {
@@ -63,6 +65,10 @@
                 }
             }
         }
+    }
+
+    &__content {
+        text-align: center;
     }
 
     &__link {

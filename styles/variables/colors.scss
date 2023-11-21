@@ -24,11 +24,13 @@ $light-beige: rgba(226, 215, 201, 0.50);
 
 $main-bg: #FDF9F4;
 $stroke-bk-30: rgba(0, 0, 0, 0.30);
+$stroke-bk-50: rgba(0, 0, 0, 0.50);
 $dark-grey: #7E7E7E;
 $medium-grey: #C4C4C4;
 $light-grey: rgba(229, 229, 229, 0.50);
 
 $error: #FF5569;
+$checked: #E2646A;
 $error-30: rgba(255, 85, 105, 0.30);
 $success: #CAD96E;
 
@@ -64,5 +66,7 @@ $success: #CAD96E;
     --light-grey: #{$light-grey};
     --Error: #{$error};
     --Error-30: #{$error-30};
-    --Green : #{$success};
+    --Green: #{$success};
+    --checked: #{$checked};
+    --Strokes-new-black: #{$stroke-bk-50};
 }

@@ -1,6 +1,6 @@
 include ../mixins/menu/menu
 
-header.header.promo-hidden.transparent
+header.header.transparent
     .header__promo
         marquee(behavior='scroll', direction='left')
             | BLACK FRIDAY 24.11-25.11 BLACK FRIDAY 24.11-25.11 BLACK FRIDAY 24.11-25.11
@@ -158,15 +158,15 @@ header.header.promo-hidden.transparent
             li.header-menu-user__item
                 a.header-menu-user__link(
                     href='#',
-                    data-micromodal='modal-enter'
-                )
-                    +icon-sym('user')
-            li.header-menu-user__item
-                a.header-menu-user__link(
-                    href='#',
                     data-micromodal='modal-favorite'
                 )
                     +icon-sym('favorite')
+            li.header-menu-user__item
+                a.header-menu-user__link(
+                    href='#',
+                    data-micromodal='modal-enter'
+                )
+                    +icon-sym('user')
             li.header-menu-user__item
                 // class="header-menu-user__link header-menu-user__link--basket-active" - показывает пипку, если в корзине что-то есть
                 a.header-menu-user__link(

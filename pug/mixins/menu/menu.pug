@@ -11,9 +11,10 @@ mixin menu-list(items)
                 class=items ? 'header-menu__item header-menu__item--drop js-menu-item-drop' : 'header-menu__item'
             )
                 a(href=url + '.html', class=page === url ? 'active' : '')
-                    != name
+                    span 
+                        != name
                     if items
-                        span.icon
+                        .icon
 
                 if items
                     .header-menu__submenu.wrapper__page

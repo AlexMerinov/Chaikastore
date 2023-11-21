@@ -1,0 +1,39 @@
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: var(--trans);
+
+    &--primary-d,
+    &--primary-m {
+        border-radius: 4px;
+        background: var(--Beige);
+        backdrop-filter: blur(2.5px);
+
+        color: var(--black);
+
+        &:hover {
+            background: #CBBCAA;
+        }
+
+        &:active {
+            background: var(--Beige);
+        }
+
+        &.disable {
+            background: var(--light-grey);
+            color: var(--Strokes-new-black);
+        }
+    }
+
+    &--primary-d {
+        @include text-size-16;
+        padding: 9px 16px;
+    }
+
+    &--primary-m {
+        padding: 7px 16px;
+        @include text-size-14;
+    }
+}
