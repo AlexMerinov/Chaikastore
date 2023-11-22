@@ -16,7 +16,25 @@ const catalogListGallery = () => {
     });
 };
 
+const favoriteItem = () => {
+    const addFavorite = document.querySelectorAll('.js-favorite-add ');
+    addFavorite.forEach((item) => {
+        item.addEventListener('click', () => {
+            if (!item.classList.contains('added')) {
+                item.classList.add('added');
+            } else {
+                item.classList.remove('added');
+            }
+
+        })
+    });
+}
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     catalogListGallery();
+    favoriteItem();
 });
 

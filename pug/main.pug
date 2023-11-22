@@ -6,9 +6,9 @@ include ./mixins/list/product-card
 
 block content
         .wrapper__page
-            .section 
-                .section__content
-                    .wrapper__wide.h-fix--805.overflow-all
+            .section.section--top.h-fix--805.overflow-all.paralax
+                .paralax__wrapper
+                    .paralax__content
                         -
                             const sliderMain = [    
                                 {
@@ -39,7 +39,7 @@ block content
                         -
                             const newList = [    
                                 {
-                                    name: 'Спортивные брюки графитового цвета с бирюзовой вставкой',
+                                    name: 'Спортивные брюки графитового цвета с бирюзовой вставкой (длинное название товара на несколько строк)',
                                     price: '99 499 ₽',
                                     price_old: '199 999 ₽',
                                     label: '',
@@ -122,7 +122,7 @@ block content
                                     ]
                                 },
                                 {
-                                    name: 'Спортивные брюки графитового цвета с бирюзовой вставкой',
+                                    name: 'Спортивные брюки',
                                     price: '99 499 ₽',
                                     price_old: '199 999 ₽',
                                     label: '',

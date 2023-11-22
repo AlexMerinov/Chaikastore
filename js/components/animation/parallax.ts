@@ -51,4 +51,5 @@ document.addEventListener('DOMContentLoaded', () => {
     jsprlx.forEach((item, index) => {
         scrollParallax(item);
     });
+
 });

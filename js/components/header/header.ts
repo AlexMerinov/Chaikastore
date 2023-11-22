@@ -27,10 +27,26 @@ const promoHidden = () => {
     });
 };
 
+
+const headerAnimate = () => {
+    const bannerheight = document.querySelector('.section.paralax').clientHeight;
+    const header = document.querySelector('.header');
+    const wScroll = window.scrollY;
+
+    if (wScroll > bannerheight - 30) {
+        header?.classList.remove('transparent');
+        header?.classList.add('fix');
+    } else {
+        header?.classList.add('transparent');
+    }
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     fHeader();
     f100vh();
     promoHidden();
+    headerAnimate();
 });
 
 window.addEventListener('resize', () => {
@@ -41,8 +57,10 @@ window.addEventListener('resize', () => {
 window.addEventListener('load', () => {
     fHeader();
     f100vh();
+    headerAnimate();
 });
 
 window.addEventListener('scroll', () => {
     fHeader();
+    headerAnimate();
 });

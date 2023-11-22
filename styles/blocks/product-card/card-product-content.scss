@@ -1,3 +1,15 @@
 .slider-product {
     padding-bottom: var(--space-xs);
+
+    &__wrapper {
+        align-items: stretch;
+    }
+
+    &__item {
+        height: auto;
+
+        .product-card {
+            height: 100%;
+        }
+    }
 }

@@ -9,6 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('mouseenter', () => {
             chapterId = item.id;
 
+            jsItemChapters.forEach((item) => {
+                item.classList.remove('active');
+            });
+
+            item.classList.add('active');
+
             chapterPreview.forEach((item) => {
                 item.classList.remove('visible');
                 if (item.getAttribute('data-chapter-id') === chapterId) {

@@ -4,7 +4,7 @@ mixin product-card(card)
             if card.label
                 .product-card__label
                     != card.label
-            .product-card__favorite 
+            .product-card__favorite.js-favorite-add 
                 +icon-sym('favorite')
 
 

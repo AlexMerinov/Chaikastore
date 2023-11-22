@@ -1,31 +1,74 @@
-.btn {
-  display: inline-block;
-  vertical-align: middle;
-  white-space: nowrap;
-  font-size: 16px;
-  line-height: 150%;
-  font-weight: bold;
-  padding: 11px 14px 11px 14px;
-  color: var(--secondary-color-900);
-  transition: var(--trans);
-  cursor: pointer;
-  border: 1px solid var(--white);
-  border-radius: 10px;
-  background: var(--white);
-  text-align: center;
-  overflow: hidden;
-  outline: none !important;
-  box-shadow: none;
-  max-width: 100%;
-  text-overflow: ellipsis;
-
-  &:hover {
-    color: var(--secondary-color-900);
-    border-color: var(--primary-color-600);
-  }
-
-  &:active {
-    background: var(--secondary-color-200);
-    border-color: var(--secondary-color-200);
-  }
+button {
+    text-align: center;
+    overflow: hidden;
+    outline: none !important;
+    box-shadow: none;
+    max-width: 100%;
+    text-overflow: ellipsis;
 }
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    vertical-align: middle;
+    white-space: nowrap;
+
+    border-radius: 4px;
+    background: var(--Beige);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+
+    text-align: center;
+    overflow: hidden;
+    outline: none !important;
+    box-shadow: none;
+    max-width: 100%;
+    text-overflow: ellipsis;
+
+    cursor: pointer;
+    transition: var(--trans);
+
+    &--primary {
+        @include text-size-16;
+        padding: 9px 16px;
+
+        color: var(--black);
+
+        &:active {
+            background: var(--Beige);
+            color: var(--black);
+        }
+
+        &.disable {
+            background: var(--light-grey);
+            color: var(--Strokes-new-black);
+        }
+    }
+
+    &--secondary {
+        padding: 4px 16px;  
+        @include text-size-12;
+
+        &:active {
+            background: var(--Beige);
+            color: var(--black);
+        }
+    }
+
+    @include bp($bp-1280) {
+        &:hover {
+            background: #CBBCAA;
+            color: var(--black);
+        }
+    }
+
+    @include maxBp($bp-768) {
+        &--primary {
+            padding: 7px 16px;
+            @include text-size-14;
+        }
+    }
+}
+
