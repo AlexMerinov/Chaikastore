@@ -126,17 +126,52 @@
     .swiper-slide {
         .main-slider__name {
             position: relative;
-            bottom: -20px;
+            letter-spacing: normal;
             opacity: 0;
-            transition: all 1s ease-out;
+            transition: all .3s linear;
         }
     }
 
     .swiper-slide.swiper-slide-active {
         .main-slider__name {
+            animation: botOutTransparent 1.5s forwards;
+            animation-delay: .6s;
+
+            &.js-fixed-parallax {
+                .main-slider__link {
+                    transition: 3s;
+                    color: var(--White-background);
+                }
+            }
+
+            &.js-fixed-parallax.fade {
+                .main-slider__link {
+                    transition: var(--trans-slow);
+                    color: transparent;
+                }
+            }
+        }
+    }
+}
+
+.paralax {
+    &__wrapper {
+        .js-layout {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+            pointer-events: none;
+            background: rgba(255, 255, 255, 0.00);
+            transition: var(--trans);
+            z-index: 1;
             opacity: 1;
-            transition-delay: .9s;
-            bottom: 0px;
         }
     }
 }

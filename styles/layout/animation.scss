@@ -149,6 +149,17 @@
     }
 }
 
+@keyframes botOutTransparent {
+    from {
+        opacity: 0;
+        transform: scale(1) translate3d(0,100%,0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translate3d(0,-40px,0);
+    }
+}
+
 
 
 

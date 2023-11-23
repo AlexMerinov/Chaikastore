@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pagination: {
                 el: '.main-slider__pagination',
             },
+            parallax: true,
             // autoplay: {
             //     delay: 5000,
             //     disableOnInteraction: false,

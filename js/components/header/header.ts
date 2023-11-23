@@ -30,14 +30,43 @@ const promoHidden = () => {
 
 const headerAnimate = () => {
     const bannerheight = document.querySelector('.section.paralax').clientHeight;
+    const titleParalax = document.querySelectorAll('.js-fixed-parallax');
     const header = document.querySelector('.header');
     const wScroll = window.scrollY;
 
-    if (wScroll > bannerheight - 30) {
+    let jsLayout = document.querySelector('.js-layout');
+    let onePercent = bannerheight / 100;
+    let percentNow = Math.round(wScroll / onePercent);
+
+    jsLayout.style.background = `rgba(255, 255, 255, 0.${percentNow})`;
+
+    // document.addEventListener('wheel', (e) => {
+    //     console.log(e.wheelDeltaY);
+
+    //     if (e.wheelDeltaY < 0) {
+    //         header.style.transform = 'translate3d(0,-100%,0)';
+    //     }
+    // });
+
+    titleParalax.forEach((title) => {
+        title.style.top = -wScroll * 2 + 'px';
+        if (wScroll > 0) {
+            title.classList.add('fade');
+        } else if (wScroll < bannerheight / 10) {
+            title.classList.remove('fade');
+        }
+    });
+
+
+
+    if (wScroll > bannerheight - 80) {
         header?.classList.remove('transparent');
-        header?.classList.add('fix');
+        header.style.transform = 'translate3d(0,0,0)';
+    } else if (wScroll < 81) {
+        header.style.transform = 'translate3d(0,0,0)';
     } else {
         header?.classList.add('transparent');
+        header.style.transform = 'translate3d(0,-100%,0)';
     }
 }
 
@@ -46,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fHeader();
     f100vh();
     promoHidden();
-    headerAnimate();
+    // headerAnimate();
 });
 
 window.addEventListener('resize', () => {
@@ -57,7 +86,7 @@ window.addEventListener('resize', () => {
 window.addEventListener('load', () => {
     fHeader();
     f100vh();
-    headerAnimate();
+    // headerAnimate();
 });
 
 window.addEventListener('scroll', () => {
