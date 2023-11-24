@@ -1,4 +1,5 @@
 include ../mixins/menu/menu
+include ../mixins/search/search
 
 header.header.transparent.promo-hidden
     .header__promo
@@ -138,23 +139,97 @@ header.header.transparent.promo-hidden
             +menu-list(menu)
 
         a.header-logo(href='index.html')
-            img.header-logo__img.header-logo__img--dark(
-                src='images/logo-black.svg',
-                alt='chaika',
-                width='108',
-                height='48'
-            )
-            img.header-logo__img.header-logo__img--light(
-                src='images/logo-white.svg',
-                alt='chaika',
-                width='108',
-                height='48'
-            )
+            picture.header-logo__img.header-logo__img--dark
+                source(
+                    srcset='images/logo-black.svg',
+                    width='80',
+                    height='35',
+                    media="(max-width: 767px)"
+                )
+                img(
+                    src='images/logo-black.svg',
+                    alt='chaika',
+                    width='108',
+                    height='48',
+                )
+            picture.header-logo__img.header-logo__img--light
+                source(
+                    srcset='images/logo-white.svg',
+                    width='80',
+                    height='35',
+                    media="(max-width: 767px)"
+                )
+                img(
+                    src='images/logo-white.svg',
+                    alt='chaika',
+                    width='108',
+                    height='48',
+                )
+        .header-search 
+            a.header-search__btn.js-search-show(href='/')
+                +icon-sym('search')
+
+            .header-search__area 
+                form.header-search__form.form.form--search.js-form-validate.js-form-validate-0(
+                    action="search.html",
+                    novalidate=""
+                )
+                    button.form__search
+                        +icon-sym('search')
+                    input.form__input(
+                        type='text',
+                        placeholder='Поиск...',
+                        required=''
+                    )
+                .header-search__result 
+                    .header-search__empty
+                        | По этому запросу ничего не найдено
+                    -
+                        const search = [
+                            {
+                                name: 'Свитер молочного цвета с высоким воротом',
+                                url: 'product-detail',
+                                picture: 'images/content/menu/swimsuit_01.jpg',
+                            },
+                            {
+                                name: 'Свитер из кошемира',
+                                url: 'product-detail',
+                                picture: 'images/content/menu/swimsuit_01.jpg',
+                            },
+                            {
+                                name: 'Свитер в полоску',
+                                url: 'product-detail',
+                                picture: 'images/content/menu/swimsuit_01.jpg',
+                            },
+                                                        {
+                                name: 'Свитер в полоску',
+                                url: 'product-detail',
+                                picture: 'images/content/menu/swimsuit_01.jpg',
+                            },
+                                                        {
+                                name: 'Свитер в полоску',
+                                url: 'product-detail',
+                                picture: 'images/content/menu/swimsuit_01.jpg',
+                            },
+                                                        {
+                                name: 'Свитер в полоску',
+                                url: 'product-detail',
+                                picture: 'images/content/menu/swimsuit_01.jpg',
+                            },
+                                                        {
+                                name: 'Свитер в полоску',
+                                url: 'product-detail',
+                                picture: 'images/content/menu/swimsuit_01.jpg',
+                            },
+                                                        {
+                                name: 'Свитер в полоску',
+                                url: 'product-detail',
+                                picture: 'images/content/menu/swimsuit_01.jpg',
+                            }
+                        ];
+                    +search-list(search)
 
         ul.header-menu-user
-            li.header-menu-user__item
-                a.header-menu-user__link.js-search-show(href='#')
-                    +icon-sym('search')
             li.header-menu-user__item
                 a.header-menu-user__link(
                     href='#',

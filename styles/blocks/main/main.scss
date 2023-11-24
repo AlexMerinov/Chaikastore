@@ -79,8 +79,14 @@
         @include text-h1;
         color: var(--White-background);
 
-        &:hover {
-            color: var(--dark);
+        @include bp($bp-1280) {
+            &:hover {
+                color: var(--dark);
+            }
+        }
+
+        @include maxBp($bp-768) {
+            word-spacing: 768px;
         }
     }
 

@@ -40,14 +40,6 @@ const headerAnimate = () => {
 
     jsLayout.style.background = `rgba(255, 255, 255, 0.${percentNow})`;
 
-    // document.addEventListener('wheel', (e) => {
-    //     console.log(e.wheelDeltaY);
-
-    //     if (e.wheelDeltaY < 0) {
-    //         header.style.transform = 'translate3d(0,-100%,0)';
-    //     }
-    // });
-
     titleParalax.forEach((title) => {
         title.style.top = -wScroll * 2 + 'px';
         if (wScroll > 0) {
@@ -70,22 +62,57 @@ const headerAnimate = () => {
     }
 }
 
+const headerSearh = () => {
+    const jsSeaarchShow = document.querySelector('.js-search-show');
+    const article = document.querySelector('.article');
+    const footer = document.querySelector('.footer');
+    const headerSearch = document.querySelector('.header-search');
+
+    const closeSearch = () => {
+        article?.classList.remove('blur');
+        footer?.classList.remove('blur');
+        headerSearch?.classList.remove('show');
+    }
+
+    jsSeaarchShow?.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        headerSearch?.classList.add('show');
+        article?.classList.add('blur');
+        footer?.classList.add('blur');
+    });
+
+
+    document.addEventListener('click', (e) => {
+        let target = e.target;
+        let thisField = target == headerSearch || headerSearch.contains(target);
+        let searchActive = headerSearch.classList.contains('show');
+
+        if (searchActive && !thisField) {
+            closeSearch();
+        }
+    });
+};
+
 
 document.addEventListener('DOMContentLoaded', () => {
     fHeader();
     f100vh();
     promoHidden();
+    headerSearh();
     // headerAnimate();
 });
 
 window.addEventListener('resize', () => {
     fHeader();
     f100vh();
+    headerSearh();
 });
 
 window.addEventListener('load', () => {
     fHeader();
     f100vh();
+    headerSearh();
     // headerAnimate();
 });
 

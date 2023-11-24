@@ -132,6 +132,43 @@
             }
         }
     }
+
+    &--search {
+        display: flex;
+
+        .form__search {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 100%;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            cursor: pointer;
+
+            .icon-sym {
+                @include icon-stroke;
+                transition: var(--trans);
+                width: 16px;
+                height: 16px;
+            }
+
+            @include maxBp($bp-1280) {
+                &:hover {
+                    .icon-sym {
+                        stroke-width: 2px;
+                    }
+                }
+            }
+        }
+
+        .form__input {
+            padding-left: 30px;
+        }
+    }
 }
 
 .error-message{
