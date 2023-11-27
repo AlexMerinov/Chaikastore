@@ -6,30 +6,40 @@ include ./mixins/list/product-card
 
 block content
         .wrapper__page
-            .section.h-fix--805.overflow-all.paralax
-                .paralax__wrapper
-                    span.js-layout
-                    .paralax__content
-                        -
-                            const sliderMain = [    
-                                {
-                                    name: 'Весенняя коллекция',
-                                    url: 'catalog-category.html',
-                                    picture: {
-                                        big: 'images/content/banners/main_0.png',
-                                        small: 'images/content/banners/main_0.png'
-                                    },
-                                },
-                                {
-                                    name: 'Последние Тренды',
-                                    url: 'catalog-category.html',
-                                    picture: {
-                                        big: 'images/content/banners/main_1.png',
-                                        small: 'images/content/banners/main_1.png'
-                                    },
-                                },
-                            ];
-                        +slider-main(sliderMain)
+            .section.h-fix--805.overflow-all.js-banner-animate
+                span.js-layout
+                -
+                    const sliderMain = [    
+                        {
+                            type: 0,
+                            name: 'Весенняя коллекция',
+                            url: 'catalog-category.html',
+                            color: '#FFFFFF',
+                            picture: {
+                                big: 'images/content/banners/main_0.png',
+                                small: 'images/content/banners/main_0.png'
+                            },
+                        },
+                        {
+                            type: 1,
+                            name: 'Последние Тренды',
+                            url: 'catalog-category.html',
+                            color: '#FFFFFF',
+                            picture: {
+                                big: 'images/content/banners/main_1.png',
+                                small: 'images/content/banners/main_1.png'
+                            },
+                        },
+                        {
+                            name: '',
+                            url: 'catalog-category.html',
+                            picture: {
+                                big: 'images/content/lookbook/item_04.png',
+                                small: 'images/content/lookbook/item_04.png'
+                            },
+                        },
+                    ];
+                +slider-main(sliderMain)
 
             section.section.section--overflow-l
                 h2.section__title 
@@ -152,19 +162,6 @@ block content
                                                 'images/content/products/item-prod-color-1-2.png',
                                                 'images/content/products/item-prod-color-1-1.png',
                                                 'images/content/products/item-prod-color-1-2.png',
-                                            ]
-                                        },
-                                        {
-                                            hex: '#ACF0FF',
-                                            photos: [
-                                                'images/content/products/item-prod-color-1-2.png',
-                                                'images/content/products/item-prod-color-1-1.png',
-                                            ]
-                                        },
-                                        {
-                                            hex: '#ACF0FF',
-                                            photos: [
-                                                'images/content/products/item-prod-color-1-1.png',
                                             ]
                                         },
                                     ]
@@ -418,6 +415,8 @@ block content
                                 {
                                     name: 'Textured feel lookbook',
                                     url: 'catalog-category.html',
+                                    type: 0,
+                                    color: '#FDF9F4',
                                     picture: {
                                         big: 'images/content/lookbook/item_01.png',
                                         small: 'images/content/lookbook/item_01.png'
@@ -426,6 +425,8 @@ block content
                                 {
                                     name: 'Party 00’s',
                                     url: 'catalog-category.html',
+                                    color: '#E2D7C9',
+                                    type: 1,
                                     picture: {
                                         big: 'images/content/lookbook/item_02.png',
                                         small: 'images/content/lookbook/item_02.png'
@@ -434,6 +435,7 @@ block content
                                 {
                                     name: 'New year lookbook',
                                     url: 'catalog-category.html',
+                                    color: '#000000',
                                     picture: {
                                         big: 'images/content/lookbook/item_03.png',
                                         small: 'images/content/lookbook/item_03.png'

@@ -30,11 +30,27 @@ const favoriteItem = () => {
     });
 }
 
+const colorChange = () => {
+    const colorPick = document.querySelectorAll('.js-catalog-color-change');
+
+    colorPick.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            if (e.target === item) {
+                colorPick.forEach((item) => {
+                    item.classList.remove('active');
+                });
+                e.target.classList.add('active');
+            }
+        })
+    });
+}
+
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
     catalogListGallery();
     favoriteItem();
+    colorChange();
 });
 

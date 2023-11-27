@@ -258,7 +258,7 @@
                 }
 
                 ul li {
-                    margin-bottom: var(--space-2xs); 
+                    margin-bottom: var(--space-2xs-desc); 
 
                     @include maxBp($bp-768) {
                         line-height: 1;
@@ -351,7 +351,7 @@
         .header-menu__submenu {
             transition: all .6s ease-out;
             opacity: 1;
-            transition-delay: .3s;
+            // transition-delay: .3s;
             pointer-events: visible;
             max-height: 800px;
         }
@@ -405,14 +405,6 @@
             display: block;
         }
     }
-
-    &__more ~ li {
-        display: none;
-    }
-
-    &__more.hide ~ li {
-        display: block;
-    }
 }
 
 .header-menu-block,
@@ -463,6 +455,14 @@
         &--dark {
             opacity: 1;
         }
+
+        @include maxBp($bp-1280) {
+
+        }
+
+        @include maxBp($bp-768) {
+
+        }
     }
 }
 
@@ -472,6 +472,7 @@
     justify-content: end;
     height: 100%;
     transition: var(--trans);
+    margin-right: -20px;
 
     &__item {
         height: 100%;
@@ -495,7 +496,11 @@
         }
 
         &:hover > .icon-sym {
-            stroke-width: 1.5px;
+            stroke-width: 2px;
+        }
+
+        @include maxBp($bp-768) {
+            padding: 0 8px;
         }
     }
 
@@ -512,7 +517,7 @@
     }
 
     @include maxBp($bp-768) {
-        gap: 16px;
+        margin-right: -8px;
     }
 }
 
@@ -666,7 +671,6 @@ body.menu-show {
 
             .hamburger {
                 & span {
-        
                     background: var(--black);
                 
                     &::after, &::before {
@@ -714,6 +718,12 @@ body.menu-show {
                     color: var(--black);
                 }
             }
+        }
+    }
+
+    .header-search__btn {
+        & > .icon-sym {
+            stroke: var(--White-background);
         }
     }
 }
@@ -832,6 +842,12 @@ body.menu-show {
             &:last-child {
                 animation: botOut 2s forwards;
             }
+        }
+    }
+
+    .header-search__btn {
+        & > .icon-sym {
+            stroke: var(--secondary-color-900);
         }
     }
 }

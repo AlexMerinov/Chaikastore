@@ -67,7 +67,7 @@ body {
     height: 688px;
 
     @include maxBp($bp-768){
-        height: 488px;
+        height: 448px;
     }
 }
 
@@ -133,24 +133,30 @@ body {
 
 
 .section {
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-xl-desc);
 
     &__title {
-        margin-bottom: var(--space-xs);
+        margin-bottom: var(--space-xs-desc);
     }
 
     &--top {
         position: relative;
         top: -80px;
         margin-bottom: 20px;
+    }
 
-        @include maxBp($bp-1280) {
 
+    @include maxBp($bp-768) {
+        margin-bottom: var(--space-xl);
+
+        &:last-child {
+            margin-bottom: var(--space-m);
         }
 
-        @include maxBp($bp-768) {
-            
+        &__title {
+            margin-bottom: var(--space-xs);
         }
+    
     }
 }
 

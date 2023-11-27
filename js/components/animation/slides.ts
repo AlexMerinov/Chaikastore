@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollbar: {
                 el: '.slider-product__scrollbar',
                 draggable: true,
+                hide: true,
             },
 
             breakpoints: {

@@ -19,18 +19,18 @@
             height: 16px;
             @include icon-stroke;
             transition: var(--trans);
-            stroke: var(--White-background);
+            stroke: var(--secondary-color-900);
             stroke-width: 1px;
         }
     
         &:hover > .icon-sym {
-            stroke-width: 1.5px;
+            stroke-width: 2px;
         }
     }
 
     &__area {
         position: relative;
-        max-width: 0;
+        width: 0;
         overflow: hidden;
         transition: var(--trans);
         background-color: var(--Main-background);
@@ -170,7 +170,7 @@
 
     &.show {
         .header-search__area {
-            max-width: 335px;
+            width: 335px;
             opacity: 1;
             overflow: visible;
         }

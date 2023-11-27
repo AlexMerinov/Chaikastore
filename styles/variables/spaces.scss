@@ -26,7 +26,7 @@ $space-l-mobile: 48px;
 
 $space-xl: 100px;
 $space-xl-desktop: 80px;
-$space-xl-mobile: 56px;
+$space-xl-mobile: 60px;
 
 $space-2xl: 120px;
 $space-2xl-desktop: 100px;
@@ -34,7 +34,7 @@ $space-2xl-mobile: 80px;
 
 $space-3xl: 140px;
 $space-3xl-desktop: 120px;
-$space-3xl-mobile: 10 0px;
+$space-3xl-mobile: 100px;
 
 $vh-100: 100vh;
 
@@ -43,11 +43,19 @@ $vh-100: 100vh;
     --space-3xs: #{$space-3xs};
     --space-3xs-desc: #{$space-3xs-desktop};
     --space-2xs: #{$space-2xs};
+    --space-2xs-desc: #{$space-2xs-desktop};
     --space-xs: #{$space-xs};
+    --space-xs-desc: #{$space-xs-desktop};
     --space-s: #{$space-s};
+    --space-s-desc: #{$space-s-desktop};
     --space-m: #{$space-m};
+    --space-m-desc: #{$space-m-desktop};
     --space-l: #{$space-l};
+    --space-l-desc: #{$space-l-desktop};
     --space-xl: #{$space-xl};
+    --space-xl-desc: #{$space-xl-desktop};
+    --space-2xl-desc: #{$space-2xl-desktop};
+    --space-3xl-desc: #{$space-3xl-desktop};
     --vh-100: #{$vh-100};
     @include maxBp($bp-1280){
         --space-3xs: #{$space-3xs-desktop};

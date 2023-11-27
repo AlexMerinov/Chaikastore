@@ -32,7 +32,7 @@ mixin product-card(card)
         a.product-card__name(href='product-detail.html')
             != card.name
 
-        ul.product-card__colors 
+        ul.product-card__colors
             each item, index in card.colors
                 -
                     colorsLength = card.colors.length

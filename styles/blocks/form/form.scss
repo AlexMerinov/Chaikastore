@@ -64,9 +64,8 @@
 
         &:focus,&.filled{
             ~.form__label{
-                font-size: 10px;
-                transform: translate3d(-100%,-50%,0);
-                left: 100%;
+                font-size: 8px;
+                transform: translate3d(0,-25px,0);
             }
         }
 
@@ -120,14 +119,6 @@
                 .icon-sym {
                     transition: var(--trans);
                     scale: 1.15;
-                }
-            }
-        }
-
-        .form__input {
-            &:focus,&.filled{
-                ~.form__label{
-                    transform: translate3d(-150%,-50%,0);
                 }
             }
         }

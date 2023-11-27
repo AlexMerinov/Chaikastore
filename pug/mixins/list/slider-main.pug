@@ -7,20 +7,53 @@ mixin slider-main(items)
                         name, 
                         url,
                         picture,
+                        type,
+                        color,
                     } = item;
-                .swiper-slide.main-slider__item
-                    .main-slider__item-wrapper 
-                        h1.main-slider__name.js-fixed-parallax
-                            a.main-slider__link(href=url)
-                                != name
-                    .main-slider__bg
-                        picture
-                            // ресайз 1024*730
-                            source(
-                                srcset=picture.small,
-                                media='(max-width: 1023px)'
-                            )
-                            // ресайз 1680*680
-                            img(src=picture.big, alt=name)
+                if type === 0
+                    .swiper-slide.main-slider__item
+                        .main-slider__item-wrapper
+                            h1.main-slider__name.js-fixed-parallax
+                                a.main-slider__link(href=url style='color:' + color) 
+                                    != name
+                            .main-slider__bg
+                                picture
+                                    // ресайз 1024*730
+                                    source(
+                                        srcset=picture.small,
+                                        media='(max-width: 1023px)'
+                                    )
+                                    // ресайз 1680*680
+                                    img(src=picture.big, alt=name)
+                else if type === 1
+                    .swiper-slide.main-slider__item
+                        a.main-slider__item-wrapper(href=url) 
+                            h1.main-slider__name.js-fixed-parallax(style='color:' + color)
+                                .main-slider__link
+                                    != name
+                            .main-slider__bg
+                                picture
+                                    // ресайз 1024*730
+                                    source(
+                                        srcset=picture.small,
+                                        media='(max-width: 1023px)'
+                                    )
+                                    // ресайз 1680*680
+                                    img(src=picture.big, alt=name)
+                else 
+                    .swiper-slide.main-slider__item
+                        .main-slider__item-wrapper
+                            h1.main-slider__name.js-fixed-parallax
+                                .main-slider__link(style='color:' + color)
+                                    != name
+                            .main-slider__bg
+                                picture
+                                    // ресайз 1024*730
+                                    source(
+                                        srcset=picture.small,
+                                        media='(max-width: 1023px)'
+                                    )
+                                    // ресайз 1680*680
+                                    img(src=picture.big, alt=name)
         
         .swiper-pagination.main-slider__pagination
