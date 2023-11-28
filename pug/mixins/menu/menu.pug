@@ -27,7 +27,7 @@ mixin menu-list(items)
                                         items,
                                     } = item;
                                 li.js-item-preview(id=index)
-                                    a(href='catalog-category.html')
+                                    a(href='main.html')
                                         != name
                                         if items
                                             span.header-menu__arr.js-menu-arr
@@ -49,17 +49,9 @@ mixin menu-list(items)
                                                         url,
                                                         items,
                                                     } = item;
-                                                //- if index === 6 && itemsLength > 7
-                                                //-     li.header-menu__more
-                                                //-         a.link-more.js-menu-more(
-                                                //-             href='#'
-                                                //-         )
-                                                //-             | Еще&nbsp;
-                                                //-             != itemsCount
-                                                //-             span.icon
                                                 li
                                                     a(
-                                                        href='catalog-category.html'
+                                                        href='main.html'
                                                     )
                                                         != name
 

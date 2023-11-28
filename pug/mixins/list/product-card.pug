@@ -4,7 +4,7 @@ mixin product-card(card)
             if card.label
                 .product-card__label
                     != card.label
-            .product-card__favorite.js-favorite-add 
+            .product-card__favorite.favorite.js-favorite-add 
                 +icon-sym('favorite')
 
 
@@ -16,7 +16,7 @@ mixin product-card(card)
                     } = item;
 
                 a(class=(index === 0 ? 'product-card__gallery js-product-card-gallery' : 'product-card__gallery js-product-card-gallery hide'),
-                    href='product-detail.html',
+                    href='product-card.html',
                     data-index=index,
                     data-src-bg=photos[0],
                     data-photos-length=photos.length)
@@ -29,7 +29,7 @@ mixin product-card(card)
                             span.product-card__gallery__item(data-img=item)
 
 
-        a.product-card__name(href='product-detail.html')
+        a.product-card__name(href='product-card.html')
             != card.name
 
         ul.product-card__colors

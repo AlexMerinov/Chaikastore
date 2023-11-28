@@ -29,38 +29,42 @@ const promoHidden = () => {
 
 
 const headerAnimate = () => {
-    const bannerheight = document.querySelector('.js-banner-animate').clientHeight;
-    const titleParalax = document.querySelectorAll('.js-fixed-parallax');
-    const header = document.querySelector('.header');
-    const wScroll = window.scrollY;
+    const banner = document.querySelector('.js-banner-animate');
+    if (banner) {
+        const bannerheight = banner.clientHeight;
+        const titleParalax = document.querySelectorAll('.js-fixed-parallax');
+        const header = document.querySelector('.js-header-transparent');
+        const wScroll = window.scrollY;
 
-    let jsLayout = document.querySelector('.js-layout');
-    let onePercent = bannerheight / 100;
-    let percentNow = Math.round(wScroll / onePercent);
+        let jsLayout = document.querySelector('.js-layout');
+        let onePercent = bannerheight / 100;
+        let percentNow = Math.round(wScroll / onePercent);
 
-    jsLayout.style.background = `rgba(255, 255, 255, 0.${percentNow})`;
+        jsLayout.style.background = `rgba(255, 255, 255, 0.${percentNow})`;
 
-    titleParalax.forEach((title) => {
-        title.style.top = -wScroll / 2 + 'px';
-        if (wScroll > 0) {
-            title.classList.add('fade');
-        } else if (wScroll < bannerheight / 10) {
-            title.classList.remove('fade');
+        titleParalax.forEach((title) => {
+            title.style.top = -wScroll / 2 + 'px';
+            if (wScroll > 0) {
+                title.classList.add('fade');
+            } else if (wScroll < bannerheight / 10) {
+                title.classList.remove('fade');
+            }
+        });
+
+
+
+        if (wScroll > 80) {
+            header?.classList.remove('transparent');
+            // header.style.transform = 'translate3d(0,0,0)';
+        } else if (wScroll < 81) {
+            // header.style.transform = 'translate3d(0,0,0)';
+            header?.classList.add('transparent');
+        } else {
+            header?.classList.add('transparent');
+            // header.style.transform = 'translate3d(0,-100%,0)';
         }
-    });
-
-
-
-    if (wScroll > 80) {
-        header?.classList.remove('transparent');
-        // header.style.transform = 'translate3d(0,0,0)';
-    } else if (wScroll < 81) {
-        // header.style.transform = 'translate3d(0,0,0)';
-        header?.classList.add('transparent');
-    } else {
-        header?.classList.add('transparent');
-        // header.style.transform = 'translate3d(0,-100%,0)';
     }
+
 }
 
 const headerSearh = () => {

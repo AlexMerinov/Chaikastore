@@ -1,8 +1,8 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Parallax, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Parallax, Autoplay, Thumbs, Fade, Scrollbar } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
-    Swiper.use([Navigation, Pagination, Parallax, Autoplay]);
+    Swiper.use([Navigation, Pagination, Parallax, Autoplay, Thumbs, Fade, Scrollbar]);
 
     const slidersBaner = document.querySelectorAll('.js-slider-main');
 
@@ -12,19 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
             speed: 1000,
             loop: true,
             grabCursor: true,
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: true
-            },
             pagination: {
                 el: '.main-slider__pagination',
             },
-            parallax: true,
-            // autoplay: {
-            //     delay: 5000,
-            //     disableOnInteraction: false,
-            //     pauseOnMouseEnter: true,
-            // },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
         });
     });
 
@@ -39,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollbar: {
                 el: '.slider-product__scrollbar',
                 draggable: true,
-                hide: true,
             },
 
             breakpoints: {
@@ -65,9 +59,37 @@ document.addEventListener('DOMContentLoaded', () => {
                     slidesPerView: 4.2,
                 },
                 1680: {
-                    slidesPerView: 5.2,
+                    slidesPerView: 6.2,
                 }
             }
         });
     });
+
+
+    const detailPreviewProd = () => {
+
+        let swiperChild = new Swiper(".js-slid-product-child", {
+            spaceBetween: 8,
+            slidesPerView: 7,
+            freeMode: true,
+            watchSlidesProgress: true,
+            direction: 'vertical',
+        });
+        let swiperParent = new Swiper(".js-slid-product-parent", {
+            slidesPerView: 1,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            thumbs: {
+                swiper: swiperChild,
+                mousewheel: {
+                    senstivity: 1,
+                    eventsTarget: ".js-slid-product-child"
+                },
+            }
+        });
+    };
+    detailPreviewProd();
+
 });

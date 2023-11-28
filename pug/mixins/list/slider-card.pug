@@ -1,0 +1,31 @@
+mixin slider-parent-prod(items)
+    .swiper.js-slid-product-parent
+        .swiper-wrapper     
+            each item, index in items 
+                -
+                    const {
+                        picture,   
+                        name, 
+                    } = item;
+                .swiper-slide 
+                    picture 
+                        source(
+                            srcset=picture,
+                            media='(max-width: 1023px)'
+                        )
+                        img(src=picture, alt=name) 
+        .swiper-pagination
+
+mixin slider-parent-child(items)
+    .swiper.js-slid-product-child
+        .swiper-wrapper     
+            each item, index in items 
+                -
+                    const {
+                        picture,  
+                        name,  
+                    } = item;
+                .swiper-slide 
+                    picture 
+                        img(src=picture , alt=name) 
+                

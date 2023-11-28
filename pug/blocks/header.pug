@@ -1,7 +1,7 @@
 include ../mixins/menu/menu
 include ../mixins/search/search
 
-header.header.transparent.promo-hidden
+header.header.promo-hidden
     .header__promo
         marquee(behavior='scroll', direction='left')
             | BLACK FRIDAY 24.11-25.11 BLACK FRIDAY 24.11-25.11 BLACK FRIDAY 24.11-25.11
@@ -15,35 +15,13 @@ header.header.transparent.promo-hidden
                 const menu = [
                     {
                         name: 'Каталог',
-                        url: 'catalog-categories',
+                        url: 'main',
                         items: [
                             {
                                 name: '92days',
-                                items: [
-                                    {
-                                        name: 'Для женщин',
-                                    },
-                                    {
-                                        name: 'Для мужчин',
-                                    },
-                                    {
-                                        name: 'Для детей',
-                                    },
-                                ]
                             },
                             {
                                 name: 'Новинки',
-                                items: [
-                                    {
-                                        name: 'Для женщин',
-                                    },
-                                    {
-                                        name: 'Для мужчин',
-                                    },
-                                    {
-                                        name: 'Для детей',
-                                    },
-                                ]
                             },
                             {
                                 name: 'Одежда',
@@ -125,15 +103,15 @@ header.header.transparent.promo-hidden
                     },
                     {
                         name: 'Новинки',
-                        url: 'nevelty',
+                        url: 'main',
                     },
                     {
                         name: 'Лукбук',
-                        url: 'lookbook',
+                        url: 'main',
                     },
                     {
                         name: 'О нас',
-                        url: 'about',
+                        url: 'main',
                     },
                 ];
             +menu-list(menu)
@@ -232,22 +210,24 @@ header.header.transparent.promo-hidden
         ul.header-menu-user
             li.header-menu-user__item
                 a.header-menu-user__link(
-                    href='#',
+                    href='/',
                     data-micromodal='modal-favorite'
                 )
                     +icon-sym('favorite')
             li.header-menu-user__item
                 a.header-menu-user__link(
-                    href='#',
+                    href='/',
                     data-micromodal='modal-enter'
                 )
                     +icon-sym('user')
             li.header-menu-user__item
                 // class="header-menu-user__link header-menu-user__link--basket-active" - показывает пипку, если в корзине что-то есть
                 a.header-menu-user__link(
-                    href='#',
+                    href='/',
                     data-micromodal='modal-basket'
                 )
                     +icon-sym('cart')
                     .header-menu-user__counter
                         | 3
+    .prod-alert-add
+        | Товар добавлен в корзину!

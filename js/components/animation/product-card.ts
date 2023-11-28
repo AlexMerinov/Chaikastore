@@ -16,41 +16,7 @@ const catalogListGallery = () => {
     });
 };
 
-const favoriteItem = () => {
-    const addFavorite = document.querySelectorAll('.js-favorite-add ');
-    addFavorite.forEach((item) => {
-        item.addEventListener('click', () => {
-            if (!item.classList.contains('added')) {
-                item.classList.add('added');
-            } else {
-                item.classList.remove('added');
-            }
-
-        })
-    });
-}
-
-const colorChange = () => {
-    const colorPick = document.querySelectorAll('.js-catalog-color-change');
-
-    colorPick.forEach((item) => {
-        item.addEventListener('click', (e) => {
-            if (e.target === item) {
-                colorPick.forEach((item) => {
-                    item.classList.remove('active');
-                });
-                e.target.classList.add('active');
-            }
-        })
-    });
-}
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
     catalogListGallery();
-    favoriteItem();
-    colorChange();
 });
 

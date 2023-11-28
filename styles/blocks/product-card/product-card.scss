@@ -23,30 +23,6 @@
         position: absolute;
         top: 12px;
         right: 12px;
-        cursor: pointer;
-
-        z-index: 2;
-
-        & > .icon-sym {
-            width: 16px;
-            height: 16px;
-            @include icon-stroke;
-            transition: var(--trans);
-            stroke: var(--White-background);
-            stroke-width: 1px;
-        }
-
-        &:hover > .icon-sym {
-            stroke-width: 2px;
-        }
-
-        &.added {
-            & > .icon-sym {
-                fill: var(--checked) !important;
-                stroke: var(--checked); 
-            }
-
-        }
     }
 
     &__preview {
