@@ -4,10 +4,7 @@ const favoriteItem = () => {
 
     addFavorite.forEach((item) => {
         item.addEventListener('click', () => {
-            console.log(addFavorite);
             if (!item.classList.contains('added')) {
-                console.log(item);
-
                 item.classList.add('added');
             } else {
                 item.classList.remove('added');
@@ -21,6 +18,7 @@ const favoriteItem = () => {
 // колор пикер  --- выбор цвета товара
 const colorChange = () => {
     const colorPick = document.querySelectorAll('.js-catalog-color-change');
+    const colorDesc = document.querySelector('.js-color-description');
 
     colorPick.forEach((item) => {
         item.addEventListener('click', (e) => {
@@ -30,6 +28,14 @@ const colorChange = () => {
                 });
                 e.target.classList.add('active');
             }
+
+            if (colorDesc) {
+                if (item.classList.contains('active')) {
+                    let thisColor = item.getAttribute('data-color-description');
+                    colorDesc.innerHTML = thisColor;
+                }
+            }
+
         })
     });
 }
@@ -55,6 +61,44 @@ const sizeChange = () => {
     });
 }
 
+//показать все цвета
+const colorMore = () => {
+    const jsColorMore = document.querySelectorAll('.js-color-more');
+
+    jsColorMore.forEach((item) => {
+
+        item.addEventListener('click', (e) => {
+            e.preventDefault;
+            item.closest('.product-card__colors')?.classList.add('open');
+        })
+    })
+
+}
+
+//стандартный аккордин с одним уровнем вложенности
+const baseAccordion = () => {
+    const jsBaseAccordion = document.querySelectorAll('.js-base-accordion');
+
+    jsBaseAccordion.forEach((item) => {
+        let tabChildArr = item.querySelectorAll('.accordion__item');
+
+        tabChildArr.forEach((link) => {
+            link.addEventListener('click', (e) => {
+
+                if (link.classList.contains('open')) {
+                    link.classList.remove('open');
+                } else {
+                    tabChildArr.forEach((link) => {
+                        link.classList.remove('open');
+                    });
+                    link.classList.add('open');
+                }
+            });
+        });
+
+    });
+
+}
 // уведомление о добавлении товара в корзину
 const alertActive = () => {
     const alertActive = document.querySelectorAll('.js-alert-visicle');
@@ -79,6 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
     colorChange();
     sizeChange();
     alertActive();
+    colorMore();
+    baseAccordion();
 });
 
 window.addEventListener('resize', () => {
@@ -86,6 +132,8 @@ window.addEventListener('resize', () => {
     colorChange();
     sizeChange();
     alertActive();
+    colorMore();
+    baseAccordion();
 });
 
 window.addEventListener('load', () => {

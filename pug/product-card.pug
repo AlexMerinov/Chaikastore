@@ -76,13 +76,14 @@ block content
                         +slider-parent-prod(mainProdList)
                     .product__info
                         h2.product__title Трикотажное платье насыщенного красного цвета
-                            span.label 
+                            span.label Новинка
                         .product__art Артикул DR-510
                         .product__price 8 900 ₽
-                        .product__color-desc Насыщенный красный
-                        ul.product__colors.color-list
-                            li.color-list__item.js-catalog-color-change.active(style='background-color: #FFFFFF;') 
-                            li.color-list__item.js-catalog-color-change(style='background-color: #D81329;') 
+                        .product__colors.color-selector
+                            .color-selector__desc.js-color-description Насыщенный красный
+                            ul.color-selector__list.color-list
+                                li.color-list__item.js-catalog-color-change(style='background-color: #FFFFFF;' data-color-description='Молочный белый') 
+                                li.color-list__item.js-catalog-color-change.active(style='background-color: #D81329;' data-color-description='Насыщенный красный') 
                         .product__size
                             ul.size-list.js-size-list 
                                 li.size-list__item XS
@@ -96,19 +97,22 @@ block content
                                 +icon-sym('favorite') 
                         .product__description.accordion.js-base-accordion
                             .accordion__item    
-                                .accordion__title Описание
+                                .accordion__title
+                                    span Описание
                                 .accordion__content
                                     ul 
                                         li Мягкая пряжа
                                         li Прямой крой
                             .accordion__item    
-                                .accordion__title Обмеры
+                                .accordion__title 
+                                    span Обмеры
                                 .accordion__content
                                     ul 
                                         li Параметры модели: 82/60/88/172 см
                                         li На модели размер S
                             .accordion__item    
-                                .accordion__title Состав и уход
+                                .accordion__title 
+                                    span Состав и уход
                                 .accordion__content
                                     ul 
                                         li 70% вискоза
@@ -116,7 +120,13 @@ block content
                                         li 20% Подкладка 100% хлопок
                                     span Рекомендация по уходу:
                                     p ручная или машинная стирка в прохладной воде
-                        .social-list
+                        .product__social.social-list
+                            .social-list__item 
+                                a(href='https://t.me/chaikastore' target="_blank")
+                                    +icon-sym('tg') 
+                            .social-list__item 
+                                a(href='https://t.me/chaikastore' target="_blank")
+                                    +icon-sym('ws') 
 
             section.section.section--overflow-l
                 h2.section__title 

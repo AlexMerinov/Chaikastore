@@ -72,19 +72,24 @@ const headerSearh = () => {
     const article = document.querySelector('.article');
     const footer = document.querySelector('.footer');
     const headerSearch = document.querySelector('.header-search');
+    const headerBottom = document.querySelector('.header__bottom');
 
     const closeSearch = () => {
         article?.classList.remove('blur');
         footer?.classList.remove('blur');
         headerSearch?.classList.remove('show');
+        headerBottom.classList.remove('bg');
     }
 
     jsSeaarchShow?.addEventListener('click', (e) => {
         e.preventDefault();
 
+        e.target.closest('.header__bottom').classList.add('bg');
+
         headerSearch?.classList.add('show');
         article?.classList.add('blur');
         footer?.classList.add('blur');
+        headerBottom.classList.add('bg');
     });
 
 

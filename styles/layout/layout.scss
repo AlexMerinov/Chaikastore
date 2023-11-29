@@ -133,6 +133,9 @@ body {
 
 .p-top-content {
     padding-top: 98px;
+    @include maxBp($bp-768) {
+        padding-top: 55px;
+    }
 }
 
 

@@ -14,6 +14,7 @@
         height: 100%;
         opacity: 1;
         transition: var(--trans-slow);
+        z-index: 10;
         & > .icon-sym {
             width: 16px;
             height: 16px;
@@ -22,10 +23,14 @@
             stroke: var(--secondary-color-900);
             stroke-width: 1px;
         }
-    
-        &:hover > .icon-sym {
-            stroke-width: 2px;
+
+        @include bp($bp-768) {
+            &:hover > .icon-sym {
+                stroke-width: 2px;
+            }
         }
+    
+
     }
 
     &__area {
@@ -33,7 +38,6 @@
         width: 0;
         overflow: hidden;
         transition: var(--trans);
-        background-color: var(--Main-background);
         opacity: 0;
     }
 
@@ -178,6 +182,38 @@
         .header-search__btn {
             transition: var(--trans);
             opacity: 0;
+        }
+    }
+
+    @include maxBp($bp-1024) {
+        margin-right: auto;
+        margin-left: 0;
+
+        &__area {
+            padding: 16px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            background: var(--Main-background);
+            pointer-events: none;
+        }
+
+        &.show {
+            .header-search__area {
+                width: 100vw;
+                top: 100%;
+                pointer-events: visible;
+                animation-delay: 1s;
+                animation: shadowBg 1.5s forwards;
+            }
+            
+        }
+    }
+
+    @include maxBp($bp-768) {
+        &__area {
+            padding: 8px 8px;
         }
     }
 } 

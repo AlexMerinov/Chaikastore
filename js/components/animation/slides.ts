@@ -1,8 +1,8 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Parallax, Autoplay, Thumbs, Fade, Scrollbar } from 'swiper/modules';
+import { Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
-    Swiper.use([Navigation, Pagination, Parallax, Autoplay, Thumbs, Fade, Scrollbar]);
+    Swiper.use([Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar]);
 
     const slidersBaner = document.querySelectorAll('.js-slider-main');
 
@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
             speed: 1000,
             loop: true,
             grabCursor: true,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
             pagination: {
                 el: '.main-slider__pagination',
             },
@@ -81,13 +85,23 @@ document.addEventListener('DOMContentLoaded', () => {
             fadeEffect: {
                 crossFade: true
             },
+            pagination: {
+                el: '.base-pagination',
+            },
+            breakpoints: {
+                768: {
+                    pagination: false,
+                },
+            },
             thumbs: {
                 swiper: swiperChild,
                 mousewheel: {
                     senstivity: 1,
                     eventsTarget: ".js-slid-product-child"
                 },
-            }
+            },
+
+
         });
     };
     detailPreviewProd();

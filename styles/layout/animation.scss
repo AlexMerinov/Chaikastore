@@ -160,6 +160,15 @@
     }
 }
 
+@keyframes shadowBg {
+    from {
+        box-shadow: 0px 50px 60px 5px rgba(34, 60, 80, 0.00);
+    }
+    to {
+        box-shadow: 0px 60px 70px 5px rgba(34, 60, 80, 0.2);
+    }
+}
+
 
 
 

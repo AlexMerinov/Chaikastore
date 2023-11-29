@@ -83,7 +83,7 @@
     }
 
     &__bottom {
-        height: 80px;
+        height: 66px;
 
         display: flex;
         align-items: center;
@@ -561,6 +561,7 @@
 
     @include maxBp($bp-1024){
         display: flex;
+        margin-right: 0;
 
         &.active {
 

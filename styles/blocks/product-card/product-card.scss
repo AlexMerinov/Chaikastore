@@ -30,20 +30,11 @@
         height: 432px;
         margin-bottom: var(--space-3xs-desc);
         position: relative;
+        overflow: hidden;
 
         @include maxBp($bp-768) {
             height: 385px;
         }
-    }
-
-    &__gallery {
-        position: relative;
-        display: flex;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
     }
 
     &__gallery__item {
@@ -63,7 +54,7 @@
            transition: var(--trans);
 
            position: absolute;
-           bottom: 4px;
+           bottom: 13px;
            left: 50%;
            transform: translateX(-50%); 
 
@@ -75,6 +66,33 @@
         &.active {
             &::after {
                 opacity: 1;
+            }
+        }
+    }
+
+    &__gallery {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        transition: var(--trans);
+        transform: scale(1.05);
+
+        @include bp($bp-1280) {
+            &:hover {
+                transition: var(--trans);
+                transform: scale(1);
+                filter: brightness(95%);
+                -webkit-filter: brightness(95%);
+
+                .product-card__gallery__item {
+                    &::after {
+                        bottom: 3px;
+                    }
+                }
             }
         }
     }
@@ -121,11 +139,23 @@
 
     &__more {
         flex: 0 0 auto;
-        a {
+        width: 16px;
+        transform: scale(1);
+        opacity: 1;
+        transition: var(--trans);
+        span {
             color: var(--Stroke-bk-30);
             @include text-size-12;
+            cursor: pointer;
         }
 
+        @include bp($bp-1280) {
+            &:hover {
+                span {
+                    color: var(--Strokes-new-black);
+                }
+            }
+        }
     }
 
     &__price {
@@ -138,6 +168,21 @@
         s {
             @include text-size-10;
             color: var(--Stroke-bk-30);
+        }
+    }
+
+    &__colors.open {
+        max-width: 99px;
+        .product-card__more {
+            display: none;
+            transform: scale(0);
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+
+        .product-card__colors-item:nth-child(n+4) {
+            opacity: 1;
         }
     }
 }
