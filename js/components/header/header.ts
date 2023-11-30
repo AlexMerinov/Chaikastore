@@ -102,6 +102,13 @@ const headerSearh = () => {
             closeSearch();
         }
     });
+
+    document.body.addEventListener('keyup', function (e) {
+        let key = e.keyCode;
+        if (key == 27) {
+            closeSearch();
+        };
+    }, false);
 };
 
 

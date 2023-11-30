@@ -1,12 +1,11 @@
 mixin product-card(card)
     .product-card
-        .product-card__preview 
+        div(class=(card.mini === true ? 'product-card__preview mini' : 'product-card__preview'))
             if card.label
                 .product-card__label
                     != card.label
             .product-card__favorite.favorite.js-favorite-add 
                 +icon-sym('favorite')
-
 
             each item, index in card.colors 
                 -

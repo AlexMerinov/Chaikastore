@@ -220,6 +220,11 @@
         margin-bottom: var(--space-2xs-desc);
         @include text-size-12;
         color: var(--black);
+
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        transition: all .2s linear;
     }
 
     &__title {
@@ -251,6 +256,7 @@
         transition: all .1s linear;
         ul {
             padding-left: 20px;
+            margin-bottom: 15px;
             list-style: disc;
         }
     }
@@ -269,6 +275,7 @@
     }
 
     &__item.open {
+        gap: 4px;
         .accordion__title {
             color: var(--black);
             span {
@@ -281,7 +288,6 @@
         }
 
         .accordion__content {
-            max-height: 100px;
             transition: var(--trans);
         }
     }

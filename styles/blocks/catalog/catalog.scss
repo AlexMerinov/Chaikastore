@@ -1,0 +1,148 @@
+.catalog-cols {
+    display: flex;
+
+    &__menu {
+        flex: 0 0 auto;
+        width: 168px;
+
+        @include maxBp($bp-1280) {
+            display: none;
+        }
+    }
+}
+
+.products-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+
+    &__filter {
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__more {
+        display: flex;
+        justify-content: center;
+        margin-top: var(--space-2xs-desc);
+        a {
+            position: relative;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 1px;
+                background: var(--black);
+
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate3d(-50%,0,0);
+                transition: var(--trans);
+                pointer-events: none;
+            }
+
+            @include bp($bp-1280) {
+
+                &:hover {
+                    transform: translate3d(0,-2px,0);
+                    color: var(--Strokes-new-black);
+                    &::after {
+                        width: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menu-side {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+        
+        & > a {
+            @include text-size-16;
+            color: var(--black);
+            transition: var(--trans);
+
+            display: inline-block;
+            margin-bottom: var(--space-2xs-desc);
+            position: relative;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 0%;
+                height: 1px;
+                background: var(--black);
+
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: var(--trans);
+            }
+
+            @include bp($bp-1280) {
+                &:hover {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &.active {
+            & > a {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__submenu {
+        & > li {
+            margin-bottom: var(--space-3xs-desc); 
+
+            a {
+                @include text-size-12;
+                color: var(--black);
+                transition: var(--trans);
+                display: inline-block;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 0%;
+                    height: 1px;
+                    background: var(--Strokes-new-black);
+    
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    transition: var(--trans);
+                }
+
+                @include bp($bp-1280) {
+                    &:hover {
+                        color: var(--Strokes-new-black);
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+
+                }
+            }
+
+            &:last-child {
+                margin-bottom: var(--space-2xs-desc); 
+            }
+        }
+    }
+}

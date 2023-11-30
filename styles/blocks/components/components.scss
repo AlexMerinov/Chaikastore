@@ -1,0 +1,191 @@
+.breads {
+    display: flex;
+    align-items: center;
+    padding: 1px 0;
+
+    &__item {
+        margin-left: 8px;
+        padding-left: 25px;
+        position: relative;
+
+        @include text-size-10;
+        color: var(--dark-grey);
+        &::after {
+            content: '';
+            display: block;
+            width: 7px;
+            height: 1px;
+            background: var(--medium-grey);
+
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translate3dd(-50%,0,0);
+        }
+        &::before {
+            content: '';
+            display: block;
+            width: 2px;
+            height: 2px;
+            background: var(--medium-grey);
+            border-radius: 100%;
+
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate3dd(-50%,0,0);
+        }
+
+        a {
+            color: var(--medium-grey);
+            @include bp($bp-768) {
+                &:hover {
+                    border-bottom: 1px solid var(--medium-grey);
+                }
+            }
+        }
+
+        &:first-child {
+            padding-left: 0;
+            margin-left: 0;
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    &__item.chapter {
+        padding-left: 15px;
+        &::after {
+            left: 0;
+        }
+        &::before {
+            display: none;
+        }
+    }
+
+    
+    @include maxBp($bp-768) {
+        display: none;
+    }
+}
+
+.arrow-drop {
+    position: relative;
+    cursor: pointer;
+    width: 13px;
+    height: 13px;
+    span {
+        display: block;
+        width: 7px;
+        height: 1px;
+        background: var(--black);
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transition: var(--trans);
+
+        &:nth-child(1) {
+            transform: translate(calc(-75% - 1px),-50%) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+            transform: translate(calc(-25% + 1px),-50%) rotate(-45deg);
+        }
+    }
+
+    &.active {
+        span {
+            &:nth-child(1) {
+                transform: translate(calc(-75% - 1px),-50%) rotate(-45deg);
+            }
+
+            &:nth-child(2) {
+                transform: translate(calc(-25% + 1px),-50%) rotate(45deg);
+            }
+        }
+
+    }
+}
+
+.drop-box-selector {
+    position: relative;
+    min-width: 98px;
+    transition: var(--trans);
+    &__result {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3px;
+
+        @include text-size-10;
+        color: var(--black);
+        cursor: pointer;
+
+        width: 100%;
+        transition: var(--trans);
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.70);
+
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        z-index: 10;
+
+        opacity: 0;
+        pointer-events: none;
+        transition: var(--trans);
+    }
+
+    &__item {
+        padding: 6px 4px;
+        @include text-size-10;
+        color: var(--black);
+        transition: var(--trans);
+        cursor: pointer;
+
+        &:first-child {
+            padding-top: 2px;
+        }
+
+        &:last-child {
+            padding-bottom: 2px;
+        }
+
+        @include bp($bp-1280) {
+            &:hover {
+                background-color: var(--White-background);
+            }
+        }
+    }
+
+    &__name {
+        display: block;
+    }
+
+    &.open {
+        .drop-box-selector__list {
+            opacity: 1;
+            pointer-events: visible;
+        }
+
+        .arrow-drop {
+            span {
+                &:nth-child(1) {
+                    transform: translate(calc(-75% - 1px),-50%) rotate(-45deg);
+                }
+        
+                &:nth-child(2) {
+                    transform: translate(calc(-25% + 1px),-50%) rotate(45deg);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+mixin menu-side(items)
+    ul.menu-side
+        each item, index in items
+            -
+                const {
+                    name,
+                    url,
+                    items,
+                } = item;
+            li(class=(index === 0 ? 'menu-side__item js-side-chapter active' : 'menu-side__item js-side-chapter'))
+                a(href='catalog.html')
+                    != name
+                if items
+                    ul.menu-side__submenu
+                        each item, index in items
+                            -
+                                const {
+                                    name,
+                                    url,
+                                    items,
+                                } = item;
+                            li
+                                a(
+                                    href='catalog.html'
+                                )
+                                    != name
