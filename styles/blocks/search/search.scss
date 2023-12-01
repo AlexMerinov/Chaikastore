@@ -217,3 +217,20 @@
         }
     }
 } 
+
+.search-content {
+    &__form {
+        margin-bottom: var(--space-m-desc);
+    }
+
+    &__counter {
+        margin-bottom: var(--space-2xs-desc);
+    }
+
+    &__null {
+        h2 {
+            margin-bottom: var(--space-3xs-desc);
+            @include text-h1;
+        }
+    }
+}

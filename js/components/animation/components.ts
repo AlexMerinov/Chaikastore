@@ -14,7 +14,6 @@ const favoriteItem = () => {
     });
 }
 
-
 // колор пикер  --- выбор цвета товара
 const colorChange = () => {
     const colorPick = document.querySelectorAll('.js-catalog-color-change');
@@ -87,7 +86,7 @@ const baseAccordion = () => {
 
                 if (link.classList.contains('open')) {
                     link.classList.remove('open');
-                    linkContent.style.maxHeight = 0 + 'px';
+                    link.lastElementChild.style.maxHeight = 0 + 'px';
 
                 } else {
                     tabChildArr.forEach((link) => {

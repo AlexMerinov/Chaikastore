@@ -1,0 +1,17 @@
+mixin basket-list(items)
+    ul.order-list
+        each item, index in items
+            -
+                const {
+                    name, 
+                    url,
+                    img,
+                    colors,
+                    hex,
+                    size,
+                    price,
+                    price_old,
+                    art,
+                } = item;
+            li.order-list__item
+                +basket-item(item)

@@ -2,6 +2,7 @@ extends ./_layout
 include ./mixins/list/slider-card
 include ./mixins/list/slider-product
 include ./mixins/list/product-card
+include ./mixins/list/breads
 
 
 block content
@@ -43,37 +44,57 @@ block content
                         +slider-parent-child(previewProdList)
 
                         -
-                            const mainProdList = [
-                                {
-                                    name: 'Трикотажное платье насыщенного красного цвета',
-                                    picture: 'images/content/card-detail/item_big_00.jpg',
-                                },
-                                {
-                                    name: 'Трикотажное платье насыщенного красного цвета',
-                                    picture: 'images/content/card-detail/item_big_01.jpg',
-                                },
-                                {
-                                    name: 'Трикотажное платье насыщенного красного цвета',
-                                    picture: 'images/content/card-detail/item_big_02.jpg',
-                                },
-                                {
-                                    name: 'Трикотажное платье насыщенного красного цвета',
-                                    picture: 'images/content/card-detail/item_big_03.jpg',
-                                },   
-                                {
-                                    name: 'Трикотажное платье насыщенного красного цвета',
-                                    picture: 'images/content/card-detail/item_big_04.jpg',
-                                },   
-                                {
-                                    name: 'Трикотажное платье насыщенного красного цвета',
-                                    picture: 'images/content/card-detail/item_big_05.jpg',
-                                },
-                                {
-                                    name: 'Трикотажное платье насыщенного красного цвета',
-                                    picture: 'images/content/card-detail/item_big_06.jpg',
-                                },                                                                                                                                                         
-                            ];
+                                const mainProdList = [
+                                    {
+                                        name: 'Трикотажное платье насыщенного красного цвета',
+                                        picture: 'images/content/card-detail/item_big_00.jpg',
+                                    },
+                                    {
+                                        name: 'Трикотажное платье насыщенного красного цвета',
+                                        picture: 'images/content/card-detail/item_big_01.jpg',
+                                    },
+                                    {
+                                        name: 'Трикотажное платье насыщенного красного цвета',
+                                        picture: 'images/content/card-detail/item_big_02.jpg',
+                                    },
+                                    {
+                                        name: 'Трикотажное платье насыщенного красного цвета',
+                                        picture: 'images/content/card-detail/item_big_03.jpg',
+                                    },   
+                                    {
+                                        name: 'Трикотажное платье насыщенного красного цвета',
+                                        picture: 'images/content/card-detail/item_big_04.jpg',
+                                    },   
+                                    {
+                                        name: 'Трикотажное платье насыщенного красного цвета',
+                                        picture: 'images/content/card-detail/item_big_05.jpg',
+                                    },
+                                    {
+                                        name: 'Трикотажное платье насыщенного красного цвета',
+                                        picture: 'images/content/card-detail/item_big_06.jpg',
+                                    },                                                                                                                                                         
+                                ];
                         +slider-parent-prod(mainProdList)
+                    -
+                        const breads = [
+                            {
+                                name: 'Главная',
+                                url: 'main.html',
+                            },
+                            {
+                                name: 'Каталог',
+                                url: 'catalog.html',
+                            },
+                            {
+                                name: '92 DAYS',
+                                url: 'catalog.html',
+                            },
+                            {
+                                chapter: true,
+                                name: 'Трикотажное платье насыщенного красного цвета',
+                            },
+                        ];
+                    +breads-list(breads)
                     .product__info
                         h2.product__title Трикотажное платье насыщенного красного цвета
                             span.label Новинка
@@ -90,7 +111,7 @@ block content
                                 li.size-list__item.checked S
                                 li.size-list__item M
                                 li.size-list__item L 
-                            a.size-list.js-size-table Таблица размеров 
+                            a.size-table.js-size-table Таблица размеров 
                         .product__btns  
                             button.btn.btn--primary.js-alert-visicle Добавить в корзину
                             .product__favorite.favorite.js-favorite-add 

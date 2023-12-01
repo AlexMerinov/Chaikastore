@@ -51,6 +51,10 @@
             &::after {
                 display: none;
             }
+
+            &::before {
+                display: none;
+            }
         }
     }
 
@@ -75,6 +79,7 @@
     cursor: pointer;
     width: 13px;
     height: 13px;
+    transition: var(--trans);
     span {
         display: block;
         width: 7px;
@@ -124,6 +129,19 @@
 
         width: 100%;
         transition: var(--trans);
+
+        @include bp($bp-1280) {
+            &:hover {
+                color: var(--Strokes-new-black);
+
+                .arrow-drop {
+                    transform: scale(1.2);
+                    span {
+                       background: var(--Strokes-new-black); 
+                    }
+                }
+            }
+        }
     }
 
     &__list {
@@ -184,6 +202,79 @@
         
                 &:nth-child(2) {
                     transform: translate(calc(-25% + 1px),-50%) rotate(45deg);
+                }
+            }
+        }
+    }
+}
+
+.error-box {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    &__content {
+        max-width: 457px;
+        text-align: center;
+
+        h1 {
+            margin-bottom: var(--space-2xs-desc);
+        }
+
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.index-pages-list {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    list-style-type: disc;
+
+    & > li {
+        margin-bottom: 12px;
+        @include text-h3;
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 0%;
+            height: 1px;
+            background: var(--black);
+
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            transition: var(--trans);
+        }
+
+        @include bp($bp-1280) {
+            &:hover {
+                &::after {
+                    width: 20%;
                 }
             }
         }

@@ -1,0 +1,26 @@
+mixin basket-item(card)
+    .order-item 
+        a.order-item__preview(href=url) 
+            img(scr=card.img width='auto' height='auto' alt=card.name)
+        .order-item__content 
+            .order-item__title
+                .favorite.js-favorite-add 
+                    +icon-sym('favorite')
+                a(href=url) 
+                    != card.name
+            .order-item__art
+                != card.art
+            .order-item__color 
+                span.order-item__color-hex(style='background:' + card.hex) 
+                span.order-item__color-name
+                    != card.color
+            .order-item__size 
+                != card.size
+            .order-item__footer 
+                .order-item__counter.counter 
+                .order-item__price
+                    .order-item__price-old
+                        != card.price_old
+                    .order-item__price-new
+                        != card.price_new
+

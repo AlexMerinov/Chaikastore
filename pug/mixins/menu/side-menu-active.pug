@@ -1,4 +1,4 @@
-mixin menu-side(items)
+mixin menu-side-active(items)
     ul.menu-side
         each item, index in items
             -
@@ -7,8 +7,8 @@ mixin menu-side(items)
                     url,
                     items,
                 } = item;
-            li(class=('menu-side__item js-side-chapter'))
-                a(href='catalog-active.html')
+            li(class=(index === 2 ? 'menu-side__item js-side-chapter active' : 'menu-side__item js-side-chapter'))
+                a(href='catalog.html')
                     != name
                 if items
                     ul.menu-side__submenu
@@ -21,6 +21,6 @@ mixin menu-side(items)
                                 } = item;
                             li
                                 a(
-                                    href='catalog-active.html'
+                                    href='catalog.html'
                                 )
                                     != name

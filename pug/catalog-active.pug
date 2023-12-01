@@ -4,12 +4,12 @@ include ./mixins/list/slider-product
 include ./mixins/list/product-card
 include ./mixins/list/breads
 include ./mixins/list/product-list
-include ./mixins/menu/side-menu
+include ./mixins/menu/side-menu-active
 
 block content
         .wrapper__page.p-top-content
             .wrapper__haed 
-                h1 Каталог
+                h1 Одежда
                 -
                     const breads = [
                         {
@@ -19,6 +19,10 @@ block content
                         {
                             chapter: true,
                             name: 'Каталог',
+                            url: 'catalog.html',
+                        },
+                        {
+                            name: 'Одежда',
                         },
                     ];
                 +breads-list(breads)
@@ -110,7 +114,7 @@ block content
                                     name: 'SALE',
                                 },
                             ];
-                        +menu-side(sideList)
+                        +menu-side-active(sideList)
                     .catalog-cols__products.products-content
                         .products-content__filter 
                             .drop-box-selector.js-drop-selector  

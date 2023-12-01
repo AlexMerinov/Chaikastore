@@ -33,7 +33,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: var(--space-xs);
+        margin-bottom: var(--space-xs-desc);
 
         @include maxBp($bp-768) {
             flex-direction: column;
@@ -68,7 +68,7 @@
         &-l {
             display: flex;
             flex-direction: column;
-            gap: var(--space-3xs);
+            gap: var(--space-3xs-desc);
 
             a[href^="tel:"] {
                 @include text-size-16;

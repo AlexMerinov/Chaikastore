@@ -1,0 +1,40 @@
+extends ./_layout
+include ./mixins/list/slider-card
+include ./mixins/list/slider-product
+include ./mixins/list/product-card
+include ./mixins/list/breads
+include ./mixins/list/product-list
+include ./mixins/menu/side-menu
+
+block content
+        .wrapper__page.p-top-content
+            .wrapper__haed 
+                h1 Поиск
+                -
+                    const breads = [
+                        {
+                            name: 'Главная',
+                            url: 'main.html',
+                        },
+                        {
+                            chapter: true,
+                            name: 'Поиск',
+                        },
+                    ];
+                +breads-list(breads)
+            .section 
+                .search-content 
+                    form.search-content__form.form.form--search.js-form-validate.js-form-validate-0(
+                    action="search.html",
+                    novalidate=""
+                    )
+                        button.form__search
+                            +icon-sym('search')
+                        input.form__input(
+                            type='text',
+                            placeholder='Поиск...',
+                            required=''
+                        )
+                .search-content__null 
+                    h2 Ничего не нашлось
+                    p К сожалению, по вашему запросу ничего не найдено. Пожалуйста, проверьте правильность написания или сократите словосочетание для поиска.

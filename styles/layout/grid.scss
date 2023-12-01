@@ -4,6 +4,8 @@
     margin-left: -4px;
     margin-right: -4px;
 
+    row-gap: 32px;
+
     @include maxBp($bp-1280) {
         margin-left: -2px;
         margin-right: -2px;
@@ -12,6 +14,7 @@
     @include maxBp($bp-768) {
         margin-left: -4px;
         margin-right: -4px; 
+        row-gap: 24px;
     }
 
     &--pb {
@@ -35,6 +38,10 @@
     flex: 0 0 auto;
     padding-left: 4px;
     padding-right: 4px;
+
+    & > * {
+        height: 100%;
+    }
 
     @include maxBp($bp-1280) {
         padding-left: 2px;
@@ -81,6 +88,28 @@
  
 .row-cols-6 > * {
     width: 16.6666666667%;
+}
+
+@include maxBp($bp-1920) {
+    .row-cols-3xl-1 > * {
+        width: 100%;
+    }
+
+    .row-cols-3xl-2 > * {
+       width: 50%;
+    }
+ 
+   .row-cols-3xl-3 > * {
+        width: 33.3333%;
+    }
+
+    .row-cols-3xl-4 > * {
+        width: 25%;
+    }
+
+    .row-cols-3xl-5 > * {
+        width: 20%;
+    }
 }
 
 @include maxBp($bp-1680) {

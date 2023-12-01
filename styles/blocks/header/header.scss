@@ -101,7 +101,7 @@
         }
 
         @include maxBp($bp-1024) {
-            height: 55px;
+            height: 56px;
         }
     }
 
@@ -522,7 +522,7 @@
 }
 
 .hamburger {
-    margin-right: 40px;
+    margin-right: 22px;
     width: 16px;
     height: 16px;
     display: none;
@@ -561,7 +561,6 @@
 
     @include maxBp($bp-1024){
         display: flex;
-        margin-right: 0;
 
         &.active {
 
@@ -581,6 +580,10 @@
             }
             
         }
+    }
+
+    @include maxBp($bp-768) {
+        margin-right: 0;
     }
 }
 

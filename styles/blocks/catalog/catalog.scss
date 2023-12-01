@@ -17,7 +17,7 @@
     flex: 1 1 auto;
 
     &__filter {
-        margin-bottom: 16px;
+        margin-bottom: var(--space-2xs-desc);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -56,6 +56,13 @@
                 }
             }
         }
+    }
+
+    @include maxBp($bp-768) {
+        &__filter {
+            margin-bottom: var(--space-3xs-mob);
+        }
+        
     }
 }
 
@@ -102,10 +109,26 @@
                     width: 100%;
                 }
             }
+
+            .menu-side__submenu {
+                max-height: max-content;
+            }
+        }
+
+        @include bp($bp-1280) {
+            &:hover {
+                .menu-side__submenu {
+                    transition: var(--trans-slow);
+                    max-height: 1000px;
+                }
+                
+            }
         }
     }
 
     &__submenu {
+        max-height: 0;
+        overflow: hidden;
         & > li {
             margin-bottom: var(--space-3xs-desc); 
 

@@ -1,0 +1,43 @@
+extends ./_layout
+include ./mixins/list/slider-card
+include ./mixins/list/slider-product
+include ./mixins/list/product-card
+include ./mixins/list/breads
+include ./mixins/list/basket-prod
+include ./mixins/list/basket-list
+
+block content
+        .wrapper__page.p-top-content
+            .wrapper__haed 
+                h1 Корзина
+                -
+                    const breads = [
+                        {
+                            name: 'Главная',
+                            url: 'main.html',
+                        },
+                        {
+                            chapter: true,
+                            name: 'Корзина',
+                        },
+                    ];
+                +breads-list(breads)
+            .section 
+                .cart-cols
+                    .cart-cols__products
+                        -
+                            const basketProducts = [
+                                {
+                                    name: 'Свитер молочного цвета с высоким воротом',
+                                    url: 'product-card.html',
+                                    img: 'images/content/products/item-prod_00.jpg',
+                                    art: 'BR-449',
+                                    hex: '#D81329',
+                                    color: 'Насыщенный красный',
+                                    size: 'XS',
+                                    price_old: '99 999 ₽',
+                                    price: '9 999 ₽',
+                                },
+                            ];
+                        +basket-list(basketProducts) 
+                    .cart-cols__order
