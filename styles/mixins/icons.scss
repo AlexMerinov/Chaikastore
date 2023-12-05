@@ -12,40 +12,35 @@
 }
 
 @mixin icon-close{
-  width: 24px;
-  height: 24px;
-  background: var(--secondary-color-100);
-  border-radius: 50%;
-  position: relative;
-  z-index: 1;
-  margin: -10px;
-  border: 10px solid var(--white);
-  cursor: pointer;
-  box-sizing: content-box;
-  transform: rotate(45deg);
-  transition: var(--trans);
-  &:hover{
-    background: var(--primary-color-600);
-    &:before,&:after{
-      background: var(--white);
-    }
-  }
-  &:before,&:after{
-    content: '';
+    width: 12px;
+    height: 12px;
     position: absolute;
-    z-index: -1;
-    left: 50%;
-    top: 50%;
-    width: 10px;
-    height: 2px;
-    transform: translate3d(-50%,-50%,0);
-    background: var(--secondary-color-900);
+    z-index: 1;
+    cursor: pointer;
+    box-sizing: content-box;
     transition: var(--trans);
-  }
-  &:after{
-    width: 2px;
-    height: 10px;
-  }
+    &:hover{
+        &:before,&:after{
+            background: var(--black);
+        }
+    }
+    &:before,&:after{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        background: var(--Strokes-new-black);
+        transition: var(--trans);
+    }
+    &:after{
+        transform: translate3d(-50%,-50%,0) rotate(45deg);
+    }
+    &:before {
+        transform: translate3d(-50%,-50%,0) rotate(-45deg);
+    }
 }
 
 @mixin icon-checkbox{

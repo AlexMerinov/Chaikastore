@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             'radio': 'Выберите вариант',
                             'select': 'Выберите вариант',
                             'select-multiple': 'Выберите вариант',
-                            'default': 'Обязательное поле',
+                            'default': 'Нужно заполнить поле',
                         },
                         patternMismatch: {
                             email: 'Некорректный email',

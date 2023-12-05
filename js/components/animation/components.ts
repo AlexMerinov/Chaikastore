@@ -183,6 +183,22 @@ const selectorDrop = () => {
     });
 }
 
+// дроп бокс селектор
+const Delivery = () => {
+    const jsChoiceDelivery = document.querySelectorAll('.js-choice-delivery');
+
+    jsChoiceDelivery.forEach((item) => {
+        item.addEventListener('click', () => {
+
+            jsChoiceDelivery.forEach((item) => {
+                item.classList.remove('checked');
+            });
+
+            item.classList.add('checked');
+        });
+    });
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     favoriteItem();
@@ -193,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
     baseAccordion();
     sideCatalog();
     selectorDrop();
+    Delivery();
 });
 
 window.addEventListener('resize', () => {

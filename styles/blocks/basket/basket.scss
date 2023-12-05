@@ -1,0 +1,214 @@
+.cart-cols {
+    &__order {
+        @include maxBp($bp-1280) {
+            width: 100%;
+        }
+    }
+}
+
+.cart-cols {
+    display: flex;
+    gap: 40px;
+
+    &__left {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    &__right {
+        flex: 0 0 auto;
+        width: 383px;
+    }
+
+    &.form {
+        .form__line {
+            margin-bottom: var(--space-2xs-desc);
+        }
+    }
+
+    @include maxBp($bp-1280) {
+        flex-direction: column;
+    }
+}
+
+
+.order-box {
+    padding: 24px;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 2px 14px 0px #DEDCE9;
+    &__name {
+        @include text-size-16;
+        color: var(--black);
+        margin-bottom: var(--space-2xs-desc);
+    }
+
+    &__line {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        @include text-size-12;
+        color: var(--black);
+        margin-bottom: var(--space-3xs-desc);
+
+        span.bold {
+            @include text-size-16;
+        }
+
+        span.w100 {
+            text-align: end;
+            @include text-size-10;
+        }
+    }
+
+    &__select {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        margin-bottom: var(--space-3xs-desc);
+    }
+
+    &__select-btn {
+        display: inline-flex;
+        flex: 1 1 auto;
+
+        input[type=radio] {
+            display: none;
+        }
+
+        label {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            padding: 2px 8px;
+
+            border-radius: 4px;
+            border: 1px solid var(--Strokes-new);
+            transition: var(--trans);
+            cursor: pointer;
+
+            @include text-size-16;
+            text-align: center;
+            color: var(--black);
+        }
+
+        input[type=radio]:checked + label {
+            border-color: var(--Strokes-new-black);
+        }
+
+        @include bp($bp-1280) {
+            &:hover {
+                label {
+                    color: var(--Strokes-new-black);
+                }
+
+                input[type=radio]:checked + label {
+                    color: var(--black);
+                }
+            }
+        }
+
+    }
+
+    &__bonus-check {
+        margin-bottom: var(--space-xs-desc);
+    }
+
+    &__alert {
+        @include text-size-10;
+        color: var(--black); 
+        margin-bottom: var(--space-3xs-desc);
+    }
+
+    &__add-new {
+        @include text-size-10;
+        color: var(--black);
+        position: relative;
+        margin-bottom: var(--space-xs-desc);
+        cursor: pointer;
+        overflow: visible;
+        transition: var(--trans);
+
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+
+            background: var(--Strokes-new-black);
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            transform: translate3d(0,0,0);
+            transition: var(--trans);
+
+        }
+
+        @include bp($bp-1280) {
+            &:hover {
+                &::after {
+                    transition: var(--trans);
+                    background: var(--black);
+                    transform: translate3d(0,1px,0);
+                }
+            }
+        }
+    }
+
+    &__link {
+        width: 100%;
+    }
+
+    @include maxBp($bp-1280) {
+        width: 100%;
+    }
+}
+
+.delivery-list {
+    display: flex;
+    gap: 16px;
+    &__item {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        padding: 8px;
+
+        border-radius: 4px;
+        background: transparent;
+        border: 1px solid var(--Strokes-new);
+        cursor: pointer;
+        transition: var(--trans);
+
+        &-name {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%;
+            color: var(--black);
+            margin-bottom: var(--space-3xs-desc);
+        }
+
+        &-desc {
+            @include text-size-12;
+            color: var(--black);
+        }
+
+        &.checked {
+            background: var(--White-background);
+            border-color: var(--black);
+        }
+
+        @include bp($bp-1280) {
+            &:hover {
+                border-color: var(--Strokes-new-black);
+            }
+            &.checked:hover {
+                border-color: var(--black);
+            }
+        }
+    }
+}

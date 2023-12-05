@@ -1,10 +1,17 @@
 .order-item {
     display: flex;
     border-bottom: 0.5px solid var(--Stroke-gray);
+    margin-bottom: var(--space-xs-desc);
+    position: relative;
     &__preview {
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: center;
+        align-items: center;
         width: 76px;
         height: 102px;
         margin-right: 8px;
+        overflow: hidden;
 
         img {
             object-fit: cover;
@@ -17,6 +24,10 @@
                 filter: brightness(90%);
             }
         }
+    }
+
+    &__content {
+        width: 100%;
     }
 
     &__title {
@@ -34,6 +45,23 @@
                 &:hover {
                     color: var(--Strokes-new-black);
                 }
+            }
+        }
+
+        & > .label {
+            margin-right: 8px;
+        }
+
+        .favorite {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 14px;
+            height: 14px;
+            .icon-sym {
+                stroke: var(--Strokes-new-black);
+                width: 12px;
+                height: 12px;
             }
         }
     }
@@ -61,34 +89,39 @@
             @include text-size-12;
             color: var(--black);
         }
+    }
 
-        &__size {
+    &__size {
+        @include text-size-12;
+        color: var(--black);
+        margin-bottom: var(--space-4xs);
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__price {
+        display: flex;
+        flex-direction: column;
+        &-old {
+            @include text-size-10;
+            color: var(--Strokes-new);
+            text-decoration: line-through;
+        }
+
+        &-new {
             @include text-size-12;
             color: var(--black);
-            margin-bottom: var(--space-4xs);
-        }
-
-        &__footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        &__price {
-            display: flex;
-            flex-direction: column;
-            &-old {
-                @include text-size-10;
-                color: var(--Strokes-new);
-                text-decoration: line-through;
-            }
-
-            &-new {
-                @include text-size-12;
-                color: var(--black);
-            }
         }
     }
 
+    &__close {
+        @include icon-close;
+        padding: 2px 0 2px 2px;
+        right: 0;
+    }
     
 }

@@ -219,6 +219,7 @@
 } 
 
 .search-content {
+    position: relative;
     &__form {
         margin-bottom: var(--space-m-desc);
     }

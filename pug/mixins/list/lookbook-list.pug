@@ -1,0 +1,22 @@
+mixin lookbook-list(items)
+    .lookbook-list  
+        each item in items 
+            -
+                const {
+                    name,
+                    url,
+                    text,
+                    picture,
+                } = item;
+            .lookbook-list__item    
+                a.lookbook-list__preview(href=url)
+                    picture     
+                        source(media="(max-width: 1023)", srcset=picture.small)
+                        img(src=picture.big, alt=name)
+                .lookbook-list__description 
+                    .lookbook-list__text 
+                        !=text
+                    .lookbook-list__title 
+                        !=name
+                    a.lookbook-list__link.btn.btn--secondary(href=url)
+                        | Смотреть

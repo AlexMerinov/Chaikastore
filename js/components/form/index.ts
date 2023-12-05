@@ -5,3 +5,4 @@ import './action';
 import './input-filled';
 import './textarea';
 import './tabs';
+import './dadata';

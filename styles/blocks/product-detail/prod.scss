@@ -362,7 +362,7 @@
     &.added {
         & > .icon-sym {
             fill: var(--checked) !important;
-            stroke: var(--checked); 
+            stroke: var(--checked) !important; 
         }
 
     }

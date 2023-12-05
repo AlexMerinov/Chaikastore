@@ -1,0 +1,86 @@
+extends ./_layout
+include ./mixins/list/breads
+include ./mixins/list/lookbook-list
+
+block content
+        .wrapper__page.p-top-content
+            .wrapper__haed 
+                h1 Лукбук
+                -
+                    const breads = [
+                        {
+                            name: 'Главная',
+                            url: 'main.html',
+                        },
+                        {
+                            chapter: true,
+                            name: 'Лукбук',
+                        },
+                    ];
+                +breads-list(breads)
+            .section.lookbook 
+                .lookbook__filter 
+                    .drop-box-selector.js-drop-selector  
+                        .drop-box-selector__result 
+                            span.drop-box-selector__name Выберите сезон
+                            .arrow-drop 
+                                span 
+                                span
+                        ul.drop-box-selector__list  
+                            li.drop-box-selector__item Осень
+                            li.drop-box-selector__item Весна
+                            li.drop-box-selector__item Зима
+                            li.drop-box-selector__item Лето
+                    
+                    .drop-box-selector.js-drop-selector  
+                        .drop-box-selector__result
+                            span.drop-box-selector__name Выберите год
+                            .arrow-drop 
+                                span 
+                                span
+                        ul.drop-box-selector__list  
+                            li.drop-box-selector__item 2010
+                            li.drop-box-selector__item 2020
+                            li.drop-box-selector__item 2021
+                            li.drop-box-selector__item 2022
+                            li.drop-box-selector__item 2023
+                -
+                    const lookbookItems = [
+                        {
+                            name: '92 DAYS OF SUMMER',
+                            url: '404.html',
+                            picture: {
+                                big: 'images/content/lookbook/item_04.png',
+                                small: 'images/content/lookbook/item_04.png'
+                            },
+                            text: '28.06.2022',
+                        },
+                        {
+                            name: 'Party 00’s',
+                            url: '404.html',
+                            picture: {
+                                big: 'images/content/lookbook/item_02.png',
+                                small: 'images/content/lookbook/item_02.png'
+                            },
+                            text: '28.06.2022',
+                        },
+                        {
+                            name: 'Textured feel lookbook',
+                            url: '404.html',
+                            picture: {
+                                big: 'images/content/lookbook/item_05.png',
+                                small: 'images/content/lookbook/item_05.png'
+                            },
+                            text: '28.06.2022',
+                        },
+                        {
+                            name: 'New year lookbook',
+                            url: '404.html',
+                            picture: {
+                                big: 'images/content/lookbook/item_03.png',
+                                small: 'images/content/lookbook/item_03.png'
+                            },
+                            text: '28.06.2022',
+                        }
+                    ]
+                +lookbook-list(lookbookItems)

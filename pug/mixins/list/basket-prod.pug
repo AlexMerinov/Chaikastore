@@ -1,13 +1,18 @@
 mixin basket-item(card)
     .order-item 
+        .order-item__close
         a.order-item__preview(href=url) 
-            img(scr=card.img width='auto' height='auto' alt=card.name)
+            picture 
+                img(data-scr=card.img alt=card.name)
         .order-item__content 
             .order-item__title
-                .favorite.js-favorite-add 
-                    +icon-sym('favorite')
                 a(href=url) 
                     != card.name
+                if card.label
+                    span.label  
+                        != card.label
+                .favorite.js-favorite-add 
+                    +icon-sym('favorite')
             .order-item__art
                 != card.art
             .order-item__color 
@@ -23,4 +28,3 @@ mixin basket-item(card)
                         != card.price_old
                     .order-item__price-new
                         != card.price_new
-
