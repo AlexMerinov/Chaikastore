@@ -8,12 +8,11 @@ html *::-webkit-scrollbar {
     }
 }
 html *::-webkit-scrollbar-thumb {
-    border-radius: 3px;
-    background-color: var(--secondary-color-300);
+    background-color: var(--black);
 }
 html *::-webkit-scrollbar-track {
     border-radius: 3px;
-    background-color: transparent;
+    background-color: var(--White-background);
 }
 
 html,
@@ -22,7 +21,7 @@ body {
 }
 body {
     background: var(--Main-background);
-    color: var(--secondary-color-900);
+    color: var(--black);
     @include text-body;
 }
 
@@ -63,6 +62,10 @@ body {
             margin-bottom: var(--space-s-mob);
         }
     }
+}
+
+.hidden {
+    display: none;
 }
 
 

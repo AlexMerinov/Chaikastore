@@ -9,7 +9,7 @@ include ./mixins/list/basket-list
 block content
         .wrapper__page.p-top-content
             .wrapper__haed 
-                h1 Корзина
+                h1 Оформление заказа
                 -
                     const breads = [
                         {
@@ -19,12 +19,61 @@ block content
                         {
                             chapter: true,
                             name: 'Корзина',
+                            url: 'cart.html',
+                        },
+                        {
+                            name: 'Оформление заказа',
                         },
                     ];
                 +breads-list(breads)
             .section 
-                .cart-cols
+                form.form.js-form-validate.cart-cols
                     .cart-cols__left
+                        .form__wrapper
+                            h3.form__subtitle Ваши данные
+                            .form__line 
+                                label.form__label
+                                    input.form__input(type="text" class="form__input" required)
+                                    span.form__ph Фамилия
+                            .form__line 
+                                label.form__label
+                                    input.form__input(type="text" class="form__input" required)
+                                    span.form__ph Имя
+                            .form__line 
+                                label.form__label
+                                    input.form__input(type="text" name="phone" inputmode="phone" class="form__input" required)
+                                    span.form__ph Телефон
+                            .form__line 
+                                label.form__label
+                                    input.form__input(type="email" inputmode="email" class="form__input" required)
+                                    span.form__ph E-mail
+                            h3.form__subtitle Доставка 
+
+                            div.form__line
+                                input.form__input.js-dadata-city(placeholder="Ваш город" required)
+
+                            .form__delivery.delivery-list
+                                .delivery-list__item.js-choice-delivery.checked 
+                                    .delivery-list__item-name Курьер СДЭК без примерки
+                                    .delivery-list__item-desc Стоимость 490 ₽, бесплатно — при покупке от 10 000 ₽
+                                .delivery-list__item.js-choice-delivery
+                                    .delivery-list__item-name Пункт выдачи СДЭК
+                                    .delivery-list__item-desc Стоимость 490 ₽, бесплатно — при покупке от 10 000 ₽
+                                .delivery-list__item.js-choice-delivery
+                                    .delivery-list__item-name Почта
+                                    .delivery-list__item-desc Стоимость 490 ₽, бесплатно — при покупке от 10 000 ₽
+
+                            h3.form__subtitle Адрес доставки
+
+                            div(class="form__line")
+                                label.form__label
+                                    input.form__input.js-dadata-city.js-dadata-address(type="text" placeholder="Выберите адрес, или добавьте новый" required)
+
+                            .form__line 
+                                label.form__label.form__label--textarea
+                                    textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                    span.form__ph Комментарий к заказу
+                    
                         -
                             const basketProducts = [
                                 {
@@ -35,7 +84,6 @@ block content
                                     hex: '#D81329',
                                     color: 'Насыщенный красный',
                                     size: 'XS',
-                                    label: 'Sale',
                                     price_old: '99 999 ₽',
                                     price_new : '9 999 ₽',
                                 },
@@ -71,10 +119,43 @@ block content
                             .order-box__line 
                                 span Скидка
                                 span 999 ₽
+                            .order-box__line 
+                                span Бонусы
+                                span -50
+                                span.w100 Начислится
+                                    span 15
+                            .order-box__line.order-box__line--promo(id='cert')
+                                span Оплата сертификатом
+                                span 500  ₽
+                            .order-box__line.order-box__line--promo(id='promo')
+                                span Промокод
+                                span 999 ₽                                       
+                            .order-box__bonus-check 
+                                label.input-checkbox
+                                    input(type="checkbox" name="bonus" required)
+                                    span.input-checkbox__text Не списывать бонусы
+                                        +icon-sym('check')
+                            .order-box__select 
+                                .order-box__select-btn 
+                                    input(
+                                        type="radio"
+                                        id='select_1' 
+                                        data-promo="promo" 
+                                        name="order-promo")
+                                    label(for='select_1') Промокод
+                                .order-box__select-btn 
+                                    input(
+                                        type="radio" 
+                                        id='select_2' 
+                                        data-promo="cert"  
+                                        name="order-promo")
+                                    label(for='select_2') Сертификат
+                            .order-box__alert Сертификат успешно применен
+                            button.order-box__add-new Добавить новый
                             .order-box__line
-                                span Итого
+                                span Итого 
                                 span.bold 99 999 ₽
-                            a.btn.btn--primary.order-box__link(href='order.html') Оформить заказ
+                            button.btn.btn--primary.order-box__link(type='submit') Оформить заказ
 
 
             section.section.section--overflow-l

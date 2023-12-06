@@ -66,9 +66,10 @@ footer.footer
                 .footer__policy 
                     form.form.form--subscribe(action='post')
                         .form__line 
-                            input(type="email" inputmode="email" class="form__input js-input-format-phone" id="footer-input-email" required)
-                            label(class="form__label" for="footer-input-email") Ваш e-mail
-                        button.form__button(type='button')
+                            label.form__label
+                                input.form__input(type="email" inputmode="email" class="form__input" required)
+                                span.form__ph E-mail
+                        button.form__button(type='submit')
                             +icon-sym('arrow-r')
                     span 
                         | Нажимая на кнопку, вы подтверждаете, что ознакомились с Политикой конфиденциальности

@@ -183,7 +183,7 @@ const selectorDrop = () => {
     });
 }
 
-// дроп бокс селектор
+// выбор доставки
 const Delivery = () => {
     const jsChoiceDelivery = document.querySelectorAll('.js-choice-delivery');
 
@@ -199,6 +199,40 @@ const Delivery = () => {
     });
 }
 
+//счетчик коллисества товаров
+const counter = () => {
+    const counters = document.querySelectorAll('.js-counter');
+    if (!counters) return;
+
+    counters.forEach((counter) => {
+        let quantityValue = counter.querySelector('.counter__input');
+        let valueBtnsMunus = counter.querySelector('.counter__btn--down');
+        let valueBtnsPlus = counter.querySelector('.counter__btn--up');
+
+        if (quantityValue.value <= 1) {
+            valueBtnsMunus?.classList.add('disable');
+        }
+
+        valueBtnsMunus.addEventListener('click', function () {
+            if (quantityValue.value >= 2) {
+                quantityValue.value = quantityValue.value - 1;
+
+                if (quantityValue.value < 2) {
+                    valueBtnsMunus?.classList.add('disable');
+                }
+            }
+        });
+
+        valueBtnsPlus.addEventListener('click', function () {
+            quantityValue.value = +quantityValue.value + 1;
+            if (quantityValue.value > 1) {
+                valueBtnsMunus?.classList.remove('disable');
+            }
+        });
+    });
+}
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     favoriteItem();
@@ -210,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sideCatalog();
     selectorDrop();
     Delivery();
+    counter();
 });
 
 window.addEventListener('resize', () => {

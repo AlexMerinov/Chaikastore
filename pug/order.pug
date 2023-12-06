@@ -29,6 +29,8 @@ block content
             .section 
                 form.form.js-form-validate.cart-cols
                     .cart-cols__left
+                        .form__sign-in-alert.sign-in-alert   
+                            | Вы можете <a href="/">войти</a>  в свой аккаунт для применения накопленных бонусов и электронных сертификатов или продолжить оформление без авторизации.
                         .form__wrapper
                             h3.form__subtitle Ваши данные
                             .form__line 
@@ -41,12 +43,13 @@ block content
                                     span.form__ph Имя
                             .form__line 
                                 label.form__label
-                                    input.form__input(type="text" name="phone" inputmode="phone" class="form__input" required)
+                                    input.form__input.js-input-format-phone(type="text" name="phone" inputmode="tel " class="form__input" required)
                                     span.form__ph Телефон
                             .form__line 
                                 label.form__label
                                     input.form__input(type="email" inputmode="email" class="form__input" required)
                                     span.form__ph E-mail
+                        .form__wrapper
                             h3.form__subtitle Доставка 
 
                             div.form__line
@@ -62,18 +65,56 @@ block content
                                 .delivery-list__item.js-choice-delivery
                                     .delivery-list__item-name Почта
                                     .delivery-list__item-desc Стоимость 490 ₽, бесплатно — при покупке от 10 000 ₽
-
+                        .form__wrapper
                             h3.form__subtitle Адрес доставки
 
-                            div(class="form__line")
-                                label.form__label
-                                    input.form__input.js-dadata-city.js-dadata-address(type="text" placeholder="Выберите адрес, или добавьте новый" required)
+                            .row.row--no-gap 
+                                .col.cols-12 
+                                    .form__line 
+                                        label.form__label
+                                            input.form__input(type="text" class="form__input" required)
+                                            span.form__ph Город и район
+                                .col.cols-12 
+                                    .form__line 
+                                        label.form__label
+                                            input.form__input(type="text" class="form__input" required)
+                                            span.form__ph Улица
+                                .col.cols-4 
+                                    .form__line 
+                                        label.form__label
+                                            input.form__input(type="text" class="form__input" required)
+                                            span.form__ph Дом
+                                .col.cols-4 
+                                    .form__line 
+                                        label.form__label
+                                            input.form__input(type="text" class="form__input" required)
+                                            span.form__ph Квартира
+                                .col.cols-4 
+                                    .form__line 
+                                        label.form__label
+                                            input.form__input(type="text" class="form__input" required)
+                                            span.form__ph Индекс
+                                .col.cols-4 
+                                    .form__line 
+                                        label.form__label
+                                            input.form__input(type="text" class="form__input" required)
+                                            span.form__ph Подъезд
+                                .col.cols-4 
+                                    .form__line 
+                                        label.form__label
+                                            input.form__input(type="text" class="form__input" required)
+                                            span.form__ph Этаж
+                                .col.cols-4 
+                                    .form__line 
+                                        label.form__label
+                                            input.form__input(type="text" class="form__input" required)
+                                            span.form__ph Домофон
+                                .col.cols-12 
+                                    .form__line 
+                                        label.form__label.form__label--textarea
+                                            textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                            span.form__ph Комментарий к заказу
 
-                            .form__line 
-                                label.form__label.form__label--textarea
-                                    textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
-                                    span.form__ph Комментарий к заказу
-                    
                         -
                             const basketProducts = [
                                 {
@@ -86,16 +127,6 @@ block content
                                     size: 'XS',
                                     price_old: '99 999 ₽',
                                     price_new : '9 999 ₽',
-                                },
-                                {
-                                    name: 'Платье миди бирюзового цвета',
-                                    url: 'product-card.html',
-                                    img: 'images/content/products/item-prod_02.jpg',
-                                    art: 'BR-449',
-                                    hex: '#74BDB4',
-                                    color: 'Бирюзовый',
-                                    size: 'XS',
-                                    price_new: '9 999 ₽',
                                 },
                                 {
                                     name: 'Свитер молочного цвета',
@@ -115,15 +146,24 @@ block content
                                 | Ваш заказ 
                             .order-box__line
                                 span Сумма
-                                span 99 999 ₽
+                                span 9 999 ₽
                             .order-box__line 
                                 span Скидка
                                 span 999 ₽
                             .order-box__line 
+                                span Доставка
+                                span 490 ₽
+                            .order-box__line.hidden 
                                 span Бонусы
                                 span -50
                                 span.w100 Начислится
                                     span 15
+                            .order-box__line.order-box__line--promo(id='cert')
+                                span Оплата сертификатом
+                                span 500  ₽
+                            .order-box__line.order-box__line--promo(id='promo')
+                                span Промокод
+                                span 999 ₽                                       
                             .order-box__bonus-check 
                                 label.input-checkbox
                                     input(type="checkbox" name="bonus" required)
@@ -131,17 +171,32 @@ block content
                                         +icon-sym('check')
                             .order-box__select 
                                 .order-box__select-btn 
-                                    input(type="radio" id='select_1' name="order-promo")
+                                    input(
+                                        type="radio"
+                                        id='select_1' 
+                                        data-promo="select-promo" 
+                                        name="order-promo")
                                     label(for='select_1') Промокод
                                 .order-box__select-btn 
-                                    input(type="radio" id='select_2' name="order-promo")
+                                    input(
+                                        type="radio" 
+                                        id='select_2' 
+                                        data-promo="select-cert"  
+                                        name="order-promo")
                                     label(for='select_2') Сертификат
+                                .order-box__select-input  
+                                    input(type="text" placeholder="Ввести промокод" id="select-promo")
+                                    label
+                                        input(type="text" value="7000 ₽" disabled name="cert" id="select-cert")
+                                        span Списать 6 700 ₽
+                                    a
+                                        +icon-sym('arrow-r')
                             .order-box__alert Сертификат успешно применен
                             button.order-box__add-new Добавить новый
                             .order-box__line
-                                span Итог
-                                span.bold 99 999 ₽
-                            button.btn.btn--primary.order-box__link(type='submit') Оформить заказ
+                                span Итого
+                                span.bold 8 999 ₽
+                            button.btn.btn--primary.order-box__link(type='submit') Оплатить заказ
 
 
             section.section.section--overflow-l

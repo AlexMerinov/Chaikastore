@@ -230,6 +230,136 @@
     }
 }
 
+.counter {
+    display: flex;
+    height: 18px;
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+
+        &::after,  &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 50%;
+            top: 50%;
+            width: 6px;
+            height: 1px;
+            background: var(--black);
+            transition: var(--trans);
+        }
+
+        &::after {
+            transform: translate3d(-50%,-50%,0) rotate(0deg);
+        }
+
+        &::before {
+            transform: translate3d(-50%,-50%,0) rotate(90deg);
+        }
+
+        &--down {
+            &::before {
+                display: none;
+            }
+        }
+
+        &.disable {
+            &::after {
+                background: var(--Stroke-bk-30);
+                pointer-events: none;
+            }
+        }
+
+        // @include bp($bp-1280) {
+        //     &:hover {
+        //         &::before, &::after {
+                    
+        //         }
+        //     }
+        // }
+    }
+
+    &__input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 100%;
+        padding: 0;
+
+        @include text-size-12;
+        color: var(--black);
+        text-align: center;
+
+        border: none;
+        outline: 0;
+        margin: 0;
+        transition: var(--trans);
+        box-shadow: none;
+        overflow: auto;
+        resize: none;
+        background: transparent;
+    }
+}
+
+.sign-in-alert {
+    @include text-size-16;
+    a {
+        text-decoration: underline;
+    }
+}
+
+.thanks-page {
+    h3 {
+        @include text-size-16;
+        margin-bottom: var(--space-s-desc);
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    &__alert {
+        display: inline-block;
+        max-width: 504px;
+        background-color: var(--White-background);
+        padding: 4px 8px;
+
+        span {
+            display: block;
+            margin-bottom: 4px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+
+
+.order-no-pay {
+    &__error {
+        margin-bottom: var(--space-xs-desc);
+        @include text-size-16;
+        color: var(--Error);
+    }
+
+    &__text {
+       padding: 4px 8px;
+       background-color: var(--White-background); 
+       @include text-size-12;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
 
 
 

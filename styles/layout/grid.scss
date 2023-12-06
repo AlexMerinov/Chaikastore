@@ -17,17 +17,13 @@
         row-gap: 24px;
     }
 
-    &--pb {
-        margin-top: -32px;
-        @include maxBp($bp-768) {
-            margin-top: -24px;
-        }
-
+    &--no-gap {
+        row-gap: 0;
+        margin-left: -4px;
+        margin-right: -4px;
         & > .col {
-            padding-top: var(--space-xs-desc);  
-            @include maxBp($bp-768) {
-                padding-top: var(--space-s-mob);  
-            }
+            padding-left: 8px;
+            padding-right: 8px;
         }
     }
 }

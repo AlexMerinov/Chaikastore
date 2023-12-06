@@ -48,7 +48,7 @@
         text-overflow: ellipsis;
     }
 
-    &__input{
+    &__input{ 
         display: block;
         width: 100%;
         height: 100%;
@@ -192,6 +192,13 @@
 
     &__delivery {
         margin-bottom: var(--space-xs-desc);
+        @include maxBp($bp-768) {
+            margin-bottom: var(--space-s-mob);
+        }
+    }
+
+    &__sign-in-alert {
+        margin-bottom: var(--space-s-desc);
     }
 }
 
@@ -319,10 +326,34 @@
 
         & > li {
             display: inline-block;
+            width: fit-content;
+            position: relative;
             @include text-size-12;
             color: var(--black);
             cursor: pointer;
             margin-bottom: var(--space-3xs-desc);
+
+            &::after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 1px;
+
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                background: var(--black);
+                opacity: 0;
+                transition: var(--trans);
+            }
+
+            @include bp($bp-1280) {
+                &:hover {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
         }
     }
 }

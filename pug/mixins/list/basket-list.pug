@@ -14,5 +14,8 @@ mixin basket-list(items)
                     art,
                     label,
                 } = item;
+            if items
+                li.order-list__count Товары:
+                    !=items.length
             li.order-list__item
                 +basket-item(item)
