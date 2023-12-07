@@ -184,15 +184,25 @@ block content
                                         data-promo="select-cert"  
                                         name="order-promo")
                                     label(for='select_2') Сертификат
-                                .order-box__select-input  
-                                    input(type="text" placeholder="Ввести промокод" id="select-promo")
-                                    label
-                                        input(type="text" value="7000 ₽" disabled name="cert" id="select-cert")
-                                        span Списать 6 700 ₽
-                                    a
-                                        +icon-sym('arrow-r')
-                            .order-box__alert Сертификат успешно применен
-                            button.order-box__add-new Добавить новый
+                                .order-box__select-wrapper
+                                    .order-box__select-field(id="select-promo") 
+                                        .order-box__select-input
+                                            input(type="text" placeholder="Ввести промокод")
+                                            a
+                                                +icon-sym('arrow-r')
+                                        span.order-box__select-alert    
+                                            span Промокод успешно применен
+                                            span.error Промокод не действителен
+                                    .order-box__select-field.hide(id="select-cert") 
+                                        .order-box__select-input
+                                            input(type="text" value="7000 ₽" disabled name="cert")
+                                            a
+                                                span Списать 6 700 ₽
+                                                +icon-sym('arrow-r')
+                                        span.order-box__select-alert 
+                                            span Сертификат успешно применен
+                                            span.error Серитфикат не действителен
+                                        a.order-box__add-new(href="/" target="_blank") Добавить новый
                             .order-box__line
                                 span Итого
                                 span.bold 8 999 ₽

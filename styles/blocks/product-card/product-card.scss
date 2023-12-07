@@ -35,11 +35,17 @@
         &.mini {
             height: 385px;
             @include maxBp($bp-1280) {
-                height: 242px;
+                min-height: 242px;
+                height: 30vw;
+                max-height: 350px;
             }
 
             @include maxBp($bp-768) {
-                height: 198px;
+                height: 42vw;
+            }
+
+            @include maxBp($bp-500) {
+                height: 62vw;
             }
         }
 

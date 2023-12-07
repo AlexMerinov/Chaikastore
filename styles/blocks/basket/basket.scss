@@ -92,10 +92,12 @@
 
         margin-bottom: var(--space-3xs-desc);
 
-        &-input {
+        &-wrapper {
             position: relative;
             width: 100%;
+        }
 
+        &-field {
             input {
                 display: block;
                 width: 100%;
@@ -114,11 +116,6 @@
                 background: transparent;
             }
 
-            label {
-                width: 100%;
-                // position: absolute;
-            }
-
             a {
                 position: absolute;
                 right: 0;
@@ -127,14 +124,22 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-
-                width: 14px;
+                min-width: 24px;
                 height: 100%;
 
                 .icon-sym {
                     fill: none;
                     stroke: var(--Stroke-bk-30);
                     transition: var(--trans);
+                }
+
+                @include bp($bp-1280) {
+                    &:hover {
+                        .icon-sym {
+                            transform: scale(1.1);
+                            stroke: var(--Strokes-new-black);
+                        }
+                    }
                 }
 
             }
