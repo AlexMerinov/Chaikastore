@@ -1,0 +1,680 @@
+
+include ./product-card
+include ./product-list
+
+-
+    const productsList = [    
+        {
+            name: 'Спортивные брюки графитового цвета с бирюзовой вставкой (длинное название товара на несколько строк)',
+            price: '99 499 ₽',
+            price_old: '199 999 ₽',
+            label: '',
+            mini: true,
+            colors: [
+                {
+                    hex: '#ACACAC',
+                    photos: [
+                        'images/content/products/item-prod_00.jpg',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#E0E0E0',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#C6C6DA',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+            ]
+        },
+        {
+            name: 'Спортивные брюки графитового цвета с бирюзовой вставкой',
+            price: '99 499 ₽',
+            price_old: '199 999 ₽',
+            label: 'New',
+            mini: true,
+            colors: [
+                {
+                    hex: '#ACACAC',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#E0E0E0',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+                {
+                    hex: '#C6C6DA',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+            ]
+        },
+        {
+            name: 'Спортивные брюки',
+            price: '99 499 ₽',
+            price_old: '199 999 ₽',
+            label: '',
+            mini: true,
+            colors: [
+                {
+                    hex: '#ACACAC',
+                    photos: [
+                        'images/content/products/item-prod-color-2-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#E0E0E0',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#C6C6DA',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+            ]
+        },
+        {
+            name: 'Спортивные брюки графитового цвета с бирюзовой вставкой',
+            price: '99 499 ₽',
+            price_old: '199 999 ₽',
+            label: 'Sale',
+            mini: true,
+            colors: [
+                {
+                    hex: '#ACACAC',
+                    photos: [
+                        'images/content/products/item-prod-color-3-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#E0E0E0',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#C6C6DA',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+            ]
+        },
+        {
+            name: 'Спортивные брюки графитового цвета с бирюзовой вставкой',
+            price: '99 499 ₽',
+            price_old: '199 999 ₽',
+            label: 'Sale',
+            mini: true,
+            colors: [
+                {
+                    hex: '#ACACAC',
+                    photos: [
+                        'images/content/products/item-prod_02.jpg',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#E0E0E0',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#C6C6DA',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+            ]
+        },
+        {
+            name: 'Спортивные брюки графитового цвета с бирюзовой вставкой',
+            price: '99 499 ₽',
+            price_old: '199 999 ₽',
+            label: 'Sale',
+            mini: true,
+            colors: [
+                {
+                    hex: '#ACACAC',
+                    photos: [
+                        'images/content/products/item-prod_02.jpg',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#E0E0E0',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#C6C6DA',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+            ]
+        },
+        {
+            name: 'Спортивные брюки графитового цвета с бирюзовой вставкой',
+            price: '99 499 ₽',
+            price_old: '199 999 ₽',
+            label: 'Sale',
+            mini: true,
+            colors: [
+                {
+                    hex: '#ACACAC',
+                    photos: [
+                        'images/content/products/item-prod-color-3-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#E0E0E0',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#C6C6DA',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+            ]
+        },
+        {
+            name: 'Спортивные брюки графитового цвета с бирюзовой вставкой',
+            price: '99 499 ₽',
+            price_old: '199 999 ₽',
+            label: 'Sale',
+            mini: true,
+            colors: [
+                {
+                    hex: '#ACACAC',
+                    photos: [
+                        'images/content/products/item-prod_00.jpg',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#E0E0E0',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#C6C6DA',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+            ]
+        },
+        {
+            name: 'Спортивные брюки графитового цвета с бирюзовой вставкой (длинное название товара на несколько строк)',
+            price: '99 499 ₽',
+            price_old: '199 999 ₽',
+            label: '',
+            mini: true,
+            colors: [
+                {
+                    hex: '#ACACAC',
+                    photos: [
+                        'images/content/products/item-prod_02.jpg',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#E0E0E0',
+                    photos: [
+                        'images/content/products/item-prod_01',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#C6C6DA',
+                    photos: [
+                        'images/content/products/item-prod_02',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+            ]
+        },
+        {
+            name: 'Спортивные брюки графитового цвета с бирюзовой вставкой',
+            price: '99 499 ₽',
+            price_old: '199 999 ₽',
+            label: 'New',
+            mini: true,
+            colors: [
+                {
+                    hex: '#ACACAC',
+                    photos: [
+                        'images/content/products/item-prod_00.jpg',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#E0E0E0',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+                {
+                    hex: '#C6C6DA',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+            ]
+        },
+        {
+            name: 'Спортивные брюки',
+            price: '99 499 ₽',
+            price_old: '199 999 ₽',
+            label: '',
+            mini: true,
+            colors: [
+                {
+                    hex: '#ACACAC',
+                    photos: [
+                        'images/content/products/item-prod_02.jpg',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#E0E0E0',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#C6C6DA',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+            ]
+        },
+        {
+            name: 'Спортивные брюки графитового цвета с бирюзовой вставкой',
+            price: '99 499 ₽',
+            price_old: '199 999 ₽',
+            label: 'Sale',
+            mini: true,
+            colors: [
+                {
+                    hex: '#ACACAC',
+                    photos: [
+                        'images/content/products/item-prod_03.jpg',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#E0E0E0',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#C6C6DA',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+            ]
+        },
+        {
+            name: 'Спортивные брюки графитового цвета с бирюзовой вставкой',
+            price: '99 499 ₽',
+            price_old: '199 999 ₽',
+            label: 'Sale',
+            mini: true,
+            colors: [
+                {
+                    hex: '#ACACAC',
+                    photos: [
+                        'images/content/products/item-prod_02.jpg',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#E0E0E0',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#C6C6DA',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+            ]
+        },
+        {
+            name: 'Спортивные брюки графитового цвета с бирюзовой вставкой',
+            price: '99 499 ₽',
+            price_old: '199 999 ₽',
+            label: 'Sale',
+            mini: true,
+            colors: [
+                {
+                    hex: '#ACACAC',
+                    photos: [
+                        'images/content/products/item-prod_00.jpg',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#E0E0E0',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#C6C6DA',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+            ]
+        },
+        {
+            name: 'Спортивные брюки графитового цвета с бирюзовой вставкой',
+            price: '99 499 ₽',
+            price_old: '199 999 ₽',
+            label: 'Sale',
+            mini: true,
+            colors: [
+                {
+                    hex: '#ACACAC',
+                    photos: [
+                        'images/content/products/item-prod_03.jpg',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#E0E0E0',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#C6C6DA',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                        'images/content/products/item-prod-color-1-2.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-2.png',
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+                {
+                    hex: '#ACF0FF',
+                    photos: [
+                        'images/content/products/item-prod-color-1-1.png',
+                    ]
+                },
+            ]
+        },
+    ];
++grid-product(productsList)

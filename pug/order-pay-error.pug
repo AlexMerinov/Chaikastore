@@ -1,0 +1,99 @@
+extends ./_layout
+include ./mixins/list/slider-card
+include ./mixins/list/slider-product
+include ./mixins/list/product-card
+include ./mixins/list/breads
+include ./mixins/list/basket-prod
+include ./mixins/list/basket-list
+
+block content
+        .wrapper__page.p-top-content
+            .wrapper__haed 
+                h1 Оформление заказа
+                -
+                    const breads = [
+                        {
+                            name: 'Главная',
+                            url: 'main-transparent.html',
+                        },
+                        {
+                            chapter: true,
+                            name: 'Корзина',
+                            url: 'cart.html',
+                        },
+                        {
+                            name: 'Оформление заказа',
+                        },
+                    ];
+                +breads-list(breads)
+            .section 
+                .cart-cols
+                    .cart-cols__left
+                        .order-no-pay
+                            .order-no-pay__error Заказ не оплачен
+                            .order-no-pay__text Кажется, что-то пошло не так, попробуйте заново оплатить <a href='order.html'>заказ</a>
+                        
+                        -
+                            const basketProducts = [
+                                {
+                                    name: 'Свитер молочного цвета с высоким воротом',
+                                    url: 'product-card.html',
+                                    img: 'images/content/products/item-prod_00.jpg',
+                                    art: 'BR-449',
+                                    hex: '#D81329',
+                                    color: 'Насыщенный красный',
+                                    size: 'XS',
+                                    price_old: '99 999 ₽',
+                                    price_new : '9 999 ₽',
+                                },
+                                {
+                                    name: 'Платье миди бирюзового цвета',
+                                    url: 'product-card.html',
+                                    img: 'images/content/products/item-prod_02.jpg',
+                                    art: 'BR-449',
+                                    hex: '#74BDB4',
+                                    color: 'Бирюзовый',
+                                    size: 'XS',
+                                    price_new: '9 999 ₽',
+                                },
+                                {
+                                    name: 'Свитер молочного цвета',
+                                    url: 'product-card.html',
+                                    img: 'images/content/products/item-prod_03.jpg',
+                                    art: 'BR-449',
+                                    hex: '#DED2C6',
+                                    color: 'Молочный',
+                                    size: 'XS',
+                                    price_new: '19 999 ₽',
+                                },
+                            ];
+                        +basket-list(basketProducts) 
+                    .cart-cols__right
+                        .order-box
+                            .order-box__name
+                                | Ваш заказ 
+                            .order-box__line
+                                span Сумма
+                                span 99 999 ₽
+                            .order-box__line 
+                                span Скидка
+                                span 999 ₽
+                            .order-box__line.order-box__line--promo(id='cert')
+                                span Оплата сертификатом
+                                span 500  ₽
+                            .order-box__line.order-box__line--promo(id='promo')
+                                span Промокод
+                                span 999 ₽      
+                            .order-box__line 
+                                span Бонусы
+                                span -50
+                                span.w100 Начислится
+                                    span 15                                 
+                            .order-box__line
+                                span Итого 
+                                span.bold 99 999 ₽
+                            .order-box__line.error
+                                span Оплата
+                                span Не оплачен
+
+

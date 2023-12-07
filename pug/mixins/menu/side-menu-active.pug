@@ -20,7 +20,5 @@ mixin menu-side-active(items)
                                     items,
                                 } = item;
                             li
-                                a(
-                                    href='catalog.html'
-                                )
+                                a(href=url + '.html' class=(page === url ? "active" : ""))
                                     != name

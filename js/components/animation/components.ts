@@ -232,6 +232,38 @@ const counter = () => {
     });
 }
 
+//добавление промокода или сертификата
+const promoInOrder = () => {
+    const jsSelectPromoBtn = document.querySelectorAll('.js-select-promo-btn');
+    const SelectPromoField = document.querySelectorAll('.order-box__select-field');
+    const jsLinkUsePromo = document.querySelectorAll('.js-link-use-promo');
+
+    jsSelectPromoBtn.forEach((item) => {
+
+        item.addEventListener('click', () => {
+            if (item.firstElementChild.checked) {
+
+                SelectPromoField.forEach((field) => {
+                    field.classList.add('hide');
+                    if (field.id === item.firstElementChild?.getAttribute('data-promo')) {
+                        field.classList.remove('hide');
+                    }
+                });
+            }
+        });
+
+    });
+
+    jsLinkUsePromo.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault;
+
+            item.closest('.order-box__select-input')?.nextElementSibling?.classList.remove('hide');
+
+        });
+    });
+}
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -245,6 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
     selectorDrop();
     Delivery();
     counter();
+    promoInOrder();
 });
 
 window.addEventListener('resize', () => {

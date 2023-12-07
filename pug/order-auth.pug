@@ -14,7 +14,7 @@ block content
                     const breads = [
                         {
                             name: 'Главная',
-                            url: 'main.html',
+                            url: 'main-transparent.html',
                         },
                         {
                             chapter: true,
@@ -115,11 +115,14 @@ block content
                                 | Ваш заказ 
                             .order-box__line
                                 span Сумма
-                                span 99 999 ₽
+                                span 9 999 ₽
                             .order-box__line 
                                 span Скидка
                                 span 999 ₽
                             .order-box__line 
+                                span Доставка
+                                span 490 ₽
+                            .order-box__line.hidden 
                                 span Бонусы
                                 span -50
                                 span.w100 Начислится
@@ -132,30 +135,47 @@ block content
                                 span 999 ₽                                       
                             .order-box__bonus-check 
                                 label.input-checkbox
-                                    input(type="checkbox" name="bonus" required)
+                                    input(type="checkbox" name="bonus")
                                     span.input-checkbox__text Не списывать бонусы
                                         +icon-sym('check')
                             .order-box__select 
-                                .order-box__select-btn 
+                                .order-box__select-btn.js-select-promo-btn  
                                     input(
                                         type="radio"
                                         id='select_1' 
-                                        data-promo="promo" 
+                                        data-promo="select-promo" 
                                         name="order-promo")
                                     label(for='select_1') Промокод
-                                .order-box__select-btn 
+                                .order-box__select-btn.js-select-promo-btn 
                                     input(
                                         type="radio" 
                                         id='select_2' 
-                                        data-promo="cert"  
+                                        data-promo="select-cert"  
                                         name="order-promo")
                                     label(for='select_2') Сертификат
-                            .order-box__alert Сертификат успешно применен
-                            button.order-box__add-new Добавить новый
+                                .order-box__select-wrapper
+                                    .order-box__select-field.hide(id="select-promo") 
+                                        .order-box__select-input
+                                            input(type="text" placeholder="Ввести промокод")
+                                            a.js-link-use-promo
+                                                +icon-sym('arrow-r')
+                                        span.order-box__select-alert.hide
+                                            span Промокод успешно применен
+                                            span.error Промокод не действителен
+                                    .order-box__select-field.hide(id="select-cert") 
+                                        .order-box__select-input
+                                            input(type="text" value="7000 ₽" disabled name="cert")
+                                            a.js-link-use-promo
+                                                span Списать 6 700 ₽
+                                                +icon-sym('arrow-r')
+                                        span.order-box__select-alert.hide 
+                                            span Сертификат успешно применен
+                                            span.error Серитфикат не действителен
+                                        a.order-box__add-new(href="/" target="_blank") Добавить новый
                             .order-box__line
-                                span Итого 
-                                span.bold 99 999 ₽
-                            button.btn.btn--primary.order-box__link(type='submit') Оформить заказ
+                                span Итого
+                                span.bold 8 999 ₽
+                            button.btn.btn--primary.order-box__link(type='submit') Оплатить заказ
 
 
             section.section.section--overflow-l

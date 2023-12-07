@@ -1,7 +1,16 @@
 include ../mixins/menu/menu
 include ../mixins/search/search
 
-header.header.promo-hidden
+-
+    var classHeader = 'header'
+    if (headerClass)
+        classHeader = classHeader + ' ' + headerClass + ' ' + 'promo-hidden' + ' ' + 'js-header-transparent'
+    if (!headerMain)
+        classHeader = classHeader + ' ' + 'header--inner' + ' ' + 'promo-hidden'
+    else
+        classHeader = classHeader + ' ' + 'header--main' + ' ' + 'promo-hidden'
+
+header(class=classHeader)
     .header__promo
         marquee(behavior='scroll', direction='left')
             | BLACK FRIDAY 24.11-25.11 BLACK FRIDAY 24.11-25.11 BLACK FRIDAY 24.11-25.11
@@ -223,11 +232,9 @@ header.header.promo-hidden
             li.header-menu-user__item
                 // class="header-menu-user__link header-menu-user__link--basket-active" - показывает пипку, если в корзине что-то есть
                 a.header-menu-user__link(
-                    href='/',
-                    data-micromodal='modal-basket'
+                    href='cart.html'
                 )
                     +icon-sym('cart')
-                    .header-menu-user__counter
-                        | 3
+                    span.header-menu-user__counter 3
     .prod-alert-add
         | Товар добавлен в корзину!

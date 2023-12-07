@@ -73,7 +73,6 @@
         @include bp($bp-1280) {
             &:hover {
                 opacity: .5;
-                letter-spacing: 2px;
             }
         }
     }

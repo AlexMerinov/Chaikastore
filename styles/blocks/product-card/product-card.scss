@@ -50,7 +50,8 @@
         }
 
         @include maxBp($bp-768) {
-            height: 385px;
+            min-height: 385px;
+            height: 100vw;
         }
     }
 
@@ -71,7 +72,7 @@
            transition: var(--trans);
 
            position: absolute;
-           bottom: 13px;
+           bottom: 3px;
            left: 50%;
            transform: translateX(-50%); 
 
@@ -96,20 +97,12 @@
         background-size: cover;
         background-position: top;
         transition: var(--trans);
-        transform: scale(1.05);
 
         @include bp($bp-1280) {
             &:hover {
                 transition: var(--trans);
-                transform: scale(1);
                 filter: brightness(95%);
                 -webkit-filter: brightness(95%);
-
-                .product-card__gallery__item {
-                    &::after {
-                        bottom: 3px;
-                    }
-                }
             }
         }
     }

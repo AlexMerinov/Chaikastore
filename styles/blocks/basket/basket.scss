@@ -58,6 +58,10 @@
         @include text-size-16;
         color: var(--black);
         margin-bottom: var(--space-2xs-desc);
+
+        @include maxBp($bp-768) {
+            margin-bottom: var(--space-4xs);
+        }
     }
 
     &__line {
@@ -82,6 +86,10 @@
             text-align: end;
             @include text-size-10;
         }
+
+        @include maxBp($bp-768) {
+            margin-bottom: var(--space-3xs-desc);
+        }
     }
 
     &__select {
@@ -90,14 +98,32 @@
         align-items: center;
         gap: 8px;
 
-        margin-bottom: var(--space-3xs-desc);
+        margin-bottom: var(--space-xs-desc);
 
         &-wrapper {
-            position: relative;
             width: 100%;
+            margin-top: var(--space-3xs-desc);
+            @include maxBp($bp-768) {
+                margin-top: var(--space-3xs-desc);
+            }
         }
 
-        &-field {
+        &-alert {
+            display: block;
+            margin-top: var(--space-3xs-desc);
+
+            span.error {
+                color: var(--Error);
+            }
+
+            @include maxBp($bp-768) {
+                margin-top: var(--space-3xs-desc);
+            }
+        }
+
+        &-input {
+            position: relative;
+
             input {
                 display: block;
                 width: 100%;
@@ -105,7 +131,7 @@
                 border: none;
                 outline: 0;
                 @include text-size-12;
-                color: var(--Strokes-new-black);
+                color: var(--black);
                 border-bottom: 1px solid var(--Strokes-new);
                 margin: 0;
                 padding: 3px 20px 3px 0px;
@@ -114,6 +140,14 @@
                 overflow: auto;
                 resize: none;
                 background: transparent;
+
+                &::placeholder {
+                    color: var(--Strokes-new-black);
+                }
+
+                &:focus {
+                    border-bottom: 1px solid var(--black);
+                }
             }
 
             a {
@@ -143,6 +177,10 @@
                 }
 
             }
+        }
+
+        @include maxBp($bp-768) {
+            margin-bottom: var(--space-3xs-desc);
         }
     }
 
@@ -191,19 +229,26 @@
 
     &__bonus-check {
         margin-bottom: var(--space-xs-desc);
+        @include maxBp($bp-768) {
+            margin-bottom: var(--space-3xs-desc);
+        }
     }
 
     &__alert {
         @include text-size-10;
         color: var(--black); 
         margin-bottom: var(--space-3xs-desc);
+        @include maxBp($bp-768) {
+            margin-bottom: var(--space-3xs-desc);
+        }
     }
 
     &__add-new {
+        display: inline-block;
         @include text-size-10;
         color: var(--black);
         position: relative;
-        margin-bottom: var(--space-xs-desc);
+        margin-top: var(--space-3xs-desc);
         cursor: pointer;
         overflow: visible;
         transition: var(--trans);

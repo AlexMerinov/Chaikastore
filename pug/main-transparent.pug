@@ -1,0 +1,15 @@
+extends ./_layout
+include ./mixins/list/slider-main
+include ./mixins/list/slider-lookbook
+include ./mixins/list/slider-product
+include ./mixins/list/product-card
+
+block vars
+    -
+        headerClass = "transparent"
+        headerMain = true
+        mainPage = true
+
+block content
+        .wrapper__page
+            include ./blocks/main
