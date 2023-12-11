@@ -114,6 +114,18 @@ document.addEventListener('DOMContentLoaded', () => {
                                 return true;
                             }
                         },
+                        inputPhone(field) {
+                            if (
+                                field.classList.contains(
+                                    'js-input-format-phone'
+                                ) &&
+                                field.value.length > 0
+                            ) {
+                                return !Inputmask.isValid(field.value, {
+                                    mask: '+7 (999) 999-99-99',
+                                });
+                            }
+                        },
                     },
                 });
                 formflag = false;

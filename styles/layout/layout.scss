@@ -128,6 +128,33 @@ body {
     }
 }
 
+.line-bottom {
+    position: relative;
+    padding-bottom: 2px;
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: var(--Strokes-new-black);
+        transform: scaleX(1);
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: var(--trans);
+    }
+
+    @include bp($bp-1280) {
+        &:hover {
+            &::after {
+                transform: scaleX(0);
+                background: var(--black);
+            }
+        }
+    }
+}
+
 .paralax {
     position: relative;
 }

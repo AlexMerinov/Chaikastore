@@ -76,6 +76,7 @@
     @include text-default;
     font-size: var(--text-size-14);
     line-height: 150%;
+    font-weight: 400;
 }
 
 @mixin text-size-16 {

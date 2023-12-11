@@ -6,3 +6,5 @@ import './input-filled';
 import './textarea';
 import './tabs';
 import './dadata';
+import './components';
+import './input-format';

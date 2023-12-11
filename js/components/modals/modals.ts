@@ -1,24 +1,23 @@
 import MicroModal from 'micromodal';
-import { defaultSettings } from './settings';
+import defaultSettings from './settings';
 import { openModal, closeModal } from './utils';
 
+MicroModal.modalSettings = defaultSettings;
+
 const fModalPosition = () => {
-    const modal = document.querySelector('.modal.is-open .modal__container');
-    const modalParent = document.querySelector(
-        '.modal.is-open .modal__overlay'
+    const modals = document.querySelectorAll(
+        '.modal.is-open .modal__container'
     );
-    if (
-        typeof modal !== 'undefined' &&
-        modal != null &&
-        typeof modalParent !== 'undefined' &&
-        modalParent != null
-    ) {
-        if (modal.clientHeight > modalParent.clientHeight) {
-            modalParent.classList.add('modal__overlay--block');
-        } else {
-            modalParent.classList.remove('modal__overlay--block');
+    modals.forEach((modal) => {
+        const modalParent = modal.closest('.modal__overlay');
+        if (typeof modalParent !== 'undefined' && modalParent != null) {
+            if (modal.clientHeight > modalParent.clientHeight) {
+                modalParent.classList.add('modal__overlay--block');
+            } else {
+                modalParent.classList.remove('modal__overlay--block');
+            }
         }
-    }
+    });
 };
 
 const scrollWidth = () => {
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             const modalID = item.getAttribute('data-micromodal') as string;
-            if (modalID! == null && modalID !== undefined) {
+            if (modalID !== null && modalID !== undefined) {
                 openModal(modalID);
 
                 setTimeout(() => {

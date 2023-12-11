@@ -39,8 +39,7 @@
         @include text-size-12;
         z-index: 1;
         left: 0;
-        top: 50%;
-        transform: translate3d(0,-50%,0);
+        top: 4px;
         transition: var(--trans);
         white-space: nowrap;
         overflow: hidden;
@@ -75,7 +74,7 @@
             border-color: var(--Error-30);
             @include input-error;
             color: var(--Error-30);
-            margin-bottom: var(--space-3xs-desc);
+            margin-bottom: var(--space-2xs-desc);
             ~.form__text{
                 @include text-error;
             }
@@ -88,7 +87,7 @@
         &:focus,&.filled{
             ~.form__ph {
                 font-size: 8px;
-                transform: translate3d(0,-20px,0);
+                transform: translate3d(0,-15px,0);
             }
         }
 
@@ -114,6 +113,27 @@
             padding: 11px 14px;
             color: var(--secondary-color-500);
             pointer-events: none;
+        }
+    }
+
+    &__input-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 24px;
+        width: 25px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        .icon-sym--no-view {
+            display: none;
+        }
+
+        .icon-sym--view {
+            display: block;
         }
     }
 
@@ -208,11 +228,10 @@
     font-size: 12px;
     line-height: 150%;
     white-space: nowrap;
-    margin-bottom: var(--space-3xs-desc);
     
     position: absolute;
     left: 0;
-    top: calc(100%);
+    bottom: 0;
 }
 
 .input-checkbox{
@@ -352,6 +371,45 @@
                     &::after {
                         opacity: 1;
                     }
+                }
+            }
+        }
+    }
+}
+
+.modal__btns {
+    display: flex;
+    gap: 4px;
+    & > * {
+        flex: 1 1 100%;
+    }
+}
+
+.modal {
+    &__body {
+        .form {
+            &__line {
+                margin-bottom: var(--space-2xs-desc);
+            }
+
+            &__submit {
+                margin-bottom: var(--space-4xs);
+                .btn {
+                    width: 100%;
+                }
+            }
+
+            &__link {
+                display: inline-block;
+                margin-bottom: var(--space-xs-desc);
+            }
+
+            &__text {
+                margin-bottom: var(--space-xs-desc);
+                margin-top: var(--space-3xs-desc);
+                @include text-size-10;
+                a {
+                    text-align: center;
                 }
             }
         }

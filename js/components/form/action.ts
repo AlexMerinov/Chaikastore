@@ -1,6 +1,6 @@
 import 'regenerator-runtime/runtime'; // fix console error 'Uncaught ReferenceError: regeneratorRuntime is not defined'
 import MicroModal from 'micromodal';
-import { defaultSettings } from '@js/components/modals/settings';
+import defaultSettings from '@js/components/modals/settings';
 
 const blurActiveElement = () => {
     const activeElement = document.activeElement as HTMLElement | null;
@@ -17,14 +17,21 @@ const closeOpenModals = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('bouncerFormValid', (e) => {
+        console.log('bouncerFormValid');
         const form = e.target as HTMLFormElement | null;
+
+        if (form.classList.contains('js-password-message')) {
+            let btnSub = e.target.querySelector('.btn');
+            let inputHide = e.target.querySelector('.form__line.hide');
+
+            btnSub.classList.add('hide');
+            inputHide.classList.remove('hide');
+
+        }
+
         if (form === null || !form.classList.contains('js-form-action')) {
             return;
         }
-
-        // const inputToken =
-        //     form.querySelector<HTMLInputElement>('[name="_token"]');
-        // const token = inputToken?.value as string;
 
         const { method } = form;
         const { action } = form;
@@ -54,10 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const successCallback = () => {
             form.reset();
-            allInputs.forEach((input) => {
+            /* allInputs.forEach((input) => {
                 input.dispatchEvent(new Event('change'));
                 input.dispatchEvent(new Event('input'));
-            });
+            }); */
             selectInputs.forEach((input) => {
                 input.dispatchEvent(new Event('change'));
             });
@@ -126,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     typeof messText !== 'undefined' &&
                     messText != null
                 ) {
-                    messCaption.innerText = 'Что-то пошло не так :(';
+                    messCaption.innerText = 'Что-то пошло не так';
                     messText.innerText = 'Попробуйте отправить форму ещё раз.';
                 }
                 setTimeout(() => {

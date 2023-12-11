@@ -5,7 +5,7 @@ block content
 
     div(class="wrapper__page article__top")
 
-        h1 Страницы
+        h2.index-pages-header Страницы
 
         -
             const pages = [
@@ -83,3 +83,50 @@ block content
                 },
             ];
         +pages-list(pages)
+
+        h2.index-pages-header Модальные окна
+        -
+            var modalLinks = true;
+            const pagesModal = [
+                {
+                    name: 'Сообщение',
+                    url: 'modal-message',
+                },
+                {
+                    name: 'Войти через Email',
+                    url: 'modal-enter',
+                },
+                {
+                    name: 'Войти через Телефон',
+                    url: 'modal-enter-mobile',
+                },
+                {
+                    name: 'Восстановить пароль',
+                    url: 'modal-password-email',
+                },
+                {
+                    name: 'Поменять пароль',
+                    url: 'modal-password-change',
+                },
+                {
+                    name: 'Пароль успешно изменен!',
+                    url: 'modal-pass-true',
+                },
+                {
+                    name: 'Отменить заказ',
+                    url: 'modal-order-cancel',
+                },
+                {
+                    name: 'Ваш город - Санкт-Петербург?',
+                    url: 'modal-your-city',
+                },
+                {
+                    name: 'Выбор города',
+                    url: 'modal-city',
+                },
+                {
+                    name: 'Удалить адрес?',
+                    url: 'modal-delet-address',
+                },
+            ];
+        +pages-list(pagesModal)

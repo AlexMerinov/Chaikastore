@@ -1,6 +1,6 @@
 mixin basket-item(card)
     .order-item 
-        .order-item__close
+        .order-item__close(data-micromodal='modal-delet-product')
         a.order-item__preview(href=url) 
             picture 
                 img(src=card.img)

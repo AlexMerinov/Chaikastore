@@ -1,11 +1,16 @@
 mixin pages-list(items)
     ul.index-pages-list
-      each item, index in items
-        -
-            const {
-                name,
-                url,
-            } = item;
-        li
-            a(href=url)
-                !=name
+        each item, index in items
+            -
+                const {
+                    name,
+                    url,
+                } = item;
+            li
+                if modalLinks
+                    a(data-micromodal=url)
+                        !=name
+                else
+                    a(href=url)
+                        !=name
+

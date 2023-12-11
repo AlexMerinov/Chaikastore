@@ -374,7 +374,10 @@
 
 
 
-
+.index-pages-header {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
 
 
 .index-pages-list {
@@ -382,11 +385,13 @@
     flex-direction: column;
     padding-left: 20px;
     list-style-type: disc;
+    margin-bottom: 30px;
 
     & > li {
         margin-bottom: 12px;
         @include text-h3;
         position: relative;
+        font-weight: 300;
 
         &::after {
             content: '';
