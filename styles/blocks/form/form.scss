@@ -63,6 +63,10 @@
         overflow: auto;
         resize: none;
         background: transparent;
+
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -webkit-appearance: none;
         &:hover{
             border-color: var(--black);
         }
@@ -401,7 +405,6 @@
 
             &__link {
                 display: inline-block;
-                margin-bottom: var(--space-xs-desc);
             }
 
             &__text {

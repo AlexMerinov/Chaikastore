@@ -7,7 +7,7 @@ mixin breads-list(items)
                     url,
                     chapter,
                 } = item;
-            li(class=(chapter === true ? 'breads__item chapter' : 'breads__item'))
+            li(class='breads__item')
                 if url
                     a(href=url class="breads__link")
                         !=name

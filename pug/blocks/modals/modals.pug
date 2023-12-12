@@ -3,19 +3,7 @@ include ../../mixins/basic/_modal
 block modal
 
 +modal({
-    id: 'message'
-})
-    +slot('header')
-        span(id="js-modal-message-caption") Сообщение
-    +slot('body')
-        .modal__text
-            p(id="js-modal-message-text" class="modal__message") Пример модального окна с текстовым сообщением.
-        div(class="modal__btns")
-            div(class="btn btn--secondary" data-micromodal-close) Хорошо
-
-+modal({
-    id: 'city',
-    modifier: 'small'
+    id: 'city'
 })
     +slot('header')
         div(class="header-city-block")
@@ -44,8 +32,8 @@ block modal
     id: 'order-cancel',
 })
     +slot('header')
+        | Вы уверены, что хотите отменить заказ ? 
     +slot('body')
-        p(class="modal__text") Отменить заказ?
         div(class="modal__btns")
             div(class="btn btn--disable") Да
             div(class="btn btn--secondary" data-micromodal-close) Нет
@@ -57,20 +45,20 @@ block modal
         | Войти или зарегистрироваться
     +slot('body')
         form(action="#" class="form js-form-validate")
-            div(class="form__line")
-                label(class="form__label")
-                    input(type="email" class="form__input" id="enter-input-name-modal" required)
-                    span.form__ph E-mail
-            div(class="form__line")
-                label(class="form__label")
-                    input(type="password" class="form__input" id="enter-input-pass-modal" required)
-                    span.form__ph Пароль
-                span.form__input-icon.js-pass-view 
-                    +icon-sym('view')
-                    +icon-sym('no-view')
-                span
-            .modal__link
-                a(href="#" class="form__link line-bottom" data-micromodal="modal-password-email") Восстановить пароль
+            .modal__content
+                div(class="form__line")
+                    label(class="form__label")
+                        input(type="email" class="form__input" id="enter-input-name-modal" required)
+                        span.form__ph E-mail
+                div(class="form__line")
+                    label(class="form__label")
+                        input(type="password" class="form__input" id="enter-input-pass-modal" required)
+                        span.form__ph Пароль
+                    span.form__input-icon.js-pass-view 
+                        +icon-sym('view')
+                        +icon-sym('no-view')
+                .modal__link
+                    a(href="#" class="form__link line-bottom" data-micromodal="modal-password-email") Восстановить пароль
             div(class="form__submit")
                 button(type="submit" class="btn btn--secondary") Далее
         .modal__link
@@ -84,18 +72,19 @@ block modal
         | Войти или зарегистрироваться
     +slot('body')
         form(action="#" class="form js-form-validate js-password-message")
-            div(class="form__line")
-                label(class="form__label")
-                    input(type="text" inputmode="tel" class="form__input js-input-format-phone" required)
-                    span.form__ph Введите телефон
-            div(class="form__line hide")
-                label(class="form__label")
-                    input(type="password" class="form__input" id="enter-input-pass-modal")
-                    span.form__ph Пароль
-                span.form__input-icon.js-pass-view 
-                    +icon-sym('view')
-                    +icon-sym('no-view')
-                div(class="form__text") Отправили код в смс. Действителен в течение 10 минут. Получить новый код можно через 26 минут
+            .modal__content
+                div(class="form__line")
+                    label(class="form__label")
+                        input(type="text" inputmode="tel" class="form__input js-input-format-phone" required)
+                        span.form__ph Введите телефон
+                div(class="form__line hide")
+                    label(class="form__label")
+                        input(type="password" class="form__input" id="enter-input-pass-modal")
+                        span.form__ph Пароль
+                    span.form__input-icon.js-pass-view 
+                        +icon-sym('view')
+                        +icon-sym('no-view')
+                    div(class="form__text") Отправили код в смс. Действителен в течение 10 минут. Получить новый код можно через 26 минут
             div(class="form__submit")
                 button(type="submit" class="btn btn--secondary") Получить код
         .modal__link
@@ -109,7 +98,7 @@ block modal
     +slot('header')
         | Восстановление пароля
     +slot('body')
-        .modal__text
+        .modal__content
             p На вашу почту отправлено письмо, содержащее ссылку для изменения пароля.
             p Ссылка будет активна в течение 15 минут.
             p Пожалуйста, перейдите по ссылке и создайте новый пароль.
@@ -124,27 +113,53 @@ block modal
         | Поменять пароль
     +slot('body')
         form(action="#" class="form js-form-validate")
-            div(class="form__line")
-                label(class="form__label") 
-                    input(type="password" class="form__input" minlength="8" required)
-                    span.form__ph Введите ваш текущий пароль
-                span.form__input-icon.js-pass-view 
-                    +icon-sym('view')
-                    +icon-sym('no-view')
-            div(class="form__line")
-                label(class="form__label") 
-                    input(type="password" class="form__input" minlength="8" required)
-                    span.form__ph Введите новый пароль
-                span.form__input-icon.js-pass-view 
-                    +icon-sym('view')
-                    +icon-sym('no-view')
-            div(class="form__line")
-                label(class="form__label") 
-                    input(type="password" class="form__input" data-password-match="#modal-change-password-1" required)
-                    span.form__ph Повторите новый пароль
-                span.form__input-icon.js-pass-view 
-                    +icon-sym('view')
-                    +icon-sym('no-view')
+            .modal__content
+                div(class="form__line")
+                    label(class="form__label") 
+                        input(type="password" class="form__input" minlength="8" required)
+                        span.form__ph Введите ваш текущий пароль
+                    span.form__input-icon.js-pass-view 
+                        +icon-sym('view')
+                        +icon-sym('no-view')
+                div(class="form__line")
+                    label(class="form__label") 
+                        input(type="password" class="form__input" minlength="8" required)
+                        span.form__ph Введите новый пароль
+                    span.form__input-icon.js-pass-view 
+                        +icon-sym('view')
+                        +icon-sym('no-view')
+                div(class="form__line")
+                    label(class="form__label") 
+                        input(type="password" class="form__input" data-password-match="#modal-change-password-1" required)
+                        span.form__ph Повторите новый пароль
+                    span.form__input-icon.js-pass-view 
+                        +icon-sym('view')
+                        +icon-sym('no-view')
+            div(class="form__submit")
+                button(type="submit" class="btn btn--secondary") Изменить
+
++modal({
+    id: 'password-reset'
+}) 
+    +slot('header')
+        | Восстановление пароля
+    +slot('body')
+        form(action="#" class="form js-form-validate")
+            .modal__content
+                div(class="form__line")
+                    label(class="form__label") 
+                        input(type="password" class="form__input" minlength="8" required)
+                        span.form__ph Введите новый пароль
+                    span.form__input-icon.js-pass-view 
+                        +icon-sym('view')
+                        +icon-sym('no-view')
+                div(class="form__line")
+                    label(class="form__label") 
+                        input(type="password" class="form__input" data-password-match="#modal-change-password-1" required)
+                        span.form__ph Повторите новый пароль
+                    span.form__input-icon.js-pass-view 
+                        +icon-sym('view')
+                        +icon-sym('no-view')
             div(class="form__submit")
                 button(type="submit" class="btn btn--secondary") Изменить
  
@@ -155,24 +170,23 @@ block modal
     +slot('header')
         | Изменение пароля
     +slot('body')
-        div(class="modal__text") Пароль успешно изменен!
+        .modal__content.center Пароль успешно изменен!
         div(class="modal__btns")
             div(class="btn btn--secondary" data-micromodal-close) Закрыть
 
 +modal({
     id: 'your-city',
-    modifier: 'middle'
 })
+    +slot('header')
+        | Ваш город Санкт-Петербург?
     +slot('body')
-        span(class="modal__subtitle") Ваш город Санкт-Петербург?
         div(class="modal__sbtns")
             div(class="btn btn--secondary" data-micromodal-close) Да, верно
             div(class="btn btn--secondary" data-micromodal="modal-city") Нет, выбрать другой
 
 
 +modal({
-    id: 'delet-address',
-    modifier: 'middle'
+    id: 'delet-address'
 })
     +slot('header')
         | Удалить адрес? 
@@ -183,8 +197,7 @@ block modal
 
 
 +modal({
-    id: 'delet-product',
-    modifier: 'middle'
+    id: 'delet-product'
 })
     +slot('header')
         | Вы уверены, что хотите удалить товар? 
@@ -192,3 +205,87 @@ block modal
         div(class="modal__btns")
             div(class="btn btn--secondary" data-micromodal-close) Нет
             div(class="btn btn--secondary") Удалить
+
++modal({
+    id: 'exit-lk' 
+})
+    +slot('header')
+        | Выйти из личного кабинета?
+    +slot('body')
+        div(class="modal__btns")
+            div(class="btn btn--secondary" data-micromodal-close) Нет
+            div(class="btn btn--secondary") Да
+
++modal({
+    id: 'add-cert' 
+})
+    +slot('header')
+        | Добавление нового сертификата
+    +slot('body')
+        form(action="#" class="form js-form-validate")
+            .modal__content
+                div(class="form__line")
+                    label(class="form__label")
+                        input(type="text" inputmode="cert" class="form__input" required)
+                        span.form__ph Введите номер сертификата
+            div(class="form__submit")
+                button(type="submit" class="btn btn--secondary") Добавить
+
++modal({
+    id: 'add-ok', 
+    modifier: 'no-content'
+})
+    +slot('header')
+        | Сертификат успешно добавлен в личный кабинет
+
++modal({
+    id: 'message-sent', 
+    modifier: 'no-content'
+})
+    +slot('header')
+        | Ваше сообщение отправлено!
+
++modal({
+    id: 'table-size',
+    modifier: 'overflow'
+})
+    +slot('body')
+        table
+            tr 
+                td Международный размер
+                td XS
+                td S
+                td M
+                td L
+            tr 
+                td Российский размер
+                td 40
+                td 42
+                td 44
+                td 46
+            tr 
+                td Обхват груди
+                td 79-83
+                td 84-88
+                td 89-92
+                td 93-96
+            tr 
+                td Обхват талии
+                td 58-62
+                td 62-66
+                td 66-70
+                td 70-74
+            tr 
+                td Обхват бедер
+                td 83-87
+                td 88-93
+                td 94-98
+                td 99-104
+
++modal({
+    id: 'cookie',
+    modifier: 'cookie'
+})
+    +slot('body')
+        p Сайт собирает информацию посредством Cookies, чтобы мы могли сделать его удобнее и быстрее.
+        div(class="btn btn--secondary") Хорошо

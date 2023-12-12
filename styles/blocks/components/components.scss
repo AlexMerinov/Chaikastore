@@ -4,7 +4,6 @@
     padding: 1px 0;
 
     &__item {
-        margin-left: 8px;
         padding-left: 25px;
         position: relative;
 
@@ -20,19 +19,6 @@
             position: absolute;
             top: 50%;
             left: 10px;
-            transform: translate3dd(-50%,0,0);
-        }
-        &::before {
-            content: '';
-            display: block;
-            width: 2px;
-            height: 2px;
-            background: var(--medium-grey);
-            border-radius: 100%;
-
-            position: absolute;
-            top: 50%;
-            left: 0;
             transform: translate3dd(-50%,0,0);
         }
 
@@ -51,10 +37,6 @@
             &::after {
                 display: none;
             }
-
-            &::before {
-                display: none;
-            }
         }
     }
 
@@ -62,9 +44,6 @@
         padding-left: 15px;
         &::after {
             left: 0;
-        }
-        &::before {
-            display: none;
         }
     }
 
@@ -91,7 +70,7 @@
         transition: var(--trans);
 
         &:nth-child(1) {
-            transform: translate(calc(-75% - 1px),-50%) rotate(45deg);
+            transform: translate(calc(-75%),-50%) rotate(45deg);
         }
 
         &:nth-child(2) {
@@ -197,7 +176,7 @@
         .arrow-drop {
             span {
                 &:nth-child(1) {
-                    transform: translate(calc(-75% - 1px),-50%) rotate(-45deg);
+                    transform: translate(calc(-75%),-50%) rotate(-45deg);
                 }
         
                 &:nth-child(2) {

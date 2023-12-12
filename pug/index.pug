@@ -89,10 +89,6 @@ block content
             var modalLinks = true;
             const pagesModal = [
                 {
-                    name: 'Сообщение',
-                    url: 'modal-message',
-                },
-                {
                     name: 'Войти через Email',
                     url: 'modal-enter',
                 },
@@ -107,6 +103,10 @@ block content
                 {
                     name: 'Поменять пароль',
                     url: 'modal-password-change',
+                },
+                {
+                    name: 'Восстановление пароля',
+                    url: 'modal-password-reset',
                 },
                 {
                     name: 'Пароль успешно изменен!',
@@ -127,6 +127,34 @@ block content
                 {
                     name: 'Удалить адрес?',
                     url: 'modal-delet-address',
+                },
+                {
+                    name: 'Выйти из ЛК?',
+                    url: 'modal-exit-lk',
+                },
+                {
+                    name: 'Удалить товар?',
+                    url: 'modal-delet-product',
+                },
+                {
+                    name: 'Добавление нового сертификата',
+                    url: 'modal-add-cert',
+                },
+                {
+                    name: 'Сертификат успешно добавлен в личный кабинет',
+                    url: 'modal-add-ok',
+                },
+                {
+                    name: 'Ваше сообщение отправлено!',
+                    url: 'modal-message-sent',
+                },
+                {
+                    name: 'Таблица размеров',
+                    url: 'modal-table-size',
+                },
+                {
+                    name: 'Куки',
+                    url: 'modal-cookie',
                 },
             ];
         +pages-list(pagesModal)

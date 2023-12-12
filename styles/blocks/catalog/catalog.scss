@@ -95,8 +95,9 @@
                 background: var(--black);
 
                 position: absolute;
-                bottom: 0;
-                left: 0;
+                top: calc(100% + 1px);
+                left: 50%;
+                transform: translate3d(-50%, 0, 0);
                 transition: var(--trans);
             }
 
@@ -148,13 +149,15 @@
                 &::after {
                     content: '';
                     display: block;
-                    width: 0%;
+                    width: 100%;
                     height: 1px;
                     background: var(--Strokes-new-black);
     
                     position: absolute;
                     bottom: 0;
                     left: 0;
+                    transform: translate3d(0, 0, 0);
+                    opacity: 0;
                     transition: var(--trans);
                 }
 
@@ -162,7 +165,8 @@
                     &:hover {
                         color: var(--Strokes-new-black);
                         &::after {
-                            width: 100%;
+                            transform: translate3d(0, 1px, 0);
+                            opacity: 1;
                         }
                     }
 

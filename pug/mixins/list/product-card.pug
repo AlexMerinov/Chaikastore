@@ -33,18 +33,18 @@ mixin product-card(card)
 
         ul.product-card__colors
             each item, index in card.colors
-                -
-                    colorsLength = card.colors.length
-                    colorsCount = card.colors.length - 3
+                //- -
+                //-     colorsLength = card.colors.length
+                //-     colorsCount = card.colors.length - 3
 
-                if index === 3 && colorsLength > 3
-                    li.product-card__more
-                        span.link-more.js-color-more(
-                            href='#'
-                        )
-                            | +
-                            != colorsCount
-                            span.icon
+                //- if index === 3 && colorsLength > 3
+                //-     li.product-card__more
+                //-         span.link-more.js-color-more(
+                //-             href='#'
+                //-         )
+                //-             | +
+                //-             != colorsCount
+                //-             span.icon
                 li(class=(index === 0 ? 'product-card__colors-item active js-catalog-color-change' : 'product-card__colors-item js-catalog-color-change'),
                     style='background-color:' + item.hex,
                     data-color-white=item.hex === '#FFFFFF' ? 'true' : 'false',

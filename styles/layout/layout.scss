@@ -25,6 +25,35 @@ body {
     @include text-body;
 }
 
+table {
+    border: 0.5px solid var(--Stroke-bk-30);
+    text-align: center;
+    @include text-size-12;
+    tr {
+        padding: 10px 0;
+        border: 0.5px solid var(--Stroke-bk-30);
+    }
+
+    td {
+        min-width: 100px;
+        border: 0.5px solid var(--Stroke-bk-30);
+        &:first-child {
+            min-width: 166px;
+            padding: 10px;
+            text-align: left;
+        }
+    }
+}
+
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"] {
+     -webkit-appearance: none;
+     border-radius: 0;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -68,7 +97,9 @@ body {
     display: none;
 }
 
-
+.margin-null {
+    margin: 0;
+}
 
 .h-fix--805 {
     height: 805px;

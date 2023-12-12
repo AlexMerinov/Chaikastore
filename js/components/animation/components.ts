@@ -89,10 +89,10 @@ const baseAccordion = () => {
                     link.lastElementChild.style.maxHeight = 0 + 'px';
 
                 } else {
-                    tabChildArr.forEach((link) => {
-                        link.classList.remove('open');
-                        link.lastElementChild.style.maxHeight = 0 + 'px';
-                    });
+                    // tabChildArr.forEach((link) => {
+                    //     link.classList.remove('open');
+                    //     link.lastElementChild.style.maxHeight = 0 + 'px';
+                    // });
                     link.classList.add('open');
                     link.lastElementChild.style.maxHeight = link.lastElementChild.scrollHeight + 'px';
                 }
