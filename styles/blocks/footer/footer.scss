@@ -94,11 +94,15 @@
                 transition: var(--trans);
             }
 
-            & > a:hover {
-                .icon-sym {
-                    fill: var(--dark-grey);
+            @include bp($bp-1280) {
+                & > a:hover {
+                    .icon-sym {
+                        fill: var(--dark-grey);
+                    }
                 }
             }
+
+
         }
     }
 
@@ -152,9 +156,13 @@
                 @include text-size-16;
                 transition: var(--trans);
 
-                &:hover {
-                    color: var(--dark-grey);
+                @include bp($bp-1280) {
+                    &:hover {
+                        color: var(--dark-grey);
+                    }
                 }
+
+
             }
 
             @include maxBp($bp-768) {
@@ -179,9 +187,12 @@
                 @include text-size-12;
                 transition: var(--trans);
 
-                &:hover {
-                    color: var(--dark-grey);
+                @include bp($bp-1280) {
+                    &:hover {
+                        color: var(--dark-grey);
+                    }
                 }
+
             }
         }
     }

@@ -163,11 +163,13 @@ header(class=classHeader)
                 )
                     button.form__search
                         +icon-sym('search')
-                    input.form__input(
-                        type='text',
-                        placeholder='Поиск...',
-                        required=''
-                    )
+                    .form__line 
+                        label.form__label
+                            input.form__input(
+                                type='text',
+                                placeholder='Поиск...',
+                                required=''
+                            )
                 .header-search__result 
                     .header-search__empty
                         | По этому запросу ничего не найдено

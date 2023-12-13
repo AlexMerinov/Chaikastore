@@ -6,3 +6,4 @@ import './slides';
 import './menu-preview';
 import './product-card';
 import './components';
+import './air-datepicker';

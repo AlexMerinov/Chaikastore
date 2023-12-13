@@ -21,8 +21,13 @@
 
     &__favorite {
         position: absolute;
-        top: 12px;
-        right: 12px;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     &__preview {

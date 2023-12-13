@@ -45,14 +45,17 @@
             
         }
 
-        &:hover {
-            picture {
-                transition: all 3s linear;
-                transform: scale(1.2);
-                filter: opacity(80%);
+        @include bp($bp-1280) {
+            &:hover {
+                picture {
+                    transition: all 3s linear;
+                    transform: scale(1.2);
+                    filter: opacity(80%);
+                }
             }
-            
         }
+
+
     }
 
     &__description {

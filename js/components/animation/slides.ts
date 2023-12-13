@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
             pagination: {
                 el: '.main-slider__pagination',
             },
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-            },
+            // autoplay: {
+            //     delay: 5000,
+            //     disableOnInteraction: false,
+            //     pauseOnMouseEnter: true,
+            // },
         });
     });
 

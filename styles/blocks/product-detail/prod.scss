@@ -70,7 +70,6 @@
     &__btns {
         display: flex;
         align-items: center;
-        gap: 14px;
         margin-bottom: var(--space-s-desc);
 
         .btn {
@@ -79,6 +78,12 @@
     }
 
     &__favorite {
+        height: 35px;
+        width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
         &.favorite {
             & > .icon-sym {
                 stroke: var(--black);
@@ -239,7 +244,6 @@
             }
         }
 
-
         &.checked {
 
             @include bp($bp-1280) {
@@ -318,7 +322,6 @@
                         opacity: 1;
                     }
                 }
-
             }
         }
 

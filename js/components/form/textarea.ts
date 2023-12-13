@@ -1,8 +1,9 @@
 const fTextarea = (textarea: any) => {
     textarea.style.height = 'auto';
+
     textarea.setAttribute(
         'style',
-        `height:${textarea.scrollHeight + 2}px;overflow-y:hidden;`
+        `height:${textarea.scrollHeight - 10}px;overflow-y:hidden;`
     );
 };
 

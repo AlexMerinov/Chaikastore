@@ -55,9 +55,13 @@ a{
     color: var(--black);
     cursor: pointer;
 
-    &:hover {
-        color: var(--dark-grey);
+    @include bp($bp-1280) {
+        &:hover {
+            color: var(--dark-grey);
+        }
     }
+
+
 }
 
 .text-nowrap{

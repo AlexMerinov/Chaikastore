@@ -304,9 +304,12 @@
 .swiper-button-next, .swiper-button-prev {
 	opacity: 0.8;
 	transition: var(--trans);
-	&:hover{
-		opacity: 1;
-	}
+    @include bp($bp-1280) {
+        &:hover{
+            opacity: 1;
+        }
+    }
+
 	svg{
 		@include icon-stroke;
 		width: 14px;

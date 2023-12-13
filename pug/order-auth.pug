@@ -52,26 +52,119 @@ block content
                                 input.form__input.js-dadata-city(placeholder="Ваш город" required)
 
                             .form__delivery.delivery-list
-                                .delivery-list__item.js-choice-delivery.checked 
-                                    .delivery-list__item-name Курьер СДЭК без примерки
+                                .delivery-list__item.js-choice-delivery.checked(id="") 
+                                    .delivery-list__item-name Самовывоз из тц Авиапарк
+                                    .delivery-list__item-desc Оплата банковской картой на сайте.
+                                .delivery-list__item.js-choice-delivery(id="deliv-fitting")
+                                    .delivery-list__item-name Курьер Грастин с примеркой
+                                    .delivery-list__item-desc Стоимость 490 ₽. Примерка до трех позиций. Возможность частичного выкупа. Оплата банковской картой или наличными курьеру.
+                                .delivery-list__item.js-choice-delivery(id="deliv-express")
+                                    .delivery-list__item-name Экспресс-доставка курьером
+                                    .delivery-list__item-desc Стоимость 490 ₽. Примерка до трех позиций. Возможность частичного выкупа. Оплата банковской картой или наличными курьеру.
+                                .delivery-list__item.js-choice-delivery(id="deliv-sdek") 
+                                    .delivery-list__item-name Курьерская доставка СДЭК, без примерки
                                     .delivery-list__item-desc Стоимость 490 ₽, бесплатно — при покупке от 10 000 ₽
-                                .delivery-list__item.js-choice-delivery
-                                    .delivery-list__item-name Пункт выдачи СДЭК
-                                    .delivery-list__item-desc Стоимость 490 ₽, бесплатно — при покупке от 10 000 ₽
-                                .delivery-list__item.js-choice-delivery
-                                    .delivery-list__item-name Почта
-                                    .delivery-list__item-desc Стоимость 490 ₽, бесплатно — при покупке от 10 000 ₽
+ 
+                                .delivery-list__item.js-choice-delivery(id="")
+                                    .delivery-list__item-name Доставка до пункта выдачи СДЭК 
+                                    .delivery-list__item-desc Стоимость 490 ₽, бесплатно — при покупке от 10 000 ₽  
 
-                            h3.form__subtitle Адрес доставки
+                            .form__delivery-description.delivery-desc   
+                                .delivery-desc__item.hide(data-delivery="deliv-fitting")   
+                                    h3.form__subtitle Адрес доставки
 
-                            div(class="form__line")
-                                label.form__label
-                                    input.form__input.js-dadata-city.js-dadata-address(type="text" placeholder="Выберите адрес, или добавьте новый" required)
+                                    .form__line
+                                        .drop-box-selector.drop-box-selector--base.js-drop-selector  
+                                            .drop-box-selector__result 
+                                                span.drop-box-selector__name Выберите адрес, или добавьте новый
+                                                .arrow-drop 
+                                                    span 
+                                                    span
+                                            ul.drop-box-selector__list  
+                                                li.drop-box-selector__item г. Копейск, Лесной пер., д. 24 кв.184
+                                                li.drop-box-selector__item г. Владикавказ, Колхозная ул., д. 13 кв.39
+                                                li.drop-box-selector__item г. Реутов, Сосновая ул., д. 4 кв.27
+                                                li.drop-box-selector__item г. Люберцы, Шоссейная ул., д. 13 кв.141 
+                                                li 
+                                                    a(target="_blank") Добавить новый адрес  
 
-                            .form__line 
-                                label.form__label.form__label--textarea
-                                    textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
-                                    span.form__ph Комментарий к заказу
+                                    h3.form__subtitle Дата и время доставки
+
+                                    .form__line
+                                        .data-time
+                                            .data-time__result 14.03.2023 в период с 9 до 12 часов
+                                            .data-time__list 
+                                                .data-time__list-item.js-nearest-date 16 ПТ
+                                                .data-time__list-item.js-nearest-date 17 СБ
+                                                .data-time__list-item.js-nearest-date 18 ВС
+                                                .data-time__datapicker
+                                                    label
+                                                        input(type="text" id="datepicker")
+                                                        +icon-sym('Calendar')
+
+                                            .drop-box-selector.drop-box-selector--base.js-drop-selector  
+                                                .drop-box-selector__result 
+                                                    span.drop-box-selector__name Интервал доставки
+                                                    .arrow-drop 
+                                                        span 
+                                                        span
+                                                ul.drop-box-selector__list  
+                                                    li.drop-box-selector__item с 9 до 12 часов
+                                                    li.drop-box-selector__item с 12 до 15 часов
+                                                    li.drop-box-selector__item с 15 до 18 часов
+                                                    li.drop-box-selector__item с 18 до 21 часа 
+                                                    
+
+                                    .form__line 
+                                        label.form__label.form__label--textarea
+                                            textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                            span.form__ph Комментарий к заказу
+                                
+                                .delivery-desc__item.hide(data-delivery="deliv-express") 
+                                    h3.form__subtitle Адрес доставки
+
+                                    .form__line
+                                        .drop-box-selector.drop-box-selector--base.js-drop-selector  
+                                            .drop-box-selector__result 
+                                                span.drop-box-selector__name Выберите адрес, или добавьте новый
+                                                .arrow-drop 
+                                                    span 
+                                                    span
+                                            ul.drop-box-selector__list  
+                                                li.drop-box-selector__item г. Копейск, Лесной пер., д. 24 кв.184
+                                                li.drop-box-selector__item г. Владикавказ, Колхозная ул., д. 13 кв.39
+                                                li.drop-box-selector__item г. Реутов, Сосновая ул., д. 4 кв.27
+                                                li.drop-box-selector__item г. Люберцы, Шоссейная ул., д. 13 кв.141 
+                                                li 
+                                                    a(target="_blank") Добавить новый адрес  
+
+                                    .form__line 
+                                        label.form__label.form__label--textarea
+                                            textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                            span.form__ph Комментарий к заказу
+
+                                .delivery-desc__item.hide(data-delivery="deliv-sdek") 
+                                    h3.form__subtitle Адрес доставки
+
+                                    .form__line
+                                        .drop-box-selector.drop-box-selector--base.js-drop-selector  
+                                            .drop-box-selector__result 
+                                                span.drop-box-selector__name Выберите адрес, или добавьте новый
+                                                .arrow-drop 
+                                                    span 
+                                                    span
+                                            ul.drop-box-selector__list  
+                                                li.drop-box-selector__item г. Копейск, Лесной пер., д. 24 кв.184
+                                                li.drop-box-selector__item г. Владикавказ, Колхозная ул., д. 13 кв.39
+                                                li.drop-box-selector__item г. Реутов, Сосновая ул., д. 4 кв.27
+                                                li.drop-box-selector__item г. Люберцы, Шоссейная ул., д. 13 кв.141 
+                                                li 
+                                                    a(target="_blank") Добавить новый адрес  
+
+                                    .form__line 
+                                        label.form__label.form__label--textarea
+                                            textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                            span.form__ph Комментарий к заказу
                     
                         -
                             const basketProducts = [

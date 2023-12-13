@@ -60,19 +60,19 @@ const sizeChange = () => {
     });
 }
 
-//показать все цвета
-const colorMore = () => {
-    const jsColorMore = document.querySelectorAll('.js-color-more');
+// //показать все цвета
+// const colorMore = () => {
+//     const jsColorMore = document.querySelectorAll('.js-color-more');
 
-    jsColorMore.forEach((item) => {
+//     jsColorMore.forEach((item) => {
 
-        item.addEventListener('click', (e) => {
-            e.preventDefault;
-            item.closest('.product-card__colors')?.classList.add('open');
-        })
-    })
+//         item.addEventListener('click', (e) => {
+//             e.preventDefault;
+//             item.closest('.product-card__colors')?.classList.add('open');
+//         })
+//     })
 
-}
+// }
 
 //стандартный аккордин с одним уровнем вложенности
 const baseAccordion = () => {
@@ -186,6 +186,7 @@ const selectorDrop = () => {
 // выбор доставки
 const Delivery = () => {
     const jsChoiceDelivery = document.querySelectorAll('.js-choice-delivery');
+    const delivetyItemDesc = document.querySelectorAll('.delivery-desc__item');
 
     jsChoiceDelivery.forEach((item) => {
         item.addEventListener('click', () => {
@@ -195,6 +196,17 @@ const Delivery = () => {
             });
 
             item.classList.add('checked');
+
+
+            if (item.classList.contains('checked')) {
+                delivetyItemDesc.forEach((desc) => {
+                    if (desc.getAttribute('data-delivery') === item.id) {
+                        desc.classList.remove('hide');
+                    } else {
+                        desc.classList.add('hide');
+                    }
+                });
+            }
         });
     });
 }
@@ -264,20 +276,39 @@ const promoInOrder = () => {
     });
 }
 
+//ближайшая дата доставки
+const nearestDate = () => {
+    const jsNearestDate = document.querySelectorAll('.js-nearest-date');
 
+    jsNearestDate.forEach((item) => {
+        document.addEventListener('click', (e) => {
+            if (e.target === item) {
+                if (item.classList.contains('active')) {
+                    item.classList.remove('active');
+                } else {
+                    jsNearestDate.forEach((item) => {
+                        item.classList.remove('active');
+                    });
+                    item.classList.add('active');
+                }
+            }
+        })
+    })
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     favoriteItem();
     colorChange();
     sizeChange();
     alertActive();
-    colorMore();
+    // colorMore();
     baseAccordion();
     sideCatalog();
     selectorDrop();
     Delivery();
     counter();
     promoInOrder();
+    nearestDate();
 });
 
 window.addEventListener('resize', () => {
@@ -285,7 +316,7 @@ window.addEventListener('resize', () => {
     colorChange();
     sizeChange();
     alertActive();
-    colorMore();
+    // colorMore();
     baseAccordion();
     sideCatalog();
 });

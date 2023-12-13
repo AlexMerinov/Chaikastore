@@ -372,7 +372,6 @@
     }
 
     @include bp($bp-1280) {
-
         &__item--drop:hover {
             .header-menu__submenu {
                 transition: all .6s ease-out;
@@ -522,7 +521,6 @@
         }
 
         @include bp($bp-1280) {
-
             &:hover > .icon-sym {
                 stroke-width: 2px;
             }
@@ -661,7 +659,6 @@ body.menu-show {
             @include bp($bp-1280) {
                 &:hover > a span {
                     color: var(--Main-background);
-
                     &::after {
                         background: var(--Main-background);
                     }

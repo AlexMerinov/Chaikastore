@@ -24,7 +24,7 @@
 
         a {
             color: var(--medium-grey);
-            @include bp($bp-768) {
+            @include bp($bp-1280) {
                 &:hover {
                     border-bottom: 1px solid var(--medium-grey);
                 }
@@ -94,30 +94,20 @@
 
 .drop-box-selector {
     position: relative;
-    min-width: 98px;
     transition: var(--trans);
     &__result {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 3px;
-
-        @include text-size-10;
-        color: var(--black);
         cursor: pointer;
-
         width: 100%;
         transition: var(--trans);
 
         @include bp($bp-1280) {
             &:hover {
                 color: var(--Strokes-new-black);
-
                 .arrow-drop {
                     transform: scale(1.2);
-                    span {
-                       background: var(--Strokes-new-black); 
-                    }
                 }
             }
         }
@@ -128,13 +118,6 @@
         flex-direction: column;
         padding: 10px 0;
         border-radius: 4px;
-        background: rgba(255, 255, 255, 0.70);
-
-        position: absolute;
-        left: 0;
-        top: 100%;
-        width: 100%;
-        z-index: 10;
 
         opacity: 0;
         pointer-events: none;
@@ -167,10 +150,84 @@
         display: block;
     }
 
+    &--filter {
+        min-width: 98px;
+
+        .drop-box-selector__result {
+            gap: 3px;
+            @include text-size-10;
+            color: var(--black);
+        }
+
+        .drop-box-selector__list {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.70);
+        }
+    }
+
+    &--base {
+        .drop-box-selector__result {
+            padding: 3px 0;
+            border-bottom: 1px solid var(--Strokes-new);
+        }
+
+        .drop-box-selector__list {
+            padding-left: 16px;
+            margin-top: 14px;
+            background: var(--White-background);
+            display: none;
+            flex-direction: column;
+        }
+
+        .drop-box-selector__item {
+            width: fit-content;
+            @include text-size-12;
+            margin-bottom: var(--space-3xs-desc);
+            position: relative;
+            display: inline-block;
+            &::after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 1px;
+                background: var(--black);
+
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                opacity: 0;
+                transition: var(--trans);
+            }
+
+            @include bp($bp-1280) {
+                &:hover {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
     &.open {
         .drop-box-selector__list {
             opacity: 1;
             pointer-events: visible;
+        }
+
+        &.drop-box-selector--base {
+            .drop-box-selector__list {
+                display: flex;
+            }
         }
 
         .arrow-drop {
@@ -253,14 +310,6 @@
                 pointer-events: none;
             }
         }
-
-        // @include bp($bp-1280) {
-        //     &:hover {
-        //         &::before, &::after {
-                    
-        //         }
-        //     }
-        // }
     }
 
     &__input {
@@ -316,6 +365,62 @@
                 margin-bottom: 0;
             }
         }
+    }
+}
+
+.data-time {
+    &__result {
+        display: inline-block;
+        padding: 4px;
+        border-radius: 4px;
+        background: var(--White-background);
+        margin-bottom: var(--space-2xs-desc);
+    }
+
+    &__list {
+        display: flex;
+        gap: 8px;
+        margin-bottom: var(--space-2xs-desc);
+
+        &-item {
+            width: 44px;
+            padding: 2px 4px;
+            border-radius: 4px;
+            border: 0.5px solid var(--Stroke-bk-30);
+            background: var(--White-background);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-transform: uppercase;
+            transition: var(--trans);
+            cursor: pointer;
+
+            &.active {
+                border-color: var(--black);
+            }
+        }
+    }
+
+    &__datapicker {
+        position: relative;
+        width: 80px;
+
+        label {
+            width: 100%;
+        }
+
+        .icon-sym {
+            position: absolute;
+            cursor: pointer;
+            right: 0;
+            top: 0;
+
+            width: 18px;
+            height: 18px;
+        }
+
     }
 }
 

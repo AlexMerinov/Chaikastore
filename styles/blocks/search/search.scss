@@ -29,8 +29,6 @@
                 stroke-width: 2px;
             }
         }
-    
-
     }
 
     &__area {
@@ -169,7 +167,10 @@
     &__form {
         position: relative;
         display: flex;
-        height: 30px;
+
+        .form__line {
+            width: 100%;
+        }
     }
 
     &.show {

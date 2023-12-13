@@ -32,6 +32,12 @@
         .form__line {
             margin-bottom: var(--space-2xs-desc);
         }
+
+        .row {
+            row-gap: 0;
+            margin-left: -8px;
+            margin-right: -8px;
+        }
     }
 
     @include maxBp($bp-1280) {
@@ -294,10 +300,12 @@
 
 .delivery-list {
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
     &__item {
         display: flex;
         flex: 1 1 auto;
+        width: calc(33.33333% - 16px);
         flex-direction: column;
         padding: 8px;
 
@@ -336,8 +344,31 @@
         }
     }
 
+    &__item-text {
+        margin-top: 8px;
+        padding-left: 8px;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 4px;
+            border-radius: 100%;
+            background: #FF5569;
+
+            position: absolute;
+            left: 0;
+            top: 6px;
+        }
+    }
+
     @include maxBp($bp-768) {
         flex-direction: column;
         gap: 8px;
+
+        &__item {
+            width: 100%;
+        }
     }
 }

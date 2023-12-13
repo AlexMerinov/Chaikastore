@@ -45,7 +45,6 @@
             }
 
             @include bp($bp-1280) {
-
                 &:hover {
                     color: var(--Strokes-new-black);
                     &::after {
@@ -128,7 +127,6 @@
                     transition: var(--trans-slow);
                     max-height: 1000px;
                 }
-                
             }
         }
     }
