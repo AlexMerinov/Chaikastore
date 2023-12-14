@@ -54,38 +54,41 @@
 }
 
 .arrow-drop {
+    display: inline-block;
     position: relative;
     cursor: pointer;
-    width: 13px;
-    height: 13px;
+    width: 12px;
+    height: 10px;
     transition: var(--trans);
+    
     span {
-        display: block;
-        width: 7px;
+        display: inline-block;
+        width: 7.5px;
         height: 1px;
         background: var(--black);
         position: absolute;
-        top: 55%;
-        left: 50%;
+        top: 6px;
         transition: var(--trans);
 
-        &:nth-child(1) {
-            transform: translate(calc(-75%),-50%) rotate(45deg);
+        &:first-of-type {
+            left: 0;
+            transform: rotate(45deg);
         }
 
-        &:nth-child(2) {
-            transform: translate(calc(-25% + 1px),-50%) rotate(-45deg);
+        &:last-of-type {
+            right: 0;
+            transform: rotate(-45deg);
         }
     }
 
     &.active {
         span {
-            &:nth-child(1) {
-                transform: translate(calc(-75% - 1px),-50%) rotate(-45deg);
+            &:first-of-type {
+                transform: rotate(-45deg);
             }
 
-            &:nth-child(2) {
-                transform: translate(calc(-25% + 1px),-50%) rotate(45deg);
+            &:last-of-type {
+                transform: rotate(45deg);
             }
         }
 
@@ -233,11 +236,11 @@
         .arrow-drop {
             span {
                 &:nth-child(1) {
-                    transform: translate(calc(-75%),-50%) rotate(-45deg);
+                    transform: rotate(-45deg);
                 }
         
                 &:nth-child(2) {
-                    transform: translate(calc(-25% + 1px),-50%) rotate(45deg);
+                    transform: rotate(45deg);
                 }
             }
         }

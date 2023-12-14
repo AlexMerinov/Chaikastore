@@ -44,6 +44,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
+                z-index: -1;
             }
 
             &-active {
@@ -176,8 +177,8 @@
 
         pointer-events: none;
         background: rgba(255, 255, 255, 0.00);
-        transition: var(--trans);
-        opacity: 1;
+        transition: var(--trans-slow);
+        opacity: 0.8;
         z-index: 2;
     }
 }

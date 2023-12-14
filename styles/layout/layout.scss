@@ -28,28 +28,35 @@ body {
 table {
     text-align: center;
     @include text-size-12;
+    border-bottom: 1px solid var(--Stroke-bk-30);
+    border-right: 1px solid var(--Stroke-bk-30);
     tr {
-        padding: 10px 0;
-        &:last-child {
-            td {
-                border-bottom: 0.5px solid var(--Stroke-bk-30);
-            }
+        td {
+            border-top: 1px solid var(--Stroke-bk-30);
+            border-left: 1px solid var(--Stroke-bk-30);
         }
     }
 
     td {
         min-width: 100px;
-        border-top: 0.5px solid var(--Stroke-bk-30);
-        border-left: 0.5px solid var(--Stroke-bk-30);
         &:first-child {
             min-width: 166px;
             padding: 10px;
             text-align: left;
         }
+    }
 
-        &:last-child {
-            border-right: 0.5px solid var(--Stroke-bk-30);
+    @include maxBp($bp-768) {
+        @include text-size-10;
+        td {
+            min-width: 50px;
+
+            &:first-child {
+                padding: 7px;
+                min-width: 100px;
+            }
         }
+
     }
 }
 

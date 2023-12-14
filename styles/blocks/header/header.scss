@@ -374,7 +374,7 @@
     @include bp($bp-1280) {
         &__item--drop:hover {
             .header-menu__submenu {
-                transition: all .6s ease-out;
+                transition: var(--trans-slow);
                 opacity: 1;
                 pointer-events: visible;
                 max-height: 800px;

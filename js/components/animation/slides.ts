@@ -1,8 +1,8 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar } from 'swiper/modules';
+import { Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar, Zoom } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
-    Swiper.use([Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar]);
+    Swiper.use([Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar, Zoom]);
 
     const slidersBaner = document.querySelectorAll('.js-slider-main');
 
@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
             pagination: {
                 el: '.main-slider__pagination',
             },
-            // autoplay: {
-            //     delay: 5000,
-            //     disableOnInteraction: false,
-            //     pauseOnMouseEnter: true,
-            // },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
         });
     });
 
@@ -31,77 +31,111 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sliderProduct.forEach((slider) => {
         const productSlide = new Swiper(slider, {
-            slidesPerView: 1,
-            speed: 1000,
+            slidesPerView: 'auto',
             spaceBetween: 16,
+            speed: 500,
+            loop: false,
+            grabCursor: true,
 
             scrollbar: {
                 el: '.slider-product__scrollbar',
                 draggable: true,
             },
-
-            breakpoints: {
-                320: {
-                    slidesPerView: 1.1,
-                },
-                375: {
-                    slidesPerView: 1.3,
-                },
-                480: {
-                    slidesPerView: 1.6,
-                },
-                576: {
-                    slidesPerView: 2.4,
-                },
-                768: {
-                    slidesPerView: 2.6,
-                },
-                1024: {
-                    slidesPerView: 3.4,
-                },
-                1440: {
-                    slidesPerView: 4.2,
-                },
-                1680: {
-                    slidesPerView: 6.2,
-                }
-            }
         });
     });
 
 
     const detailPreviewProd = () => {
 
-        let swiperChild = new Swiper(".js-slid-product-child", {
-            spaceBetween: 8,
-            slidesPerView: 7,
-            freeMode: true,
-            watchSlidesProgress: true,
-            direction: 'vertical',
+        const swiperParent = document.querySelectorAll('.js-slid-product-parent');
+        swiperParent.forEach((slider) => {
+            let swiperSlderThumb = null;
+            const parent = slider.closest('.product__preview-gallery');
+            const thisModalBox = parent?.querySelector('.modal');
+
+            console.log(thisModalBox);
+
+            const thumb = parent?.querySelector('.js-slid-product-child');
+            if (thumb !== null && thumb !== undefined) {
+                swiperSlderThumb = new Swiper(thumb, {
+                    spaceBetween: 8,
+                    slidesPerView: 7,
+                    freeMode: true,
+                    watchSlidesProgress: true,
+                    direction: 'vertical',
+                    watchSlidesProgress: true,
+                });
+            }
+
+            const swiperSlder = new Swiper(slider, {
+                slidesPerView: 1,
+                effect: 'fade',
+                watchSlidesProgress: true,
+                fadeEffect: {
+                    crossFade: true
+                },
+                pagination: {
+                    el: '.base-pagination',
+                },
+                breakpoints: {
+                    768: {
+                        pagination: false,
+                    },
+                },
+                on: {
+                    activeIndexChange(swiper: any) {
+                        if (!thisModalBox?.classList.contains('is-open')) {
+                            const sliderSwiper = thisModalBox.querySelector('.js-slider-lightbox');
+                            sliderSwiper?.swiper.slideTo(swiper.realIndex);
+                        }
+                    },
+                },
+                thumbs: {
+                    swiper: swiperSlderThumb,
+                    mousewheel: {
+                        senstivity: 1,
+                        eventsTarget: ".js-slid-product-child"
+                    },
+                },
+            });
+
         });
-        let swiperParent = new Swiper(".js-slid-product-parent", {
-            slidesPerView: 1,
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: true
-            },
-            pagination: {
-                el: '.base-pagination',
-            },
-            breakpoints: {
-                768: {
-                    pagination: false,
-                },
-            },
-            thumbs: {
-                swiper: swiperChild,
-                mousewheel: {
-                    senstivity: 1,
-                    eventsTarget: ".js-slid-product-child"
-                },
-            },
 
 
+        const slidersLightBox = document.querySelectorAll('.js-slider-lightbox');
+        slidersLightBox.forEach((slider) => {
+            const parent = slider.closest('.product__preview-gallery');
+            const thisModalBox = parent?.querySelector('.modal');
+
+
+            const swiperSlider = new Swiper(slider, {
+                slidesPerView: 1,
+                speed: 700,
+                spaceBetween: 16,
+                centeredSlides: true,
+                clickable: true,
+                zoom: {
+                    maxRatio: 3,
+                },
+
+                on: {
+                    activeIndexChange(swiper: any) {
+                        if (thisModalBox?.classList.contains('is-open')) {
+                            const sliderSwiper = parent.querySelector('.js-slid-product-parent');
+                            sliderSwiper?.swiper.slideTo(swiper.realIndex);
+                        }
+                    },
+                },
+
+                breakpoints: {
+                    768: {
+                        slidesPerView: 1.7,
+                    },
+                    1440: {
+                        slidesPerView: 2.2,
+                    },
+                }
+            });
         });
     };
     detailPreviewProd();

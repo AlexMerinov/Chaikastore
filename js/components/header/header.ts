@@ -44,7 +44,7 @@ const headerAnimate = () => {
 
 
         titleParalax.forEach((title) => {
-            title.style.top = -wScroll / 3 + 'px';
+            title.style.top = -wScroll / 2 + 'px';
             if (wScroll > 0) {
                 title.classList.add('fade');
             } else if (wScroll < bannerheight / 10) {
