@@ -1,8 +1,8 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar, Zoom } from 'swiper/modules';
+import { Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar, Zoom, Keyboard } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
-    Swiper.use([Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar, Zoom]);
+    Swiper.use([Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar, Zoom, Keyboard]);
 
     const slidersBaner = document.querySelectorAll('.js-slider-main');
 
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             grabCursor: true,
             effect: 'fade',
             fadeEffect: {
-                crossFade: true
+                crossFade: true,
             },
             pagination: {
                 el: '.main-slider__pagination',
@@ -113,11 +113,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 speed: 700,
                 spaceBetween: 16,
                 centeredSlides: true,
-                clickable: true,
+                slideToClickedSlide: true,
+                keyboard: {
+                    enabled: true,
+                },
                 zoom: {
                     maxRatio: 3,
                 },
-
+                navigation: {
+                    nextEl: '.custom-slider-btn--next',
+                    prevEl: '.custom-slider-btn--prev',
+                },
                 on: {
                     activeIndexChange(swiper: any) {
                         if (thisModalBox?.classList.contains('is-open')) {
@@ -126,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     },
                 },
-
                 breakpoints: {
                     768: {
                         slidesPerView: 1.7,

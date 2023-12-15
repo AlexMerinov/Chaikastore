@@ -41,22 +41,25 @@
             height: 385px;
             @include maxBp($bp-1280) {
                 min-height: 242px;
-                height: 30vw;
-                max-height: 350px;
-            }
+                max-height: 320px;
+                height: calc(31vw);
 
-            @include maxBp($bp-768) {
-                height: 42vw;
-            }
+                @include maxBp($bp-768) {
+                    height: 242px;
+                    max-height: 300px;
+                    height: calc(48vw);
+                }
 
-            @include maxBp($bp-500) {
-                height: 62vw;
+                @include maxBp($bp-500) {
+                    min-height: 198px;
+                    max-height: 280px;
+                    height: calc(100vw);
+                }
             }
         }
 
         @include maxBp($bp-768) {
-            min-height: 385px;
-            height: calc(100vw * 0.5);
+            height: 385px;
         }
     }
 

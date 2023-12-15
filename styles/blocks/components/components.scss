@@ -502,3 +502,51 @@
         }
     }
 }
+
+.custom-slider-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(0,-50%,0);
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0.5;
+    transition: var(--trans);
+
+    @include bp($bp-1280) {
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &.swiper-button-disabled {
+        opacity: 0 !important;
+        pointer-events: none;
+    }
+
+    .icon-sym {
+        width: 35px;
+        height: 35px;
+        fill: var(--Stroke-bk-30);
+        transition: var(--trans);
+    }
+
+    &--next {
+        right: 0;
+    }
+
+    &--prev {
+        left: 0;
+        transform: translate3d(0,-50%,0) rotate(180deg);
+    }
+
+    @include maxBp($bp-768) {
+        display: none;
+    }
+}

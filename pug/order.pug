@@ -29,7 +29,7 @@ block content
                 form.form.js-form-validate.cart-cols
                     .cart-cols__left
                         .form__sign-in-alert.sign-in-alert   
-                            | Вы можете <a (data-micromodal="modal-enter-mobile")>войти</a>  в свой аккаунт для применения накопленных бонусов и электронных сертификатов или продолжить оформление без авторизации.
+                            | Вы можете <a href="/" data-micromodal="modal-enter-mobile">войти</a>  в свой аккаунт для применения накопленных бонусов и электронных сертификатов или продолжить оформление без авторизации.
                         .form__wrapper
                             h3.form__subtitle Ваши данные
                             .form__line 
@@ -64,11 +64,13 @@ block content
                                 .delivery-list__item.js-choice-delivery(id="")
                                     .delivery-list__item-name Почта
                                     .delivery-list__item-desc Стоимость 490 ₽, бесплатно — при покупке от 10 000 ₽
-                                .delivery-list__item.js-choice-delivery(id="")
+                                .delivery-list__item.js-choice-delivery(id="deliv-country-post")
                                     .delivery-list__item-wrapper
                                         .delivery-list__item-name Почта
                                         .delivery-list__item-desc Стоимость 1500 ₽. Без примерки и частичного выкупа. Оплата по выставленному счету на E-mail или Whatsapp. Бесплатно — при покупке от 20 000 ₽
-                                    .delivery-list__item-text.hide(data-delivery="") Обращаем ваше внимание: налоги и пошлины на покупку не включены в стоимость доставки на сайте — в каждой стране собственная система налогообложения. Обязательно уточните эту информацию в таможенной службе вашей страны.​
+                            .form__delivery-description.delivery-desc
+                                .delivery-desc__item.hide(data-delivery="deliv-country-post")  
+                                    .delivery-list__item-text Обращаем ваше внимание: налоги и пошлины на покупку не включены в стоимость доставки на сайте — в каждой стране собственная система налогообложения. Обязательно уточните эту информацию в таможенной службе вашей страны.​
                                 
                         .form__wrapper
                             h3.form__subtitle Адрес доставки
@@ -207,7 +209,7 @@ block content
                                         span.order-box__select-alert.hide 
                                             span Сертификат успешно применен
                                             span.error Серитфикат не действителен
-                                        a.order-box__add-new(href="/" target="_blank") Добавить новый
+                                        a.order-box__add-new(href="/" data-micromodal="modal-add-cert") Добавить новый
                             .order-box__line
                                 span Итого
                                 span.bold 8 999 ₽

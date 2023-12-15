@@ -109,14 +109,36 @@ input {
         }
     }
 
+    &__alert {
+        margin-bottom: var(--space-xs-desc);
+        @include text-size-16;
+        a {
+            text-decoration: underline;
+        }
+
+        @include maxBp($bp-768) {
+            margin-bottom: var(--space-xs-mob);
+            @include text-size-12;
+        }
+    }
+
     &__haed {
         display: flex;
         align-items: center;
         gap: 24px;
         margin-bottom: var(--space-s-desc);
         h1 {
+            display: inline-flex;
+            align-items: center;
             margin-bottom: 0;
             @include text-h3;
+            position: relative;
+        }
+
+        &-counter {
+            display: block;
+            margin-left: 4px;
+            @include text-size-12;
         }
 
         @include maxBp($bp-768) {
@@ -463,3 +485,5 @@ hr,.hr{
 .hide{
     display: none !important;
 }
+
+
