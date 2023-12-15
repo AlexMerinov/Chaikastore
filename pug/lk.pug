@@ -1,0 +1,135 @@
+extends ./_layout
+
+block content
+        .wrapper__page.p-top-content
+            .wrapper__haed 
+                h1 Личный кабинет 
+            .section 
+                .section-cols
+                    .section-cols__side 
+                        ul.person-menu  
+                            li.person-menu__title 
+                                span Мои данные
+                                .arrow-drop
+                                    span 
+                                    span
+                            li.person-menu__list 
+                                ul 
+                                    li.person-menu__item    
+                                        a.active(href="404.pug") Мои данные
+                                    li.person-menu__item    
+                                        a(href="404.pug") Мои заказы и возвраты
+                                    li.person-menu__item    
+                                        a(href="404.pug") Избранное
+                                    li.person-menu__item    
+                                        a(href="404.pug") Корзина
+                                    li.person-menu__item    
+                                        a(href="404.pug") Бонусные баллы
+                                    li.person-menu__item    
+                                        a(href="404.pug") Подарочные сертификаты
+                                    li.person-menu__item    
+                                        a(href="404.pug") Мои данные
+                        a.person-out(data-micromodal="modal-exit-lk") Выйти
+                    .section-cols__content
+                        .person-info.fade-in 
+                            .person-info__header.js-item-toggle  
+                                .person-info__title Мои данные 
+                                button(type="button").arrow-drop
+                                    span 
+                                    span
+                            .person-info__content
+                                form.form.js-form-validate
+                                    .form__line 
+                                        label.form__label
+                                            input.form__input(type="text" value="" class="form__input" required)
+                                            span.form__ph Фамилия
+                                    .form__line 
+                                        label.form__label
+                                            input.form__input(type="text" value="" class="form__input" required)
+                                            span.form__ph Имя
+                                    .form__line 
+                                        label.form__label
+                                            input.form__input(type="text" value="" class="form__input" required)
+                                            span.form__ph Дата рождения
+                                            span.form__input-icon
+                                                +icon-sym('pencil')
+                                    .form__footer
+                                        button.btn.btn--secondary.person-info__btn(type='submit') Сохранить
+                                        .person-info__change
+                                            | Изменения внесены
+                        .person-info.fade-in 
+                            .person-info__header.js-item-toggle  
+                                .person-info__title Контактная информация
+                                button(type="button").arrow-drop
+                                    span 
+                                    span 
+                            .person-info__content
+                                form.form.js-form-validate
+                                    .form__line 
+                                        label.form__label 
+                                            input.form__input.js-input-format-phone(type="text" value="" name="phone" inputmode="tel" class="form__input" required)
+                                            span.form__ph Телефон
+                                    .form__line 
+                                        label.form__label
+                                            input.form__input(type="email" value="" inputmode="email" class="form__input" required)
+                                            span.form__ph E-mail
+                                            span.form__input-icon
+                                                +icon-sym('pencil')
+                                    .form__line 
+                                        label.form__label
+                                            input.form__input(type="password" class="form__input" required)
+                                            span.form__ph Пароль
+                                            span.form__input-icon.js-pass-view 
+                                                +icon-sym('view')
+                                                +icon-sym('no-view')
+                                    .form__footer
+                                        button.btn.btn--secondary.person-info__btn(type='submit') Сохранить
+                                        .person-info__change
+                                            | Изменения внесены
+                        .person-info.fade-in 
+                            .person-info__header.js-item-toggle  
+                                .person-info__title Адрес доставки
+                                button(type="button").arrow-drop
+                                    span 
+                                    span 
+                            .person-info__content
+                                .address-field
+                                    .address-field__item 
+                                        span 656000, Алтайский край, г. Барнаул, пр. Ленина, 63, кв. 3
+                                        .address-field__pagination 
+                                            a(data-micromodal="modal-delet-address") 
+                                                +icon-sym('bucket')
+                                            a(data-micromodal="modal-delet-address") 
+                                                +icon-sym('pencil')
+                                    .address-field__item 
+                                        span 656000, Алтайский край, г. Барнаул, пр. Ленина, 63, кв. 3
+                                        .address-field__pagination 
+                                            a(data-micromodal="modal-delet-address") 
+                                                +icon-sym('bucket')
+                                            a(data-micromodal="modal-delet-address") 
+                                                +icon-sym('pencil')
+                                button(type="button").btn.btn--secondary.person-info__btn Добавить   
+                        .person-info.fade-in 
+                            .person-info__header.js-item-toggle  
+                                .person-info__title Управление подписками
+                                button(type="button").arrow-drop
+                                    span 
+                                    span 
+                            .person-info__content
+                                .person-info__subscribe
+                                    label.input-checkbox
+                                        input(type="checkbox")
+                                        span.input-checkbox__text Ежедневно на почту
+                                            +icon-sym('check')
+                                    label.input-checkbox
+                                        input(type="checkbox")
+                                        span.input-checkbox__text По смс
+                                            +icon-sym('check')
+
+         
+
+                                         
+
+
+
+

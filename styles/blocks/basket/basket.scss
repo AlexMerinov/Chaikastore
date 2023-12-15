@@ -29,10 +29,6 @@
     }
 
     &.form {
-        .form__line {
-            margin-bottom: var(--space-2xs-desc);
-        }
-
         .row {
             row-gap: 0;
             margin-left: -8px;

@@ -1,3 +1,4 @@
+import { slideToggle } from '@js/components/animation/toggle';
 // добавление элемента в избранное
 const favoriteItem = () => {
     const addFavorite = document.querySelectorAll('.js-favorite-add');
@@ -60,19 +61,6 @@ const sizeChange = () => {
     });
 }
 
-// //показать все цвета
-// const colorMore = () => {
-//     const jsColorMore = document.querySelectorAll('.js-color-more');
-
-//     jsColorMore.forEach((item) => {
-
-//         item.addEventListener('click', (e) => {
-//             e.preventDefault;
-//             item.closest('.product-card__colors')?.classList.add('open');
-//         })
-//     })
-
-// }
 
 //стандартный аккордин с одним уровнем вложенности
 const baseAccordion = () => {
@@ -89,6 +77,8 @@ const baseAccordion = () => {
                     link.lastElementChild.style.maxHeight = 0 + 'px';
 
                 } else {
+                    // Eсли нужно закрывать один блок при окрытии другого
+                    //
                     // tabChildArr.forEach((link) => {
                     //     link.classList.remove('open');
                     //     link.lastElementChild.style.maxHeight = 0 + 'px';
@@ -121,6 +111,25 @@ const sideCatalog = () => {
             });
         });
 
+    });
+}
+
+//Выпадашки 
+const toggleItems = () => {
+    document.body.addEventListener('click', (e) => {
+        const target = e.target as Element;
+
+        if (
+            (target.classList.contains('js-item-toggle') ||
+                target.closest('.js-item-toggle'))
+        ) {
+            e.preventDefault();
+            const link = target.classList.contains('js-item-toggle')
+                ? target
+                : target.closest('.js-menu-toggle');
+            const linkTarget = link?.nextElementSibling;
+            slideToggle(link, linkTarget, 300);
+        }
     });
 }
 
@@ -309,6 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
     counter();
     promoInOrder();
     nearestDate();
+    toggleItems();
 });
 
 window.addEventListener('resize', () => {

@@ -5,6 +5,7 @@
 
     &__line {
         position: relative;
+        margin-bottom: var(--space-2xs-desc);
         .error-message {
             z-index: 1;
         }
@@ -23,6 +24,12 @@
         overflow: hidden;
         max-width: 100%;
         text-overflow: ellipsis;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     &__ph {
