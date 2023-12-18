@@ -1,0 +1,37 @@
+extends ./_layout
+
+block content
+        .wrapper__page.p-top-content
+            .wrapper__haed 
+                h1 Личный кабинет 
+            .section 
+                .section-cols
+                    .section-cols__side 
+                        ul.person-menu.fade-in   
+                            li.person-menu__title.js-item-toggle 
+                                span Мои данные
+                                .arrow-drop
+                                    span 
+                                    span
+                            li.person-menu__list 
+                                ul 
+                                    li.person-menu__item    
+                                        a(href="404.html") Мои данные
+                                    li.person-menu__item    
+                                        a.active(href="lk.html") Мои заказы и возвраты
+                                    li.person-menu__item    
+                                        a(href="lk.html") Избранное
+                                    li.person-menu__item    
+                                        a(href="lk.html") Корзина
+                                    li.person-menu__item    
+                                        a(href="lk.html") Бонусные баллы
+                                    li.person-menu__item    
+                                        a(href="lk.html") Подарочные сертификаты
+                                    li.person-menu__item    
+                                        a(href="lk.html") Мои данные
+                        a.person-out.person-out--desc(href="#" data-micromodal="modal-exit-lk") Выйти
+                    .section-cols__content
+                        .person-order-refund
+                            a.person-order-refund__link.active(href='lk-orders.html') Заказы
+                            a.person-order-refund__link(href='lk-orders.html') Возвраты
+                        p Вы еще не сделали ни одного заказа

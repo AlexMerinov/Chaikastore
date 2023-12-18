@@ -57,6 +57,8 @@
         @include maxBp($bp-768) {
             gap: 16px;
             margin-bottom: var(--space-s);
+            max-width: 100%;
+            width: 100%;
         }
     }
 

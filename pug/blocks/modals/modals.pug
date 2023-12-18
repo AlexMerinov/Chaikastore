@@ -35,7 +35,7 @@ block modal
         | Вы уверены, что хотите отменить заказ ? 
     +slot('body')
         div(class="modal__btns")
-            div(class="btn btn--disable") Да
+            div(class="btn btn--light-m") Да
             div(class="btn btn--secondary" data-micromodal-close) Нет
 
 +modal({
@@ -181,7 +181,7 @@ block modal
         | Ваш город Санкт-Петербург?
     +slot('body')
         div(class="modal__sbtns")
-            div(class="btn btn--secondary" data-micromodal-close) Да, верно
+            div(class="btn btn--light-m" data-micromodal-close) Да, верно
             div(class="btn btn--secondary" data-micromodal="modal-city") Нет, выбрать другой
 
 
@@ -192,7 +192,7 @@ block modal
         | Удалить адрес? 
     +slot('body')
         div(class="modal__btns")
-            div(class="btn btn--secondary" data-micromodal-close) Нет
+            div(class="btn btn--light-m" data-micromodal-close) Нет
             div(class="btn btn--secondary") Удалить
 
 
@@ -203,7 +203,7 @@ block modal
         | Вы уверены, что хотите удалить товар? 
     +slot('body')
         div(class="modal__btns")
-            div(class="btn btn--secondary" data-micromodal-close) Нет
+            div(class="btn btn--light-m" data-micromodal-close) Нет
             div(class="btn btn--secondary") Удалить
 
 +modal({
@@ -213,7 +213,7 @@ block modal
         | Выйти из личного кабинета?
     +slot('body')
         div(class="modal__btns")
-            div(class="btn btn--secondary" data-micromodal-close) Нет
+            div(class="btn btn--light-m" data-micromodal-close) Нет
             div(class="btn btn--secondary") Да
 
 +modal({
@@ -288,4 +288,4 @@ block modal
 })
     +slot('body')
         p Сайт собирает информацию посредством Cookies, чтобы мы могли сделать его удобнее и быстрее.
-        div(class="btn btn--secondary") Хорошо
+        div(class="btn btn--secondary" data-micromodal-close) Хорошо

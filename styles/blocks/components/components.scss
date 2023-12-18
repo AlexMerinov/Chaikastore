@@ -57,39 +57,44 @@
     display: inline-block;
     position: relative;
     cursor: pointer;
-    width: 12px;
-    height: 10px;
+    width: 7px;
+    height: 7px;
     transition: var(--trans);
+    transform: rotate(-45deg);
+    bottom: 2px;
     
     span {
         display: inline-block;
-        width: 7.5px;
-        height: 1px;
         background: var(--black);
         position: absolute;
-        top: 6px;
         transition: var(--trans);
 
         &:first-of-type {
+            // transform-origin: 0px 0px;
+            height: 7px;
+            width: 1px;
             left: 0;
-            transform: rotate(45deg);
+            top: 0;
+            bottom: 0;
         }
 
         &:last-of-type {
+            // transform-origin: 100% 0px;
+            bottom: 0;
+            left: 0;
             right: 0;
-            transform: rotate(-45deg);
+            width: 7px;
+            height: 1px;
         }
     }
 
     &.active {
-        span {
-            &:first-of-type {
-                transform: rotate(-45deg);
-            }
+        &:first-child {
+            rotate: 90deg;
+        }
 
-            &:last-of-type {
-                transform: rotate(45deg);
-            }
+        &:last-child {
+            rotate: 90deg;
         }
 
     }
@@ -110,7 +115,7 @@
             &:hover {
                 color: var(--Strokes-new-black);
                 .arrow-drop {
-                    transform: scale(1.2);
+                    transform: rotate(-45deg) scale(1.2);
                 }
             }
         }
@@ -154,15 +159,15 @@
     }
 
     &--filter {
-        min-width: 98px;
 
         .drop-box-selector__result {
-            gap: 3px;
+            gap: 4px;
             @include text-size-10;
             color: var(--black);
         }
 
         .drop-box-selector__list {
+            min-width: 98px;
             position: absolute;
             left: 0;
             top: 100%;
@@ -236,11 +241,11 @@
         .arrow-drop {
             span {
                 &:nth-child(1) {
-                    transform: rotate(-45deg);
+                    transform: rotate(-90deg);
                 }
         
                 &:nth-child(2) {
-                    transform: rotate(45deg);
+                    transform: rotate(90deg);
                 }
             }
         }

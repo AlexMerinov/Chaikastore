@@ -114,6 +114,7 @@ input {
         @include text-size-16;
         a {
             text-decoration: underline;
+            display: inline-block;
         }
 
         @include maxBp($bp-768) {

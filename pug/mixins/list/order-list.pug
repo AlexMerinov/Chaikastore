@@ -1,0 +1,39 @@
+mixin order-list(items)
+    .person-order-list
+        each item in items       
+            -
+                const {
+                    url,
+                    payment,
+                    date,
+                    number,
+                    price, 
+                       ,
+                    products,
+                } = item;
+            a.person-order(href=url + '.html')
+                .person-order__header 
+                    .person-order__header-top 
+                        .person-order__number 
+                            != '№ ' + number
+                            span(class=(payment === true ? 'person-order__payment' : 'person-order__payment person-order__payment--false'))
+                                if payment === true 
+                                    != 'Оплачен'
+                                else 
+                                    != 'Не оплачен'
+                        .person-order__price 
+                            != price + '₽'
+                    .person-order__header-bot
+                        .person-order__date 
+                            != 'от ' + date
+                        .person-order__status 
+                            != status
+                .person-order__list
+                    each item in products 
+                        -
+                            const {
+                                url,
+                                img,
+                            } = item;
+                        picture
+                            img(src=img)

@@ -1,0 +1,115 @@
+extends ./_layout
+include ./mixins/list/basket-prod
+include ./mixins/list/basket-list
+ 
+
+block content
+        .wrapper__page.p-top-content
+            .wrapper__haed 
+                h1 Личный кабинет 
+            .section 
+                .section-cols
+                    .section-cols__side 
+                        ul.person-menu.fade-in   
+                            li.person-menu__title.js-item-toggle 
+                                span Мои данные
+                                .arrow-drop
+                                    span 
+                                    span
+                            li.person-menu__list 
+                                ul 
+                                    li.person-menu__item    
+                                        a(href="404.html") Мои данные
+                                    li.person-menu__item    
+                                        a.active(href="lk.html") Мои заказы и возвраты
+                                    li.person-menu__item    
+                                        a(href="lk.html") Избранное
+                                    li.person-menu__item    
+                                        a(href="lk.html") Корзина
+                                    li.person-menu__item    
+                                        a(href="lk.html") Бонусные баллы
+                                    li.person-menu__item    
+                                        a(href="lk.html") Подарочные сертификаты
+                                    li.person-menu__item    
+                                        a(href="lk.html") Мои данные
+                        a.person-out.person-out--desc(href="#" data-micromodal="modal-exit-lk") Выйти
+                    .section-cols__content
+                        .order-details  
+                            a.order-details___back(href='lk-orders.html')
+                            .order-details__header  
+                                .order-details__number
+                                    span Ваш заказ № 145654545654  
+                                    span.order-status Доставка
+                                .order-details__date от 15.05.2022 
+                            .order-delivery 
+                                +icon-sym('check')
+                                | Оплачен и передан в службу доставки. Трек номер: <span>LK9006786789900</span>
+                                 
+                                a(href="#" data-micromodal="modal-order-cancel") Отменить
+                            .order-details__field   
+                                span.order-details__subtitle О покупателе:
+                                p Воронцова Алина, +7 (960) 988 98 98, login@gmail.com
+                            .order-details__field   
+                                span.order-details__subtitle О заказе:
+                                p 3 товара, оплата на сайте, без примерки
+                            .order-details__field   
+                                span.order-details__subtitle Доставка:
+                                p Воронцова Алина, +7 (960) 988 98 98, login@gmail.com
+                            .order-details__field   
+                                span.order-details__subtitle О покупателе:
+                                p Россия, г. Сочи, Адлерский район, ул. Цветочная, д. 15
+                                p Почта России
+                                p 19 ноября - 22 ноября
+                            .order-details__field   
+                                span.order-details__subtitle Стоимость:
+                                p Доставка: 490 ₽  
+                                p Скидка: 500 ₽  
+                                p Итого: 24 500 ₽  
+                            .order-details-list.fade-in 
+                                .order-details-list__header.js-item-toggle  
+                                    .order-details-list__title Товары в заказе: <span>3 </span>
+                                    button(type="button").arrow-drop
+                                        span 
+                                        span
+                                .order-details-list__content
+                                    -
+                                        const basketProducts = [
+                                            {
+                                                name: 'Свитер молочного цвета с высоким воротом',
+                                                url: 'product-card.html',
+                                                img: 'images/content/products/item-prod_00.jpg',
+                                                art: 'BR-449',
+                                                hex: '#D81329',
+                                                color: 'Насыщенный красный',
+                                                size: 'XS',
+                                                label: 'Sale',
+                                                price_old: '99 999 ₽',
+                                                price_new : '9 999 ₽',
+                                            },
+                                            {
+                                                name: 'Платье миди бирюзового цвета',
+                                                url: 'product-card.html',
+                                                img: 'images/content/products/item-prod_02.jpg',
+                                                art: 'BR-449',
+                                                hex: '#74BDB4',
+                                                color: 'Бирюзовый',
+                                                size: 'XS',
+                                                price_new: '9 999 ₽',
+                                            },
+                                            {
+                                                name: 'Свитер молочного цвета',
+                                                url: 'product-card.html',
+                                                img: 'images/content/products/item-prod_03.jpg',
+                                                art: 'BR-449',
+                                                hex: '#DED2C6',
+                                                color: 'Молочный',
+                                                size: 'XS',
+                                                price_new: '19 999 ₽',
+                                            },
+                                        ];
+                                    +basket-list(basketProducts) 
+                                    
+                            a.order-details__refund.btn.btn--disabled(href="#" data-micromodal="modal-order-cancel") Оформить возврат 
+                            
+                            
+                            

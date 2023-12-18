@@ -119,14 +119,12 @@ const toggleItems = () => {
     document.body.addEventListener('click', (e) => {
         const target = e.target as Element;
 
-        if (
-            (target.classList.contains('js-item-toggle') ||
-                target.closest('.js-item-toggle'))
-        ) {
+        if (target.classList.contains('js-item-toggle') || target.closest('.js-item-toggle')) {
             e.preventDefault();
             const link = target.classList.contains('js-item-toggle')
                 ? target
-                : target.closest('.js-menu-toggle');
+                : target.closest('.js-item-toggle');
+
             const linkTarget = link?.nextElementSibling;
             slideToggle(link, linkTarget, 300);
         }

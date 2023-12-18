@@ -32,21 +32,25 @@
         }
     }
 
-    &--cookie {
-        &[aria-hidden=true] .modal__container{
-            animation-name: slideOutBottom;
+    &--cookie[aria-hidden=true] {
+        .modal__container {
+            animation-name: slideInBottom !important;
             @include maxBp($bp-768){
                 animation-name: slideOutMobile;
             }
         }
+    }
 
-        &[aria-hidden=false] .modal__container{
-            animation-name: slideInBottom;
+    &--cookie[aria-hidden=false] {
+        .modal__container {
+            animation-name: slideInBottom !important;
             @include maxBp($bp-768){
                 animation-name: slideInMobile;
             }
         }
+    }
 
+    &--cookie {
         .modal__overlay{
             align-items: flex-end;
         }
@@ -258,13 +262,20 @@
 }
 
 .modal__close {
-    @include icon-close;
     outline: none !important;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     z-index: 10;
-    top: 12px;
-    right: 12px;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+
+    &-icon {
+        @include icon-close;
+    }
 }
 
 .modal__subtitle {

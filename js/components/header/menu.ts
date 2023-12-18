@@ -95,6 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
         menuShow();
     });
 
+    document.addEventListener('DOMContentLoaded', () => {
+        hoverMenu();
+        menuShow();
+    });
+
     window.addEventListener('load', () => {
         hoverMenu();
         menuShow();

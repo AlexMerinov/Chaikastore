@@ -85,6 +85,8 @@ const headerSearh = () => {
     jsSeaarchShow?.addEventListener('click', (e) => {
         e.preventDefault();
 
+        jsSeaarchShow.nextElementSibling?.querySelector('.form__input').focus();
+
         e.target.closest('.header__bottom').classList.add('bg');
 
         headerSearch?.classList.add('show');

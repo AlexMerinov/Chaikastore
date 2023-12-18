@@ -30,6 +30,20 @@ button {
     cursor: pointer;
     transition: var(--trans);
 
+    @include bp($bp-1280) {
+        &:hover {
+            background: #CBBCAA;
+            color: var(--black);
+        }
+    }
+
+    @include maxBp($bp-768) {
+        &--primary {
+            padding: 7px 16px;
+            @include text-size-14;
+        }
+    }
+
     &--primary {
         @include text-size-16;
         padding: 8px 16px;
@@ -47,6 +61,42 @@ button {
         }
     }
 
+    &--light-l {
+        @include text-size-16;
+        padding: 8px 16px;
+        background: #CBBCAA;
+        color: var(--black);
+
+        &:active {
+            background: var(--beige);
+            color: var(--black);
+        }
+
+        @include bp($bp-1280) {
+            &:hover {
+                background: var(--beige);
+            }
+        }
+    }
+
+    &--light-m {
+        padding: 4px 16px;  
+        @include text-size-12;
+        background: #CBBCAA;
+        color: var(--black);
+
+        &:active {
+            background: var(--beige);
+            color: var(--black);
+        }
+
+        @include bp($bp-1280) {
+            &:hover {
+                background: var(--beige);
+            }
+        }
+    }
+
     &--secondary {
         padding: 4px 16px;  
         @include text-size-12;
@@ -54,20 +104,6 @@ button {
         &:active {
             background: var(--Beige);
             color: var(--black);
-        }
-    }
-
-    @include bp($bp-1280) {
-        &:hover {
-            background: #CBBCAA;
-            color: var(--black);
-        }
-    }
-
-    @include maxBp($bp-768) {
-        &--primary {
-            padding: 7px 16px;
-            @include text-size-14;
         }
     }
 }

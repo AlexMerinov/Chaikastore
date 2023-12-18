@@ -1,0 +1,212 @@
+.person-order-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s-desc);
+
+    @include maxBp($bp-768) {
+        gap: var(--space-s-mob);
+    }
+}
+
+.person-order {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: var(--space-s-desc);
+    border-bottom: 1px solid var(--Stroke-gray);
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: var(--space-3xs-desc);
+
+        &-top,
+        &-bot {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+        }
+    }
+
+    &__number {
+        @include text-size-16;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__payment {
+        padding: 2px 8px;
+        border-radius: 4px;
+        background: #D8DCC7;
+        backdrop-filter: blur(2px);
+        @include text-size-10;
+
+        &--false {
+            background: #DCC7C7; 
+        }
+    }
+
+    &__price {
+        @include text-size-16;
+    }
+
+    &__status {
+        @include text-size-10;
+        color: var(--Stroke-gray);
+    }
+
+    &__date {
+        @include text-size-12;
+        color: var(--Stroke-gray); 
+    }
+
+    &__list {
+        display: flex;
+        gap: 16px;
+        overflow: auto;
+
+        picture {
+            flex: 0 0 auto;
+            display: block;
+            width: 76px;
+            height: 102px;
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    @include maxBp($bp-768) {
+        padding-bottom: var(--space-s-mob);
+
+        &__header {
+            margin-bottom: var(--space-2xs-mob);
+        }
+
+        &__number {
+            @include text-size-14;
+            gap: 4px;
+        }
+
+        &__list {
+            gap: 8px;
+        }
+    }
+                             
+}
+
+.person-order-refund {
+    display: flex;
+    gap: 8px;
+    margin-bottom: var(--space-s-desc);
+
+    &__link {
+        padding: 2px 8px;
+        border-radius: 4px;
+        border: 1px solid var(--Strokes-new);
+        @include text-size-16;
+
+        &.active {
+            border-color: var(--Strokes-new-black);
+        }
+    }
+
+    @include maxBp($bp-768) {
+        margin-bottom: var(--space-s-mob);
+
+        &__link {
+            @include text-size-14;
+        }
+    }
+}
+
+.order-details {
+    &__back {
+        margin-bottom: var(--space-xs-desc);
+    }
+
+    &__header {
+        margin-bottom: var(--space-xs-desc);
+    }
+
+    &__number {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include text-size-16;
+
+        .order-status {
+            display: block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(216, 220, 199, 0.50);
+            backdrop-filter: blur(2px);
+
+            @include text-size-10;
+        }
+    }
+
+    &__date {
+       color: var(--Strokes-new-black); 
+    }
+
+    &__field {
+        margin-bottom: var(--space-2xs-desc);
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    &__subtitle {
+        display: block;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 150%;
+        font-style: normal;
+        color: var(--black);
+        margin-bottom: var(--space-4xs);
+    }
+
+    .order-delivery {
+        margin-bottom: var(--space-xs-desc);
+    }
+}
+
+.order-delivery {
+    padding: 8px;
+    border-radius: 4px;
+    background: var(--White-background);
+    display: flex;
+    align-items: center;
+
+    .icon-sym {
+        fill: none;
+        stroke: var(--black);
+        margin-right: 4px;
+    }
+
+    a {
+        display: inline-block;
+        margin-left: auto;
+        @include text-size-10;
+        text-decoration: underline;
+    }
+}
+
+.order-details-list {
+    margin-bottom: var(--space-s-desc);
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    &__title {
+        @include text-size-16;
+    }
+}

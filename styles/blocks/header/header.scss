@@ -229,8 +229,8 @@
 
         pointer-events: none;
         opacity: 0;
-
         transition: var(--trans);
+        transition-delay: 0s;
 
         & > ul {
             display: flex;
@@ -375,6 +375,7 @@
         &__item--drop:hover {
             .header-menu__submenu {
                 transition: var(--trans-slow);
+                // transition-delay: .3s;
                 opacity: 1;
                 pointer-events: visible;
                 max-height: 800px;
