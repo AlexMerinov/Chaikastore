@@ -1,4 +1,4 @@
-mixin order-list(items)
+mixin lk-order-list(items)
     .person-order-list
         each item in items       
             -
@@ -8,7 +8,7 @@ mixin order-list(items)
                     date,
                     number,
                     price, 
-                       ,
+                    status,
                     products,
                 } = item;
             a.person-order(href=url + '.html')

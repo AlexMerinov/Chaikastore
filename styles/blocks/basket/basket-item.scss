@@ -64,6 +64,8 @@
 
     &__content {
         width: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
     &__title {
@@ -143,6 +145,7 @@
     }
 
     &__footer {
+        margin-top: auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -151,6 +154,7 @@
     &__price {
         display: flex;
         flex-direction: column;
+        margin-left: auto;
         &-old {
             @include text-size-10;
             color: var(--Strokes-new);

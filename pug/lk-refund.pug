@@ -1,4 +1,5 @@
 extends ./_layout
+include ./mixins/list/order-list
 
 block content
         .wrapper__page.p-top-content
@@ -30,8 +31,7 @@ block content
                         a.person-out.person-out--desc(href="#" data-micromodal="modal-exit-lk") Выйти
                     .section-cols__content
                         .person-order-refund
-                            a.person-order-refund__link.active(href='lk-orders.html') Заказы
-                            a.person-order-refund__link(href='lk-orders.html') Возвраты
-                        p Вы еще не сделали ни одного заказа
-
+                            a.person-order-refund__link(href='lk-orders.html') Заказы
+                            a.person-order-refund__link.active(href='lk-refund.html') Возвраты
+                        p Вы еще не сделали ни одного возврата
                     a.person-out.person-out--mob(href="#" data-micromodal="modal-exit-lk") Выйти

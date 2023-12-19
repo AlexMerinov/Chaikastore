@@ -37,14 +37,8 @@ block content
                             .order-details__header  
                                 .order-details__number
                                     span Ваш заказ № 145654545654  
-                                    span.order-status Доставка
+                                    span.order-status Доставлен
                                 .order-details__date от 15.05.2022 
-                            .order-delivery 
-                                .order-delivery__status
-                                    +icon-sym('check')
-                                    | Оплачен и передан в службу доставки. Трек&nbsp;номер:&nbsp;<a href="LK9006786789900" class="js-link-copy order-delivery__num">LK9006786789900</a>
-                                 
-                                a(href="#" data-micromodal="modal-order-cancel") Отменить
                             dl.order-details__field   
                                 dt.order-details__subtitle О покупателе:
                                 dd Воронцова Алина, +7 (960) 988 98 98, login@gmail.com
@@ -110,7 +104,15 @@ block content
                                             },
                                         ];
                                     +basket-list(basketProducts) 
-                    a.person-out.person-out--mob(href="#" data-micromodal="modal-exit-lk") Выйти                
+                                    
+                            .order-details__refund
+                                a.order-details__refund-link.btn.btn--secondary.disable(href="lk-order-refund.html") Оформить возврат 
+                                .order-details__refund-status
+                                    +icon-sym('check')
+                                    span Доставлен 22.08.22
+                    a.person-out.person-out--mob(href="#" data-micromodal="modal-exit-lk") Выйти    
+
+
                             
                             
                             

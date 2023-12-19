@@ -8,37 +8,35 @@ block content
             .section 
                 .section-cols
                     .section-cols__side 
-                        ul.person-menu.fade-in   
-                            li.person-menu__title.js-item-toggle 
+                        nav.person-menu.fade-in   
+                            .person-menu__title.js-item-toggle 
                                 span Мои данные
                                 .arrow-drop
                                     span 
                                     span
-                            li.person-menu__list 
+                            .person-menu__list 
                                 ul 
                                     li.person-menu__item    
-                                        a(href="404.html") Мои данные
-                                    li.person-menu__item    
-                                        a.active(href="lk.html") Мои заказы и возвраты
-                                    li.person-menu__item    
-                                        a(href="lk.html") Избранное
-                                    li.person-menu__item    
-                                        a(href="lk.html") Корзина
-                                    li.person-menu__item    
-                                        a(href="lk.html") Бонусные баллы
-                                    li.person-menu__item    
-                                        a(href="lk.html") Подарочные сертификаты
-                                    li.person-menu__item    
                                         a(href="lk.html") Мои данные
+                                    li.person-menu__item    
+                                        a.active(href="lk-orders.html") Мои заказы и возвраты
+                                    li.person-menu__item    
+                                        a(href="lk-favorite.html") Избранное
+                                    li.person-menu__item    
+                                        a(href="cart.html") Корзина
+                                    li.person-menu__item    
+                                        a(href="lk-bonus.html") Бонусные баллы
+                                    li.person-menu__item    
+                                        a(href="lk-cert.html") Подарочные сертификаты
                         a.person-out.person-out--desc(href="#" data-micromodal="modal-exit-lk") Выйти
                     .section-cols__content
                         .person-order-refund
                             a.person-order-refund__link.active(href='lk-orders.html') Заказы
-                            a.person-order-refund__link(href='lk-orders.html') Возвраты
+                            a.person-order-refund__link(href='lk-refund.html') Возвраты
                         -
-                            const orders = [
+                            const ordersList = [
                                 {
-                                    url: '404',
+                                    url: 'lk-order-details',
                                     payment: true,
                                     date: '16.09.2023',
                                     number: '1231123443',
@@ -60,7 +58,7 @@ block content
                                     ]
                                 },
                                 {
-                                    url: '404',
+                                    url: 'lk-order-details',
                                     payment: true,
                                     date: '01.09.2023',
                                     number: '12346783',
@@ -79,7 +77,7 @@ block content
                                     ]
                                 },
                                 {
-                                    url: '404',
+                                    url: 'lk-order-details',
                                     payment: false,
                                     date: '22.04.2023',
                                     number: '1231123499',
@@ -92,7 +90,7 @@ block content
                                     ]
                                 },
                                 {
-                                    url: '404',
+                                    url: 'lk-order-details',
                                     payment: true,
                                     date: '16.09.2023',
                                     number: '1231123443',
@@ -114,7 +112,7 @@ block content
                                     ]
                                 },
                                 {
-                                    url: '404',
+                                    url: 'lk-order-details',
                                     payment: true,
                                     date: '16.09.2023',
                                     number: '1231123443',
@@ -136,5 +134,5 @@ block content
                                     ]
                                 }
                             ]
-                        +order-list(orders)
-                        
+                        +lk-order-list(ordersList)
+                    a.person-out.person-out--mob(href="#" data-micromodal="modal-exit-lk") Выйти    

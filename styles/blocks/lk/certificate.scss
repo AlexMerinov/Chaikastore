@@ -1,0 +1,150 @@
+.certificat {
+    display: grid;
+    grid-template-columns: 236px 1fr;
+    grid-template-rows:  repeat(2,  minmax(min-content, 100px));
+    column-gap: 16px;
+    row-gap: 0px;
+    &__total {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        display: flex;
+
+        &-card {
+            width: 236px;
+            height: 126px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+    
+            border-radius: 8px;
+            border: 1px solid var(--black);
+            background: var(--White-background);
+            margin-left: auto;
+            margin-right: auto;
+
+            @include maxBp($bp-1280) {
+                margin-bottom: var(--space-2xs-desc);
+            }
+
+            @include maxBp($bp-768) {
+                margin-bottom: var(--space-2xs-mob);
+            }
+        }
+
+        &-sum {
+            @include text-h3;
+        }
+
+        @include maxBp($bp-768) {
+            grid-column: 1 / 2;
+        }
+    }
+
+    &__content {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+
+        @include maxBp($bp-768) {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+        }
+    }
+
+    &__name {
+        @include text-size-16;
+        margin-bottom: var(--space-3xs-desc);
+        @include maxBp($bp-768) {
+            @include text-size-14;
+            margin-bottom: var(--space-3xs-mob);
+        }
+    }
+
+    &__text {
+        margin-bottom: var(--space-3xs-desc);
+        @include maxBp($bp-768) {
+            margin-bottom: var(--space-3xs-mob);
+        }
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        & > * {
+            width: 100%;
+            max-width: 205px;    
+        }
+
+        @include maxBp($bp-768) {
+            margin-bottom: var(--space-s-mob);
+            & > * {
+                max-width: 100%;    
+            }
+        }
+    }
+
+    &__list {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        dt {
+            @include text-size-16;
+            margin-bottom: var(--space-s-mob);
+        }
+
+        @include maxBp($bp-1280) {
+            grid-column: 1 / 3;
+        }
+
+        @include maxBp($bp-768) {
+            grid-row: 3 / 4;
+            grid-column: 1 / 2;
+        }
+    }
+
+    &__item {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        padding: 8px;
+        border-radius: 4px;
+        background: var(--White-background );
+        margin-bottom: var(--space-3xs-desc);
+        @include text-size-10;
+        gap: 4px;
+
+        &-num {
+            @include text-size-12;
+        }
+
+        .icon-sym {
+            fill: none;
+            stroke: var(--black);
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        & > * {
+            &:last-child {
+                display: block;
+                margin-left: auto;
+            }
+        }
+
+        @include maxBp($bp-768) {
+            row-gap: var(--space-3xs-mob);
+        }
+    }
+
+    @include maxBp($bp-1280) {
+        row-gap: var(--space-2xs-desc);
+    }
+
+    @include maxBp($bp-768) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, minmax(min-content, max-content));
+    }
+}

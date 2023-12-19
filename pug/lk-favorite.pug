@@ -1,0 +1,215 @@
+extends ./_layout
+include ./mixins/list/product-card
+include ./mixins/list/favorite-list
+ 
+
+block content
+        .wrapper__page.p-top-content
+            .wrapper__haed 
+                h1 Личный кабинет 
+            .section 
+                .section-cols
+                    .section-cols__side 
+                        nav.person-menu.fade-in   
+                            .person-menu__title.js-item-toggle 
+                                span Мои заказы и возвраты
+                                .arrow-drop
+                                    span 
+                                    span
+                            .person-menu__list 
+                                ul 
+                                    li.person-menu__item    
+                                        a(href="lk.html") Мои данные
+                                    li.person-menu__item    
+                                        a(href="lk-orders.html") Мои заказы и возвраты
+                                    li.person-menu__item    
+                                        a.active(href="lk-favorite.html") Избранное
+                                    li.person-menu__item    
+                                        a(href="cart.html") Корзина
+                                    li.person-menu__item    
+                                        a(href="lk-bonus.html") Бонусные баллы
+                                    li.person-menu__item    
+                                        a(href="lk-cert.html") Подарочные сертификаты
+                        a.person-out.person-out--desc(href="#" data-micromodal="modal-exit-lk") Выйти
+                    .section-cols__content
+                        -
+                            const productsList = [    
+                                {
+                                    name: 'Спортивные брюки графитового цвета с бирюзовой вставкой (длинное название товара на несколько строк)',
+                                    price: '99 499 ₽',
+                                    price_old: '199 999 ₽',
+                                    label: '',
+                                    mini: true,
+                                    added: true,
+                                    colors: [
+                                        {
+                                            hex: '#ACACAC',
+                                            photos: [
+                                                'images/content/products/item-prod_00.jpg',
+                                                'images/content/products/item-prod-color-1-1.png',
+                                                'images/content/products/item-prod-color-1-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                            ]
+                                        },
+                                        {
+                                            hex: '#E0E0E0',
+                                            photos: [
+                                                'images/content/products/item-prod-color-1-2.png',
+                                                'images/content/products/item-prod-color-1-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                            ]
+                                        },
+                                        {
+                                            hex: '#C6C6DA',
+                                            photos: [
+                                                'images/content/products/item-prod-color-1-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                                'images/content/products/item-prod-color-1-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                            ]
+                                        },
+                                        {
+                                            hex: '#ACF0FF',
+                                            photos: [
+                                                'images/content/products/item-prod-color-1-2.png',
+                                                'images/content/products/item-prod-color-1-1.png',
+                                            ]
+                                        },
+                                        {
+                                            hex: '#ACF0FF',
+                                            photos: [
+                                                'images/content/products/item-prod-color-1-1.png',
+                                            ]
+                                        },
+                                    ]
+                                },
+                                {
+                                    name: 'Спортивные брюки графитового цвета с бирюзовой вставкой',
+                                    price: '99 499 ₽',
+                                    price_old: '199 999 ₽',
+                                    label: 'New',
+                                    mini: true,
+                                    added: true,
+                                    colors: [
+                                        {
+                                            hex: '#ACACAC',
+                                            photos: [
+                                                'images/content/products/item-prod-color-1-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                            ]
+                                        },
+                                        {
+                                            hex: '#E0E0E0',
+                                            photos: [
+                                                'images/content/products/item-prod-color-1-2.png',
+                                                'images/content/products/item-prod-color-1-1.png',
+                                            ]
+                                        },
+                                        {
+                                            hex: '#C6C6DA',
+                                            photos: [
+                                                'images/content/products/item-prod-color-1-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                            ]
+                                        },
+                                        {
+                                            hex: '#ACF0FF',
+                                            photos: [
+                                                'images/content/products/item-prod-color-1-2.png',
+                                                'images/content/products/item-prod-color-1-1.png',
+                                            ]
+                                        },
+                                    ]
+                                },
+                                {
+                                    name: 'Спортивные брюки',
+                                    price: '99 499 ₽',
+                                    price_old: '199 999 ₽',
+                                    label: '',
+                                    mini: true,
+                                    added: true,
+                                    colors: [
+                                        {
+                                            hex: '#ACACAC',
+                                            photos: [
+                                                'images/content/products/item-prod-color-2-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                                'images/content/products/item-prod-color-1-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                            ]
+                                        },
+                                        {
+                                            hex: '#E0E0E0',
+                                            photos: [
+                                                'images/content/products/item-prod-color-1-2.png',
+                                                'images/content/products/item-prod-color-1-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                            ]
+                                        },
+                                        {
+                                            hex: '#C6C6DA',
+                                            photos: [
+                                                'images/content/products/item-prod-color-1-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                                'images/content/products/item-prod-color-1-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                            ]
+                                        },
+                                    ]
+                                },
+                                {
+                                    name: 'Спортивные брюки графитового цвета с бирюзовой вставкой',
+                                    price: '99 499 ₽',
+                                    price_old: '199 999 ₽',
+                                    label: 'Sale',
+                                    mini: true,
+                                    added: true,
+                                    colors: [
+                                        {
+                                            hex: '#ACACAC',
+                                            photos: [
+                                                'images/content/products/item-prod-color-3-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                                'images/content/products/item-prod-color-1-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                            ]
+                                        },
+                                        {
+                                            hex: '#E0E0E0',
+                                            photos: [
+                                                'images/content/products/item-prod-color-1-2.png',
+                                                'images/content/products/item-prod-color-1-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                            ]
+                                        },
+                                        {
+                                            hex: '#C6C6DA',
+                                            photos: [
+                                                'images/content/products/item-prod-color-1-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                                'images/content/products/item-prod-color-1-1.png',
+                                                'images/content/products/item-prod-color-1-2.png',
+                                            ]
+                                        },
+                                        {
+                                            hex: '#ACF0FF',
+                                            photos: [
+                                                'images/content/products/item-prod-color-1-2.png',
+                                                'images/content/products/item-prod-color-1-1.png',
+                                            ]
+                                        },
+                                        {
+                                            hex: '#ACF0FF',
+                                            photos: [
+                                                'images/content/products/item-prod-color-1-1.png',
+                                            ]
+                                        },
+                                    ]
+                                },
+                            ];
+                        +grid-product(productsList)
+                    a.person-out.person-out--mob(href="#" data-micromodal="modal-exit-lk") Выйти
+
+                            
+                            
+                            

@@ -1,19 +1,16 @@
-mixin basket-list(items)
-    ul.order-list
+mixin grid-product(items)
+    .row.row-cols-5.row-cols-3xl-4.row-cols-xl-4.row-cols-l-5.row-cols-m-4.row-cols-s-3.row-cols-xs-2
         each item, index in items
             -
                 const {
                     name, 
                     url,
-                    img,
+                    picture,
                     colors,
-                    hex,
-                    size,
                     price,
                     price_old,
-                    art,
                     label,
-                    order,
+                    mini,
                 } = item;
-            li.order-list__item
-                +basket-item(item)
+            .col
+                +product-card(item)

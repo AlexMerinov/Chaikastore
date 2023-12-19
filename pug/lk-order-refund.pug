@@ -25,7 +25,7 @@ block content
                                     li.person-menu__item    
                                         a(href="lk-favorite.html") Избранное
                                     li.person-menu__item    
-                                        a(href="cart.html") Корзина
+                                        a(href="cart  .html") Корзина
                                     li.person-menu__item    
                                         a(href="lk-bonus.html") Бонусные баллы
                                     li.person-menu__item    
@@ -36,15 +36,8 @@ block content
                             a.order-details__back(href='lk-orders.html') Назад
                             .order-details__header  
                                 .order-details__number
-                                    span Ваш заказ № 145654545654  
-                                    span.order-status Доставка
+                                    span Возврат заказа № 145654545654  
                                 .order-details__date от 15.05.2022 
-                            .order-delivery 
-                                .order-delivery__status
-                                    +icon-sym('check')
-                                    | Оплачен и передан в службу доставки. Трек&nbsp;номер:&nbsp;<a href="LK9006786789900" class="js-link-copy order-delivery__num">LK9006786789900</a>
-                                 
-                                a(href="#" data-micromodal="modal-order-cancel") Отменить
                             dl.order-details__field   
                                 dt.order-details__subtitle О покупателе:
                                 dd Воронцова Алина, +7 (960) 988 98 98, login@gmail.com
@@ -64,12 +57,10 @@ block content
                                 dd Доставка: 490 ₽  
                                 dd Скидка: 500 ₽  
                                 dd Итого: 24 500 ₽  
-                            .order-details-list.fade-in 
-                                .order-details-list__header.js-item-toggle  
-                                    .order-details-list__title Товары в заказе: <span>3</span>
-                                    button(type="button").arrow-drop
-                                        span 
-                                        span
+                            .order-details-list
+                                .order-details-list__header 
+                                    .order-details-list__title Выберите товары для возврата
+                                    .order-details-list__description Обращаем ваше внимание, что возврат и обмен товара осуществляется за счет клиента.          
                                 .order-details-list__content
                                     -
                                         const basketProducts = [
@@ -110,7 +101,15 @@ block content
                                             },
                                         ];
                                     +basket-list(basketProducts) 
-                    a.person-out.person-out--mob(href="#" data-micromodal="modal-exit-lk") Выйти                
+                                    
+                            .order-details__refund
+                                a.order-details__refund-link.btn.btn--secondary.disable(href="lk-order-refund.html") Оформить возврат 
+                                .order-details__refund-status
+                                    +icon-sym('check')
+                                    span Доставлен 22.08.22
+                    a.person-out.person-out--mob(href="#" data-micromodal="modal-exit-lk") Выйти
+
+
                             
                             
                             

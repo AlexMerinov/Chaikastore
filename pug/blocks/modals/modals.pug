@@ -246,6 +246,13 @@ block modal
         | Ваше сообщение отправлено!
 
 +modal({
+    id: 'link-copy', 
+    modifier: 'no-content'
+})
+    +slot('header')
+        | Ваш трек номер скопирован
+
++modal({
     id: 'table-size',
     modifier: 'overflow'
 })

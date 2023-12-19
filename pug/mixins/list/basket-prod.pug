@@ -1,35 +1,62 @@
 mixin basket-item(card)
-    .order-item 
-        .order-item__close(data-micromodal='modal-delet-product')
-        a.order-item__preview(href=url) 
-            picture 
-                img(src=card.img)
-        .order-item__content 
-            .order-item__title
-                a(href=url) 
-                    != card.name
-                if card.label
-                    span.label  
-                        != card.label
-                .favorite.js-favorite-add 
-                    +icon-sym('favorite')
-            .order-item__art
-                != card.art
-            .order-item__color 
-                span.order-item__color-hex(style='background:' + card.hex) 
-                span.order-item__color-name
-                    != card.color
-                .order-item__size 
-                    != card.size
-            .order-item__footer 
-                .order-item__cointer.counter.js-counter 
-                    button.counter__btn.counter__btn--down(type='button')
-                        span
-                    input.counter__input(type="text" min='1' value='1')    
-                    button.counter__btn.counter__btn--up(type='button')   
-                        span 
-                .order-item__price
-                    .order-item__price-old
-                        != card.price_old
-                    .order-item__price-new
-                        != card.price_new
+    if card.order === true
+        .order-item 
+            a.order-item__preview(href=url) 
+                picture 
+                    img(src=card.img)
+            .order-item__content 
+                .order-item__title
+                    a(href=url) 
+                        != card.name
+                    if card.label
+                        span.label  
+                            != card.label
+                .order-item__art
+                    != card.art
+                .order-item__color 
+                    span.order-item__color-hex(style='background:' + card.hex) 
+                    span.order-item__color-name
+                        != card.color
+                    .order-item__size 
+                        != card.size
+                .order-item__footer 
+                    .order-item__price
+                        .order-item__price-old
+                            != card.price_old
+                        .order-item__price-new
+                            != card.price_new
+    else
+        .order-item 
+            .order-item__close(data-micromodal='modal-delet-product')
+            a.order-item__preview(href=url) 
+                picture 
+                    img(src=card.img)
+            .order-item__content 
+                .order-item__title
+                    a(href=url) 
+                        != card.name
+                    if card.label
+                        span.label  
+                            != card.label
+                    .favorite.js-favorite-add 
+                        +icon-sym('favorite')
+                .order-item__art
+                    != card.art
+                .order-item__color 
+                    span.order-item__color-hex(style='background:' + card.hex) 
+                    span.order-item__color-name
+                        != card.color
+                    .order-item__size 
+                        != card.size
+                .order-item__footer 
+                    .order-item__cointer.counter.js-counter 
+                        button.counter__btn.counter__btn--down(type='button')
+                            span
+                        input.counter__input(type="text" min='1' value='1')    
+                        button.counter__btn.counter__btn--up(type='button')   
+                            span 
+                    .order-item__price
+                        .order-item__price-old
+                            != card.price_old
+                        .order-item__price-new
+                            != card.price_new

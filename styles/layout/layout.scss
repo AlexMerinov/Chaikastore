@@ -105,7 +105,7 @@ input {
 
         @include maxBp($bp-768){
             padding-left: 8px;
-            padding-right: 8px;
+            padding-right: 8px; 
         }
     }
 
@@ -283,6 +283,9 @@ input {
     width: 100%;
 }
 
+.js-item-toggle  {
+    cursor: pointer;
+}
 
 .section {
     margin-bottom: var(--space-xl-desc);

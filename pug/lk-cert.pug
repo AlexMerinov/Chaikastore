@@ -1,0 +1,56 @@
+extends ./_layout
+
+block content
+        .wrapper__page.p-top-content
+            .wrapper__haed 
+                h1 Личный кабинет 
+            .section 
+                .section-cols
+                    .section-cols__side 
+                        nav.person-menu.fade-in   
+                            .person-menu__title.js-item-toggle 
+                                span Бонусные баллы
+                                .arrow-drop
+                                    span 
+                                    span
+                            .person-menu__list 
+                                ul 
+                                    li.person-menu__item    
+                                        a(href="lk.html") Мои данные
+                                    li.person-menu__item    
+                                        a(href="lk-orders.html") Мои заказы и возвраты
+                                    li.person-menu__item    
+                                        a(href="lk-favorite.html") Избранное
+                                    li.person-menu__item    
+                                        a(href="cart.html") Корзина
+                                    li.person-menu__item    
+                                        a.active(href="lk-bonus.html") Бонусные баллы
+                                    li.person-menu__item    
+                                        a(href="lk-cert.html") Подарочные сертификаты
+                        a.person-out.person-out--desc(href="#" data-micromodal="modal-exit-lk") Выйти
+                    .section-cols__content
+                        .certificat
+                            .certificat__total 
+                                .certificat__total-card 
+                                    span.certificat__total-text Общая сумма
+                                    span.certificat__total-sum 10 000 ₽
+                            .certificat__content
+                                .certificat__name Добавьте сертификат
+                                .certificat__text Чтобы воспользоваться им при оформлении заказа
+                                .certificat__btns 
+                                    a.btn.btn--secondary(href="#" data-micromodal="modal-add-cert") Добавить
+                                    a.btn.btn--light-m(href="#") Подарить
+                            dl.certificat__list 
+                                dt Активные сертификаты
+                                dd.certificat__item
+                                    +icon-sym('check')
+                                    span.certificat__item-num Сертификат № JF456SD
+                                    span Активен до 12.01.2024
+                                    span 5 000 ₽
+                                dd.certificat__item
+                                    +icon-sym('check')
+                                    span.certificat__item-num Сертификат № JF456SD
+                                    span Активен до 12.12.2023
+                                    span 5 000 ₽
+
+                    a.person-out.person-out--mob(href="#" data-micromodal="modal-exit-lk") Выйти

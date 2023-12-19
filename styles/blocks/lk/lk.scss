@@ -40,6 +40,22 @@
         padding-top: 4px;
         padding-bottom: 4px;
         border-bottom: 1px solid var(--black);
+
+        &.show {
+            .arrow-drop {
+                span {
+                    &:first-child {
+                        transform: rotate(-90deg);
+                    }
+
+                    &:last-child {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+
+
         @include maxBp($bp-1280) {
             display: flex;
         }
@@ -128,6 +144,12 @@
 
     &--desc {
         @include maxBp($bp-1280) {
+            display: none;
+        }
+    }
+
+    &--mob {
+        @include bp($bp-1280) {
             display: none;
         }
     }

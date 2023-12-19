@@ -1,0 +1,102 @@
+extends ./_layout
+
+block content
+        .wrapper__page.p-top-content
+            .wrapper__haed 
+                h1 Личный кабинет 
+            .section 
+                .section-cols
+                    .section-cols__side 
+                        nav.person-menu.fade-in   
+                            .person-menu__title.js-item-toggle 
+                                span Бонусные баллы
+                                .arrow-drop
+                                    span 
+                                    span
+                            .person-menu__list 
+                                ul 
+                                    li.person-menu__item    
+                                        a(href="lk.html") Мои данные
+                                    li.person-menu__item    
+                                        a(href="lk-orders.html") Мои заказы и возвраты
+                                    li.person-menu__item    
+                                        a(href="lk-favorite.html") Избранное
+                                    li.person-menu__item    
+                                        a(href="cart.html") Корзина
+                                    li.person-menu__item    
+                                        a.active(href="lk-bonus.html") Бонусные баллы
+                                    li.person-menu__item    
+                                        a(href="lk-cert.html") Подарочные сертификаты
+                        a.person-out.person-out--desc(href="#" data-micromodal="modal-exit-lk") Выйти
+                    .section-cols__content
+                        .bonuses
+                            .bonuses__header
+                                span.bonuses__header-counter 324
+                                span.bonuses__header-text Накоплено баллов
+                                a.bonuses__header-link(href="404.html") Как начисляются бонусы?
+                            .bonuses__list 
+                                .person-info.fade-in 
+                                    .person-info__header.js-item-toggle  
+                                        .person-info__title 2023
+                                        button(type="button").arrow-drop
+                                            span 
+                                            span
+                                    .person-info__content
+                                        ul.bonus-list
+                                            li.bonus-list__item     
+                                                a.bonus-list__order(href="lk-order-details-ok.html") Заказ № <span> 456646546</span> от <span>20.05.2023</span>
+                                                span Начислятся через 8 дней
+                                                span 25
+                                            li.bonus-list__item     
+                                                a.bonus-list__order(href="lk-order-details-ok.html") Заказ № <span> 456646546</span> от <span>09.04.2023</span>
+                                                span Списаны
+                                                span 12
+                                            li.bonus-list__item     
+                                                a.bonus-list__order(href="lk-order-details-ok.html") Заказ № <span> 456646546</span> от <span>11.01.2023</span>
+                                                span Начислены
+                                                span 100
+                                .person-info.fade-in 
+                                    .person-info__header.js-item-toggle  
+                                        .person-info__title 2022
+                                        button(type="button").arrow-drop
+                                            span 
+                                            span
+                                    .person-info__content
+                                        ul.bonus-list
+                                            li.bonus-list__item     
+                                                a.bonus-list__order(href="lk-order-details-ok.html") Заказ № <span> 456646546</span> от <span>20.05.2022</span>
+                                                span Списаны
+                                                span 8
+                                            li.bonus-list__item     
+                                                a.bonus-list__order(href="lk-order-details-ok.html") Заказ № <span> 456646546</span> от <span>20.05.2022</span>
+                                                span Начислены
+                                                span 10
+                                .person-info.fade-in 
+                                    .person-info__header.js-item-toggle  
+                                        .person-info__title 2021
+                                        button(type="button").arrow-drop
+                                            span 
+                                            span
+                                    .person-info__content
+                                        ul.bonus-list
+                                            li.bonus-list__item     
+                                                a.bonus-list__order(href="lk-order-details-ok.html") Заказ № <span> 456646546</span> от <span>20.05.2021</span>
+                                                span Списаны
+                                                span 123
+                                            li.bonus-list__item     
+                                                a.bonus-list__order(href="lk-order-details-ok.html") Заказ № <span> 456646546</span> от <span>20.05.2021</span>
+                                                span Начислены
+                                                span 123
+                                .person-info.fade-in 
+                                    .person-info__header.js-item-toggle  
+                                        .person-info__title 2020
+                                        button(type="button").arrow-drop
+                                            span 
+                                            span
+                                    .person-info__content
+                                        ul.bonus-list
+                                            li.bonus-list__item     
+                                                a.bonus-list__order(href="lk-order-details-ok.html") Заказ № <span> 456646546</span> от <span>20.05.2020</span>
+                                                span Начислены
+                                                span 999
+                    a.person-out.person-out--mob(href="#" data-micromodal="modal-exit-lk") Выйти

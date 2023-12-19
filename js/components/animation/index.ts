@@ -7,3 +7,4 @@ import './menu-preview';
 import './product-card';
 import './components';
 import './air-datepicker';
+import './copy-link';
