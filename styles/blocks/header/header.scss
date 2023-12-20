@@ -100,7 +100,7 @@
             background: var(--Main-background);
         }
 
-        @include maxBp($bp-1024) {
+        @include maxBp($bp-1280) {
             height: 56px;
         }
     }
@@ -115,7 +115,7 @@
     display: flex;
     align-items: center;
 
-    @include maxBp($bp-1024) {
+    @include maxBp($bp-1280) {
         padding-left: 16px;
         padding-right: 16px;
         padding-top: var(--space-s);
@@ -184,28 +184,13 @@
         }
 
         @include bp($bp-1280) {
-            &:nth-child(1):hover {
+            &:hover {
                 & > a span {
+
                     &::after {
+                        transition-delay: .2s;
                         width: 100%;
                     }
-                }
-            }
-            &:nth-child(2):hover {
-                & > a span {
-                    font-weight: 500;
-                }
-            }
-            &:nth-child(3):hover {
-                & > a span {
-                    &::after {
-                        width: 100%;
-                    }
-                }
-            }
-            &:nth-child(4):hover {
-                & > a span {
-                    opacity: 0.5;
                 }
             }
         }
@@ -267,7 +252,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: var(--space-2xs); 
+                margin-bottom: var(--space-2xs-desc); 
 
                     @include maxBp($bp-768) {
                         margin-bottom: 0;
@@ -277,7 +262,10 @@
                 }
 
                 ul li {
-                    margin-bottom: var(--space-2xs-desc); 
+                    margin-bottom: var(--space-3xs-desc); 
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
 
                     @include maxBp($bp-768) {
                         line-height: 1;
@@ -349,7 +337,7 @@
             }
         }
 
-        @include maxBp($bp-1024) {
+        @include maxBp($bp-1280) {
             opacity: 1;
             max-height: 100%;
             top: 66px;
@@ -362,7 +350,7 @@
     &__preview  {
         margin-left: 80px;
 
-        @include maxBp($bp-1024) {
+        @include maxBp($bp-1280) {
            display: none;
         }
     }
@@ -375,7 +363,7 @@
         &__item--drop:hover {
             .header-menu__submenu {
                 transition: var(--trans-slow);
-                // transition-delay: .3s;
+                transition-delay: .2s;
                 opacity: 1;
                 pointer-events: visible;
                 max-height: 800px;
@@ -438,7 +426,7 @@
 .header-menu__item {
     height: 100%;
 
-    @include maxBp($bp-1024) {
+    @include maxBp($bp-1280) {
         height: auto;
     }
 }
@@ -447,7 +435,7 @@
     display: flex;
     align-items: center;
 
-    @include maxBp($bp-1024){
+    @include maxBp($bp-1280){
         z-index: -1;
         position: absolute;
         top: -100vh;
@@ -557,11 +545,13 @@
 
 .hamburger {
     margin-right: 22px;
-    width: 16px;
-    height: 16px;
+    width: 54px;
+    height: 54px;
     display: none;
     align-items: center;
     justify-content: center;
+    position: relative;
+    left: -16px;
 
     cursor: pointer;
 
@@ -593,7 +583,7 @@
         }
     }
 
-    @include maxBp($bp-1024){
+    @include maxBp($bp-1280){
         display: flex;
 
         &.active {
@@ -618,6 +608,7 @@
 
     @include maxBp($bp-768) {
         margin-right: 0;
+        left: -8px;
     }
 }
 
@@ -634,7 +625,7 @@ body.menu-show {
 .header.transparent {
     .header-logo {
         &__img {
-            @include maxBp($bp-1024) {
+            @include maxBp($bp-1280) {
             }
             &--light {
                 opacity: 1;
@@ -651,10 +642,6 @@ body.menu-show {
 
             & > a span {
                 color: var(--White-background);
-    
-                @include maxBp($bp-1024) {
-
-                }
             }
 
             @include bp($bp-1280) {
@@ -687,7 +674,7 @@ body.menu-show {
         transition: var(--trans);
         
 
-        @include maxBp($bp-1024) {
+        @include maxBp($bp-1280) {
         }
 
         .hamburger {
@@ -718,7 +705,7 @@ body.menu-show {
             .header-logo {
                 &__img {
                     
-                    @include maxBp($bp-1024) {
+                    @include maxBp($bp-1280) {
                     }
                     &--light {
                         opacity: 0;
@@ -768,7 +755,6 @@ body.menu-show {
     width: 45%;
     max-width: 670px;
     max-height: 100%;
-    min-height: 500px;
     display: flex;
     position: relative;
 

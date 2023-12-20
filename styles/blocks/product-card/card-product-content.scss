@@ -7,14 +7,10 @@
 
     &__item {
         height: auto;
-        width: 324px;
+        width: 288px;
 
         .product-card {
             height: 100%;
-        }
-
-        @include maxBp($bp-768) {
-            width: 288px;
         }
     }
 
@@ -33,7 +29,7 @@
             cursor: pointer;
         }
 
-        @include maxBp($bp-1024) {
+        @include maxBp($bp-1280) {
             width: calc(100% - 16px);
         }
 

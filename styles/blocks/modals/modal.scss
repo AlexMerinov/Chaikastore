@@ -103,7 +103,7 @@
 
                 &-slide {
                     picture {
-                        opacity: 0.5;
+                        opacity: 0.3;
                         display: flex;
                         height: 100%;
                         width: 100%;
@@ -127,7 +127,7 @@
         }
 
         .modal__container {
-            @include maxBp($bp-1024) {
+            @include maxBp($bp-1280) {
                 padding: 0;
             }
         }
@@ -180,7 +180,7 @@
 .modal__container {
     min-width: 298px;
     max-width: 350px;
-    margin: 16px auto;
+    margin: 0px auto;
     box-sizing: border-box;
     background: var(--White-background);
     border-radius: 4px;

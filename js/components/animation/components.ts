@@ -1,43 +1,50 @@
 import { slideToggle } from '@js/components/animation/toggle';
 // добавление элемента в избранное
 const favoriteItem = () => {
-    const addFavorite = document.querySelectorAll('.js-favorite-add');
+    document.body.addEventListener('click', (e) => {
+        const favorite = e.target as Element;
 
-    addFavorite.forEach((item) => {
-        item.addEventListener('click', () => {
-            if (!item.classList.contains('added')) {
-                item.classList.add('added');
-            } else {
-                item.classList.remove('added');
+        if (favorite !== null && favorite !== undefined) {
+            if (favorite.classList.contains('js-favorite-add') || favorite.closest('.js-favorite-add')) {
+                e.preventDefault();
+
+                const addFavorite = document.querySelectorAll('.js-favorite-add')
+
+                addFavorite.forEach((item) => {
+                    if (!item.classList.contains('added') && (item === e.target || item === e.target.closest('.js-favorite-add'))) {
+                        item.classList.add('added');
+                    } else {
+                        item.classList.remove('added');
+                    }
+                })
             }
-
-        })
+        }
     });
-}
+};
 
 // колор пикер  --- выбор цвета товара
 const colorChange = () => {
-    const colorPick = document.querySelectorAll('.js-catalog-color-change');
-    const colorDesc = document.querySelector('.js-color-description');
+    document.addEventListener('click', (e) => {
+        const colorPick = document.querySelectorAll('.js-catalog-color-change');
+        const colorDesc = document.querySelector('.js-color-description');
 
-    colorPick.forEach((item) => {
-        item.addEventListener('click', (e) => {
+        colorPick.forEach((item) => {
             if (e.target === item) {
                 colorPick.forEach((item) => {
                     item.classList.remove('active');
                 });
                 e.target.classList.add('active');
-            }
 
-            if (colorDesc) {
-                if (item.classList.contains('active')) {
-                    let thisColor = item.getAttribute('data-color-description');
-                    colorDesc.innerHTML = thisColor;
+
+                if (colorDesc) {
+                    if (item.classList.contains('active')) {
+                        let thisColor = item.getAttribute('data-color-description');
+                        colorDesc.innerHTML = thisColor;
+                    }
                 }
             }
-
-        })
-    });
+        });
+    })
 }
 
 // размер пикер  --- выбор размера товара
@@ -133,14 +140,16 @@ const toggleItems = () => {
 
 // уведомление о добавлении товара в корзину
 const alertActive = () => {
-    const alertActive = document.querySelectorAll('.js-alert-visicle');
+    const alertActive = document.querySelectorAll('.js-alert-basket');
 
     alertActive.forEach((item) => {
 
         item.addEventListener('click', () => {
             let alert = document.querySelector('.prod-alert-add');
-
             alert?.classList.add('visible');
+
+            item.innerHTML = 'Товар добавлен в корзину';
+            item.classList.add('disable');
 
             setTimeout(() => {
                 alert?.classList.remove('visible');

@@ -1,12 +1,12 @@
 mixin basket-item(card)
     if card.order === true
         .order-item 
-            a.order-item__preview(href=url) 
+            a.order-item__preview(href=card.url) 
                 picture 
                     img(src=card.img)
             .order-item__content 
                 .order-item__title
-                    a(href=url) 
+                    a(href=card.url) 
                         != card.name
                     if card.label
                         span.label  
@@ -28,12 +28,12 @@ mixin basket-item(card)
     else
         .order-item 
             .order-item__close(data-micromodal='modal-delet-product')
-            a.order-item__preview(href=url) 
+            a.order-item__preview(href=card.url) 
                 picture 
                     img(src=card.img)
             .order-item__content 
                 .order-item__title
-                    a(href=url) 
+                    a(href=card.url) 
                         != card.name
                     if card.label
                         span.label  

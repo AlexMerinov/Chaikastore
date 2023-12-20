@@ -1,8 +1,8 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar, Zoom, Keyboard } from 'swiper/modules';
+import { Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar, Zoom, Keyboard, Mousewheel } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
-    Swiper.use([Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar, Zoom, Keyboard]);
+    Swiper.use([Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar, Zoom, Keyboard, Mousewheel]);
 
     const slidersBaner = document.querySelectorAll('.js-slider-main');
 
@@ -53,17 +53,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const parent = slider.closest('.product__preview-gallery');
             const thisModalBox = parent?.querySelector('.modal');
 
-            console.log(thisModalBox);
-
             const thumb = parent?.querySelector('.js-slid-product-child');
             if (thumb !== null && thumb !== undefined) {
                 swiperSlderThumb = new Swiper(thumb, {
                     spaceBetween: 8,
-                    slidesPerView: 7,
+                    slidesPerView: 'auto',
                     freeMode: true,
                     watchSlidesProgress: true,
                     direction: 'vertical',
                     watchSlidesProgress: true,
+                    mousewheel: {
+                        sensitivity: 1,
+                        eventsTarget: '.js-slid-product-child',
+                    }
                 });
             }
 

@@ -75,18 +75,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const hoverMenu = () => {
         const jsMenuItemDrop = document.querySelectorAll('.js-menu-item-drop');
+        let timer = null;
         jsMenuItemDrop.forEach((item) => {
-            item.addEventListener('mouseenter', (e) => {
-                if (document.documentElement.clientWidth > 1023) {
-                    e.target.closest('.header__bottom').classList.add('bg');
-                }
-            });
 
-            item.addEventListener('mouseleave', (e) => {
-                if (document.documentElement.clientWidth > 1023) {
+            if (document.documentElement.clientWidth > 1023) {
+                item.addEventListener('mouseenter', (e) => {
+                    clearTimeout(timer);
+                    timer = setTimeout(() => {
+                        e.target.closest('.header__bottom').classList.add('bg');
+                    }, 160);
+                });
+                item.addEventListener('mouseleave', (e) => {
+                    clearTimeout(timer);
                     e.target.closest('.header__bottom').classList.remove('bg');
-                }
-            });
+                });
+            }
         });
     }
 

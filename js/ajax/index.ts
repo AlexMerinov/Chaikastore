@@ -13,11 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 fetch(url)
                     .then((response) => {
+                        target.classList.add('loaded');
                         return response.text();
                     })
                     .then((data) => {
-                        const parent = target.closest('.catalog-load-more');
+                        const parent = target.closest('.products-content__more');
                         const div = document.createElement('div');
+                        div.classList.add('list-wrapper');
                         div.innerHTML = data;
                         parent?.insertAdjacentElement('afterend', div);
                         parent?.remove();
@@ -32,4 +34,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-

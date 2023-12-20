@@ -3,9 +3,9 @@
     display: flex;
     height: 100%;
     align-items: center;
-    padding: 0 20px;
     transition: var(--trans);
     &__btn {
+        padding: 0 20px;
         height: 16px;
         display: flex;
         align-items: center;
@@ -183,10 +183,11 @@
         .header-search__btn {
             transition: var(--trans);
             opacity: 0;
+            pointer-events: none;
         }
     }
 
-    @include maxBp($bp-1024) {
+    @include maxBp($bp-1280) {
         margin-right: auto;
         margin-left: 0;
 

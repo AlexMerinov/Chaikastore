@@ -98,7 +98,7 @@ input {
         padding-left: 48px;
         padding-right: 48px;
 
-        @include maxBp($bp-1024){
+        @include maxBp($bp-1280){
             padding-left: 16px;
             padding-right: 16px;
         }
@@ -158,7 +158,7 @@ input {
 
 .h-fix--805 {
     height: 805px;
-    @include maxBp($bp-1024){
+    @include maxBp($bp-1280){
         height: 1000px;
     }
 
@@ -178,7 +178,7 @@ input {
 .overflow-l {
     margin-left: -48px;
 
-    @include maxBp($bp-1024){
+    @include maxBp($bp-1280){
         margin-left: -16px;
     }
 
@@ -190,7 +190,7 @@ input {
 .overflow-r {
     margin-right: -48px;
 
-    @include maxBp($bp-1024){
+    @include maxBp($bp-1280){
         margin-right: -16px;
     }
 
@@ -203,7 +203,7 @@ input {
     margin-left: -48px;
     margin-right: -48px;
 
-    @include maxBp($bp-1024){
+    @include maxBp($bp-1280){
         margin-left: -16px;
         margin-right: -16px;
     }
@@ -264,7 +264,7 @@ input {
 
 .p-top-content {
     padding-top: 90px;
-    @include maxBp($bp-1024) {
+    @include maxBp($bp-1280) {
         padding-top: 80px;
     }
     @include maxBp($bp-768) {
@@ -502,3 +502,20 @@ hr,.hr{
 }
 
 
+.list-wrapper {
+    margin-top: 32px;
+    @include maxBp($bp-768) {
+        margin-top: 24px;
+    }
+}
+
+.show-more {
+    transition: var(--trans);
+    &.loaded {
+        pointer-events: none;
+        color: rgba(0, 0, 0, 0.2);
+        &::after {
+            animation: 2s loadBtn infinite linear;
+        }
+    }
+}

@@ -62,28 +62,27 @@ footer.footer
                     ]
                 +footer-menu-bot(botList)
 
-            .footer__info 
-                .footer__policy 
-                    form.form.form--subscribe.js-form-validate(action='post')
-                        .form__line 
-                            label.form__label
-                                input.form__input(type="email" inputmode="email" class="form__input" required)
-                                span.form__ph E-mail
-                        button.form__button(type='submit')
-                            +icon-sym('arrow-r')
-                    span 
-                        | Нажимая на кнопку, вы подтверждаете, что ознакомились с Политикой конфиденциальности
+            .footer__policy 
+                form.form.form--subscribe.js-form-validate(action='post')
+                    .form__line 
+                        label.form__label
+                            input.form__input(type="email" inputmode="email" class="form__input" required)
+                            span.form__ph E-mail
+                    button.form__button(type='submit')
+                        +icon-sym('arrow-r')
+                span 
+                    | Нажимая на кнопку, вы подтверждаете, что ознакомились с Политикой конфиденциальности
 
-                .footer__contacts
-                    .footer__contacts-l
-                        a(href='tel:+74954775204')
-                            | +7 (495) 477-52-04
-                        a(href='mailto:mail@chaikastore.ru') 
-                            | mail@chaikastore.ru
-                    .footer__contacts-r
-                        a(href='https://t.me/chaikastore' target="_blank")
-                            +icon-sym('tg') 
-                        a(href='https://t.me/chaikastore' target="_blank")
+            .footer__contacts
+                .footer__contacts-l
+                    a(href='tel:+74954775204')
+                        | +7 (495) 477-52-04
+                    a(href='mailto:mail@chaikastore.ru') 
+                        | mail@chaikastore.ru
+                .footer__contacts-r
+                    a(href='https://t.me/chaikastore' target="_blank")
+                        +icon-sym('tg') 
+                    a(href='https://t.me/chaikastore' target="_blank")
                             +icon-sym('ws') 
             .footer__bottom 
                 span 
