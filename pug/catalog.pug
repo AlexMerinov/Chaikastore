@@ -10,6 +10,17 @@ block content
         .wrapper__page.p-top-content
             .wrapper__haed 
                 h1 Каталог
+                -
+                    const breads = [
+                        {
+                            name: 'Главная',
+                            url: 'main-transparent.html',
+                        },
+                        {
+                            name: 'Каталог',
+                        },
+                    ];
+                +breads-list(breads)
             .section 
                 .catalog-cols
                     aside.catalog-cols__menu 
@@ -112,18 +123,6 @@ block content
                                     li.drop-box-selector__item S
                                     li.drop-box-selector__item M
                                     li.drop-box-selector__item L 
-
-                            -
-                                const breads = [
-                                    {
-                                        name: 'Главная',
-                                        url: 'main-transparent.html',
-                                    },
-                                    {
-                                        name: 'Каталог',
-                                    },
-                                ];
-                            +breads-list(breads)
                             
                             .drop-box-selector.drop-box-selector--filter.js-drop-selector  
                                 .drop-box-selector__result Сортировка:

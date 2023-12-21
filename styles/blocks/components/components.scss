@@ -414,16 +414,24 @@
     &__datapicker {
         position: relative;
         width: 80px;
+        display: flex;
+        align-items: center;
 
         label {
             width: 100%;
+            padding-left: 18px;
+            position: absolute;
+
+            input {
+                width: 100%;
+            }
         }
 
         .icon-sym {
             position: absolute;
             cursor: pointer;
-            right: 0;
-            top: 0;
+            left: 0;
+            bottom: 0;
 
             width: 18px;
             height: 18px;

@@ -7,7 +7,7 @@ mixin slider-parent-prod(items)
                         picture,   
                         name, 
                     } = item;
-                .swiper-slide(data-micromodal="modal-swiper-lightbox" data-swiper-slide-index=index) 
+                .swiper-slide.js-scale-view(data-micromodal="modal-swiper-lightbox" data-swiper-slide-index=index) 
                     picture 
                         source(
                             srcset=picture,

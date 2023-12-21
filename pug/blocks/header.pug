@@ -1,5 +1,4 @@
 include ../mixins/menu/menu
-include ../mixins/search/search
 
 -
     var classHeader = 'header'
@@ -156,68 +155,20 @@ header(class=classHeader)
             a.header-search__btn.js-search-show(href='/')
                 +icon-sym('search')
 
-            .header-search__area 
-                form.header-search__form.form.form--search.js-form-validate.js-form-validate-0(
-                    action="search.html",
-                    novalidate=""
-                )
-                    button.form__search
-                        +icon-sym('search')
-                    .form__line 
-                        label.form__label
-                            input.form__input(
-                                type='text',
-                                placeholder='Поиск...',
-                                required=''
-                            )
-                .header-search__result 
-                    .header-search__empty
-                        | По этому запросу ничего не найдено
-                    -
-                        const search = [
-                            {
-                                name: 'Свитер молочного цвета с высоким воротом',
-                                url: 'product-detail',
-                                picture: 'images/content/menu/swimsuit_01.jpg',
-                            },
-                            {
-                                name: 'Свитер из кошемира',
-                                url: 'product-detail',
-                                picture: 'images/content/menu/swimsuit_01.jpg',
-                            },
-                            {
-                                name: 'Свитер в полоску',
-                                url: 'product-detail',
-                                picture: 'images/content/menu/swimsuit_01.jpg',
-                            },
-                                                        {
-                                name: 'Свитер в полоску',
-                                url: 'product-detail',
-                                picture: 'images/content/menu/swimsuit_01.jpg',
-                            },
-                                                        {
-                                name: 'Свитер в полоску',
-                                url: 'product-detail',
-                                picture: 'images/content/menu/swimsuit_01.jpg',
-                            },
-                                                        {
-                                name: 'Свитер в полоску',
-                                url: 'product-detail',
-                                picture: 'images/content/menu/swimsuit_01.jpg',
-                            },
-                                                        {
-                                name: 'Свитер в полоску',
-                                url: 'product-detail',
-                                picture: 'images/content/menu/swimsuit_01.jpg',
-                            },
-                                                        {
-                                name: 'Свитер в полоску',
-                                url: 'product-detail',
-                                picture: 'images/content/menu/swimsuit_01.jpg',
-                            }
-                        ];
-                    +search-list(search)
-
+            .header-search__area
+                form.header-search__form.search.form.form--search.js-form-validate(
+                    action="search.html")
+                        button.form__search
+                            +icon-sym('search')
+                        input.form__input.js-autocomplete-search(
+                            type='text',
+                            placeholder='Поиск...',
+                            required,
+                            maxlength="100",
+                            autocomplete="off",
+                            name="query",
+                            data-url="images/json/search.json",
+                        )
         ul.header-menu-user
             li.header-menu-user__item
                 a.header-menu-user__link(href="favorite.html")

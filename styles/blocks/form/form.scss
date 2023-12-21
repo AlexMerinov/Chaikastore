@@ -190,13 +190,13 @@
         .form__search {
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: 20px;
+            justify-content: flex-end;
+            width: 25px;
             height: 25px;
             z-index: 2;
 
             position: absolute;
-            left: 0;
+            right: 0;
             top: 0;
 
             cursor: pointer;
@@ -208,6 +208,10 @@
                 height: 16px;
             }
 
+            @include maxBp($bp-1280) {
+                right: 8px;
+            }
+
             @include bp($bp-1280) {
                 &:hover {
                     .icon-sym {
@@ -215,10 +219,6 @@
                     }
                 }
             }
-        }
-
-        .form__input {
-            padding-left: 30px;
         }
     }
 
@@ -349,48 +349,6 @@
     ~.error-message{
         margin-top: -3px;
         top: 100%;
-    }
-}
-
-.autoComplete_wrapper {
-    & > ul {
-        background: var(--White-background);
-        padding-left: 16px;
-        margin-top: 14px;
-        display: flex;
-        flex-direction: column;
-
-        & > li {
-            display: inline-block;
-            width: fit-content;
-            position: relative;
-            @include text-size-12;
-            color: var(--black);
-            cursor: pointer;
-            margin-bottom: var(--space-3xs-desc);
-
-            &::after {
-                content: '';
-                display: block;
-                width: 100%;
-                height: 1px;
-
-                position: absolute;
-                bottom: -1px;
-                left: 0;
-                background: var(--black);
-                opacity: 0;
-                transition: var(--trans);
-            }
-
-            @include bp($bp-1280) {
-                &:hover {
-                    &::after {
-                        opacity: 1;
-                    }
-                }
-            }
-        }
     }
 }
 

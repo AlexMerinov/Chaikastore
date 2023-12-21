@@ -564,3 +564,11 @@
     }
 }
 
+.js-scale-view {
+    transition: var(--trans);
+    position: relative;
+    & > picture {
+        position: absolute;
+    }
+}
+

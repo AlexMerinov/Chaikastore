@@ -367,6 +367,18 @@
         }
     }
 
+    &__error {
+        width: 100%;
+        &-item {
+            color: #FF5569;
+
+            a {
+                text-decoration: underline;
+                color: inherit;
+            }
+        }
+    }
+
     @include maxBp($bp-768) {
         flex-direction: column;
         gap: 8px;
@@ -375,4 +387,9 @@
             width: 100%;
         }
     }
+}
+
+.order-error {
+    color: #FF5569;
+    margin-bottom: var(--space-2xs-desc);
 }

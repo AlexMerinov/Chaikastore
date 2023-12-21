@@ -164,7 +164,6 @@ const selectorDrop = () => {
 
     jsDropSelector.forEach((item) => {
         item.addEventListener('click', () => {
-
             if (item.classList.contains('open')) {
                 item.classList.remove('open');
             } else {
@@ -174,9 +173,14 @@ const selectorDrop = () => {
 
         let choise = item.querySelectorAll('.drop-box-selector__item');
         let name = item.querySelector('.drop-box-selector__name');
+        let time = document.querySelector('.data-time__result-time');
+
         choise.forEach((link) => {
             link.addEventListener('click', (e) => {
                 name.innerHTML = link.innerHTML;
+                if (time !== null && time !== undefined && e.target.classList.contains('js-time-select')) {
+                    time.innerHTML = link.innerHTML;
+                }
             });
         })
 
@@ -216,7 +220,7 @@ const Delivery = () => {
 
             if (item.classList.contains('checked')) {
                 delivetyItemDesc.forEach((desc) => {
-                    if (desc.getAttribute('data-delivery') === item.id) {
+                    if (desc.getAttribute('data-delivery') === item.getAttribute('data-delivery-id')) {
                         desc.classList.remove('hide');
                     } else {
                         desc.classList.add('hide');
@@ -312,6 +316,28 @@ const nearestDate = () => {
     })
 }
 
+const scaleViewProduct = () => {
+    let jsScaleView = document.querySelectorAll('.js-scale-view');
+
+    jsScaleView.forEach((item) => {
+        if (item !== null) {
+            let img = item.querySelector('picture');
+            let itemH = item.clientHeight;
+            let itemW = item.clientWidth;
+
+            item.addEventListener('mousemove', (e) => {
+                let pageX = e.offsetX;
+                let pageY = e.offsetY;
+                let moveLeft = pageX / (itemW / 120);
+                let moveTop = pageY / (itemH / 120);
+
+                img.style.cssText = `width: calc(100% * 5); transform: translate3d(-${moveLeft}%,-${moveTop}%,0);`;
+            });
+        }
+    });
+
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     favoriteItem();
     colorChange();
@@ -326,6 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
     promoInOrder();
     nearestDate();
     toggleItems();
+    scaleViewProduct();
 });
 
 window.addEventListener('resize', () => {

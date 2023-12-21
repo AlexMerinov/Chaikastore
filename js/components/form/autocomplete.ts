@@ -6,17 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputs = document.querySelectorAll('.js-autocomplete-search');
     inputs.forEach((input: any, index) => {
         input.classList.add(`js-autocomplete-search-${index}`);
+
         const url = input.getAttribute('data-url');
-        // eslint-disable-next-line new-cap
+
         const autoCompleteJS = new autoComplete({
             selector: `.js-autocomplete-search-${index}`,
             data: {
                 src: async (query: any) => {
                     try {
-                        const category = input.getAttribute('data-category');
-                        const source = await fetch(
-                            `${url}?category=${category}&query=${query}`
-                        );
+                        const source = await fetch(`${url}?query=${query}`);
+                        console.log(inputs);
+
                         const data = await source.json();
                         return data;
                     } catch (error) {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!data.results.length) {
                         const message = document.createElement('div');
                         message.setAttribute('class', 'no_result');
-                        message.innerHTML = `Не найдено совпадений для "${data.query}"`;
+                        message.innerHTML = `По запросу "${data.query}" ничего не найдено`;
                         list.prepend(message);
                     } else {
                         const li = list.querySelectorAll('li');
@@ -80,17 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (input.value.length > 0) {
                 form?.classList.remove('error');
             }
-        });
-    });
-
-    const selects = document.querySelectorAll(
-        'select.js-autocomplete-search-category'
-    );
-    selects.forEach((select: any, index) => {
-        const form = select.closest('form');
-        const input = form?.querySelector('.js-autocomplete-search');
-        select.addEventListener('change', () => {
-            input?.setAttribute('data-category', select.value);
         });
     });
 });

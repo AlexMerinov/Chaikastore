@@ -52,20 +52,23 @@ block content
                                 input.form__input.js-dadata-city(placeholder="Ваш город" required)
 
                             .form__delivery.delivery-list
-                                .delivery-list__item.js-choice-delivery.checked(id="") 
+                                .delivery-list__error 
+                                    .delivery-list__error-item 
+                                        | Примерка доступна при заказе не более 3-х товаров. <a href="" target="_blank">Проверьте свой заказ</a>
+                                .delivery-list__item.js-choice-delivery.checked(data-delivery-id="") 
                                     .delivery-list__item-name Самовывоз из тц Авиапарк
                                     .delivery-list__item-desc Оплата банковской картой на сайте.
-                                .delivery-list__item.js-choice-delivery(id="deliv-fitting")
+                                .delivery-list__item.js-choice-delivery(data-delivery-id="deliv-fitting")
                                     .delivery-list__item-name Курьер Грастин с примеркой
                                     .delivery-list__item-desc Стоимость 490 ₽. Примерка до трех позиций. Возможность частичного выкупа. Оплата банковской картой или наличными курьеру.
-                                .delivery-list__item.js-choice-delivery(id="deliv-express")
+                                .delivery-list__item.js-choice-delivery(data-delivery-id="deliv-express")
                                     .delivery-list__item-name Экспресс-доставка курьером
                                     .delivery-list__item-desc Стоимость 490 ₽. Примерка до трех позиций. Возможность частичного выкупа. Оплата банковской картой или наличными курьеру.
-                                .delivery-list__item.js-choice-delivery(id="deliv-sdek") 
+                                .delivery-list__item.js-choice-delivery(data-delivery-id="deliv-sdek") 
                                     .delivery-list__item-name Курьерская доставка СДЭК, без примерки
                                     .delivery-list__item-desc Стоимость 490 ₽, бесплатно — при покупке от 10 000 ₽
  
-                                .delivery-list__item.js-choice-delivery(id="")
+                                .delivery-list__item.js-choice-delivery(data-delivery-id="")
                                     .delivery-list__item-name Доставка до пункта выдачи СДЭК 
                                     .delivery-list__item-desc Стоимость 490 ₽, бесплатно — при покупке от 10 000 ₽  
 
@@ -74,8 +77,8 @@ block content
                                     h3.form__subtitle Адрес доставки
 
                                     .form__line
-                                        .drop-box-selector.drop-box-selector--base.js-drop-selector  
-                                            .drop-box-selector__result 
+                                        .drop-box-selector.drop-box-selector--base.js-drop-selector.fade-in   
+                                            .drop-box-selector__result  
                                                 span.drop-box-selector__name Выберите адрес, или добавьте новый
                                                 .arrow-drop 
                                                     span 
@@ -92,7 +95,10 @@ block content
 
                                     .form__line
                                         .data-time
-                                            .data-time__result 14.03.2023 в период с 9 до 12 часов
+                                            .data-time__result 
+                                                span.data-time__result-day 14.03.2023
+                                                | в период 
+                                                span.data-time__result-time с 9 до 12 часов
                                             .data-time__list 
                                                 .data-time__list-item.js-nearest-date 16 ПТ
                                                 .data-time__list-item.js-nearest-date 17 СБ
@@ -102,17 +108,17 @@ block content
                                                         input(type="text" id="datepicker")
                                                         +icon-sym('Calendar')
 
-                                            .drop-box-selector.drop-box-selector--base.js-drop-selector  
+                                            .drop-box-selector.drop-box-selector--base.js-drop-selector.fade-in  
                                                 .drop-box-selector__result 
                                                     span.drop-box-selector__name Интервал доставки
                                                     .arrow-drop 
                                                         span 
                                                         span
                                                 ul.drop-box-selector__list  
-                                                    li.drop-box-selector__item с 9 до 12 часов
-                                                    li.drop-box-selector__item с 12 до 15 часов
-                                                    li.drop-box-selector__item с 15 до 18 часов
-                                                    li.drop-box-selector__item с 18 до 21 часа 
+                                                    li.drop-box-selector__item.js-time-select с 12 до 15 часов
+                                                    li.drop-box-selector__item.js-time-select с 9 до 12 часов
+                                                    li.drop-box-selector__item.js-time-select с 15 до 18 часов
+                                                    li.drop-box-selector__item.js-time-select с 18 до 21 часа 
                                                     
 
                                     .form__line 
@@ -124,7 +130,7 @@ block content
                                     h3.form__subtitle Адрес доставки
 
                                     .form__line
-                                        .drop-box-selector.drop-box-selector--base.js-drop-selector  
+                                        .drop-box-selector.drop-box-selector--base.js-drop-selector.fade-in   
                                             .drop-box-selector__result 
                                                 span.drop-box-selector__name Выберите адрес, или добавьте новый
                                                 .arrow-drop 
@@ -147,7 +153,7 @@ block content
                                     h3.form__subtitle Адрес доставки
 
                                     .form__line
-                                        .drop-box-selector.drop-box-selector--base.js-drop-selector  
+                                        .drop-box-selector.drop-box-selector--base.js-drop-selector.fade-in  
                                             .drop-box-selector__result 
                                                 span.drop-box-selector__name Выберите адрес, или добавьте новый
                                                 .arrow-drop 
@@ -165,7 +171,10 @@ block content
                                         label.form__label.form__label--textarea
                                             textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
                                             span.form__ph Комментарий к заказу
-                    
+
+                        h3.form__subtitle Товары: <span>3</span>
+                        .order-error 
+                            | Примерка и выкуп доступны при заказе не более 3 товаров
                         -
                             const basketProducts = [
                                 {

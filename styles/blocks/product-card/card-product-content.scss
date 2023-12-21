@@ -7,10 +7,14 @@
 
     &__item {
         height: auto;
-        width: 288px;
+        width: 22vw;
 
         .product-card {
             height: 100%;
+        }
+
+        @include maxBp($bp-768) {
+            width: 40vw;
         }
     }
 

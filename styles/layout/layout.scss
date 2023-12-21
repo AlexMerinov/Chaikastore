@@ -24,8 +24,47 @@ body {
     color: var(--black);
     @include text-body;
 }
+.modal__body {
+    table {
+        text-align: center;
+        @include text-size-12;
+        border-bottom: 1px solid var(--Stroke-bk-30);
+        border-right: 1px solid var(--Stroke-bk-30);
+        tr {
+            td {
+                border-top: 1px solid var(--Stroke-bk-30);
+                border-left: 1px solid var(--Stroke-bk-30);
+            }
+        }
 
-table {
+        td {
+            min-width: 100px;
+            &:first-child {
+                min-width: 166px;
+                padding: 10px;
+                text-align: left;
+            }
+        }
+
+        @include maxBp($bp-768) {
+            @include text-size-10;
+            td {
+                min-width: 50px;
+
+                &:first-child {
+                    padding: 7px;
+                    min-width: 100px;
+                }
+            }
+
+        }
+    }
+}
+
+table.size-product {
+    margin-bottom: var(--space-3xs-desc);
+    width: 100%;
+    max-width: 500px;
     text-align: center;
     @include text-size-12;
     border-bottom: 1px solid var(--Stroke-bk-30);
@@ -38,10 +77,11 @@ table {
     }
 
     td {
-        min-width: 100px;
+        min-width: 60px;
         &:first-child {
-            min-width: 166px;
-            padding: 10px;
+            min-width: 100px;
+            max-width: 200px;
+            padding: 5px;
             text-align: left;
         }
     }
@@ -49,7 +89,7 @@ table {
     @include maxBp($bp-768) {
         @include text-size-10;
         td {
-            min-width: 50px;
+            min-width: 40px;
 
             &:first-child {
                 padding: 7px;
@@ -126,7 +166,6 @@ input {
     &__haed {
         display: flex;
         align-items: center;
-        gap: 24px;
         margin-bottom: var(--space-s-desc);
         h1 {
             display: inline-flex;
@@ -134,6 +173,8 @@ input {
             margin-bottom: 0;
             @include text-h3;
             position: relative;
+            min-width: 168px;
+            padding-right: 14px;
         }
 
         &-counter {

@@ -55,72 +55,72 @@ block content
                                 input.form__input.js-dadata-city(placeholder="Ваш город" required)
 
                             .form__delivery.delivery-list
-                                .delivery-list__item.js-choice-delivery.checked(id="") 
+                                .delivery-list__item.js-choice-delivery(data-delivery-id="deliv-sdek_1") 
                                     .delivery-list__item-name Курьер СДЭК без примерки
                                     .delivery-list__item-desc Стоимость 490 ₽, бесплатно — при покупке от 10 000 ₽
-                                .delivery-list__item.js-choice-delivery(id="")
+                                .delivery-list__item.js-choice-delivery(data-delivery-id="")
                                     .delivery-list__item-name Пункт выдачи СДЭК
                                     .delivery-list__item-desc Стоимость 490 ₽, бесплатно — при покупке от 10 000 ₽
-                                .delivery-list__item.js-choice-delivery(id="")
+                                .delivery-list__item.js-choice-delivery(data-delivery-id="")
                                     .delivery-list__item-name Почта
                                     .delivery-list__item-desc Стоимость 490 ₽, бесплатно — при покупке от 10 000 ₽
-                                .delivery-list__item.js-choice-delivery(id="deliv-country-post")
+                                .delivery-list__item.js-choice-delivery(data-delivery-id="deliv-country-post")
                                     .delivery-list__item-wrapper
                                         .delivery-list__item-name Почта
                                         .delivery-list__item-desc Стоимость 1500 ₽. Без примерки и частичного выкупа. Оплата по выставленному счету на E-mail или Whatsapp. Бесплатно — при покупке от 20 000 ₽
                             .form__delivery-description.delivery-desc
                                 .delivery-desc__item.hide(data-delivery="deliv-country-post")  
                                     .delivery-list__item-text Обращаем ваше внимание: налоги и пошлины на покупку не включены в стоимость доставки на сайте — в каждой стране собственная система налогообложения. Обязательно уточните эту информацию в таможенной службе вашей страны.​
-                                
-                        .form__wrapper
-                            h3.form__subtitle Адрес доставки
+                                .delivery-desc__item.hide(data-delivery="deliv-sdek_1") 
+                                    .form__wrapper
+                                        h3.form__subtitle Адрес доставки
 
-                            .row.row--no-gap 
-                                .col.cols-12 
-                                    .form__line 
-                                        label.form__label
-                                            input.form__input(type="text" class="form__input" required)
-                                            span.form__ph Город и район
-                                .col.cols-12 
-                                    .form__line 
-                                        label.form__label
-                                            input.form__input(type="text" class="form__input" required)
-                                            span.form__ph Улица
-                                .col.cols-4 
-                                    .form__line 
-                                        label.form__label
-                                            input.form__input(type="text" class="form__input" required)
-                                            span.form__ph Дом
-                                .col.cols-4 
-                                    .form__line 
-                                        label.form__label
-                                            input.form__input(type="text" class="form__input" required)
-                                            span.form__ph Квартира
-                                .col.cols-4 
-                                    .form__line 
-                                        label.form__label
-                                            input.form__input(type="text" class="form__input" required)
-                                            span.form__ph Индекс
-                                .col.cols-4 
-                                    .form__line 
-                                        label.form__label
-                                            input.form__input(type="text" class="form__input" required)
-                                            span.form__ph Подъезд
-                                .col.cols-4 
-                                    .form__line 
-                                        label.form__label
-                                            input.form__input(type="text" class="form__input" required)
-                                            span.form__ph Этаж
-                                .col.cols-4 
-                                    .form__line 
-                                        label.form__label
-                                            input.form__input(type="text" class="form__input" required)
-                                            span.form__ph Домофон
-                                .col.cols-12 
-                                    .form__line 
-                                        label.form__label.form__label--textarea
-                                            textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
-                                            span.form__ph Комментарий к заказу
+                                        .row.row--no-gap 
+                                            .col.cols-12 
+                                                .form__line 
+                                                    label.form__label
+                                                        input.form__input(type="text" class="form__input" required)
+                                                        span.form__ph Город и район
+                                            .col.cols-12 
+                                                .form__line 
+                                                    label.form__label
+                                                        input.form__input(type="text" class="form__input" required)
+                                                        span.form__ph Улица
+                                            .col.cols-4 
+                                                .form__line 
+                                                    label.form__label
+                                                        input.form__input(type="text" class="form__input" required)
+                                                        span.form__ph Дом
+                                            .col.cols-4 
+                                                .form__line 
+                                                    label.form__label
+                                                        input.form__input(type="text" class="form__input" required)
+                                                        span.form__ph Квартира
+                                            .col.cols-4 
+                                                .form__line 
+                                                    label.form__label
+                                                        input.form__input(type="text" class="form__input" required)
+                                                        span.form__ph Индекс
+                                            .col.cols-4 
+                                                .form__line 
+                                                    label.form__label
+                                                        input.form__input(type="text" class="form__input" required)
+                                                        span.form__ph Подъезд
+                                            .col.cols-4 
+                                                .form__line 
+                                                    label.form__label
+                                                        input.form__input(type="text" class="form__input" required)
+                                                        span.form__ph Этаж
+                                            .col.cols-4 
+                                                .form__line 
+                                                    label.form__label
+                                                        input.form__input(type="text" class="form__input" required)
+                                                        span.form__ph Домофон
+                                            .col.cols-12 
+                                                .form__line 
+                                                    label.form__label.form__label--textarea
+                                                        textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                                        span.form__ph Комментарий к заказу
 
                         -
                             const basketProducts = [
