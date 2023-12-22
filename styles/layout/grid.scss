@@ -25,6 +25,10 @@
             padding-left: 8px;
             padding-right: 8px;
         }
+
+        @include maxBp($bp-768) {
+            row-gap: 0;
+        }
     }
 }
  

@@ -123,14 +123,14 @@ block modal
                             +icon-sym('no-view')
                 div(class="form__line")
                     label(class="form__label") 
-                        input(type="password" class="form__input" minlength="8" required)
+                        input(type="password" class="form__input" id="modal-change-password-1" minlength="8" required)
                         span.form__ph Введите новый пароль
                         span.form__input-icon.js-pass-view 
                             +icon-sym('view')
                             +icon-sym('no-view')
                 div(class="form__line")
                     label(class="form__label") 
-                        input(type="password" class="form__input" data-password-match="#modal-change-password-1" required)
+                        input(type="password" class="form__input" data-password-match="#modal-change-password-1" id="modal-change-password-2" required)
                         span.form__ph Повторите новый пароль
                         span.form__input-icon.js-pass-view 
                             +icon-sym('view')
@@ -296,3 +296,56 @@ block modal
     +slot('body')
         p Сайт собирает информацию посредством Cookies, чтобы мы могли сделать его удобнее и быстрее.
         div(class="btn btn--secondary" data-micromodal-close) Хорошо
+
++modal({
+    id: 'add-address',
+    modifier: 'big'
+})
+    +slot('header')
+        | Добавить адрес доставки
+    +slot('body')
+        form(action="#" class="form js-form-validate")
+            .modal__content
+                .row.row--no-gap 
+                    .col.cols-12 
+                        .form__line 
+                            label.form__label
+                                input.form__input(type="text" class="form__input" required)
+                                span.form__ph Город и район
+                    .col.cols-12 
+                        .form__line 
+                            label.form__label
+                                input.form__input(type="text" class="form__input" required)
+                                span.form__ph Улица
+                    .col.cols-4 
+                        .form__line 
+                            label.form__label
+                                input.form__input(type="text" class="form__input" required)
+                                span.form__ph Дом
+                    .col.cols-4 
+                        .form__line 
+                            label.form__label
+                                input.form__input(type="text" class="form__input" required)
+                                span.form__ph Квартира
+                    .col.cols-4 
+                        .form__line 
+                            label.form__label
+                                input.form__input(type="text" class="form__input" required)
+                                span.form__ph Индекс
+                    .col.cols-4 
+                        .form__line 
+                            label.form__label
+                                input.form__input(type="text" class="form__input" required)
+                                span.form__ph Подъезд
+                    .col.cols-4 
+                        .form__line 
+                            label.form__label
+                                input.form__input(type="text" class="form__input" required)
+                                span.form__ph Этаж
+                    .col.cols-4 
+                        .form__line 
+                            label.form__label
+                                input.form__input(type="text" class="form__input" required)
+                                span.form__ph Домофон
+            div(class="form__submit")
+                button(type="submit" class="btn btn--secondary") Добавить

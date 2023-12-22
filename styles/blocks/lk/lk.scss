@@ -240,6 +240,17 @@
         }
     }
 
+    &__change {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        .icon-sym {
+            fill: none;
+            stroke: var(--black);
+            stroke-width: 0.5px;
+        }
+    }
+
     &__subscribe {
         display: flex;
         flex-direction: column;

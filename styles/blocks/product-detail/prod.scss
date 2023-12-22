@@ -66,6 +66,8 @@
         margin-bottom: var(--space-2xs-desc);
 
         .size-table {
+            display: inline-flex;
+            align-items: center;
             @include text-size-10;
         }
     }
@@ -87,8 +89,10 @@
         align-items: center;
         justify-content: center;
         z-index: 2;
+        cursor: pointer;
         &.favorite {
             & > .icon-sym {
+                cursor: pointer;
                 stroke: var(--black);
             }
         }
@@ -237,7 +241,7 @@
             width: 100%;
             opacity: 0;
             height: 1px;
-            background-color: var(--Strokes-new-black);
+            background-color: var(--black);
 
             position: absolute;
             left: 50%;
@@ -287,9 +291,11 @@
     }
 
     &__title {
+        display: inline-flex;
         cursor: pointer;
         transition: var(--trans);
         span {
+            cursor: pointer;
             position: relative;
             &::after {
                 content: '';
@@ -363,6 +369,7 @@
     z-index: 2;
 
     & > .icon-sym {
+        cursor: pointer;
         width: 16px;
         height: 16px;
         @include icon-stroke;
@@ -393,6 +400,7 @@
 
     &__item {
         .icon-sym {
+            cursor: pointer;
             width: 16px;
             height: 16px;
             transition: var(--trans);

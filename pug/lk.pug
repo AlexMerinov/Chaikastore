@@ -31,7 +31,7 @@ block content
                     .section-cols__content
                         .person-info.fade-in 
                             .person-info__header.js-item-toggle  
-                                .person-info__title Мои данные 
+                                .person-info__title Личная информация
                                 button(type="button").arrow-drop
                                     span 
                                     span
@@ -54,6 +54,7 @@ block content
                                     .form__footer
                                         button.btn.btn--secondary.person-info__btn(type='submit') Сохранить
                                         .person-info__change
+                                            +icon-sym('check')
                                             | Изменения внесены
                         .person-info.fade-in 
                             .person-info__header.js-item-toggle  
@@ -80,9 +81,12 @@ block content
                                             span.form__input-icon.js-pass-view 
                                                 +icon-sym('view')
                                                 +icon-sym('no-view')
+                                            a.icon-edit(data-micromodal="modal-password-change") 
+                                                +icon-sym('pencil')
                                     .form__footer
                                         button.btn.btn--secondary.person-info__btn(type='submit') Сохранить
                                         .person-info__change
+                                            +icon-sym('check')
                                             | Изменения внесены
                         .person-info.fade-in 
                             .person-info__header.js-item-toggle  
@@ -97,16 +101,16 @@ block content
                                         .address-field__pagination 
                                             a(data-micromodal="modal-delet-address") 
                                                 +icon-sym('bucket')
-                                            a(data-micromodal="modal-delet-address") 
+                                            a(data-micromodal="modal-add-address") 
                                                 +icon-sym('pencil')
                                     .address-field__item 
                                         span 656000, Алтайский край, г. Барнаул, пр. Ленина, 63, кв. 3
                                         .address-field__pagination 
                                             a(data-micromodal="modal-delet-address") 
                                                 +icon-sym('bucket')
-                                            a(data-micromodal="modal-delet-address") 
+                                            a(data-micromodal="modal-add-address") 
                                                 +icon-sym('pencil')
-                                button(type="button").btn.btn--secondary.person-info__btn Добавить   
+                                a(data-micromodal="modal-add-address").btn.btn--secondary.person-info__btn Добавить   
                         .person-info.fade-in 
                             .person-info__header.js-item-toggle  
                                 .person-info__title Управление подписками

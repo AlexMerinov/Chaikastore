@@ -29,6 +29,7 @@
         height: 102px;
         margin-right: 8px;
         overflow: hidden;
+        margin-bottom: 5px;
 
         & > picture {
             display: block;
@@ -95,7 +96,9 @@
             justify-content: center;
             width: 14px;
             height: 14px;
+            cursor: pointer;
             .icon-sym {
+                cursor: pointer;
                 stroke: var(--Strokes-new-black);
                 width: 12px;
                 height: 12px;
@@ -168,6 +171,7 @@
     }
 
     &__close {
+        cursor: pointer;
         @include icon-close;
         padding: 2px 0 2px 2px;
         right: 0;

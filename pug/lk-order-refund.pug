@@ -32,81 +32,97 @@ block content
                                         a(href="lk-cert.html") Подарочные сертификаты
                         a.person-out.person-out--desc(href="#" data-micromodal="modal-exit-lk") Выйти
                     .section-cols__content
-                        .order-details  
-                            a.order-details__back(href='lk-orders.html') Назад
-                            .order-details__header  
-                                .order-details__number
-                                    span Возврат заказа № 145654545654  
-                                .order-details__date от 15.05.2022 
-                            dl.order-details__field   
-                                dt.order-details__subtitle О покупателе:
-                                dd Воронцова Алина, +7 (960) 988 98 98, login@gmail.com
-                            dl.order-details__field   
-                                dt.order-details__subtitle О заказе:
-                                dd 3 товара, оплата на сайте, без примерки
-                            dl.order-details__field   
-                                dt.order-details__subtitle Доставка:
-                                dd Воронцова Алина, +7 (960) 988 98 98, login@gmail.com
-                            dl.order-details__field   
-                                dt.order-details__subtitle О покупателе:
-                                dd Россия, г. Сочи, Адлерский район, ул. Цветочная, д. 15
-                                dd Почта России
-                                dd 19 ноября - 22 ноября
-                            dl.order-details__field   
-                                dt.order-details__subtitle Стоимость:
-                                dd Доставка: 490 ₽  
-                                dd Скидка: 500 ₽  
-                                dd Итого: 24 500 ₽  
-                            .order-details-list
-                                .order-details-list__header 
+                        .order-details
+                            form.form.js-form-validate  
+                                a.order-details__back(href='lk-orders.html') Назад
+                                .order-details__header  
+                                    .order-details__number
+                                        span Возврат заказа № 145654545654  
+                                    .order-details__date от 15.05.2022 
+                                dl.order-details__field   
+                                    dt.order-details__subtitle О покупателе:
+                                    dd Воронцова Алина, +7 (960) 988 98 98, login@gmail.com
+                                dl.order-details__field   
+                                    dt.order-details__subtitle О заказе:
+                                    dd 3 товара, оплата на сайте, без примерки
+                                dl.order-details__field   
+                                    dt.order-details__subtitle Доставка:
+                                    dd Воронцова Алина, +7 (960) 988 98 98, login@gmail.com
+                                dl.order-details__field   
+                                    dt.order-details__subtitle Доставка:
+                                    dd Россия, г. Сочи, Адлерский район, ул. Цветочная, д. 15
+                                    dd Почта России
+                                    dd 19 ноября - 22 ноября
+                                dl.order-details__field   
+                                    dt.order-details__subtitle Стоимость:
+                                    dd Доставка: 490 ₽  
+                                    dd Скидка: 500 ₽  
+                                    dd Итого: 24 500 ₽  
+                                .order-details-list
                                     .order-details-list__title Выберите товары для возврата
                                     .order-details-list__description Обращаем ваше внимание, что возврат и обмен товара осуществляется за счет клиента.          
-                                .order-details-list__content
-                                    -
-                                        const basketProducts = [
-                                            {   
-                                                order: true,
-                                                name: 'Свитер молочного цвета с высоким воротом',
-                                                url: 'product-card.html',
-                                                img: 'images/content/products/item-prod_00.jpg',
-                                                art: 'BR-449',
-                                                hex: '#D81329',
-                                                color: 'Насыщенный красный',
-                                                size: 'XS',
-                                                label: 'Sale',
-                                                price_old: '99 999 ₽',
-                                                price_new : '9 999 ₽',
-                                            },
-                                            {
-                                                order: true,
-                                                name: 'Платье миди бирюзового цвета',
-                                                url: 'product-card.html',
-                                                img: 'images/content/products/item-prod_02.jpg',
-                                                art: 'BR-449',
-                                                hex: '#74BDB4',
-                                                color: 'Бирюзовый',
-                                                size: 'XS',
-                                                price_new: '9 999 ₽',
-                                            },
-                                            {
-                                                order: true,
-                                                name: 'Свитер молочного цвета',
-                                                url: 'product-card.html',
-                                                img: 'images/content/products/item-prod_03.jpg',
-                                                art: 'BR-449',
-                                                hex: '#DED2C6',
-                                                color: 'Молочный',
-                                                size: 'XS',
-                                                price_new: '19 999 ₽',
-                                            },
-                                        ];
-                                    +basket-list(basketProducts) 
-                                    
-                            .order-details__refund
-                                a.order-details__refund-link.btn.btn--secondary.disable(href="lk-order-refund.html") Оформить возврат 
-                                .order-details__refund-status
-                                    +icon-sym('check')
-                                    span Доставлен 22.08.22
+                                    .order-details-list__content
+                                        -
+                                            const basketProducts = [
+                                                {   
+                                                    order: true,
+                                                    name: 'Свитер молочного цвета с высоким воротом',
+                                                    url: 'product-card.html',
+                                                    img: 'images/content/products/item-prod_00.jpg',
+                                                    art: 'BR-449',
+                                                    hex: '#D81329',
+                                                    color: 'Насыщенный красный',
+                                                    size: 'XS',
+                                                    label: 'Sale',
+                                                    price_old: '99 999 ₽',
+                                                    price_new : '9 999 ₽',
+                                                },
+                                                {
+                                                    order: true,
+                                                    name: 'Платье миди бирюзового цвета',
+                                                    url: 'product-card.html',
+                                                    img: 'images/content/products/item-prod_02.jpg',
+                                                    art: 'BR-449',
+                                                    hex: '#74BDB4',
+                                                    color: 'Бирюзовый',
+                                                    size: 'XS',
+                                                    price_new: '9 999 ₽',
+                                                },
+                                                {
+                                                    order: true,
+                                                    name: 'Свитер молочного цвета',
+                                                    url: 'product-card.html',
+                                                    img: 'images/content/products/item-prod_03.jpg',
+                                                    art: 'BR-449',
+                                                    hex: '#DED2C6',
+                                                    color: 'Молочный',
+                                                    size: 'XS',
+                                                    price_new: '19 999 ₽',
+                                                },
+                                            ];
+                                        +basket-list(basketProducts) 
+                                    .order-details-list__title Выберите вид возврата    
+                                    .order-details-list__title Контактные данные
+                                    .order-details-list__description Пожалуйста, используйте адрес электронной почты или номер телефона, указанный в учетной записи на момент создания заказа
+                                    .order-details-list__content
+                                        label.input-checkbox
+                                            input(type="radio" required name="info" data-info="select-mail") 
+                                            span.input-checkbox__text По e-mail
+                                        label.input-checkbox
+                                            input(type="radio" required name="info" data-info="select-phone")
+                                            span.input-checkbox__text По номеру телефон
+                                        .form__line 
+                                            label.form__label 
+                                                input.form__input.js-input-format-phone(type="text" value="" name="phone" inputmode="tel" class="form__input" required)
+                                                span.form__ph Телефон
+                                        .form__line
+                                            label.form__label
+                                                input.form__input(type="email" value="" inputmode="email" class="form__input" required)
+                                                span.form__ph E-mail
+                                        
+                                    .order-details-list__title Причина возврата                                                            
+                                    .order-details-list__title Способ возврата 
+
                     a.person-out.person-out--mob(href="#" data-micromodal="modal-exit-lk") Выйти
 
 

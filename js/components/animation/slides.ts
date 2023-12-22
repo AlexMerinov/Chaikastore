@@ -1,18 +1,21 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar, Zoom, Keyboard, Mousewheel } from 'swiper/modules';
+import { Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar, Zoom, Keyboard, Mousewheel, FreeMode } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
-    Swiper.use([Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar, Zoom, Keyboard, Mousewheel]);
+    Swiper.use([Navigation, Pagination, Parallax, Autoplay, Thumbs, EffectFade, Scrollbar, Zoom, Keyboard, Mousewheel, FreeMode]);
 
     const slidersBaner = document.querySelectorAll('.js-slider-main');
 
     slidersBaner.forEach((slider) => {
         const swiperSlider = new Swiper(slider, {
             slidesPerView: 1,
-            speed: 1000,
+            speed: 700,
             loop: true,
             grabCursor: true,
             effect: 'fade',
+            keyboard: {
+                enabled: true,
+            },
             fadeEffect: {
                 crossFade: true,
             },
@@ -33,7 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const productSlide = new Swiper(slider, {
             slidesPerView: 'auto',
             spaceBetween: 16,
-            speed: 500,
+            slidesPerGroupAuto: true,
+            freeMode: true,
+            speed: 700,
             loop: false,
             grabCursor: true,
 
@@ -57,11 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (thumb !== null && thumb !== undefined) {
                 swiperSlderThumb = new Swiper(thumb, {
                     spaceBetween: 8,
+                    speed: 500,
                     slidesPerView: 'auto',
                     freeMode: true,
                     watchSlidesProgress: true,
                     direction: 'vertical',
-                    watchSlidesProgress: true,
                     mousewheel: {
                         sensitivity: 1,
                         eventsTarget: '.js-slid-product-child',
@@ -71,10 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const swiperSlder = new Swiper(slider, {
                 slidesPerView: 1,
+                keyboard: {
+                    enabled: true,
+                },
                 effect: 'fade',
                 watchSlidesProgress: true,
                 fadeEffect: {
-                    crossFade: true
+                    crossFade: true,
                 },
                 pagination: {
                     el: '.base-pagination',

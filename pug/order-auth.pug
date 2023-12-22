@@ -49,7 +49,8 @@ block content
                             h3.form__subtitle Доставка 
 
                             div.form__line
-                                input.form__input.js-dadata-city(placeholder="Ваш город" required)
+                                label.form__label
+                                    input.form__input.js-dadata-city(placeholder="Ваш город" required)
 
                             .form__delivery.delivery-list
                                 .delivery-list__error 
@@ -77,20 +78,63 @@ block content
                                     h3.form__subtitle Адрес доставки
 
                                     .form__line
-                                        .drop-box-selector.drop-box-selector--base.js-drop-selector.fade-in   
-                                            .drop-box-selector__result  
-                                                span.drop-box-selector__name Выберите адрес, или добавьте новый
-                                                .arrow-drop 
-                                                    span 
-                                                    span
-                                            ul.drop-box-selector__list  
-                                                li.drop-box-selector__item г. Копейск, Лесной пер., д. 24 кв.184
-                                                li.drop-box-selector__item г. Владикавказ, Колхозная ул., д. 13 кв.39
-                                                li.drop-box-selector__item г. Реутов, Сосновая ул., д. 4 кв.27
-                                                li.drop-box-selector__item г. Люберцы, Шоссейная ул., д. 13 кв.141 
-                                                li 
-                                                    a(target="_blank") Добавить новый адрес  
-
+                                        .form__addres-field
+                                            .drop-box-selector.drop-box-selector--base.js-drop-city
+                                                .drop-box-selector__result  
+                                                    span.drop-box-selector__name Выберите адрес, или добавьте новый
+                                                    .arrow-drop 
+                                                        span 
+                                                        span
+                                                ul.drop-box-selector__list  
+                                                    li.drop-box-selector__item г. Копейск, Лесной пер., д. 24 кв.184
+                                                    li.drop-box-selector__item г. Владикавказ, Колхозная ул., д. 13 кв.39
+                                                    li.drop-box-selector__item г. Реутов, Сосновая ул., д. 4 кв.27
+                                                    li.drop-box-selector__item г. Люберцы, Шоссейная ул., д. 13 кв.141 
+                                                    li 
+                                                        a(class="js-add-new-address") Добавить новый адрес  
+                                            .new-address-field.hide 
+                                                .row.row--no-gap 
+                                                    .col.cols-12 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Город и район
+                                                    .col.cols-12 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Улица
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Дом
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Квартира
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Индекс
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Подъезд
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Этаж
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Домофон
+   
                                     h3.form__subtitle Дата и время доставки
 
                                     .form__line
@@ -130,19 +174,68 @@ block content
                                     h3.form__subtitle Адрес доставки
 
                                     .form__line
-                                        .drop-box-selector.drop-box-selector--base.js-drop-selector.fade-in   
-                                            .drop-box-selector__result 
-                                                span.drop-box-selector__name Выберите адрес, или добавьте новый
-                                                .arrow-drop 
-                                                    span 
-                                                    span
-                                            ul.drop-box-selector__list  
-                                                li.drop-box-selector__item г. Копейск, Лесной пер., д. 24 кв.184
-                                                li.drop-box-selector__item г. Владикавказ, Колхозная ул., д. 13 кв.39
-                                                li.drop-box-selector__item г. Реутов, Сосновая ул., д. 4 кв.27
-                                                li.drop-box-selector__item г. Люберцы, Шоссейная ул., д. 13 кв.141 
-                                                li 
-                                                    a(target="_blank") Добавить новый адрес  
+                                        .form__addres-field
+                                            .drop-box-selector.drop-box-selector--base.js-drop-city
+                                                .drop-box-selector__result  
+                                                    span.drop-box-selector__name Выберите адрес, или добавьте новый
+                                                    .arrow-drop 
+                                                        span 
+                                                        span
+                                                ul.drop-box-selector__list  
+                                                    li.drop-box-selector__item г. Копейск, Лесной пер., д. 24 кв.184
+                                                    li.drop-box-selector__item г. Владикавказ, Колхозная ул., д. 13 кв.39
+                                                    li.drop-box-selector__item г. Реутов, Сосновая ул., д. 4 кв.27
+                                                    li.drop-box-selector__item г. Люберцы, Шоссейная ул., д. 13 кв.141 
+                                                    li 
+                                                        a(class="js-add-new-address") Добавить новый адрес  
+                                            .new-address-field.hide 
+                                                .row.row--no-gap 
+                                                    .col.cols-12 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Город и район
+                                                    .col.cols-12 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Улица
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Дом
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Квартира
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Индекс
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Подъезд
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Этаж
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Домофон
+                                                    .col.cols-12 
+                                                        .form__line 
+                                                            label.form__label.form__label--textarea
+                                                                textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                                                span.form__ph Комментарий к заказу
+ 
 
                                     .form__line 
                                         label.form__label.form__label--textarea
@@ -153,19 +246,68 @@ block content
                                     h3.form__subtitle Адрес доставки
 
                                     .form__line
-                                        .drop-box-selector.drop-box-selector--base.js-drop-selector.fade-in  
-                                            .drop-box-selector__result 
-                                                span.drop-box-selector__name Выберите адрес, или добавьте новый
-                                                .arrow-drop 
-                                                    span 
-                                                    span
-                                            ul.drop-box-selector__list  
-                                                li.drop-box-selector__item г. Копейск, Лесной пер., д. 24 кв.184
-                                                li.drop-box-selector__item г. Владикавказ, Колхозная ул., д. 13 кв.39
-                                                li.drop-box-selector__item г. Реутов, Сосновая ул., д. 4 кв.27
-                                                li.drop-box-selector__item г. Люберцы, Шоссейная ул., д. 13 кв.141 
-                                                li 
-                                                    a(target="_blank") Добавить новый адрес  
+                                        .form__addres-field
+                                            .drop-box-selector.drop-box-selector--base.js-drop-city
+                                                .drop-box-selector__result  
+                                                    span.drop-box-selector__name Выберите адрес, или добавьте новый
+                                                    .arrow-drop 
+                                                        span 
+                                                        span
+                                                ul.drop-box-selector__list  
+                                                    li.drop-box-selector__item г. Копейск, Лесной пер., д. 24 кв.184
+                                                    li.drop-box-selector__item г. Владикавказ, Колхозная ул., д. 13 кв.39
+                                                    li.drop-box-selector__item г. Реутов, Сосновая ул., д. 4 кв.27
+                                                    li.drop-box-selector__item г. Люберцы, Шоссейная ул., д. 13 кв.141 
+                                                    li 
+                                                        a(class="js-add-new-address") Добавить новый адрес  
+                                            .new-address-field.hide 
+                                                .row.row--no-gap 
+                                                    .col.cols-12 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Город и район
+                                                    .col.cols-12 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Улица
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Дом
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Квартира
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Индекс
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Подъезд
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Этаж
+                                                    .col.cols-4 
+                                                        .form__line 
+                                                            label.form__label
+                                                                input.form__input(type="text" class="form__input" required)
+                                                                span.form__ph Домофон
+                                                    .col.cols-12 
+                                                        .form__line 
+                                                            label.form__label.form__label--textarea
+                                                                textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                                                span.form__ph Комментарий к заказу
+
 
                                     .form__line 
                                         label.form__label.form__label--textarea

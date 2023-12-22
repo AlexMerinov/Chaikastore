@@ -32,6 +32,16 @@
         }
     }
 
+    &--big {
+        .modal__container {
+            max-width: 552px;
+
+            .form__line {
+                margin-bottom: 0;
+            }
+        }
+    }
+
     &--cookie[aria-hidden=true] {
         .modal__container {
             animation-name: slideInBottom !important;
@@ -133,10 +143,9 @@
         }
 
         .modal__close {
-            width: 20px;
-            height: 20px;
-            top: 16px;
-            height: 16px;
+            width: 32px;
+            height: 32px;
+            top: 0;
         }
     }
 }
@@ -272,6 +281,7 @@
     right: 0;
     width: 24px;
     height: 24px;
+    cursor: pointer;
 
     &-icon {
         @include icon-close;

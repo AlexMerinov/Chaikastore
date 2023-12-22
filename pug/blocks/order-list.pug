@@ -1,0 +1,104 @@
+include ../mixins/list/order-list
+
+-
+    const ordersList = [
+        {
+            url: 'lk-order-details',
+            payment: true,
+            date: '16.09.2023',
+            number: '1231123443',
+            price: '34 984',
+            status: 'Собирается на складе',
+            products: [
+                {
+                    img: 'images/content/products/item-prod_00.jpg',
+                },
+                {
+                    img: 'images/content/products/item-prod-color-1-2.png',
+                },
+                {
+                    img: 'images/content/products/item-prod-color-3-1.png',
+                },
+                {
+                    img: 'images/content/products/item-prod_03.jpg',
+                }
+            ]
+        },
+        {
+            url: 'lk-order-details',
+            payment: true,
+            date: '01.09.2023',
+            number: '12346783',
+            price: '34 984',
+            status: 'Принят в обработку',
+            products: [
+                {
+                    img: 'images/content/products/item-prod_00.jpg',
+                },
+                {
+                    img: 'images/content/products/item-prod-color-2-1.png',
+                },
+                {
+                    img: 'images/content/products/item-prod-color-3-1.png',
+                },
+            ]
+        },
+        {
+            url: 'lk-order-details',
+            payment: false,
+            date: '22.04.2023',
+            number: '1231123499',
+            price: '99 984',
+            status: 'Ожидание оплаты',
+            products: [
+                {
+                    img: 'images/content/products/item-prod-color-2-1.png',
+                },
+            ]
+        },
+        {
+            url: 'lk-order-details',
+            payment: true,
+            date: '16.09.2023',
+            number: '1231123443',
+            price: '34 984',
+            status: 'Собирается на складе',
+            products: [
+                {
+                    img: 'images/content/products/item-prod_00.jpg',
+                },
+                {
+                    img: 'images/content/products/item-prod-color-1-2.png',
+                },
+                {
+                    img: 'images/content/products/item-prod-color-3-1.png',
+                },
+                {
+                    img: 'images/content/products/item-prod_03.jpg',
+                }
+            ]
+        },
+        {
+            url: 'lk-order-details',
+            payment: true,
+            date: '16.09.2023',
+            number: '1231123443',
+            price: '34 984',
+            status: 'Собирается на складе',
+            products: [
+                {
+                    img: 'images/content/products/item-prod_00.jpg',
+                },
+                {
+                    img: 'images/content/products/item-prod-color-1-2.png',
+                },
+                {
+                    img: 'images/content/products/item-prod-color-3-1.png',
+                },
+                {
+                    img: 'images/content/products/item-prod_03.jpg',
+                }
+            ]
+        }
+    ]
++lk-order-list(ordersList)

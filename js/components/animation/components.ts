@@ -13,7 +13,7 @@ const favoriteItem = () => {
                 addFavorite.forEach((item) => {
                     if (!item.classList.contains('added') && (item === e.target || item === e.target.closest('.js-favorite-add'))) {
                         item.classList.add('added');
-                    } else {
+                    } else if (item.classList.contains('added') && (item === e.target || item === e.target.closest('.js-favorite-add'))) {
                         item.classList.remove('added');
                     }
                 })
@@ -316,27 +316,79 @@ const nearestDate = () => {
     })
 }
 
-const scaleViewProduct = () => {
-    let jsScaleView = document.querySelectorAll('.js-scale-view');
+const addNewAddres = () => {
+    const jsChoiceCity = document.querySelectorAll('.js-drop-city');
 
-    jsScaleView.forEach((item) => {
-        if (item !== null) {
-            let img = item.querySelector('picture');
-            let itemH = item.clientHeight;
-            let itemW = item.clientWidth;
+    jsChoiceCity.forEach((item) => {
+        const name = item.querySelector('.drop-box-selector__name');
 
-            item.addEventListener('mousemove', (e) => {
-                let pageX = e.offsetX;
-                let pageY = e.offsetY;
-                let moveLeft = pageX / (itemW / 120);
-                let moveTop = pageY / (itemH / 120);
+        item.addEventListener('click', () => {
+            if (item.classList.contains('open')) {
+                item.classList.remove('open');
+            } else {
+                item.classList.add('open');
+            }
+        });
 
-                img.style.cssText = `width: calc(100% * 5); transform: translate3d(-${moveLeft}%,-${moveTop}%,0);`;
-            });
-        }
+        item.addEventListener('click', (e) => {
+            const target = e.target as Element;
+            const addressField = target.closest('.form__addres-field')?.querySelector('.new-address-field');
+
+            if (target.classList.contains('js-add-new-address') && addressField !== null && addressField?.classList.contains('hide')) {
+                addressField?.classList.remove('hide');
+                name.innerHTML = 'Новый адрес';
+            } else if (target.classList.contains('drop-box-selector__item')) {
+                if (!addressField.classList.contains('hide')) {
+                    addressField.classList.add('hide');
+                    name.innerHTML = target.innerHTML;
+
+                } else {
+                    name.innerHTML = target.innerHTML;
+                }
+
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            let target = e.target;
+            let thisField = target == item || item.contains(target);
+            let FildActive = item.classList.contains('open');
+
+            if (FildActive && !thisField) {
+                item.classList.remove('open');
+            }
+        });
+
+        document.body.addEventListener('keyup', function (e) {
+            let key = e.keyCode;
+            if (key == 27) {
+                item.classList.remove('open');
+            };
+        }, false);
     });
-
 }
+
+// const scaleViewProduct = () => {
+//     let jsScaleView = document.querySelectorAll('.js-scale-view');
+
+//     jsScaleView.forEach((item) => {
+//         if (item !== null) {
+//             let img = item.querySelector('picture');
+//             let itemH = item.clientHeight;
+//             let itemW = item.clientWidth;
+
+//             item.addEventListener('mousemove', (e) => {
+//                 let pageX = e.offsetX;
+//                 let pageY = e.offsetY;
+//                 let moveLeft = pageX / (itemW / 120);
+//                 let moveTop = pageY / (itemH / 120);
+
+//                 img.style.cssText = `width: calc(100% * 5); transform: translate3d(-${moveLeft}%,-${moveTop}%,0);`;
+//             });
+//         }
+//     });
+
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
     favoriteItem();
@@ -352,15 +404,5 @@ document.addEventListener('DOMContentLoaded', () => {
     promoInOrder();
     nearestDate();
     toggleItems();
-    scaleViewProduct();
-});
-
-window.addEventListener('resize', () => {
-    favoriteItem();
-    colorChange();
-    sizeChange();
-    alertActive();
-    // colorMore();
-    baseAccordion();
-    sideCatalog();
+    addNewAddres();
 });

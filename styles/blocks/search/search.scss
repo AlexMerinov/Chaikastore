@@ -16,6 +16,7 @@
         transition: var(--trans-slow);
         z-index: 10;
         & > .icon-sym {
+            cursor: pointer;
             width: 16px;
             height: 16px;
             @include icon-stroke;
