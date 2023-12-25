@@ -8,3 +8,4 @@ import './tabs';
 import './dadata';
 import './components';
 import './input-format';
+import './file';

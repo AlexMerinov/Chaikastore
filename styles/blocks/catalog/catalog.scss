@@ -9,6 +9,15 @@
             display: none;
         }
     }
+
+    &__products {
+        .form-sort {
+            margin-bottom: 16px;
+            @include maxBp($bp-768) {
+                margin-bottom: 8px;
+            }
+        }
+    }
 }
 
 .products-content {

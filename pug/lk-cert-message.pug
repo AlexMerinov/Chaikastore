@@ -1,0 +1,75 @@
+extends ./_layout
+include ./mixins/list/slider-card
+include ./mixins/list/slider-product
+include ./mixins/list/product-card
+include ./mixins/list/breads
+include ./mixins/list/basket-prod
+include ./mixins/list/basket-list
+
+block content
+        .wrapper__page.p-top-content
+            .wrapper__haed 
+                h1 Оформление заказа
+            .section 
+                form.form.js-form-validate.cart-cols
+                    .cart-cols__left
+                        .form__wrapper
+                            h3.form__subtitle Ваши данные
+                            .form__line 
+                                label.form__label
+                                    input.form__input(type="text" class="form__input" required)
+                                    span.form__ph Фамилия
+                            .form__line 
+                                label.form__label
+                                    input.form__input(type="text" class="form__input" required)
+                                    span.form__ph Имя
+                            .form__line 
+                                label.form__label
+                                    input.form__input(type="text" name="phone" inputmode="phone" class="form__input" required)
+                                    span.form__ph Телефон
+                            .form__line 
+                                label.form__label
+                                    input.form__input(type="email" inputmode="email" class="form__input" required)
+                                    span.form__ph E-mail 
+                            h3.form__subtitle Номинал сертификата
+                            .form__line 
+                                .select-list
+                                    label.select-list__item
+                                        input(type="radio" name="denomination")
+                                        span 5 000 ₽
+                                    label.select-list__item
+                                        input(type="radio" name="denomination")
+                                        span 7 000 ₽
+                                    label.select-list__item
+                                        input(type="radio" name="denomination")
+                                        span 10 000 ₽
+                                    label.select-list__item
+                                        input(type="radio" name="denomination")
+                                        span 15 000 ₽
+                            h3.form__subtitle Подпись
+                            .form__line 
+                                label.form__label
+                                    input.form__input(type="text" class="form__input" required)
+                                    span.form__ph Кому
+                            .form__line 
+                                label.form__label
+                                    input.form__input(type="text" class="form__input" required)
+                                    span.form__ph Подпись, от кого
+
+
+                    .cart-cols__right
+                        .order-box
+                            .order-box__name
+                                | Ваш сертификат
+                            .order-box__line
+                                span Итого
+                                span.bold 99 999 ₽
+                            .order-box__line
+                                label.input-checkbox
+                                    input(type="checkbox")
+                                    span.input-checkbox__text 
+                                        | Отправляя сообщение, вы соглашаетесь на обработку и хранение персональных данных в соответствии
+                                        a(href="#") с политикой конфиденциальности
+                                        +icon-sym('check')
+                            button.btn.btn--primary.order-box__link(type='submit') Перейти к оплате
+                            a(href="#") Условия использования электронного сертификата

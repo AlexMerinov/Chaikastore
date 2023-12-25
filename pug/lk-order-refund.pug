@@ -33,7 +33,7 @@ block content
                         a.person-out.person-out--desc(href="#" data-micromodal="modal-exit-lk") Выйти
                     .section-cols__content
                         .order-details
-                            form.form.js-form-validate  
+                            form.form.js-form-validate.order-details__form  
                                 a.order-details__back(href='lk-orders.html') Назад
                                 .order-details__header  
                                     .order-details__number
@@ -59,13 +59,13 @@ block content
                                     dd Скидка: 500 ₽  
                                     dd Итого: 24 500 ₽  
                                 .order-details-list
-                                    .order-details-list__title Выберите товары для возврата
+                                    .order-details-list__name Выберите товары для возврата
                                     .order-details-list__description Обращаем ваше внимание, что возврат и обмен товара осуществляется за счет клиента.          
                                     .order-details-list__content
                                         -
                                             const basketProducts = [
                                                 {   
-                                                    order: true,
+                                                    order: 'checkbox',
                                                     name: 'Свитер молочного цвета с высоким воротом',
                                                     url: 'product-card.html',
                                                     img: 'images/content/products/item-prod_00.jpg',
@@ -78,7 +78,7 @@ block content
                                                     price_new : '9 999 ₽',
                                                 },
                                                 {
-                                                    order: true,
+                                                    order: 'checkbox',
                                                     name: 'Платье миди бирюзового цвета',
                                                     url: 'product-card.html',
                                                     img: 'images/content/products/item-prod_02.jpg',
@@ -89,7 +89,7 @@ block content
                                                     price_new: '9 999 ₽',
                                                 },
                                                 {
-                                                    order: true,
+                                                    order: 'checkbox',
                                                     name: 'Свитер молочного цвета',
                                                     url: 'product-card.html',
                                                     img: 'images/content/products/item-prod_03.jpg',
@@ -101,9 +101,19 @@ block content
                                                 },
                                             ];
                                         +basket-list(basketProducts) 
-                                    .order-details-list__title Выберите вид возврата    
-                                    .order-details-list__title Контактные данные
-                                    .order-details-list__description Пожалуйста, используйте адрес электронной почты или номер телефона, указанный в учетной записи на момент создания заказа
+                                .order-details__field.mb-s 
+                                    .order-details__title Выберите вид возврата 
+                                    .order-details__select
+                                        .form__select
+                                            .js-select.form-select.form-select--big
+                                                select
+                                                    option Обмен на аналогичный товар
+                                                    option Вид возврата 2
+                                                    option Вид возврата 3
+                                                    option Вид возврата 4     
+                                .order-details__field.mb-s
+                                    .order-details__title Контактные данные
+                                    .order-details__description Пожалуйста, используйте адрес электронной почты или номер телефона, <br> указанный в учетной записи на момент создания заказа
                                     .order-details-list__content
                                         label.input-checkbox
                                             input(type="radio" required name="info" data-info="select-mail") 
@@ -119,9 +129,50 @@ block content
                                             label.form__label
                                                 input.form__input(type="email" value="" inputmode="email" class="form__input" required)
                                                 span.form__ph E-mail
-                                        
-                                    .order-details-list__title Причина возврата                                                            
-                                    .order-details-list__title Способ возврата 
+                                .order-details__field.mb-s
+                                    .order-details__title Причина возврата   
+                                    .order-details__select
+                                        .form__select
+                                            .js-select.form-select.form-select--big
+                                                select
+                                                    option Причина возврата 1
+                                                    option Причина возврата 2
+                                                    option Причина возврата 3
+                                                    option.form-select__other Иное (комментарий)  
+                                    .form__line 
+                                        label.form__label.form__label--textarea
+                                            textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                            span.form__ph Комментарий к заказу
+
+                                    .form__line 
+                                        .upload-file__wrapper
+                                            input(
+                                                type="file" 
+                                                name="files"
+                                                id="upload-file__input" 
+                                                class="upload-file__input" 
+                                                multiple  
+                                                accept="image/jpeg,image/png,image/gif"
+                                            )
+                                            label.upload-file__label(for="upload-file__input")
+                                                | Приложите до 5 фото, до 15мб
+                                                span.btn.btn--secondary Прикрепить файл
+                                            .upload-file__list
+                                
+                                .order-details__field.mb-s                                                      
+                                            .order-details__title Способ возврата 
+                                            .order-details__select
+                                                .form__select
+                                                    .js-select.form-select.form-select--big
+                                                        select
+                                                            option Способ возврата 1
+                                                            option Способ возврата 2
+                                                            option Способ возврата 3
+                                                            option Способ возврата 4
+                                            .order-details__download
+                                                | В отправление необходимо вложить бланк возврата
+                                                a.btn.btn--secondary(href="/" download) Скачать бланк
+                                button.btn.btn--primary.order-details__submit(type="submit") Оформить возврат
 
                     a.person-out.person-out--mob(href="#" data-micromodal="modal-exit-lk") Выйти
 

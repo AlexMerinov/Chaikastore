@@ -296,26 +296,6 @@ const promoInOrder = () => {
     });
 }
 
-//ближайшая дата доставки
-const nearestDate = () => {
-    const jsNearestDate = document.querySelectorAll('.js-nearest-date');
-
-    jsNearestDate.forEach((item) => {
-        document.addEventListener('click', (e) => {
-            if (e.target === item) {
-                if (item.classList.contains('active')) {
-                    item.classList.remove('active');
-                } else {
-                    jsNearestDate.forEach((item) => {
-                        item.classList.remove('active');
-                    });
-                    item.classList.add('active');
-                }
-            }
-        })
-    })
-}
-
 const addNewAddres = () => {
     const jsChoiceCity = document.querySelectorAll('.js-drop-city');
 
@@ -368,41 +348,17 @@ const addNewAddres = () => {
     });
 }
 
-// const scaleViewProduct = () => {
-//     let jsScaleView = document.querySelectorAll('.js-scale-view');
-
-//     jsScaleView.forEach((item) => {
-//         if (item !== null) {
-//             let img = item.querySelector('picture');
-//             let itemH = item.clientHeight;
-//             let itemW = item.clientWidth;
-
-//             item.addEventListener('mousemove', (e) => {
-//                 let pageX = e.offsetX;
-//                 let pageY = e.offsetY;
-//                 let moveLeft = pageX / (itemW / 120);
-//                 let moveTop = pageY / (itemH / 120);
-
-//                 img.style.cssText = `width: calc(100% * 5); transform: translate3d(-${moveLeft}%,-${moveTop}%,0);`;
-//             });
-//         }
-//     });
-
-// }
-
 document.addEventListener('DOMContentLoaded', () => {
     favoriteItem();
     colorChange();
     sizeChange();
     alertActive();
-    // colorMore();
     baseAccordion();
     sideCatalog();
     selectorDrop();
     Delivery();
     counter();
     promoInOrder();
-    nearestDate();
     toggleItems();
     addNewAddres();
 });

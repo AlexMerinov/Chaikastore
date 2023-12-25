@@ -5,6 +5,27 @@
             margin-bottom: 0;
         }
 
+        .input-checkbox {
+            display: flex;
+
+            &__text {
+                padding: 0 0 0 20px;
+                &::after {
+                    top: 0;
+                    transform: translate3d(0, 0, 0);
+                }
+    
+                .icon-sym {
+                    top: 0;
+                    transform: translate3d(0, 50%, 0);
+                }
+            }
+
+            .order-item {
+                width: 100%;
+            }
+        }
+
         @include maxBp($bp-768) {
             margin-bottom: var(--space-xs-mob);
         }
@@ -20,6 +41,7 @@
     display: flex;
     border-bottom: 0.5px solid var(--Stroke-gray);
     position: relative;
+
     &__preview {
         display: flex;
         flex: 0 0 auto;

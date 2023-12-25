@@ -143,10 +143,16 @@ block content
                                                 span.data-time__result-day 14.03.2023
                                                 | в период 
                                                 span.data-time__result-time с 9 до 12 часов
-                                            .data-time__list 
-                                                .data-time__list-item.js-nearest-date 16 ПТ
-                                                .data-time__list-item.js-nearest-date 17 СБ
-                                                .data-time__list-item.js-nearest-date 18 ВС
+                                            .data-time__list
+                                                label.data-time__list-item
+                                                    input(type="radio" name="nearest-date")
+                                                    span 15 ПТ
+                                                label.data-time__list-item
+                                                    input(type="radio" name="nearest-date")
+                                                    span 16 СБ
+                                                label.data-time__list-item
+                                                    input(type="radio" name="nearest-date")
+                                                    span 17 ВС
                                                 .data-time__datapicker
                                                     label
                                                         input(type="text" id="datepicker")
