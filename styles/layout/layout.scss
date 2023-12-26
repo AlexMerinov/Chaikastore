@@ -479,6 +479,37 @@ input {
     padding-top: 0 !important;
 }
 
+.text-col {
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+    &.no-gap {
+        & > * {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.side-content {
+    max-width: 670px;
+    .form {
+        &__button {
+            width: 168px;
+            flex: 0 0 auto;
+            margin-right: 16px;
+
+            @include maxBp($bp-768) {
+                width: 100%;
+                margin-bottom: var(--space-4xs);
+            }
+        }
+    }
+
+    .list-info  {
+        margin-bottom: var(--space-s-desc);
+    }
+}
+
 .svg-mask {
     position: absolute;
     z-index: -1;

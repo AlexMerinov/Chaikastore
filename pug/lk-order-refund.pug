@@ -108,9 +108,7 @@ block content
                                             .js-select.form-select.form-select--big
                                                 select
                                                     option Обмен на аналогичный товар
-                                                    option Вид возврата 2
-                                                    option Вид возврата 3
-                                                    option Вид возврата 4     
+                                                    option Возврат денежных средств на карту с которой была совершена оплата   
                                 .order-details__field.mb-s
                                     .order-details__title Контактные данные
                                     .order-details__description Пожалуйста, используйте адрес электронной почты или номер телефона, <br> указанный в учетной записи на момент создания заказа
@@ -135,14 +133,17 @@ block content
                                         .form__select
                                             .js-select.form-select.form-select--big
                                                 select
-                                                    option Причина возврата 1
-                                                    option Причина возврата 2
-                                                    option Причина возврата 3
+                                                    option Не подошел размер
+                                                    option Не подошел по стилю
+                                                    option Доставлен не тот товар или брак
                                                     option.form-select__other Иное (комментарий)  
                                     .form__line 
                                         label.form__label.form__label--textarea
-                                            textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                            textarea(class="form__input js-textarea" max="500" style="height:24px;overflow-y:hidden;")
                                             span.form__ph Комментарий к заказу
+                                        span.form__text 
+                                            | Осталось символов:
+                                            span.symbol-counter
 
                                     .form__line 
                                         .upload-file__wrapper
@@ -165,10 +166,8 @@ block content
                                                 .form__select
                                                     .js-select.form-select.form-select--big
                                                         select
-                                                            option Способ возврата 1
-                                                            option Способ возврата 2
-                                                            option Способ возврата 3
-                                                            option Способ возврата 4
+                                                            option Самостоятельный возврат почтовой или курьерской службой 
+                                                            option Самостоятельный возврат в пункт самовывоза (ТЦ "Авиапарк")
                                             .order-details__download
                                                 | В отправление необходимо вложить бланк возврата
                                                 a.btn.btn--secondary(href="/" download) Скачать бланк

@@ -120,9 +120,11 @@ block content
                                             .col.cols-12 
                                                 .form__line 
                                                     label.form__label.form__label--textarea
-                                                        textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                                        textarea(class="form__input js-textarea" max="500" style="height:24px;overflow-y:hidden;")
                                                         span.form__ph Комментарий к заказу
-
+                                                    span.form__text 
+                                                        | Осталось символов:
+                                                        span.symbol-counter
                         -
                             const basketProducts = [
                                 {

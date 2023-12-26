@@ -1,0 +1,32 @@
+extends ./_layout
+
+block content
+        .wrapper__page.p-top-content
+            .wrapper__haed 
+                h1 Подарочный сертификат
+            .section 
+                .section-cols
+                    .cart-cols__left
+                        .person-order-refund
+                            a.person-order-refund__link.active(href='lk-cert-me.html') Для себя
+                            a.person-order-refund__link(href='lk-cert-you.html') В подарок
+                        .order-details
+                            h3.order-details__title Благодарим вас за покупку!
+
+                            .order-delivery 
+                                .order-delivery__status
+                                    | Ваш сертификат отправлен на электронную почту
+
+                            dl.order-details__field   
+                                dt.order-details__subtitle Информация  о покупателе:
+                                dd Воронцова Алина
+                                dd Телефон: 8 960 988 98 98
+                                dd Почта: login@gmail.com
+                            
+                    .cart-cols__right
+                        .order-box
+                            .order-box__name
+                                | Ваш сертификат
+                            .order-box__line
+                                span Итого
+                                span.bold 99 999 ₽

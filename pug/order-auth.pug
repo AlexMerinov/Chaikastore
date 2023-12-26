@@ -157,24 +157,20 @@ block content
                                                     label
                                                         input(type="text" id="datepicker")
                                                         +icon-sym('Calendar')
-
-                                            .drop-box-selector.drop-box-selector--base.js-drop-selector.fade-in  
-                                                .drop-box-selector__result 
-                                                    span.drop-box-selector__name Интервал доставки
-                                                    .arrow-drop 
-                                                        span 
-                                                        span
-                                                ul.drop-box-selector__list  
-                                                    li.drop-box-selector__item.js-time-select с 12 до 15 часов
-                                                    li.drop-box-selector__item.js-time-select с 9 до 12 часов
-                                                    li.drop-box-selector__item.js-time-select с 15 до 18 часов
-                                                    li.drop-box-selector__item.js-time-select с 18 до 21 часа 
-                                                    
-
+                                            .form__select
+                                                .js-select.form-select.form-select--big
+                                                    select
+                                                        option с 9 до 12 часов
+                                                        option с 12 до 16 часов
+                                                        option с 16 до 18 часов
+                                                        option с 18 до 21 часов  
                                     .form__line 
                                         label.form__label.form__label--textarea
-                                            textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                            textarea(class="form__input js-textarea" max="500" style="height:24px;overflow-y:hidden;")
                                             span.form__ph Комментарий к заказу
+                                        span.form__text 
+                                            | Осталось символов:
+                                            span.symbol-counter             
                                 
                                 .delivery-desc__item.hide(data-delivery="deliv-express") 
                                     h3.form__subtitle Адрес доставки
@@ -239,14 +235,18 @@ block content
                                                     .col.cols-12 
                                                         .form__line 
                                                             label.form__label.form__label--textarea
-                                                                textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                                                textarea(class="form__input js-textarea" max="500" style="height:24px;overflow-y:hidden;")
                                                                 span.form__ph Комментарий к заказу
- 
-
+                                                            span.form__text 
+                                                                | Осталось символов:
+                                                                span.symbol-counter
                                     .form__line 
                                         label.form__label.form__label--textarea
-                                            textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                            textarea(class="form__input js-textarea" max="500" style="height:24px;overflow-y:hidden;")
                                             span.form__ph Комментарий к заказу
+                                        span.form__text 
+                                            | Осталось символов:
+                                            span.symbol-counter
 
                                 .delivery-desc__item.hide(data-delivery="deliv-sdek") 
                                     h3.form__subtitle Адрес доставки
@@ -311,14 +311,18 @@ block content
                                                     .col.cols-12 
                                                         .form__line 
                                                             label.form__label.form__label--textarea
-                                                                textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                                                textarea(class="form__input js-textarea" max="500" style="height:24px;overflow-y:hidden;")
                                                                 span.form__ph Комментарий к заказу
-
-
+                                                            span.form__text 
+                                                                | Осталось символов:
+                                                                span.symbol-counter
                                     .form__line 
                                         label.form__label.form__label--textarea
-                                            textarea(class="form__input js-textarea" style="height:24px;overflow-y:hidden;")
+                                            textarea(class="form__input js-textarea" max="500" style="height:24px;overflow-y:hidden;")
                                             span.form__ph Комментарий к заказу
+                                        span.form__text 
+                                            | Осталось символов:
+                                            span.symbol-counter
 
                         h3.form__subtitle Товары: <span>3</span>
                         .order-error 

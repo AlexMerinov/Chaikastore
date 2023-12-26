@@ -173,14 +173,10 @@ const selectorDrop = () => {
 
         let choise = item.querySelectorAll('.drop-box-selector__item');
         let name = item.querySelector('.drop-box-selector__name');
-        let time = document.querySelector('.data-time__result-time');
 
         choise.forEach((link) => {
             link.addEventListener('click', (e) => {
                 name.innerHTML = link.innerHTML;
-                if (time !== null && time !== undefined && e.target.classList.contains('js-time-select')) {
-                    time.innerHTML = link.innerHTML;
-                }
             });
         })
 
@@ -348,6 +344,30 @@ const addNewAddres = () => {
     });
 }
 
+const payChoice = () => {
+    document.body.addEventListener('click', (e) => {
+        const target = e.target as Element;
+
+
+        if (target.classList.contains('js-pay-choice') || target.closest('.js-pay-choice')) {
+            e.preventDefault();
+            const link = target.classList.contains('js-pay-choice')
+                ? target
+                : target.closest('.js-pay-choice');
+
+            const input = link?.querySelector('input');
+            const dateBox = link?.closest('.data-time')?.querySelector('.data-time__box');
+            input.checked = true;
+
+            if (input.getAttribute('data-type') === 'after') {
+                dateBox.style.display = 'block';
+            } else {
+                dateBox.style.display = 'none';
+            }
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     favoriteItem();
     colorChange();
@@ -361,4 +381,5 @@ document.addEventListener('DOMContentLoaded', () => {
     promoInOrder();
     toggleItems();
     addNewAddres();
+    payChoice();
 });

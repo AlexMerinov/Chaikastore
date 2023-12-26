@@ -1,18 +1,15 @@
 extends ./_layout
-include ./mixins/list/slider-card
-include ./mixins/list/slider-product
-include ./mixins/list/product-card
-include ./mixins/list/breads
-include ./mixins/list/basket-prod
-include ./mixins/list/basket-list
 
 block content
         .wrapper__page.p-top-content
             .wrapper__haed 
-                h1 Оформление заказа
+                h1 Подарочный сертификат
             .section 
                 form.form.js-form-validate.cart-cols
                     .cart-cols__left
+                        .person-order-refund
+                            a.person-order-refund__link.active(href='lk-cert-me.html') Для себя
+                            a.person-order-refund__link(href='lk-cert-you.html') В подарок
                         .form__wrapper
                             h3.form__subtitle Ваши данные
                             .form__line 
@@ -31,6 +28,7 @@ block content
                                 label.form__label
                                     input.form__input(type="email" inputmode="email" class="form__input" required)
                                     span.form__ph E-mail 
+                        .form__wrapper
                             h3.form__subtitle Номинал сертификата
                             .form__line 
                                 .select-list
@@ -46,11 +44,19 @@ block content
                                     label.select-list__item
                                         input(type="radio" name="denomination")
                                         span 15 000 ₽
+                        .form__wrapper
                             h3.form__subtitle Подпись
                             .form__line 
                                 label.form__label
                                     input.form__input(type="text" class="form__input" required)
                                     span.form__ph Кому
+                            .form__line 
+                                label.form__label.form__label--textarea
+                                    textarea(class="form__input js-textarea" max="500" style="height:24px;overflow-y:hidden;")
+                                    span.form__ph Поздравление или сообщение
+                                span.form__text 
+                                    | Осталось символов:
+                                    span.symbol-counter
                             .form__line 
                                 label.form__label
                                     input.form__input(type="text" class="form__input" required)
@@ -68,8 +74,8 @@ block content
                                 label.input-checkbox
                                     input(type="checkbox")
                                     span.input-checkbox__text 
-                                        | Отправляя сообщение, вы соглашаетесь на обработку и хранение персональных данных в соответствии
-                                        a(href="#") с политикой конфиденциальности
+                                        | Отправляя сообщение, вы соглашаетесь на обработку и хранение персональных данных в соответствии c
+                                        a(href="policy.html") политикой конфиденциальности
                                         +icon-sym('check')
                             button.btn.btn--primary.order-box__link(type='submit') Перейти к оплате
                             a(href="#") Условия использования электронного сертификата

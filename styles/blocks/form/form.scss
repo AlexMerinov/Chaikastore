@@ -1,6 +1,13 @@
 .form{
     &__wrapper {
-        margin-bottom: var(--space-xs-desc);
+        margin-bottom: var(--space-s-desc);
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include maxBp($bp-768) {
+            margin-bottom: var(--space-s-mob);
+        }
     }
 
     &__line {
@@ -55,6 +62,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @include maxBp($bp-768) {
+            flex-wrap: wrap;
+        }
     }
 
     &__ph {
@@ -352,6 +363,7 @@
         z-index: 1;
         padding: 0 0 0 16px;
         transition: var(--trans);
+        @include text-size-10;
         &:after{
             content: '';
             display: block;
@@ -366,6 +378,10 @@
             border: 1px solid var(--Strokes-new-black);
             background: var(--White, #FFF);
             transition: var(--trans);
+        }
+
+        a {
+            text-decoration: underline;
         }
 
         .icon-sym {
@@ -735,18 +751,36 @@
         cursor: pointer;
 
         span {
-            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 8px;
+            width: 80px;
             @include text-size-12;
             transition: var(--trans);
             border-radius: 8px;
-            border: 0.5px solid var(--black);
+            border: 0.5px solid var(--Stroke-bk-30);
         }
 
 
         input:checked ~ span {
             background-color: var(--White-background);
+            border-color: var(--black);
         }
+    }
 
+    .error-message {
+        bottom: -20px;
+    }
+
+    @include maxBp($bp-768) {
+        gap: 4px;
+
+        &__item {
+            span {
+                width: 73px;
+            }
+        }
     }
 }
 

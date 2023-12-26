@@ -1,0 +1,124 @@
+extends ./_layout
+
+block content
+        .wrapper__page.p-top-content
+            .wrapper__haed 
+                h1 Подарочный сертификат
+            .section 
+                form.form.js-form-validate.cart-cols
+                    .cart-cols__left
+                        .person-order-refund
+                            a.person-order-refund__link(href='lk-cert-me.html') Для себя
+                            a.person-order-refund__link.active(href='lk-cert-you.html') В подарок
+                        .form__wrapper
+                            h3.form__subtitle Данные получателя
+                            .form__line 
+                                label.form__label
+                                    input.form__input(type="text" class="form__input" required)
+                                    span.form__ph Как обращаться к получателю?
+                            .form__line 
+                                label.form__label
+                                    input.form__input(type="text" name="phone" inputmode="phone" class="form__input" required)
+                                    span.form__ph Телефон
+                            .form__line 
+                                label.form__label
+                                    input.form__input(type="email" inputmode="email" class="form__input" required)
+                                    span.form__ph E-mail 
+                        .form__wrapper
+                            .data-time
+                                .data-time__header 
+                                    h3.data-time__title Когда отправить
+                                    .data-time__result 
+                                        span.data-time__result-day 14.03.2023
+                                        | в период 
+                                        span.data-time__result-time с 9 до 12 часов
+                                .data-time__choice
+                                    label.input-checkbox.js-pay-choice 
+                                        input(type="radio" data-type="now" required name="info" data-info="select-date") 
+                                        span.input-checkbox__text Сразу после оплаты
+                                    label.input-checkbox.js-pay-choice 
+                                        input(type="radio" data-type="after" required name="info" data-info="select-date")
+                                        span.input-checkbox__text Выбрать дату и время
+                                .data-time__box.fade-in 
+                                    .data-time__list
+                                        label.data-time__list-item
+                                            input(type="radio" name="nearest-date")
+                                            span 15 ПТ
+                                        label.data-time__list-item
+                                            input(type="radio" name="nearest-date")
+                                            span 16 СБ
+                                        label.data-time__list-item
+                                            input(type="radio" name="nearest-date")
+                                            span 17 ВС
+                                        .data-time__datapicker
+                                            label
+                                                input(type="text" id="datepicker")
+                                                +icon-sym('Calendar')
+                                    .form__select
+                                        .js-select.form-select.form-select--big
+                                            select(required)
+                                                option с 9 до 12 часов
+                                                option с 12 до 16 часов
+                                                option с 16 до 18 часов
+                                                option с 18 до 21 часов    
+
+                        .form__wrapper
+                            h3.form__subtitle Номинал сертификата
+                            .form__line 
+                                .select-list
+                                    label.select-list__item
+                                        input(type="radio" required name="denomination")
+                                        span 5 000 ₽
+                                    label.select-list__item
+                                        input(type="radio" required name="denomination")
+                                        span 7 000 ₽
+                                    label.select-list__item
+                                        input(type="radio" required name="denomination")
+                                        span 10 000 ₽
+                                    label.select-list__item
+                                        input(type="radio" required name="denomination")
+                                        span 15 000 ₽
+                        .form__wrapper
+                            h3.form__subtitle Подпись
+                            .form__line 
+                                label.form__label
+                                    input.form__input(type="text" class="form__input" required)
+                                    span.form__ph Кому
+                            .form__line 
+                                label.form__label.form__label--textarea
+                                    textarea(class="form__input js-textarea" max="500" style="height:24px;overflow-y:hidden;")
+                                    span.form__ph Поздравление или сообщение
+                                span.form__text 
+                                    | Осталось символов:
+                                    span.symbol-counter
+                            .form__line 
+                                label.form__label
+                                    input.form__input(type="text" class="form__input")
+                                    span.form__ph Подпись, от кого
+                                label.input-checkbox
+                                    input(type="checkbox")
+                                    span.input-checkbox__text 
+                                        | Отправить анонимно
+                                        +icon-sym('check')
+                                
+
+
+                    .cart-cols__right
+                        .order-box
+                            .order-box__name
+                                | Ваш сертификат
+                            .order-box__line
+                                span Итого
+                                span.bold 99 999 ₽
+                            .order-box__line 
+                                span Время отправки: 
+                                span 14.03.2023 в 15:00  
+                            .order-box__line
+                                label.input-checkbox
+                                    input(type="checkbox")
+                                    span.input-checkbox__text 
+                                        | Отправляя сообщение, вы соглашаетесь на обработку и хранение персональных данных в соответствии c
+                                        a(href="policy.html") политикой конфиденциальности
+                                        +icon-sym('check')
+                            button.btn.btn--primary.order-box__link(type='submit') Перейти к оплате
+                            a(href="#") Условия использования электронного сертификата

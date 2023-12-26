@@ -64,6 +64,11 @@
     border-radius: 8px;
     background: #FFF;
     box-shadow: 0px 2px 14px 0px #DEDCE9;
+
+    a {
+        text-decoration: underline;
+    }
+
     &__name {
         @include text-size-16;
         color: var(--black);
@@ -291,6 +296,10 @@
 
     &__link {
         width: 100%;
+        margin-bottom: var(--space-4xs);
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     @include maxBp($bp-1280) {

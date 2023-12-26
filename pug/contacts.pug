@@ -1,0 +1,53 @@
+extends ./_layout
+include ./mixins/list/breads
+
+block content
+        .wrapper__page.p-top-content
+            .wrapper__haed 
+                h1 Подарочный сертификат
+                -
+                    const breads = [
+                        {
+                            name: 'Главная',
+                            url: 'main-transparent.html',
+                        },
+                        {
+                            name: 'Контакты',
+                        },
+                    ];
+                +breads-list(breads)
+            .section.side-content
+                .person-order-refund
+                    a.person-order-refund__link.active(href='contacts.html') Контакты
+                    a.person-order-refund__link(href='market.html') Магазины
+                ul.list-info  
+                    li Режим работы интернет-магазина: с 9:00 до 20:00
+                    li 
+                        a(href="tel:+79660202723") +7 ( 966 ) 020-27-23 
+                    li 
+                        a(href="mailto:mail@chaikastore.ru") mail@chaikastore.ru
+                form.form
+                    h3.form__subtitle Написать нам
+                    .form__line 
+                        label.form__label
+                            input.form__input(type="text" class="form__input" required)
+                            span.form__ph Имя
+                    .form__line 
+                        label.form__label
+                            input.form__input(type="text" class="form__input" required)
+                            span.form__ph Фамилия
+                    .form__line 
+                        label.form__label
+                            input.form__input(type="text" name="phone" inputmode="phone" class="form__input" required)
+                            span.form__ph Телефон
+                    .form__line 
+                        label.form__label
+                            input.form__input(type="email" inputmode="email" class="form__input" required)
+                            span.form__ph E-mail 
+                    .form__line 
+                        label.form__label.form__label--textarea
+                            textarea(class="form__input js-textarea" max="500" style="height:24px;overflow-y:hidden;")
+                            span.form__ph Ваше сообщение
+                    .form__footer 
+                        button.btn.btn--secondary.form__button(type="submit") Отправить
+                        p Отправляя сообщение, вы соглашаетесь на обработку и хранение персональных данных в соответствии с политикой конфиденциальности
