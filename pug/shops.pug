@@ -1,0 +1,50 @@
+extends ./_layout
+include ./mixins/list/breads
+include ./mixins/list/shops
+include ./mixins/basic/_modal
+
+block content
+        .wrapper__page.p-top-content
+            .wrapper__haed 
+                h1 Подарочный сертификат
+                -
+                    const breads = [
+                        {
+                            name: 'Главная',
+                            url: 'main-transparent.html',
+                        },
+                        {
+                            name: 'Контакты',
+                        },
+                    ];
+                +breads-list(breads)
+            .section
+                -
+                    const shops = [
+                        {
+                            city: 'Москва',
+                            items: [
+                                {
+                                    name: 'Универмаг «Цветной»',
+                                    address: 'Адрес: г. Москва, Цветной бульвар, 15с1, 2 этаж',
+                                    point: '55.771145,37.620177',
+                                },
+                                {
+                                    name: 'Универмаг «Trend Island»',
+                                    address: 'Адрес: г. Москва, ул. Русаковская, 31, «Сокольники», 2 этаж',
+                                    point: '55.788576,37.678685',
+                                },
+                                {
+                                    name: 'Универмаг «Телеграф»',
+                                    address: 'Адрес: г. Москва, ул. Русаковская, 31, «Сокольники», 2 этаж',
+                                    point: '55.788576,37.678685',
+                                },
+                                {
+                                    name: 'Универмаг «Телеграф»',
+                                    address: 'Адрес: г. Москва, Пресненская набережная, 1, «Афимолл», 1 этаж',
+                                    point: '55.749162,37.539742',
+                                },
+                            ],
+                        },
+                    ];
+                +shops-list(shops)

@@ -53,7 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const detailPreviewProd = () => {
 
         const swiperParent = document.querySelectorAll('.js-slid-product-parent');
+        if (!swiperParent) return;
         swiperParent.forEach((slider) => {
+
             let swiperSlderThumb = null;
             const parent = slider.closest('.product__preview-gallery');
             const thisModalBox = parent?.querySelector('.modal');
@@ -74,41 +76,119 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            const swiperSlder = new Swiper(slider, {
-                slidesPerView: 1,
-                keyboard: {
-                    enabled: true,
-                },
-                effect: 'fade',
-                watchSlidesProgress: true,
-                fadeEffect: {
-                    crossFade: true,
-                },
-                pagination: {
-                    el: '.base-pagination',
-                },
-                breakpoints: {
-                    768: {
-                        pagination: false,
-                    },
-                },
-                on: {
-                    activeIndexChange(swiper: any) {
-                        if (!thisModalBox?.classList.contains('is-open')) {
-                            const sliderSwiper = thisModalBox.querySelector('.js-slider-lightbox');
-                            sliderSwiper?.swiper.slideTo(swiper.realIndex);
-                        }
-                    },
-                },
-                thumbs: {
-                    swiper: swiperSlderThumb,
-                    mousewheel: {
-                        senstivity: 1,
-                        eventsTarget: ".js-slid-product-child"
-                    },
-                },
-            });
+            console.log(slider);
 
+
+            if (slider.getAttribute('data-slides') === 'uno') {
+                new Swiper(slider, {
+                    slidesPerView: 1,
+                    keyboard: {
+                        enabled: true,
+                    },
+                    effect: 'fade',
+                    watchSlidesProgress: true,
+                    fadeEffect: {
+                        crossFade: true,
+                    },
+                    pagination: {
+                        el: '.base-pagination',
+                    },
+                    breakpoints: {
+                        768: {
+                            pagination: false,
+                        },
+                    },
+                    on: {
+                        activeIndexChange(swiper: any) {
+                            if (!thisModalBox?.classList.contains('is-open')) {
+                                const sliderSwiper = thisModalBox.querySelector('.js-slider-lightbox');
+                                sliderSwiper?.swiper.slideTo(swiper.realIndex);
+                            }
+                        },
+                    },
+                    thumbs: {
+                        swiper: swiperSlderThumb,
+                        mousewheel: {
+                            senstivity: 1,
+                            eventsTarget: ".js-slid-product-child"
+                        },
+                    },
+                });
+            } else if (slider.getAttribute('data-slides') === 'duble') {
+                new Swiper(slider, {
+                    slidesPerView: 2,
+                    spaceBetween: 16,
+                    keyboard: {
+                        enabled: true,
+                    },
+                    effect: 'fade',
+                    watchSlidesProgress: true,
+                    fadeEffect: {
+                        crossFade: true,
+                    },
+                    pagination: {
+                        el: '.base-pagination',
+                    },
+                    breakpoints: {
+                        768: {
+                            pagination: false,
+                        },
+                    },
+                    on: {
+                        activeIndexChange(swiper: any) {
+                            if (!thisModalBox?.classList.contains('is-open')) {
+                                const sliderSwiper = thisModalBox.querySelector('.js-slider-lightbox');
+                                sliderSwiper?.swiper.slideTo(swiper.realIndex);
+                            }
+                        },
+                    },
+                    thumbs: {
+                        swiper: swiperSlderThumb,
+                        mousewheel: {
+                            senstivity: 1,
+                            eventsTarget: ".js-slid-product-child"
+                        },
+                    },
+                });
+            } else if (slider.getAttribute('data-slides') === 'triple') {
+                new Swiper(slider, {
+                    slidesPerView: 3,
+                    spaceBetween: 16,
+                    keyboard: {
+                        enabled: true,
+                    },
+                    effect: 'fade',
+                    watchSlidesProgress: true,
+                    fadeEffect: {
+                        crossFade: true,
+                    },
+                    pagination: {
+                        el: '.base-pagination',
+                    },
+                    breakpoints: {
+                        768: {
+                            pagination: false,
+                        },
+                    },
+                    on: {
+                        activeIndexChange(swiper: any) {
+                            if (!thisModalBox?.classList.contains('is-open')) {
+                                const sliderSwiper = thisModalBox.querySelector('.js-slider-lightbox');
+                                sliderSwiper?.swiper.slideTo(swiper.realIndex);
+                            }
+                        },
+                    },
+                    thumbs: {
+                        swiper: swiperSlderThumb,
+                        mousewheel: {
+                            senstivity: 1,
+                            eventsTarget: ".js-slid-product-child"
+                        },
+                    },
+                });
+            } else {
+                return;
+            }
         });
 
 

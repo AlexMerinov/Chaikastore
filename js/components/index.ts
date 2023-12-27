@@ -4,3 +4,4 @@ import './header';
 import './animation';
 import './cookie';
 import './catalog';
+import './contacts';

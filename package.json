@@ -118,6 +118,8 @@
     "regenerator-runtime": "^0.13.9",
     "slim-select": "^2.6.0",
     "swiper": "^10.2.0",
+    "vue": "^3.3.13",
+    "vue-yandex-maps": "^0.12.7",
     "webpack": "^5.67.0"
   }
 }

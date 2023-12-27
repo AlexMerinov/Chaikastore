@@ -14,12 +14,16 @@
         &:last-child {
             margin-bottom: 0;
         }
+
+        @include maxBp($bp-768) {
+            flex-direction: column;
+            margin-bottom: var(--space-s-mob);
+        }
     }
 
     &__preview {
-        height: 37vw;
-        min-height: 619px;
-        min-width: 927px;
+        aspect-ratio:927/619;
+        flex: 0 0 auto;
         width: 70%;
         display: flex;
         align-items: center;
@@ -55,7 +59,10 @@
             }
         }
 
-
+        @include maxBp($bp-768) {
+            width: 100%;
+            margin-bottom: var(--space-s-mob);
+        }
     }
 
     &__description {
@@ -66,17 +73,88 @@
         align-items: center;
         justify-content: center;
         text-align: center;
+
+        @include maxBp($bp-768) {
+            margin-left: 0;
+        }
     }
 
     &__text {
         @include text-size-12;
         color: var(--black);
         margin-bottom: var(--space-3xs-desc);
+
+        @include maxBp($bp-768) {
+            margin-bottom: var(--space-3xs-mob);
+        }
     }
 
     &__title {
-      @include text-h2;
-      color: var(--black);  
-      margin-bottom: var(--space-3xs-desc);
+        @include text-h2;
+        color: var(--black);  
+        margin-bottom: var(--space-3xs-desc);
+
+        @include maxBp($bp-768) {
+            margin-bottom: var(--space-3xs-mob);
+        }
+    }
+}
+
+
+.lookbook-page {
+    &__container {
+        max-width: 1176px;
+        margin: 0 auto;
+    }
+    &__preview {
+        width: 100%;
+        aspect-ratio: 1344/789;
+        margin-bottom: var(--space-3xs-desc);
+    }
+
+    &__breads {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__breads, &__title, &__date {
+        text-align: center;
+        margin-bottom: var(--space-s-desc);
+    }
+
+    &__date {
+        width: 100%;
+        @include text-size-10;
+    }
+
+    &__text {
+        max-width: 840px;
+        margin-left: auto;
+        margin-right: auto;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: var(--space-l-desc);
+    }
+
+    &__uno {
+        aspect-ratio: 1176/1764;
+        width: 100%;
+        margin-bottom: var(--space-l-desc); 
+    }
+
+    &__duble {
+        aspect-ratio: 1176/867;
+        width: 100%;
+        margin-bottom: var(--space-l-desc);
+
+        & > .swiper {
+            height: 100%;
+        }
+    }
+
+    &__triple {
+        aspect-ratio: 1176/572;
+        width: 100%;
+        margin-bottom: var(--space-l-desc);
     }
 }

@@ -1,0 +1,88 @@
+.shops-col{
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	&__items{
+		width: 36%;
+	}
+	&__map{
+		width: calc(64% - 30px);
+	}
+
+    @include maxBp($bp-1280){
+		gap: 30px;
+        flex-direction: column;
+
+        &__items, &__map {
+            width: 100%;
+        }
+	}
+}
+
+.product-shop {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 8px;
+
+    &__item {
+        width: calc(50% - 4px);
+        padding: 8px;
+
+        border-radius: 4px;
+        border: 0.5px solid var(--black);
+        transition: var(--trans);
+        cursor: pointer;
+
+        &.active {
+            background-color: var(--White-background);
+        }
+
+        @include maxBp($bp-768) {
+            width: 100%;
+        }
+    } 
+    
+    &__name {
+        font-weight: 500;
+        margin-bottom: var(--space-3xs-desc);
+    }
+}
+
+
+.ymap{
+	display: block;
+	aspect-ratio:833/426;
+	width: 100%;
+	background: var(--gray-200);
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	@include maxBp($bp-768){
+		aspect-ratio:1/1;
+	}
+	&__item{
+		display: none;
+	}
+	[class*="ymaps-2-1"][class*="-map-bg"]{
+		background: var(--black);
+	}
+	a{
+		border: none;
+	}
+}
+
+.ymap-content{
+	padding: 10px 0 10px 10px;
+	font-family: var(--font-main);
+	@include maxBp($bp-768){
+		padding: 0;
+	}
+
+    .product-shop {
+        &__item {
+            width: 100%;
+            cursor: auto;
+        }
+    }
+}

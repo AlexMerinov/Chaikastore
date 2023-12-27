@@ -29,11 +29,9 @@ mixin modal(data = {})
                 if (typeof slots['header'] === 'function')
                     div(class=headerClasses.join(" "))
                         div(class="modal__close" data-micromodal-close)
-                            .modal__close-icon
                         - slots["header"]();
                 else
                     div(class="modal__close" data-micromodal-close)
-                        .modal__close-icon
                 if (typeof slots['body'] === 'function')
                     div(class=bodyClasses.join(" "))
                         - slots["body"]();

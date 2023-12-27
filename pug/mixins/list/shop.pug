@@ -1,0 +1,16 @@
+mixin shop-list(items)
+    ul(class="product-shop")
+        each item, index in items
+            -
+                const {
+                    name,
+                    contact,
+                    address,
+                } = item;
+            li(data-active=index class=(index === 0 ? "product-shop__item active js-shop-map" : "product-shop__item js-shop-map"))
+                div(class="product-shop__name")
+                    !=name
+                div(class="product-shop__contacts")
+                    div(class="product-shop__contacts__item")
+                        !=address
+

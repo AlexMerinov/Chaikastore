@@ -1,5 +1,5 @@
-mixin slider-parent-prod(items)
-    .swiper.js-slid-product-parent
+mixin slider-parent-prod-uno(items)
+    .swiper.js-slid-product-parent(data-slides="uno")
         .swiper-wrapper     
             each item, index in items 
                 -
@@ -15,6 +15,46 @@ mixin slider-parent-prod(items)
                         )
                         img(src=picture, alt=name) 
         .base-pagination
+
+
+mixin slider-parent-prod-duble(items)
+    .swiper.js-slid-product-parent(data-slides="duble")
+        .swiper-wrapper     
+            each item, index in items 
+                -
+                    const {
+                        picture,   
+                        name, 
+                    } = item;
+                .swiper-slide.js-scale-view(data-micromodal="modal-swiper-lightbox" data-swiper-slide-index=index) 
+                    picture 
+                        source(
+                            srcset=picture,
+                            media='(max-width: 1023px)'
+                        )
+                        img(src=picture, alt=name) 
+        .base-pagination
+
+
+mixin slider-parent-prod-triple(items)
+    .swiper.js-slid-product-parent(data-slides="triple")
+        .swiper-wrapper     
+            each item, index in items 
+                -
+                    const {
+                        picture,   
+                        name, 
+                    } = item;
+                .swiper-slide.js-scale-view(data-micromodal="modal-swiper-lightbox" data-swiper-slide-index=index) 
+                    picture 
+                        source(
+                            srcset=picture,
+                            media='(max-width: 1023px)'
+                        )
+                        img(src=picture, alt=name) 
+        .base-pagination
+
+
 
 mixin slider-parent-child(items)
     .swiper.js-slid-product-child

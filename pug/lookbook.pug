@@ -19,30 +19,25 @@ block content
                 +breads-list(breads)
             .section.lookbook 
                 .lookbook__filter 
-                    .drop-box-selector.js-drop-selector  
-                        .drop-box-selector__result 
-                            span.drop-box-selector__name Выберите сезон
-                            .arrow-drop 
-                                span 
-                                span
-                        ul.drop-box-selector__list  
-                            li.drop-box-selector__item Осень
-                            li.drop-box-selector__item Весна
-                            li.drop-box-selector__item Зима
-                            li.drop-box-selector__item Лето
-                    
-                    .drop-box-selector.js-drop-selector  
-                        .drop-box-selector__result
-                            span.drop-box-selector__name Выберите год
-                            .arrow-drop 
-                                span 
-                                span
-                        ul.drop-box-selector__list  
-                            li.drop-box-selector__item 2010
-                            li.drop-box-selector__item 2020
-                            li.drop-box-selector__item 2021
-                            li.drop-box-selector__item 2022
-                            li.drop-box-selector__item 2023
+                    div(class="form-sort")
+                        div(class="form-sort__item")
+                            | Выберите сезон:
+                            div(class="js-select form-select")
+                                select
+                                    option Осень
+                                    option Весна
+                                    option Зима
+                                    option Лето
+                                    option Все сезоны
+                        div(class="form-sort__item")
+                                | Выберите год:
+                                div(class="js-select form-select")
+                                    select
+                                        option 2010
+                                        option 2020
+                                        option 2021
+                                        option 2023
+                                        option За все время
                 -
                     const lookbookItems = [
                         {
