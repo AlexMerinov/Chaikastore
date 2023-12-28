@@ -71,4 +71,10 @@ $success: #CAD96E;
     --checked: #{$checked};
     --Strokes-new-black: #{$stroke-bk-50};
     --Strokes-new: #{$stroke-new};
+
+    --dinamic-color: #000;
+    --dinamic-dark: color-mix(in srgb, var(--dinamic-color), #fff 25%);
+    --dinamic-medium: color-mix(in srgb, var(--dinamic-color), #fff 40%);
+    --dinamic-light: color-mix(in srgb, var(--dinamic-color), #fff 60%);
+    --dinamic-lighter: color-mix(in srgb, var(--dinamic-color), #fff 75%);
 }

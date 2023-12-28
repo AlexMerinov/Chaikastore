@@ -253,6 +253,13 @@ block modal
         | Ваш трек номер скопирован
 
 +modal({
+    id: 'link-copy-go', 
+    modifier: 'no-content'
+})
+    +slot('header')
+        | Ссылка скопирована, <br> теперь вы можете рассказать о нас
+
++modal({
     id: 'table-size',
     modifier: 'overflow'
 })

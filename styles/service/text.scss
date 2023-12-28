@@ -69,19 +69,85 @@ a{
 }
 
 .text-content{
+    & > .block {
+        margin-top: var(--space-l-desc);
+        margin-bottom: var(--space-l-desc);
+        display: flex;
+        align-items: center;
+
+        & > img {
+            margin-bottom: 0;
+            max-width: 50%;
+            @include maxBp($bp-768) {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+
+        img {
+            margin-bottom: var(--space-xs-mob);
+            + div {
+                margin-left: 80px;
+                @include maxBp($bp-1280) {
+                    margin-left: 24px;
+                }
+
+                @include maxBp($bp-768) {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        div {
+            + img {
+                margin-left: 80px;
+                @include maxBp($bp-1280) {
+                    margin-left: 24px;
+                }
+
+                @include maxBp($bp-768) {
+                    margin-left: 0;
+                    margin-top: var(--space-xs-mob);
+                }
+            }
+        }
+        p {
+            display: block;
+            text-align: left;
+            margin: 0;
+
+            + blockquote {
+                margin-top: 80px;
+                @include maxBp($bp-1280) {
+                   margin-top: 40px;
+                }
+
+                @include maxBp($bp-768) {
+                    margin-top: var(--space-xs-mob);
+                }
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include maxBp($bp-768) {
+            display: block;
+            margin-bottom: var(--space-l-mob);
+            margin-top: var(--space-l-mob);
+        }
+    }
+
   p{
     padding: 0;
-    margin:0 0 20px 0;
+    margin-left: auto;
+    margin-right: auto;
     &:last-child{
       margin-bottom: 0;
     }
-    +img{
-      margin-top: 20px;
-    }
-    img {
-      margin-bottom: 20px;
-    }
   }
+
   ul,ol{
     list-style: none;
     padding: 0;
@@ -120,6 +186,7 @@ a{
       }
     }
   }
+
   ol{
     counter-reset: list;
     li{
@@ -135,11 +202,10 @@ a{
       }
     }
   }
+
   h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
-    padding-top: 20px;
-    @include maxBp($bp-768){
-      padding-top: 8px;
-    }
+    text-align: center;
+
     &:first-child{
       padding-top: 0;
     }
@@ -163,23 +229,10 @@ a{
 
   blockquote{
     display: block;
-    position: relative;
-    padding: 0 0 0 54px;
-    margin:var(--space-s) 0;
-    &:first-child{
-      margin-top: 0;
-    }
-    &:before{
-      content: '';
-      position: absolute;
-      z-index: -1;
-      left: 0;
-      top: 0;
-      width: 32px;
-      height: 32px;
-      background:url(../images/quote.svg) no-repeat  0 0;
-      background-size: contain;
-    }
+    padding: 16px;
+    border-radius: 8px;
+    border: 0.5px solid #000;
+
   }
 
   table{
@@ -228,10 +281,14 @@ a{
 
   img{
     height: auto;
-    border-radius: 10px;
-    margin: 20px 0;
-    +h1,+h2,+h3,+h4,+h5,+h6,+.h1,+.h2,+.h3,+.h4,+.h5,+.h6{
-      padding-top: 0;
+    max-width: 100%;
+    margin-bottom: var(--space-l-desc);
+    @include maxBp($bp-768){
+        margin-bottom: var(--space-l-mob);
+    }
+
+    &:first-child {
+        margin-top: 0;
     }
   }
 
@@ -249,7 +306,14 @@ a{
 }
 
 .text-center{
-  text-align: center;
+    text-align: center;
+    max-width: 840px;
+    margin-bottom: var(--space-l-desc);
+    @include maxBp($bp-768){
+        text-align: left;
+        margin-bottom: var(--space-l-mob);
+    }
+
 }
 
 .text-bold{

@@ -8,7 +8,7 @@ include ./mixins/list/slider-modal
 block content
         .wrapper__page
             .section.lookbook 
-                .lookbook-page
+                .lookbook-page(id='page-top')
                     .lookbook-page__preview
                          picture
                                 source(media="(min-width: 1920)" srcset="big.jpg 1x, big-hd.jpg 2x")
@@ -34,9 +34,9 @@ block content
                         h1.lookbook-page__title Textured feel lookbook
                         .lookbook-page__date 28.07.2021
                         .lookbook-page__text ЛЮБЫЕ ПРЕДМЕТЫ, КОТОРЫЕ НАС ОКРУЖАЮТ ИМЕЮТ СВОЮ ОСОБЕННУЮ ТЕКСТУРУ. <br> ОНА ДАЁТ НАМ ДВА ВИДА ВОЗДЕЙСТВИЯ: ВИЗУАЛЬНОЕ И ТАКТИЛЬНОЕ.
-                        .lookbook-page__duble 
+                        .lookbook-page__duble.js-slider-dinamic 
                             -
-                                const mainProdList = [
+                                const lookbookOne = [
                                     {
                                         name: 'Трикотажное платье насыщенного красного цвета',
                                         picture: 'images/content/lookbook/detail/lookbook_00.jpg',
@@ -44,9 +44,13 @@ block content
                                     {
                                         name: 'Трикотажное платье насыщенного красного цвета',
                                         picture: 'images/content/lookbook/detail/lookbook_01.jpg',
-                                    },       
+                                    },   
+                                    {
+                                        name: 'Трикотажное платье насыщенного красного цвета',
+                                        picture: 'images/content/lookbook/detail/lookbook_01.jpg',
+                                    },     
                                 ];
-                            +slider-parent-prod-duble(mainProdList)
+                            +slider-parent-prod-duble(lookbookOne)
 
                             +modal({
                                 id: 'swiper-lightbox',
@@ -54,7 +58,7 @@ block content
                             })
                                 +slot('body')
                                     -
-                                        const lightBoxList = [
+                                        const lightBoxListOne = [
                                             {
                                                 name: 'Трикотажное платье насыщенного красного цвета',
                                                 picture: 'images/content/lookbook/detail/lookbook_00.jpg',
@@ -62,13 +66,89 @@ block content
                                             {
                                                 name: 'Трикотажное платье насыщенного красного цвета',
                                                 picture: 'images/content/lookbook/detail/lookbook_01.jpg',
+                                            },     
+                                            {
+                                                name: 'Трикотажное платье насыщенного красного цвета',
+                                                picture: 'images/content/lookbook/detail/lookbook_01.jpg',
+                                            },                                                                       
+                                        ];
+                                    +slider-lightbox(lightBoxListOne)
+                        .lookbook-page__text ВИЗУАЛЬНОЕ ВОЗДЕЙСТВИЕ ОКАЗЫВАЕТ НА НАС В ПЕРВУЮ ОЧЕРЕДЬ ЦВЕТ И ФОРМА. НАШ ВЗГЛЯД ПРИТЯГИВАЕТ ТЕКСТУРА ТКАНИ, РЕЛЬЕФ, НЕОБЫЧНОЕ ПЛЕТЕНИЕ. МЫ РАЗЛИЧАЕМ МАТЕРИАЛ, ИЗ КОТОРОГО СДЕ­ЛАНО ИЗДЕЛИЕ.
+                        .lookbook-page__triple.js-slider-dinamic
+                            -
+                                const lookbookTwo = [
+                                    {
+                                        name: 'Трикотажное платье насыщенного красного цвета',
+                                        picture: 'images/content/lookbook/detail/lookbook_03.jpg',
+                                    },
+                                    {
+                                        name: 'Трикотажное платье насыщенного красного цвета',
+                                        picture: 'images/content/lookbook/detail/lookbook_04.jpg',
+                                    }, 
+                                    {
+                                        name: 'Трикотажное платье насыщенного красного цвета',
+                                        picture: 'images/content/lookbook/detail/lookbook_05.jpg',
+                                    },       
+                                                                        {
+                                        name: 'Трикотажное платье насыщенного красного цвета',
+                                        picture: 'images/content/lookbook/detail/lookbook_05.jpg',
+                                    }, 
+                                ];
+                            +slider-parent-prod-triple(lookbookTwo)
+
+                            +modal({
+                                id: 'swiper-lightbox',
+                                modifier: 'lightbox'
+                            })
+                                +slot('body')
+                                    -
+                                        const lightBoxListTwo = [
+                                            {
+                                                name: 'Трикотажное платье насыщенного красного цвета',
+                                                picture: 'images/content/lookbook/detail/lookbook_03.jpg',
+                                            },
+                                            {
+                                                name: 'Трикотажное платье насыщенного красного цвета',
+                                                picture: 'images/content/lookbook/detail/lookbook_04.jpg',
+                                            }, 
+                                            {
+                                                name: 'Трикотажное платье насыщенного красного цвета',
+                                                picture: 'images/content/lookbook/detail/lookbook_05.jpg',
                                             },                                                                          
                                         ];
-                                    +slider-lightbox(lightBoxList)
-                        .lookbook-page__text ВИЗУАЛЬНОЕ ВОЗДЕЙСТВИЕ ОКАЗЫВАЕТ НА НАС В ПЕРВУЮ ОЧЕРЕДЬ ЦВЕТ И ФОРМА. НАШ ВЗГЛЯД ПРИТЯГИВАЕТ ТЕКСТУРА ТКАНИ, РЕЛЬЕФ, НЕОБЫЧНОЕ ПЛЕТЕНИЕ. МЫ РАЗЛИЧАЕМ МАТЕРИАЛ, ИЗ КОТОРОГО СДЕ­ЛАНО ИЗДЕЛИЕ.
-                        .lookbook-page__triple
+                                    +slider-lightbox(lightBoxListTwo)
                         .lookbook-page__text ТАКТИЛЬНОЕ ВОЗДЕЙСТВИЕ МОЖНО ОЩУТИТЬ, ПРИКОСНУВШИСЬ К ИЗДЕЛИЮ РУКАМИ. <br> ВЕДЬ ГЛЯДЯ НА ПРЕДМЕТ, МЫ ПОНИМАЕМ, КАКОЙ ОН. ТРОГАЯ ЕГО, МЫ ПОНИМАЕМ ЕГО ЕЩЕ БОЛЬШЕ.
-                        .lookbook-page__duble 
+                        .lookbook-page__duble.js-slider-dinamic 
+                            -
+                                const lookbookThree = [
+                                    {
+                                        name: 'Трикотажное платье насыщенного красного цвета',
+                                        picture: 'images/content/lookbook/detail/lookbook_06.jpg',
+                                    },
+                                    {
+                                        name: 'Трикотажное платье насыщенного красного цвета',
+                                        picture: 'images/content/lookbook/detail/lookbook_07.jpg',
+                                    },       
+                                ];
+                            +slider-parent-prod-duble(lookbookThree)
+
+                            +modal({
+                                id: 'swiper-lightbox',
+                                modifier: 'lightbox'
+                            })
+                                +slot('body')
+                                    -
+                                        const lightBoxListThree = [
+                                            {
+                                                name: 'Трикотажное платье насыщенного красного цвета',
+                                                picture: 'images/content/lookbook/detail/lookbook_06.jpg',
+                                            },
+                                            {
+                                                name: 'Трикотажное платье насыщенного красного цвета',
+                                                picture: 'images/content/lookbook/detail/lookbook_07.jpg',
+                                            },                                                                          
+                                        ];
+                                    +slider-lightbox(lightBoxListThree)
                         .lookbook-page__text ДЛЯ ЛЮБОЙ НАШЕЙ КОЛЛЕКЦИИ ПРИОРИТЕТОМ ВСЕГДА БЫЛИ ТАКТИЛЬНЫЕ ОЩУЩЕНИЯ, КОТОРЫЕ ПЕРЕДАЕТ ВЕЩЬ. <br> ДЛЯ ЛЮБОЙ НАШЕЙ КОЛЛЕКЦИИ ПРИОРИТЕТОМ ВСЕГДА БЫЛИ ТАКТИЛЬНЫЕ ОЩУЩЕНИЯ, КОТОРЫЕ ПЕРЕДАЕТ ВЕЩЬ. И В ЭТОМ ГОДУ МЫ ВЫПУСТИЛИ ЛЕТНИЙ ДРОП, В КОТОРЫЙ ВОШЛИ ИЗДЕЛИЯ С АБСОЛЮТНО НОВЫМИ ДЛЯ НАС ТЕКСТУРАМИ.
                         .lookbook-page__uno
                             picture
@@ -88,8 +168,42 @@ block content
                                 img(align="center" width="100%" height="100%" src="images/content/lookbook/detail/lookbook_10.jpg" loading="lazy")
                         .lookbook-page__uno.mb-3xs
                             picture
-                                source(media="(min-width: 1920)" srcset="big.jpg 1x, big-hd.jpg 2x")
                                 source(media="(min-width: 1280)" srcset="big.jpg 1x, big-hd.jpg 2x")
-                                img(align="center" width="100%" height="100%" src="images/content/lookbook/detail/lookbook_11.jpg" loading="lazy")
+                                img(align="center" width="100%" height="100%" src="images/content/lookbook/detail/lookbook_17.jpg" loading="lazy")
                         .lookbook-page__grid
+                            .grid-masonry
+                                picture
+                                    source(media="(min-width: 1280)" srcset="big.jpg 1x, big-hd.jpg 2x")
+                                    img(align="center" width="100%" height="100%" src="images/content/lookbook/detail/lookbook_11.jpg" loading="lazy")
+                                picture
+                                    source(media="(min-width: 1280)" srcset="big.jpg 1x, big-hd.jpg 2x")
+                                    img(align="center" width="100%" height="100%" src="images/content/lookbook/detail/lookbook_13.jpg" loading="lazy")
+                                picture
+                                    source(media="(min-width: 1280)" srcset="big.jpg 1x, big-hd.jpg 2x")
+                                    img(align="center" width="100%" height="100%" src="images/content/lookbook/detail/lookbook_15.jpg" loading="lazy")
+                                picture
+                                    source(media="(min-width: 1280)" srcset="big.jpg 1x, big-hd.jpg 2x")
+                                    img(align="center" width="100%" height="100%" src="images/content/lookbook/detail/lookbook_12.jpg" loading="lazy")
+                                picture
+                                    source(media="(min-width: 1280)" srcset="big.jpg 1x, big-hd.jpg 2x")
+                                    img(align="center" width="100%" height="100%" src="images/content/lookbook/detail/lookbook_14.jpg" loading="lazy")
+                                picture
+                                    source(media="(min-width: 1280)" srcset="big.jpg 1x, big-hd.jpg 2x")
+                                    img(align="center" width="100%" height="100%" src="images/content/lookbook/detail/lookbook_16.jpg" loading="lazy")
+                        .lookbook-page__footer 
+                            .share
+                                span Рассказать о нас
+                                ul.social-list
+                                    li.social-list__item 
+                                        a.js-link-and-copy(href='https://t.me/' data-copy="https://chaikastore.ru/" target="_blank")
+                                            +icon-sym('tg') 
+                                    li.social-list__item 
+                                        a.js-link-and-copy(href='https://wa.me/' data-copy="https://chaikastore.ru/" target="_blank")
+                                            +icon-sym('ws') 
+                                    li.social-list__item 
+                                        a.js-link-and-copy(href='https://vk.com/' data-copy="https://chaikastore.ru/" target="_blank")
+                                            +icon-sym('vk') 
+                            a.page-top-link(href='#page-top') Наверх
+
+
 

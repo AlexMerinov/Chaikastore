@@ -57,10 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
         swiperParent.forEach((slider) => {
 
             let swiperSlderThumb = null;
-            const parent = slider.closest('.product__preview-gallery');
-            const thisModalBox = parent?.querySelector('.modal');
+            const parentDinamic = slider.closest('.js-slider-dinamic');
+            const thisModalBox = parentDinamic?.querySelector('.modal');
 
-            const thumb = parent?.querySelector('.js-slid-product-child');
+            const navArrows = {
+                navigation: {
+                    nextEl: parentDinamic.querySelector('.custom-slider-btn--next'),
+                    prevEl: parentDinamic.querySelector('.custom-slider-btn--prev'),
+                }
+            }
+
+            const thumb = parentDinamic?.querySelector('.js-slid-product-child');
             if (thumb !== null && thumb !== undefined) {
                 swiperSlderThumb = new Swiper(thumb, {
                     spaceBetween: 8,
@@ -76,17 +83,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            console.log(slider);
-
-
             if (slider.getAttribute('data-slides') === 'uno') {
                 new Swiper(slider, {
                     slidesPerView: 1,
                     keyboard: {
                         enabled: true,
                     },
-                    effect: 'fade',
                     watchSlidesProgress: true,
+                    effect: 'fade',
                     fadeEffect: {
                         crossFade: true,
                     },
@@ -118,21 +122,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 new Swiper(slider, {
                     slidesPerView: 2,
                     spaceBetween: 16,
-                    keyboard: {
-                        enabled: true,
-                    },
-                    effect: 'fade',
                     watchSlidesProgress: true,
-                    fadeEffect: {
-                        crossFade: true,
-                    },
-                    pagination: {
-                        el: '.base-pagination',
-                    },
-                    breakpoints: {
-                        768: {
-                            pagination: false,
-                        },
+                    direction: 'horizontal',
+                    slideToClickedSlide: true,
+                    navigation: {
+                        nextEl: navArrows.navigation.nextEl,
+                        prevEl: navArrows.navigation.prevEl,
                     },
                     on: {
                         activeIndexChange(swiper: any) {
@@ -140,34 +135,25 @@ document.addEventListener('DOMContentLoaded', () => {
                                 const sliderSwiper = thisModalBox.querySelector('.js-slider-lightbox');
                                 sliderSwiper?.swiper.slideTo(swiper.realIndex);
                             }
-                        },
-                    },
-                    thumbs: {
-                        swiper: swiperSlderThumb,
-                        mousewheel: {
-                            senstivity: 1,
-                            eventsTarget: ".js-slid-product-child"
                         },
                     },
                 });
             } else if (slider.getAttribute('data-slides') === 'triple') {
+                console.log(parentDinamic);
+                console.log(thisModalBox);
                 new Swiper(slider, {
                     slidesPerView: 3,
                     spaceBetween: 16,
-                    keyboard: {
-                        enabled: true,
-                    },
-                    effect: 'fade',
                     watchSlidesProgress: true,
-                    fadeEffect: {
-                        crossFade: true,
-                    },
-                    pagination: {
-                        el: '.base-pagination',
+                    slideToClickedSlide: true,
+                    direction: 'vertical',
+                    navigation: {
+                        nextEl: navArrows.navigation.nextEl,
+                        prevEl: navArrows.navigation.prevEl,
                     },
                     breakpoints: {
                         768: {
-                            pagination: false,
+                            direction: 'horizontal',
                         },
                     },
                     on: {
@@ -176,13 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
                                 const sliderSwiper = thisModalBox.querySelector('.js-slider-lightbox');
                                 sliderSwiper?.swiper.slideTo(swiper.realIndex);
                             }
-                        },
-                    },
-                    thumbs: {
-                        swiper: swiperSlderThumb,
-                        mousewheel: {
-                            senstivity: 1,
-                            eventsTarget: ".js-slid-product-child"
                         },
                     },
                 });
@@ -194,8 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const slidersLightBox = document.querySelectorAll('.js-slider-lightbox');
         slidersLightBox.forEach((slider) => {
-            const parent = slider.closest('.product__preview-gallery');
-            const thisModalBox = parent?.querySelector('.modal');
+            const parentDinamic = slider.closest('.js-slider-dinamic');
+            const thisModalBox = parentDinamic?.querySelector('.modal');
 
 
             const swiperSlider = new Swiper(slider, {
@@ -217,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 on: {
                     activeIndexChange(swiper: any) {
                         if (thisModalBox?.classList.contains('is-open')) {
-                            const sliderSwiper = parent.querySelector('.js-slid-product-parent');
+                            const sliderSwiper = parentDinamic.querySelector('.js-slid-product-parent');
                             sliderSwiper?.swiper.slideTo(swiper.realIndex);
                         }
                     },

@@ -46,7 +46,8 @@
         left: 0;
         width: 100%;
         display: flex;
-        background-color: var(--Main-background);
+        transition: var(--trans);
+        background-color: transparent;
 
         .form__line {
             width: 100%;
@@ -69,6 +70,11 @@
             transition: var(--trans);
             opacity: 0;
             pointer-events: none;
+        }
+
+        .header-search__form {
+            transition-delay: .2s;
+            background-color: var(--Main-background);
         }
     }
 
