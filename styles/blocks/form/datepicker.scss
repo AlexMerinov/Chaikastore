@@ -1,0 +1,7 @@
+.feedback-contacts {
+    &__check {
+        display: flex;
+        gap: 32px;
+        margin-bottom: var(--space-2xs-desc);
+    }
+}

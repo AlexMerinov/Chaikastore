@@ -7,11 +7,15 @@ block modal
 })
     +slot('header')
         div(class="header-city-block")
-            a(class="link-city" data-micromodal-close)
-                +icon-sym('arr-down')
-                +icon-sym('pin')
-                | Moсква
-    +slot('body')
+            div(class="form-sort")
+                div(class="form-sort__item")
+                    div(class="js-select form-select")
+                        select
+                            option Россия
+                            option Беларусь
+                            option Казахстан
+                            option Армения
+                            option Азербайджан
         div(class="form")
             div(class="form__line")
                 input(class="form__input form__input--search js-dadata-city")

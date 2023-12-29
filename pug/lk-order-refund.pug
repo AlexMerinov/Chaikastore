@@ -47,9 +47,6 @@ block content
                                     dd 3 товара, оплата на сайте, без примерки
                                 dl.order-details__field   
                                     dt.order-details__subtitle Доставка:
-                                    dd Воронцова Алина, +7 (960) 988 98 98, login@gmail.com
-                                dl.order-details__field   
-                                    dt.order-details__subtitle Доставка:
                                     dd Россия, г. Сочи, Адлерский район, ул. Цветочная, д. 15
                                     dd Почта России
                                     dd 19 ноября - 22 ноября
@@ -113,20 +110,23 @@ block content
                                     .order-details__title Контактные данные
                                     .order-details__description Пожалуйста, используйте адрес электронной почты или номер телефона, <br> указанный в учетной записи на момент создания заказа
                                     .order-details-list__content
-                                        label.input-checkbox
-                                            input(type="radio" required name="info" data-info="select-mail") 
-                                            span.input-checkbox__text По e-mail
-                                        label.input-checkbox
-                                            input(type="radio" required name="info" data-info="select-phone")
-                                            span.input-checkbox__text По номеру телефон
-                                        .form__line 
-                                            label.form__label 
-                                                input.form__input.js-input-format-phone(type="text" value="" name="phone" inputmode="tel" class="form__input" required)
-                                                span.form__ph Телефон
-                                        .form__line
-                                            label.form__label
-                                                input.form__input(type="email" value="" inputmode="email" class="form__input" required)
-                                                span.form__ph E-mail
+                                        .feedback-contacts
+                                            .feedback-contacts__check
+                                                label.input-checkbox.js-fb-contacts(data-fb='email')
+                                                    input(type="radio" checked required name="info" data-info="select-mail") 
+                                                    span.input-checkbox__text По e-mail
+                                                label.input-checkbox.js-fb-contacts(data-fb='phone') 
+                                                    input(type="radio" required name="info" data-info="select-phone")
+                                                    span.input-checkbox__text По номеру телефон
+                                            .feedback-contacts__fild
+                                                .form__line.hide(data-fb='phone') 
+                                                    label.form__label 
+                                                        input.form__input.js-input-format-phone(type="text" value="" name="phone" inputmode="tel" class="form__input" required)
+                                                        span.form__ph Телефон
+                                                .form__line(data-fb='email') 
+                                                    label.form__label
+                                                        input.form__input(type="email" value="" inputmode="email" class="form__input" required)
+                                                        span.form__ph E-mail
                                 .order-details__field.mb-s
                                     .order-details__title Причина возврата   
                                     .order-details__select
@@ -170,7 +170,7 @@ block content
                                                             option Самостоятельный возврат в пункт самовывоза (ТЦ "Авиапарк")
                                             .order-details__download
                                                 | В отправление необходимо вложить бланк возврата
-                                                a.btn.btn--secondary(href="/" download) Скачать бланк
+                                                a.btn.btn--secondary(href="/Chaika_Blank_Refund.pdf" download) Скачать бланк
                                 button.btn.btn--primary.order-details__submit(type="submit") Оформить возврат
 
                     a.person-out.person-out--mob(href="#" data-micromodal="modal-exit-lk") Выйти
