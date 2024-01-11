@@ -267,31 +267,6 @@
         cursor: pointer;
         overflow: visible;
         transition: var(--trans);
-
-        &::after {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 1px;
-
-            background: var(--Strokes-new-black);
-            position: absolute;
-            left: 0;
-            bottom: -1px;
-            transform: translate3d(0,0,0);
-            transition: var(--trans);
-
-        }
-
-        @include bp($bp-1280) {
-            &:hover {
-                &::after {
-                    transition: var(--trans);
-                    background: var(--black);
-                    transform: translate3d(0,1px,0);
-                }
-            }
-        }
     }
 
     &__link {

@@ -111,8 +111,19 @@
         aspect-ratio: 1344/789;
         margin-bottom: var(--space-3xs-desc);
 
+        picture {
+            display: block;
+            width: 100%;
+            height: 100%;
+            img {
+                object-fit: cover;
+            }
+        }
+
         @include maxBp($bp-768) {
             margin-bottom: var(--space-s-mob);
+            max-height: 413px;
+            aspect-ratio: 304/413;
         }
     }
 

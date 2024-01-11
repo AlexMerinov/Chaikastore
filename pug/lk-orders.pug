@@ -2,7 +2,7 @@ extends ./_layout
 include ./mixins/list/order-list
 
 block content
-        .wrapper__page.p-top-content
+        .wrapper__page.wrapper__page--content
             .wrapper__haed 
                 h1 Личный кабинет 
             .section 
@@ -57,6 +57,15 @@ block content
                                         }
                                     ]
                                 },
+                                {
+                                    url: 'lk-order-cert-details',
+                                    payment: true,
+                                    date: '16.09.2023',
+                                    number: '1231123443',
+                                    price: '34 984',
+                                    status: 'Собирается на складе',
+                                    order: 'cert'
+                                }, 
                                 {
                                     url: 'lk-order-details',
                                     payment: true,

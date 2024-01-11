@@ -59,8 +59,8 @@ block modal
                         input(type="password" class="form__input" id="enter-input-pass-modal" required)
                         span.form__ph Пароль
                         span.form__input-icon.js-pass-view 
-                            +icon-sym('view')
                             +icon-sym('no-view')
+                            +icon-sym('view')
                 .modal__link
                     a(href="#" class="form__link line-bottom" data-micromodal="modal-password-email") Восстановить пароль
             div(class="form__submit")
@@ -254,7 +254,7 @@ block modal
     modifier: 'no-content'
 })
     +slot('header')
-        | Ваш трек номер скопирован
+        | Ваш номер скопирован
 
 +modal({
     id: 'link-copy-go', 

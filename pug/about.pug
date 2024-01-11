@@ -3,7 +3,7 @@ include ./mixins/list/breads
 include ./mixins/list/lookbook-list
 
 block content
-        .wrapper__page.p-top-content
+        .wrapper__page.wrapper__page--content
             .wrapper__haed 
                 h1 О нас
                 -
@@ -18,8 +18,9 @@ block content
                     ];
                 +breads-list(breads)
             .section
+                <!-- Текстовый блок -->
                 .text-content 
-                    img(align="center"  src="images/content/about/main.png" loading="lazy")
+                    img.img(align="center"  src="images/content/about/main.png" loading="lazy")
                     h2 От классического стиля до ярких идей
                     p.text-center Основатели CHAIKA — Елизавета и Михаил Кореловы — партнеры по жизни и в работе над брендом. Каждая коллекция с новой стороны воплощает ценности сооснователей CHAIKA и девушек, которые ее выбирают — легкость, свободу, внимание к комфорту и качеству жизни.
                     div.block

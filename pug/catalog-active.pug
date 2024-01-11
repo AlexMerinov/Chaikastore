@@ -7,7 +7,7 @@ include ./mixins/list/product-list
 include ./mixins/menu/side-menu-active
 
 block content
-        .wrapper__page.p-top-content
+        .wrapper__page.wrapper__page--content
             .wrapper__haed 
                 h1 Одежда
                 -
@@ -861,7 +861,7 @@ block content
                                 ];
                             +grid-product(productsList)
                             .products-content__more 
-                                a.js-catalog-load-more.show-more(href='/') Показать еще
+                                a.js-catalog-load-more.show-more(href='ajax-catalog-list.html') Показать еще
                 
             section.section.section--overflow-l
                 h2.section__title 

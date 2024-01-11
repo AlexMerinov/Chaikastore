@@ -10,6 +10,7 @@ mixin lk-order-list(items)
                     price, 
                     status,
                     products,
+                    order,
                 } = item;
             a.person-order(href=url + '.html')
                 .person-order__header 
@@ -28,12 +29,17 @@ mixin lk-order-list(items)
                             != 'от ' + date
                         .person-order__status 
                             != status
-                .person-order__list
-                    each item in products 
-                        -
-                            const {
-                                url,
-                                img,
-                            } = item;
-                        picture
-                            img(src=img)
+                if order === 'cert' 
+                    .person-order__cert 
+                        img(src="images/logo-black.svg" alt="chaika" width="auto" height="24px")
+                        span Подарочный сертификат
+                else
+                    .person-order__list
+                        each item in products 
+                            -
+                                const {
+                                    url,
+                                    img,
+                                } = item;
+                            picture
+                                img(src=img)

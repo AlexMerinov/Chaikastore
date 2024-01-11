@@ -37,12 +37,13 @@
         height: 25px;
         width: 0;
         overflow: hidden;
-        transition: var(--trans);
+        transition: all .1s linear;
         opacity: 0;
     }
 
     &__form {
         position: absolute;
+        top: 0;
         left: 0;
         width: 100%;
         display: flex;
@@ -62,6 +63,7 @@
     &.show {
         .header-search__area {
             width: 335px;
+            transition: var(--trans);
             opacity: 1;
             overflow: visible;
         }
@@ -73,14 +75,15 @@
         }
 
         .header-search__form {
-            transition-delay: .2s;
+            transition: var(--trans);
+            transition-delay: .3s;
             background-color: var(--Main-background);
         }
     }
 
     @include maxBp($bp-1280) {
         margin-right: auto;
-        margin-left: 0;
+        margin-left: -8px;
 
         &__area {
             padding: 16px;
@@ -88,7 +91,6 @@
             top: 0;
             left: 0;
             width: 100vw;
-            background: var(--Main-background);
             pointer-events: none;
         }
 
@@ -99,6 +101,10 @@
                 pointer-events: visible;
                 animation-delay: 1s;
                 animation: shadowBg 1.5s forwards;
+            }
+
+            .header-search__form {
+                transition-delay: .1s;
             }
             
         }

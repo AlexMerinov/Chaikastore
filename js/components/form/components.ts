@@ -11,12 +11,12 @@ function inputView() {
 
             if (thisField.type === 'password') {
                 thisField.setAttribute("type", "text");
-                iconView.style.display = 'none';
-                iconNoView.style.display = 'block';
-            } else {
-                thisField.setAttribute("type", "password");
                 iconView.style.display = 'block';
                 iconNoView.style.display = 'none';
+            } else {
+                thisField.setAttribute("type", "password");
+                iconView.style.display = 'none';
+                iconNoView.style.display = 'block';
             }
 
         });

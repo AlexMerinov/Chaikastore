@@ -1,0 +1,218 @@
+//add this class to body for blocked page
+
+.menu-show {
+    padding-right: var(--scroll-width);
+    position: fixed!important;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+//custome table
+
+table.size-product {
+    margin-bottom: var(--space-3xs-desc);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    @include text-size-12;
+    border-bottom: 1px solid var(--Stroke-bk-30);
+    border-right: 1px solid var(--Stroke-bk-30);
+    tr {
+        td {
+            border-top: 1px solid var(--Stroke-bk-30);
+            border-left: 1px solid var(--Stroke-bk-30);
+        }
+    }
+
+    td {
+        min-width: 60px;
+        &:first-child {
+            min-width: 100px;
+            max-width: 200px;
+            padding: 5px;
+            text-align: left;
+        }
+    }
+
+    @include maxBp($bp-768) {
+        @include text-size-10;
+        td {
+            min-width: 40px;
+
+            &:first-child {
+                padding: 7px;
+                min-width: 100px;
+            }
+        }
+
+    }
+}
+
+
+.hidden {
+    display: none;
+}
+
+.margin-null {
+    margin: 0;
+}
+
+//add a class if you need to go beyond the container's boundaries
+
+.overflow-l {
+    margin-left: -48px;
+
+    @include maxBp($bp-1280){
+        margin-left: -16px;
+    }
+
+    @include maxBp($bp-768){
+        margin-left: -8px;
+    }
+}
+
+.overflow-r {
+    margin-right: -48px;
+
+    @include maxBp($bp-1280){
+        margin-right: -16px;
+    }
+
+    @include maxBp($bp-768){
+        margin-right: -8px;
+    }
+}
+
+.overflow-all {
+    margin-left: -48px;
+    margin-right: -48px;
+
+    @include maxBp($bp-1280){
+        margin-left: -16px;
+        margin-right: -16px;
+    }
+
+    @include maxBp($bp-768){
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.hide{
+    display: none !important;
+}
+
+// if need animation 
+
+.fade-in{
+    @include animation(fadeIn 0.3s var(--cubic));
+}
+
+.fade-out{
+    @include animation(fadeOut 0.3s var(--cubic));
+    opacity: 0;
+}
+
+// fixed padding value
+
+.mb-3xs{
+    margin-bottom: var(--space-3xs-desc) !important;
+}
+.mb-2xs{
+    margin-bottom: var(--space-2xs-desc) !important;
+}
+.mb-xs{
+    margin-bottom: var(--space-xs-desc) !important;
+}
+.mb-s{
+    margin-bottom: var(--space-s-desc) !important;
+}
+.mb-m{
+    margin-bottom: var(--space-m-desc) !important;
+}
+.mb-l{
+    margin-bottom: var(--space-l-desc) !important;
+}
+.mb-xl{
+    margin-bottom: var(--space-xl-desc) !important;
+}
+
+.mt-3xs{
+    margin-top: var(--space-3xs) !important;
+}
+.mt-2xs{
+    margin-top: var(--space-xs) !important;
+}
+.mt-xs{
+    margin-top: var(--space-xs) !important;
+}
+.mt-s{
+    margin-top: var(--space-s) !important;
+}
+.mt-m{
+    margin-top: var(--space-m) !important;
+}
+.mt-l{
+    margin-top: var(--space-l) !important;
+}
+.mt-xl{
+    margin-top: var(--space-xl) !important;
+}
+
+.mb-0{
+    margin-bottom: 0 !important;
+}
+.mt-0{
+    margin-top: 0 !important;
+}
+.pb-0{
+    padding-bottom: 0 !important;
+}
+.pt-0{
+    padding-top: 0 !important;
+}
+
+// hidden/show modifire @media
+
+.tablet-show{
+    @include bp($bp-1280){
+        display: none !important;
+    }
+}
+.tablet-hide{
+    @include maxBp($bp-1280){
+        display: none !important;
+    }
+}
+.mobile-show{
+    @include bp($bp-768){
+        display: none !important;
+    }
+}
+.mobile-hide{
+    @include maxBp($bp-768){
+        display: none !important;
+    }
+}
+
+.mobile-vertical-show{
+    @include bp($bp-500){
+        display: none !important;
+    }
+}
+.mobile-vertical-hide{
+    @include maxBp($bp-500){
+        display: none !important;
+    }
+}

@@ -1,7 +1,7 @@
 extends ./_layout
 
 block content
-        .wrapper__page.p-top-content
+        .wrapper__page.wrapper__page--content
             .wrapper__haed 
                 h1 Подарочный сертификат
             .section 
@@ -22,7 +22,7 @@ block content
                                     span.form__ph Имя
                             .form__line 
                                 label.form__label
-                                    input.form__input(type="text" name="phone" inputmode="phone" class="form__input" required)
+                                    input.form__input.js-input-format-phone(type="text" name="phone" inputmode="phone" class="form__input" required)
                                     span.form__ph Телефон
                             .form__line 
                                 label.form__label
@@ -78,4 +78,4 @@ block content
                                         a(href="policy.html") политикой конфиденциальности
                                         +icon-sym('check')
                             button.btn.btn--primary.order-box__link(type='submit') Перейти к оплате
-                            a(href="#") Условия использования электронного сертификата
+                            a(href="help-cert.html" target="_blank") Условия использования электронного сертификата

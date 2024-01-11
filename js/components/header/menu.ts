@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', () => {
         hoverMenu();
-        menuShow();
+        // menuShow();
     });
 
     document.addEventListener('DOMContentLoaded', () => {

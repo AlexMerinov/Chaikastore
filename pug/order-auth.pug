@@ -7,7 +7,7 @@ include ./mixins/list/basket-prod
 include ./mixins/list/basket-list
 
 block content
-        .wrapper__page.p-top-content
+        .wrapper__page.wrapper__page--content
             .wrapper__haed 
                 h1 Оформление заказа
                 -
@@ -40,7 +40,7 @@ block content
                                     span.form__ph Имя
                             .form__line 
                                 label.form__label
-                                    input.form__input(type="text" name="phone" inputmode="phone" class="form__input" required)
+                                    input.form__input.js-input-format-phone(type="text" name="phone" inputmode="phone" class="form__input" required)
                                     span.form__ph Телефон
                             .form__line 
                                 label.form__label
@@ -424,7 +424,7 @@ block content
                                         span.order-box__select-alert.hide 
                                             span Сертификат успешно применен
                                             span.error Серитфикат не действителен
-                                        a.order-box__add-new(data-micromodal="modal-add-cert") Добавить новый
+                                        a.order-box__add-new(href="#" data-micromodal="modal-add-cert") Добавить новый
                             .order-box__line
                                 span Итого
                                 span.bold 8 999 ₽

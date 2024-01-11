@@ -2,7 +2,7 @@ extends ./_layout
 include ./mixins/list/breads
 
 block content
-        .wrapper__page.p-top-content
+        .wrapper__page.wrapper__page--content
             .wrapper__haed 
                 h1 Подарочный сертификат
                 -
@@ -26,7 +26,7 @@ block content
                         a(href="tel:+79660202723") +7 ( 966 ) 020-27-23 
                     li 
                         a(href="mailto:mail@chaikastore.ru") mail@chaikastore.ru
-                form.form
+                form.form.js-form-validate
                     h3.form__subtitle Написать нам
                     .form__line 
                         label.form__label
@@ -38,7 +38,7 @@ block content
                             span.form__ph Фамилия
                     .form__line 
                         label.form__label
-                            input.form__input(type="text" name="phone" inputmode="phone" class="form__input" required)
+                            input.form__input.js-input-format-phone(type="text" name="phone" inputmode="phone" class="form__input" required)
                             span.form__ph Телефон
                     .form__line 
                         label.form__label
